@@ -41,6 +41,7 @@ export const UI_LABELS = {
     behavior: "行为",
     morality: "道德",
     outcry: "舆论",
+    harm: "危害",
     barHeader: "← 认知盲区 ｜ 过度反应 →",
     deviation: "偏移",
     blindSpot: "认知盲区 — 社会严重低估其危害",

@@ -17,7 +17,16 @@ const I18nContext = createContext();
 export function I18nProvider({ children }) {
   const [lang, setLang] = useState(() => {
     const saved = localStorage.getItem("app_lang");
-    return saved === "zh_CN" ? "zh_CN" : "zh_TW";
+    if (saved === "zh_CN" || saved === "zh_TW") {
+      return saved;
+    }
+    
+    // No saved preference, detect browser/system language
+    const browserLang = (navigator.language || navigator.userLanguage || "").toLowerCase();
+    if (browserLang.includes("zh-cn") || browserLang.includes("zh-sg") || browserLang.includes("zh-hans")) {
+      return "zh_CN";
+    }
+    return "zh_TW";
   });
 
   useEffect(() => {
