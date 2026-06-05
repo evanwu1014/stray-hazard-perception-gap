@@ -1,20 +1,21 @@
-import { DECISION_MATRIX } from "../data/scenarioData";
-import { UI_LABELS } from "../data/uiLabels";
+import { useI18n } from "../context/I18nContext";
 
 export default function DecisionMatrix() {
+  const { decisionMatrix, uiLabels } = useI18n();
+
   return (
     <div className="matrix-container">
       <table className="matrix-table">
         <thead>
           <tr>
-            <th>{UI_LABELS.matrix.method}</th>
-            <th>{UI_LABELS.matrix.columns.reserve}</th>
-            <th>{UI_LABELS.matrix.columns.urban}</th>
-            <th>{UI_LABELS.matrix.columns.campus}</th>
+            <th>{uiLabels.matrix.method}</th>
+            <th>{uiLabels.matrix.columns.reserve}</th>
+            <th>{uiLabels.matrix.columns.urban}</th>
+            <th>{uiLabels.matrix.columns.campus}</th>
           </tr>
         </thead>
         <tbody>
-          {DECISION_MATRIX.map((row, index) => (
+          {decisionMatrix.map((row, index) => (
             <tr key={index}>
               <td className="col-header">
                 {row.method}

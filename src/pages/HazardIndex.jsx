@@ -2,11 +2,11 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import RankList from "../components/RankList";
 import DeviationChart from "../components/DeviationChart";
-import { HAZARD_TEXT } from "../data/textContent";
-import { UI_LABELS } from "../data/uiLabels";
+import { useI18n } from "../context/I18nContext";
 
 export default function HazardIndex() {
-  const { hero, methodology, dimensions, ranking, perception, abuseSociology, polarizationIndicator, insights, quote } = HAZARD_TEXT;
+  const { hazardText, uiLabels } = useI18n();
+  const { hero, methodology, dimensions, ranking, perception, abuseSociology, polarizationIndicator, insights, quote } = hazardText;
 
   return (
     <>
@@ -19,7 +19,7 @@ export default function HazardIndex() {
           {hero.sub[3]}<br />
           {hero.sub[4]}
         </p>
-        <div className="hero-scroll"><span>{UI_LABELS.scroll}</span><div className="arrow"></div></div>
+        <div className="hero-scroll"><span>{uiLabels.scroll}</span><div className="arrow"></div></div>
       </section>
 
       {/* ═══ Methodology ═══ */}
@@ -54,7 +54,10 @@ export default function HazardIndex() {
                 <p className="desc">{dim.desc}</p>
                 <ul className="examples">
                   {dim.examples.map((ex, exIdx) => (
-                    <li key={exIdx}><strong>{ex.level}</strong>{"　"}{ex.text}</li>
+                    <li key={exIdx}>
+                      <strong>{ex.level}</strong>
+                      <span className="ex-text">{ex.text}</span>
+                    </li>
                   ))}
                 </ul>
               </Reveal>
@@ -80,10 +83,10 @@ export default function HazardIndex() {
           </Reveal>
 
           <Reveal className="threat-legend">
-            <div className="legend-item"><span className="dot lv1"></span>{UI_LABELS.threatLegend.low} (≤10)</div>
-            <div className="legend-item"><span className="dot lv2"></span>{UI_LABELS.threatLegend.medium} (11-15)</div>
-            <div className="legend-item"><span className="dot lv3"></span>{UI_LABELS.threatLegend.high} (16-22)</div>
-            <div className="legend-item"><span className="dot lv4"></span>{UI_LABELS.threatLegend.extreme} (23+)</div>
+            <div className="legend-item"><span className="dot lv1"></span>{uiLabels.threatLegend.low} (≤10)</div>
+            <div className="legend-item"><span className="dot lv2"></span>{uiLabels.threatLegend.medium} (11-15)</div>
+            <div className="legend-item"><span className="dot lv3"></span>{uiLabels.threatLegend.high} (16-22)</div>
+            <div className="legend-item"><span className="dot lv4"></span>{uiLabels.threatLegend.extreme} (23+)</div>
           </Reveal>
 
           <RankList />
@@ -121,8 +124,8 @@ export default function HazardIndex() {
 
           {/* Deviation legend */}
           <Reveal className="dev-legend">
-            <div className="dev-legend-item"><span className="swatch over-swatch"></span>{UI_LABELS.deviation.overreaction}</div>
-            <div className="dev-legend-item"><span className="swatch blind-swatch"></span>{UI_LABELS.deviation.blindSpot}</div>
+            <div className="dev-legend-item"><span className="swatch over-swatch"></span>{uiLabels.deviation.overreaction}</div>
+            <div className="dev-legend-item"><span className="swatch blind-swatch"></span>{uiLabels.deviation.blindSpot}</div>
           </Reveal>
 
           {/* Deviation Chart */}

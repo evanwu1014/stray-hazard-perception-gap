@@ -1,30 +1,32 @@
 import { useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
-import { UI_LABELS } from "../data/uiLabels";
-
-const SCENARIO_LINKS = [
-  { id: "hero", label: UI_LABELS.nav.scenario.hero },
-  { id: "intro", label: UI_LABELS.nav.scenario.intro },
-  { id: "scenarios", label: UI_LABELS.nav.scenario.scenarios },
-  { id: "charts", label: UI_LABELS.nav.scenario.charts },
-  { id: "matrix", label: UI_LABELS.nav.scenario.matrix }
-];
-
-const HOME_LINKS = [
-  { id: "methodology", label: UI_LABELS.nav.home.methodology },
-  { id: "dimensions", label: UI_LABELS.nav.home.dimensions },
-  { id: "ranking", label: UI_LABELS.nav.home.ranking },
-  { id: "perception", label: UI_LABELS.nav.home.perception },
-  { id: "insights", label: UI_LABELS.nav.home.insights }
-];
+import { useI18n } from "../context/I18nContext";
 
 export default function Navbar() {
+  const { lang, toggleLang, uiLabels } = useI18n();
   const location = useLocation();
   const [show, setShow] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   const isScenario = location.pathname === "/scenario";
-  const links = isScenario ? SCENARIO_LINKS : HOME_LINKS;
+
+  const scenarioLinks = [
+    { id: "hero", label: uiLabels.nav.scenario.hero },
+    { id: "intro", label: uiLabels.nav.scenario.intro },
+    { id: "scenarios", label: uiLabels.nav.scenario.scenarios },
+    { id: "charts", label: uiLabels.nav.scenario.charts },
+    { id: "matrix", label: uiLabels.nav.scenario.matrix }
+  ];
+
+  const homeLinks = [
+    { id: "methodology", label: uiLabels.nav.home.methodology },
+    { id: "dimensions", label: uiLabels.nav.home.dimensions },
+    { id: "ranking", label: uiLabels.nav.home.ranking },
+    { id: "perception", label: uiLabels.nav.home.perception },
+    { id: "insights", label: uiLabels.nav.home.insights }
+  ];
+
+  const links = isScenario ? scenarioLinks : homeLinks;
 
   useEffect(() => {
     // Reset state asynchronously on path change safely
@@ -72,17 +74,27 @@ export default function Navbar() {
   };
 
   return (
-    <nav className={`float-nav ${show ? "show" : ""}`} id="floatNav">
-      {links.map((link) => (
-        <a
-          key={link.id}
-          href={`#${link.id}`}
-          className={activeSection === link.id ? "active" : ""}
-          onClick={(e) => handleLinkClick(e, link.id)}
-        >
-          {link.label}
-        </a>
-      ))}
-    </nav>
+    <>
+      <nav className={`float-nav ${show ? "show" : ""}`} id="floatNav">
+        {links.map((link) => (
+          <a
+            key={link.id}
+            href={`#${link.id}`}
+            className={activeSection === link.id ? "active" : ""}
+            onClick={(e) => handleLinkClick(e, link.id)}
+          >
+            {link.label}
+          </a>
+        ))}
+      </nav>
+
+      <button
+        className="lang-switch-btn"
+        onClick={toggleLang}
+        title={lang === "zh_TW" ? "切換至簡體中文" : "切换至繁体中文"}
+      >
+        {lang === "zh_TW" ? "繁" : "简"}
+      </button>
+    </>
   );
 }

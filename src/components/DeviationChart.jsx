@@ -1,9 +1,9 @@
-import { getProcessedHazardData } from "../data/hazardData";
 import Reveal from "./Reveal";
-import { UI_LABELS } from "../data/uiLabels";
+import { useI18n } from "../context/I18nContext";
 
 export default function DeviationChart() {
-  const processedData = getProcessedHazardData();
+  const { getProcessedData, uiLabels } = useI18n();
+  const processedData = getProcessedData();
   
   // Sort by deviation descending (most overreacted first)
   const sortedData = [...processedData].sort((a, b) => b.deviation - a.deviation);
@@ -13,11 +13,11 @@ export default function DeviationChart() {
   return (
     <div className="dev-chart" id="devChart">
       <div className="dev-chart-header">
-        <div>{UI_LABELS.deviation.behavior}</div>
-        <div style={{ textAlign: "center" }}>{UI_LABELS.deviation.morality}</div>
-        <div style={{ textAlign: "center" }}>{UI_LABELS.deviation.outcry}</div>
-        <div className="bar-header">{UI_LABELS.deviation.barHeader}</div>
-        <div style={{ textAlign: "center" }}>{UI_LABELS.deviation.deviation}</div>
+        <div>{uiLabels.deviation.behavior}</div>
+        <div style={{ textAlign: "center" }}>{uiLabels.deviation.morality}</div>
+        <div style={{ textAlign: "center" }}>{uiLabels.deviation.outcry}</div>
+        <div className="bar-header">{uiLabels.deviation.barHeader}</div>
+        <div style={{ textAlign: "center" }}>{uiLabels.deviation.deviation}</div>
       </div>
       
       {sortedData.map((item, index) => {
@@ -30,8 +30,8 @@ export default function DeviationChart() {
               <div className="dev-row">
                 <div className="dev-name">{item.name}</div>
                 <div className="dev-scores-mobile">
-                  <span>{UI_LABELS.deviation.morality}: <strong style={{ color: "var(--d-md)" }}>{item.condemn}</strong></span>
-                  <span>{UI_LABELS.deviation.outcry}: <strong style={{ color: "var(--purple)" }}>{item.outcry}</strong></span>
+                  <span>{uiLabels.deviation.morality}: <strong style={{ color: "var(--d-md)" }}>{item.condemn}</strong></span>
+                  <span>{uiLabels.deviation.outcry}: <strong style={{ color: "var(--purple)" }}>{item.outcry}</strong></span>
                 </div>
                 <div className="dev-score-cell condemn">{item.condemn}</div>
                 <div className="dev-score-cell outcry">{item.outcry}</div>

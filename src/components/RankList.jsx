@@ -1,6 +1,5 @@
-import { HAZARD_DATA } from "../data/hazardData";
 import Reveal from "./Reveal";
-import { UI_LABELS } from "../data/uiLabels";
+import { useI18n } from "../context/I18nContext";
 
 const getColorClass = (val) => {
   if (val <= 3) return "c-lo";
@@ -16,8 +15,9 @@ const getThreatClass = (total) => {
 };
 
 export default function RankList() {
+  const { hazardData, uiLabels } = useI18n();
   // Sort data by objTotal ascending (matches original HTML), filtering out supplemental entries
-  const sortedData = [...HAZARD_DATA]
+  const sortedData = [...hazardData]
     .filter(item => !item.isSupplemental)
     .sort((a, b) => a.objTotal - b.objTotal);
 
@@ -42,7 +42,7 @@ export default function RankList() {
                 <h3>
                   {item.name}
                   <span className="cite-ref">
-                    {UI_LABELS.citationRef}
+                    {uiLabels.citationRef}
                     <span className="tooltip">
                       <strong>{item.tooltipTitle}</strong>
                       {item.tooltipContent}
@@ -55,26 +55,26 @@ export default function RankList() {
               <div className="rank-scores">
                 <div className="s-sub-scores">
                   <div className="s-box">
-                    <span className="label">{UI_LABELS.painDepth}</span>
+                    <span className="label">{uiLabels.painDepth}</span>
                     <span className={`val ${getColorClass(item.subScores.pain)}`}>
                       {item.subScores.pain}
                     </span>
                   </div>
                   <div className="s-box">
-                    <span className="label">{UI_LABELS.harmScale}</span>
+                    <span className="label">{uiLabels.harmScale}</span>
                     <span className={`val ${getColorClass(item.subScores.scale)}`}>
                       {item.subScores.scale}
                     </span>
                   </div>
                   <div className="s-box">
-                    <span className="label">{UI_LABELS.externalCost}</span>
+                    <span className="label">{uiLabels.externalCost}</span>
                     <span className={`val ${getColorClass(item.subScores.external)}`}>
                       {item.subScores.external}
                     </span>
                   </div>
                 </div>
                 <div className={`s-box total ${getThreatClass(item.objTotal)}`}>
-                  <span className="label">{UI_LABELS.totalScore}</span>
+                  <span className="label">{uiLabels.totalScore}</span>
                   <span className="val">{item.objTotal}</span>
                 </div>
               </div>

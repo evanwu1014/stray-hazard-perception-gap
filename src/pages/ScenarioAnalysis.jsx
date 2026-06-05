@@ -2,12 +2,11 @@ import { Link } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import ScenarioChart from "../components/ScenarioChart";
 import DecisionMatrix from "../components/DecisionMatrix";
-import { SCENARIO_LIST } from "../data/scenarioData";
-import { SCENARIO_TEXT } from "../data/textContent";
-import { UI_LABELS } from "../data/uiLabels";
+import { useI18n } from "../context/I18nContext";
 
 export default function ScenarioAnalysis() {
-  const { hero, intro, scenarios, charts, matrix, philosophy, bottom } = SCENARIO_TEXT;
+  const { scenarioText, scenarioList, uiLabels } = useI18n();
+  const { hero, intro, scenarios, charts, matrix, philosophy, bottom } = scenarioText;
 
   return (
     <>
@@ -32,7 +31,7 @@ export default function ScenarioAnalysis() {
           </a>
           <Link to="/" className="btn-secondary">{hero.secondaryBtn}</Link>
         </div>
-        <div className="hero-scroll"><span>{UI_LABELS.scroll}</span><div className="arrow"></div></div>
+        <div className="hero-scroll"><span>{uiLabels.scroll}</span><div className="arrow"></div></div>
       </section>
 
       {/* ═══ Introduction ═══ */}
@@ -59,7 +58,7 @@ export default function ScenarioAnalysis() {
           </Reveal>
 
           <div className="scenario-grid">
-            {SCENARIO_LIST.map((sc, index) => (
+            {scenarioList.map((sc, index) => (
               <Reveal 
                 key={sc.id} 
                 className={`scenario-card ${sc.id}`} 
@@ -70,15 +69,15 @@ export default function ScenarioAnalysis() {
                 <p className="desc">{sc.desc}</p>
                 <div className="scenario-details">
                   <div className="detail-row">
-                    <span className="label">{UI_LABELS.scenarioDetails.ecoRisk}</span>
+                    <span className="label">{uiLabels.scenarioDetails.ecoRisk}</span>
                     <span className={`val ${sc.metricColorClass}`}>{sc.metrics.eco}</span>
                   </div>
                   <div className="detail-row">
-                    <span className="label">{UI_LABELS.scenarioDetails.coreGoal}</span>
+                    <span className="label">{uiLabels.scenarioDetails.coreGoal}</span>
                     <span className="val">{sc.metrics.core}</span>
                   </div>
                   <div className="detail-row">
-                    <span className="label">{UI_LABELS.scenarioDetails.coreMethod}</span>
+                    <span className="label">{uiLabels.scenarioDetails.coreMethod}</span>
                     <span className={`val ${sc.metricColorClass}`}>{sc.metrics.method}</span>
                   </div>
                 </div>

@@ -89,7 +89,7 @@ export const DECISION_MATRIX = [
       urban: {
         status: "❌ 嚴重危害",
         type: "danger",
-        detail: "引爆鼠患、蟑螂與環境髒亂。高密度犬貓群聚會引發嚴重鄰里衝突、路殺车禍，並加速貓瘟等傳染病在流浪群體中傳播。"
+        detail: "引爆鼠患、蟑螂與環境髒亂。高密度犬貓群聚會引發嚴重鄰里衝突、路殺車禍，並加速貓瘟等傳染病在流浪群體中傳播。"
       },
       campus: {
         status: "❌ 行政失職",
