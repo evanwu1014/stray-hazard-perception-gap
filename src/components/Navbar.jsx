@@ -93,7 +93,8 @@ export default function Navbar() {
         onClick={toggleLang}
         title={lang === "zh_TW" ? "切換至簡體中文" : "切换至繁体中文"}
       >
-        {lang === "zh_TW" ? "繁" : "简"}
+        <span className="lang-icon">🌐</span>
+        <span className="lang-text">{lang === "zh_TW" ? "繁中" : "简中"}</span>
       </button>
     </>
   );
