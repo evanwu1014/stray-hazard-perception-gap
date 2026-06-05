@@ -6,6 +6,8 @@ export const UI_LABELS = {
   externalCostFull: "外部环境与社会成本",
   totalScore: "危害总分",
   citationRef: "注",
+  researchBtn: "研究依据",
+  learnMore: "深入了解",
   scroll: "SCROLL",
   
   threatLegend: {
@@ -74,5 +76,28 @@ export const UI_LABELS = {
     ecoRisk: "生态脆弱度 / 公卫风险",
     coreGoal: "管理核心点",
     coreMethod: "建议核心手段"
+  },
+
+  behaviorDetail: {
+    backToList: "← 返回评估列表",
+    rank: "综合排名",
+    threatLevel: "威胁等级",
+    scoreBreakdown: "评分细项",
+    fullDesc: "详细说明",
+    causeAnalysis: "成因分析",
+    policyImplication: "政策启示",
+    scenariosTitle: "情境分析",
+    scenariosSubtitle: "此行为在不同情境下的具体危害与应对建议",
+    actionsTitle: "各方应对建议",
+    citationTitle: "研究文献依据",
+    perceptionGap: "认知偏差分析",
+    perceptionGapDesc: "社会道德直觉 vs 客观危害评分",
+    moralScore: "道德直觉分",
+    objScore: "客观危害分（标准化）",
+    riskLabels: {
+      critical: "需立即介入",
+      high: "高风险",
+      moderate: "中度风险"
+    }
   }
 };

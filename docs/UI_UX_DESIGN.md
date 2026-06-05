@@ -49,5 +49,33 @@
 *   **動態進度條與偏差條**:
     *   [RankList.jsx](../src/components/RankList.jsx) 中的危害強度橫條，在元素進入可視範圍後以 `transition: width 1.2s` 漸進填滿。
     *   [DeviationChart.jsx](../src/components/DeviationChart.jsx) 的認知偏移條，從中線雙向延伸（向右紅色代表過度反應，向左青色代表認知盲區）。
-*   **懸浮資訊提示 (Tooltips)**: 基於 CSS 選擇器與純樣式定位，在註釋標記 (`.cite-ref`) 懸浮時顯示帶有毛玻璃背景的詳細文獻來源與詮釋文字。
+*   **行內點擊展開面板 (Info Panel Card)**：原懸浮式 tooltip 於行動裝置極難觸發，且容易被頁面邊緣截斷。改版後以 click-toggle 式的行內展開面板 `.cite-panel` 取代。當點擊「📖 研究依據」文字按鈕 (`.cite-btn`) 時，以動畫向下滑動展開。面板採用深色磨砂玻璃背景與頂部藍色漸層裝飾條，包含標題、內容說明、文獻引用，並設有「查看完整情境分析」的快速導航連結。
 *   **懸浮卡片位移**: 卡片（如危害維度卡片、場域卡片、角色卡片）在 Hover 時有 `translateY(-6px)` 的上浮微動效，並伴隨陰影加深與邊框亮化。
+
+---
+
+## 4. 獨立條目詳情頁設計規範 (Behavior Detail Page Specifications)
+
+為提供行為危害更全面深入的分析，獨立詳情頁 ([BehaviorDetail.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/pages/BehaviorDetail.jsx)) 設計了極富視覺衝擊與學術質感的佈局：
+
+*   **三維評分環形圖 (SVG Score Gauges)**
+    *   以自訂 SVG `<circle>` 動態繪製 `strokeDasharray`。當頁面加載時，環形條從 0% 漸進加載至指定分值（`transition: stroke-dasharray 1s`）。
+    *   三個維度（痛苦深度、波及規模、外部成本）分別使用對應的指標色彩，並在環形中心顯著呈現分數數值。
+*   **三欄詳細說明卡片**
+    *   「詳細說明」、「成因分析」、「政策啟示」三個板塊採用橫向網格（Grid）並列，小螢幕自動重疊為單欄。卡片背景採用極富質感的半透明磨砂玻璃與細緻的發光邊框。
+*   **客觀與主觀認知落差 (Perception Gap Graph)**
+    *   在專屬卡片中以雙長條圖並列方式展示：
+        *   **大眾道德直覺分值**：使用柔和的灰色/粉色長條。
+        *   **客觀危害分值**：使用對應其危害程度（低/中/高/極端）色彩的亮色長條。
+        *   下方渲染一個偏離狀態標籤（如「過度反應 +X」或「認知盲區 -X」），能迅速告知讀者該議題的社會認知失真情況。
+*   **多場景情境卡片 (Scenarios)**
+    *   採用 `grid` 多欄自適應排版。卡片在邊框與背景上，使用客製化的 CSS 變數（如 `--sc-color`, `--sc-bg`, `--sc-border`）呈現特定的風險級別顏色（Critical ⚡ / High ⚠️ / Moderate ℹ️）。
+*   **跨條目快速導航 (Linear Navigation)**
+    *   頁尾設計「危害較低 ←」與「危害較高 →」的雙向導航按鈕，顯示上一名與下一名行為的名稱，供讀者線性流暢地比較不同程度的危害行為。
+
+---
+
+## 5. 路由切換捲動重置 (Scroll to Top)
+
+*   **機制**：由於 React 單頁應用（SPA）預設會在路由跳轉時維持先前的滾動位置，這在列表頁滑動至底部並點擊「深入了解」後，會導致詳情頁面依然停留在最底部，破壞首屏視覺體驗。
+*   **解決方式**：使用 [ScrollToTop.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/components/ScrollToTop.jsx) 元件，在 `<HashRouter>` 的頂層監聽 `pathname` 的改變。一旦路由跳轉，便調用 `window.scrollTo({ top: 0, left: 0, behavior: 'instant' })` 強制重置滾動位置，提供流暢的瀏覽旅程。

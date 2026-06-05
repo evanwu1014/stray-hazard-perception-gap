@@ -13,8 +13,9 @@
 - 網頁 UI/UX 設計規範
 - 核心配色系統
 - 字體與排版
-- 互動與動畫效果
-- 專案架構審查與待優化設計評析
+- 互動與動畫效果（包含 Info Panel Card、卡片浮動等微動效）
+- 獨立條目詳情頁設計規範 (Behavior Detail Page)
+- 路由切換捲動重置 (Scroll to Top)
 
 ### 📚 論述資料文件
 [THEORETICAL_CONTENT.md](./THEORETICAL_CONTENT.md)
