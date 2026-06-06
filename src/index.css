@@ -12,7 +12,7 @@
   --surface-border: rgba(255, 255, 255, 0.06);
   --text: #e2e8f0;
   --text-dim: #7a8ba7;
-  --text-faint: #4a5568;
+  --text-faint: #62728d;
   --d-lo: #34d399;
   --d-md: #f5a623;
   --d-hi: #ff5c5c;
@@ -1668,8 +1668,8 @@ strong.accent {
 .matrix-table th {
   font-weight: 700;
   color: var(--text);
-  background: rgba(0, 0, 0, .15);
-  border-bottom: 2px solid rgba(255, 255, 255, .08);
+  background: rgba(255, 255, 255, .03);
+  border-bottom: 2px solid rgba(96, 165, 250, .25);
 }
 
 .matrix-table tr:hover td {

@@ -6,6 +6,8 @@
 
 ## 1. 核心配色系統 (Design Tokens & Color System)
 
+> 完整的色彩系統規範（含對比度評估、使用規則與歷史調整記錄）請參閱 [COLOR_SYSTEM.md](./COLOR_SYSTEM.md)。
+
 主要顏色皆定義於 [index.css](../src/index.css) 的 `:root` 變數中：
 
 *   **基礎背景與表面色**
@@ -13,10 +15,10 @@
     *   次背景色 (`--bg2`): `#0f1219`
     *   表面卡片色 (`--surface`): `rgba(17, 21, 30, 0.65)` （具玻璃透光感）
     *   邊框色 (`--surface-border`): `rgba(255, 255, 255, 0.06)`
-*   **文字顏色**
-    *   主文字色 (`--text`): `#e2e8f0` (高對比冷白)
-    *   次文字色 (`--text-dim`): `#7a8ba7` (低對比藍灰)
-    *   淡文字色 (`--text-faint`): `#4a5568`
+*   **文字顏色**（三層階層系統）
+    *   主文字色 (`--text`): `#e2e8f0`（高對比冷白，對比度 ~14.5:1）
+    *   次文字色 (`--text-dim`): `#7a8ba7`（說明文字，對比度 ~4.6:1）
+    *   淡文字色 (`--text-faint`): `#62728d`（輔助標籤，對比度 ~3.4:1）
 *   **客觀危害分級 (Objective Hazard Levels)**
     *   低痛苦/危害 (`--d-lo`): `#34d399` (翠綠色)
     *   中痛苦/危害 (`--d-md`): `#f5a623` (橙黃色)
@@ -79,3 +81,16 @@
 
 *   **機制**：由於 React 單頁應用（SPA）預設會在路由跳轉時維持先前的滾動位置，這在列表頁滑動至底部並點擊「深入了解」後，會導致詳情頁面依然停留在最底部，破壞首屏視覺體驗。
 *   **解決方式**：使用 [ScrollToTop.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/components/ScrollToTop.jsx) 元件，在 `<HashRouter>` 的頂層監聽 `pathname` 的改變。一旦路由跳轉，便調用 `window.scrollTo({ top: 0, left: 0, behavior: 'instant' })` 強制重置滾動位置，提供流暢的瀏覽旅程。
+
+---
+
+## 6. 懸浮導航欄 (Floating Navbar)
+
+*   **元件**：[Navbar.jsx](../src/components/Navbar.jsx)，CSS 類別為 `.float-nav`。
+*   **捲動觸發顯示**：導航欄在頁面頂部（`scrollY ≤ 300px`）時以 `opacity: 0` + `pointer-events: none` 完全隱藏，捲動超過 300px 後以 `transition: opacity 0.4s` 平滑淡入，避免遮擋 Hero 首屏的宏大視覺動畫。
+*   **Scroll Spy（滾動偵測）**：透過 `scroll` 事件監聽，比對各區塊 `offsetTop - 250px` 的閾值，自動標記當前可見區塊對應的導覽連結為 `.active` 狀態（白色文字 + 半透明底）。
+*   **頁面路由差異**：
+    *   首頁（`/`）：顯示 機制、維度、排名、認知落差、洞見 五個錨點連結。
+    *   場域分析頁（`/scenario`）：顯示 首頁、模型理念、三大場域、危害量化、決策矩陣 五個錨點連結。
+    *   條目詳情頁（`/behavior/:id`）：**不渲染導航欄**，避免無效錨點與視覺干擾。
+*   **語言切換按鈕**：固定於右上角（`position: fixed; top: 20px; right: 20px; z-index: 101`），在所有頁面與路由下皆持續顯示，不受捲動高度影響。

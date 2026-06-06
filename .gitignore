@@ -15,6 +15,10 @@ dist-ssr
 # Firebase
 .firebase
 
+# AI tool directories
+.devin
+.gemini
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

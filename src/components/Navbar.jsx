@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
 import { useLocation } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 
@@ -9,31 +9,37 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
 
   const isScenario = location.pathname === "/scenario";
+  const isDetail = location.pathname.startsWith("/behavior");
 
-  const scenarioLinks = [
-    { id: "hero", label: uiLabels.nav.scenario.hero },
-    { id: "intro", label: uiLabels.nav.scenario.intro },
-    { id: "scenarios", label: uiLabels.nav.scenario.scenarios },
-    { id: "charts", label: uiLabels.nav.scenario.charts },
-    { id: "matrix", label: uiLabels.nav.scenario.matrix }
-  ];
+  const links = useMemo(() => {
+    const scenarioLinks = [
+      { id: "hero", label: uiLabels.nav.scenario.hero },
+      { id: "intro", label: uiLabels.nav.scenario.intro },
+      { id: "scenarios", label: uiLabels.nav.scenario.scenarios },
+      { id: "charts", label: uiLabels.nav.scenario.charts },
+      { id: "matrix", label: uiLabels.nav.scenario.matrix }
+    ];
 
-  const homeLinks = [
-    { id: "methodology", label: uiLabels.nav.home.methodology },
-    { id: "dimensions", label: uiLabels.nav.home.dimensions },
-    { id: "ranking", label: uiLabels.nav.home.ranking },
-    { id: "perception", label: uiLabels.nav.home.perception },
-    { id: "insights", label: uiLabels.nav.home.insights }
-  ];
+    const homeLinks = [
+      { id: "methodology", label: uiLabels.nav.home.methodology },
+      { id: "dimensions", label: uiLabels.nav.home.dimensions },
+      { id: "ranking", label: uiLabels.nav.home.ranking },
+      { id: "perception", label: uiLabels.nav.home.perception },
+      { id: "insights", label: uiLabels.nav.home.insights }
+    ];
 
-  const links = isScenario ? scenarioLinks : homeLinks;
+    return isScenario ? scenarioLinks : homeLinks;
+  }, [isScenario, uiLabels]);
 
+  // Reset navbar visibility and active section on path change
   useEffect(() => {
-    // Reset state asynchronously on path change safely
-    const timer = setTimeout(() => {
-      setShow(false);
-      setActiveSection("");
-    }, 0);
+    setShow(false);
+    setActiveSection("");
+  }, [location.pathname]);
+
+  // Handle scroll listener
+  useEffect(() => {
+    if (isDetail) return;
 
     const handleScroll = () => {
       const scrollY = window.scrollY;
@@ -57,36 +63,35 @@ export default function Navbar() {
     handleScroll();
 
     return () => {
-      clearTimeout(timer);
       window.removeEventListener("scroll", handleScroll);
     };
-  }, [location.pathname, links]);
+  }, [isDetail, links]);
 
   const handleLinkClick = (e, id) => {
     e.preventDefault();
     const el = document.getElementById(id);
     if (el) {
       el.scrollIntoView({ behavior: "smooth" });
-      // Update hash in address bar without jumping
-      window.history.pushState(null, null, `#${id}`);
       setActiveSection(id);
     }
   };
 
   return (
     <>
-      <nav className={`float-nav ${show ? "show" : ""}`} id="floatNav">
-        {links.map((link) => (
-          <a
-            key={link.id}
-            href={`#${link.id}`}
-            className={activeSection === link.id ? "active" : ""}
-            onClick={(e) => handleLinkClick(e, link.id)}
-          >
-            {link.label}
-          </a>
-        ))}
-      </nav>
+      {!isDetail && (
+        <nav className={`float-nav ${show ? "show" : ""}`} id="floatNav">
+          {links.map((link) => (
+            <a
+              key={link.id}
+              href={`#${link.id}`}
+              className={activeSection === link.id ? "active" : ""}
+              onClick={(e) => handleLinkClick(e, link.id)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
+      )}
 
       <button
         className="lang-switch-btn"

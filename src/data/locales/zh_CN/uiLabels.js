@@ -82,7 +82,7 @@ export const UI_LABELS = {
   },
 
   behaviorDetail: {
-    backToList: "← 返回评估列表",
+    backToList: "返回评估列表",
     rank: "综合排名",
     threatLevel: "威胁等级",
     scoreBreakdown: "评分细项",
