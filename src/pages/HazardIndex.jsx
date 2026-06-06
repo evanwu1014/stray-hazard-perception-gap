@@ -1,4 +1,5 @@
-import { Link } from "react-router-dom";
+import { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import Reveal from "../components/Reveal";
 import RankList from "../components/RankList";
 import DeviationChart from "../components/DeviationChart";
@@ -6,7 +7,23 @@ import { useI18n } from "../context/I18nContext";
 
 export default function HazardIndex() {
   const { hazardText, uiLabels } = useI18n();
+  const location = useLocation();
   const { hero, methodology, dimensions, ranking, perception, abuseSociology, polarizationIndicator, insights, quote } = hazardText;
+
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      const targetId = location.state.scrollTo;
+      const el = document.getElementById(targetId);
+      if (el) {
+        const timer = setTimeout(() => {
+          el.scrollIntoView({ behavior: "smooth", block: "start" });
+        }, 150);
+        // 清理狀態
+        window.history.replaceState({}, document.title);
+        return () => clearTimeout(timer);
+      }
+    }
+  }, [location]);
 
   return (
     <>

@@ -13,7 +13,49 @@ export const HAZARD_DATA = [
     outcry: 1,      // 輿論風暴指數
     tooltipTitle: "開放空間 TNR/TNA 的限制",
     tooltipContent: "研究與數學模型顯示，流浪犬貓的年移除率必須持續達到 75% 至 85% 以上，族群總量才會開始下降，且絕育個體仍會持續獵殺野生動物或造成人車追咬衝突。",
-    citation: "Longcore et al. (2009) Conservation Biology / Barrows (2004)",
+    citation: "Longcore et al. (2009) Conservation Biology / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / Duke Space (2023) / JASV / 台灣石虎保育協會 / PMC/NIH (2023)",
+    references: [
+          {
+                title: "Longcore et al. (2009) Conservation Biology - TNR Claims Critical Assessment",
+                url: null
+          },
+          {
+                title: "Barrows (2004) - Professional Ethics and Stray Cat Management",
+                url: null
+          },
+          {
+                title: "PMC/NIH (2022) - High-intensity TNR required to reduce free-roaming cat population",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9169806/"
+          },
+          {
+                title: "University of Florida IFAS (2020) - How Effective and Humane Is Trap-Neuter-Release?",
+                url: "https://ask.ifas.ufl.edu/publication/UW468"
+          },
+          {
+                title: "Wellbeing International - Why Trap-Neuter-Return is Not an Ethical Solution (Australia perspective)",
+                url: "https://www.wellbeingintlstudiesrepository.org/cgi/viewcontent.cgi?article=1009&context=aw_comp_globalcats_managementtnr"
+          },
+          {
+                title: "Duke University Space (2023) - Citizens perceptions toward Hangzhou TNR Program (Asia)",
+                url: "https://dukespace.lib.duke.edu/items/bbbf3445-70a3-425f-948e-5501a94edc80"
+          },
+          {
+                title: "JASV - Successful Control of Feral Cat Populations Through Trap-Neuter (Asia islands)",
+                url: "https://jsmcah.org/index.php/jasv/article/view/125/287"
+          },
+          {
+                title: "台灣石虎保育協會 (Leopard Cat Association of Taiwan)（中華民國）- 石虎保育數據",
+                url: "https://www.twlcat.org/en/"
+          },
+          {
+                title: "PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/"
+          },
+          {
+                title: "AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats",
+                url: "https://topics.amcham.com.tw/2016/07/protecting-endangered-leopard-cats/"
+          }
+    ],
     detailContent: {
       fullDesc: "TNR（誘捕、絕育、回置）作為人道管理手段，在個體福利面確實減少了痛苦，但在族群控制面的成效受數學模型嚴格質疑。「當面餵食」使 TNR 個體持續存活於街頭生境，維持其對原生生態的掠食壓力，並強化流浪動物對特定公共空間的佔據。",
       causeAnalysis: "餵食者通常具有高度同理心，但其行為導致非預期的系統性後果：吸引未絕育個體聚集、增加族群密度、強化地域性造成衝突，以及使收容系統接收壓力的評估失真。",
@@ -72,7 +114,29 @@ export const HAZARD_DATA = [
     outcry: 9,
     tooltipTitle: "結果論淨值折抵與外部性",
     tooltipContent: "此為違法暴力行為。個體痛苦評為 6 分，但該捕食個體被移除客觀上阻止了未來被其掠食的數百隻原生野生動物的極端折磨（淨痛苦總量下降）。惟私人暴力會產生秩序恐慌，故仍具備 1 分外部社會成本。",
-    citation: "動保法第 25 條刑事責任 / 環境犯罪學與社會安全成本",
+    citation: "中華民國《動物保護法》第 25 條刑事責任 / 環境犯罪學與社會安全成本 / PMC/NIH (2023) / WHO / United Against Rabies (2022) / Asian News Network (2023)",
+    references: [
+          {
+                title: "中華民國《動物保護法》第 25 條刑事責任",
+                url: null
+          },
+          {
+                title: "PMC/NIH (2023) - Progress towards dog-mediated rabies elimination in PR China (Asia)",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/"
+          },
+          {
+                title: "WHO - Strategic Framework for Elimination of Human Rabies Transmitted by Dogs",
+                url: "https://iris.who.int/bitstreams/18d3fd7b-0c76-4284-b714-0b7650d015ad/download"
+          },
+          {
+                title: "United Against Rabies / WHO (2022) - Rabies prevention and control – lessons from Chongqing, China (Asia)",
+                url: "https://unitedagainstrabies.org/news/rabies-prevention-and-control-lessons-from-chongqing-china/"
+          },
+          {
+                title: "Asian News Network (2023) - China's crackdown on stray dogs sparks public outcry (Asia)",
+                url: "https://asianews.network/chinas-crackdown-on-stray-dogs-sparks-public-outcry/"
+          }
+    ],
     detailContent: {
       fullDesc: "私自處決流浪動物在臺灣屬違法行為（動保法第 25 條），最高可處二年有期徒刑。儘管在結果論框架下，移除一隻獵食個體可客觀減少未來發生的動物痛苦，但私刑模式帶來的法律秩序破壞與社會恐慌，使其在「外部成本」面仍有負向評分。",
       causeAnalysis: "行為者通常是對流浪動物生態危害有所認知的農牧業者、保育人士或對鄰里安全有顧慮的居民。缺乏合法快速移除管道，是促使私刑行為發生的重要結構性因素。",
@@ -131,7 +195,25 @@ export const HAZARD_DATA = [
     outcry: 1,
     tooltipTitle: "人擇基因缺陷的痛苦",
     tooltipContent: "純種寵物（如摺耳貓、短吻犬）在選育特徵的過程中，常固化了嚴重的遺傳疾病，如骨骼發育不良、短吻犬呼吸道阻塞綜合症（BOAS）。",
-    citation: "Takanosu et al. (2008) / UFAW Genetic Welfare Problems",
+    citation: "Takanosu et al. (2008) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",
+    references: [
+          {
+                title: "Takanosu et al. (2008) - Inherited Disorders in Dogs",
+                url: null
+          },
+          {
+                title: "UFAW - Genetic Welfare Problems of Companion Animals",
+                url: null
+          },
+          {
+                title: "Bellumori et al. JAVMA (2013) - Prevalence of inherited disorders among mixed-breed and purebred dogs (27,254 cases)",
+                url: "https://pubmed.ncbi.nlm.nih.gov/23683021/"
+          },
+          {
+                title: "PMC/NIH (2018) - Frequency and distribution of 152 genetic disease variants in over 100,000 dogs",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5945203/"
+          }
+    ],
     detailContent: {
       fullDesc: "購買純種動物的消費行為，其道德成本主要透過供應鏈傳遞——消費端的需求直接驅動繁殖產業的規模。即便個別買家善待動物，其消費決策仍是對基因缺陷固化與繁殖剝削的資助。",
       causeAnalysis: "消費者通常缺乏對品種基因問題的完整認知。選擇純種動物的動機多為外觀審美、可預期的個性特質，或社會認同。這些動機本身合理，但資訊不透明使消費者難以做出知情選擇。",
@@ -190,7 +272,25 @@ export const HAZARD_DATA = [
     outcry: 10,
     tooltipTitle: "極端痛苦與危害邊界",
     tooltipContent: "視覺衝擊與社會道德譴責程度最高。在結果論模型中，其「個體痛苦深度」達滿分，但因受限於個體施暴能力，其損害被限制於極小規模，無外部生態擴散性。研究顯示其施虐動機可分為雙軌路徑：一是病理性虐待（ASPD/反社會型），以折磨生命獲取掌控感或快感；二是轉移性虐待（弱弱相殘型），施虐者將自身無力處理的心理與社會危機，向生態最底層的動物轉嫁。",
-    citation: "社會心理學：反社會人格特質與暴力行為關聯性研究",
+    citation: "Psychology Today (2025) / PMC/NIH (2022) / Oxford Animal Ethics / Faunalytics (2020)",
+    references: [
+          {
+                title: "Psychology Today (2025) - The Violence Link",
+                url: "https://www.psychologytoday.com/us/blog/the-human-equation/202503/the-violence-link"
+          },
+          {
+                title: "PMC/NIH (2022) - Animal Abuse as an Indicator of Domestic Violence",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9024712/"
+          },
+          {
+                title: "Oxford Animal Ethics - The Link between Animal Abuse and Human Violence (Monograph)",
+                url: "https://www.oxfordanimalethics.com/what-we-do/publication/the-link-between-animal-abuse-and-human-violence/"
+          },
+          {
+                title: "Faunalytics (2020) - The Development of an Animal Protection Regime in China (Asia)",
+                url: "https://faunalytics.org/the-development-of-an-animal-protection-regime-in-china/"
+          }
+    ],
     detailContent: {
       fullDesc: "虐殺行為在道德直覺層面引發最強烈的社會譴責，是動保倡議最易動員輿論的議題類型。然而在結果論框架下，其危害邊界完全收斂於單一個體——高度的個體痛苦，配合極低的受害規模與外部成本，使其客觀危害分數低於許多社會感知不嚴重的行為。",
       causeAnalysis: "研究識別兩類主要施虐路徑：(1) 病理性：具 ASPD 特質者以折磨作為掌控感的來源，此類人格具跨物種暴力傾向（連結家暴與殺人犯罪）；(2) 轉移性：社會弱勢者將無力宣洩的挫折，轉嫁至防禦力最低的流浪動物身上。",
@@ -249,7 +349,17 @@ export const HAZARD_DATA = [
     outcry: 10,
     tooltipTitle: "時間維度的痛苦累積",
     tooltipContent: "將個體痛苦時間拉長，其結果論累積痛苦高於瞬間虐殺。在此類行為中存在顯著的性別分流機制：男性施虐者傾向物理暴力，而女性施虐者則高比例表現為『病態囤積（Animal Hoarding）』。後者常被『愛心拯救』的外衣包裝，社會譴責極低，但會導致數十至數百隻動物長期處於極度擁擠、營養不良、疾病蔓延與糞尿窒息中，其製造的慢性痛苦深度與生命受害規模在結果論上遠超單一物理暴力。",
-    citation: "行為科學：虐待動物與家暴/社會暴力的關聯研究",
+    citation: "APA (2023) Hoarding Disorder / EBSCO (2024) Animal Hoarding / 社會學與犯罪學解構",
+    references: [
+          {
+                title: "American Psychiatric Association (APA, 2023) - What is Hoarding Disorder?",
+                url: "https://www.psychiatry.org/patients-families/hoarding-disorder/what-is-hoarding-disorder"
+          },
+          {
+                title: "EBSCO Research Starters (2024) - Animal hoarding",
+                url: "https://www.ebsco.com/research-starters/social-sciences-and-humanities/animal-hoarding"
+          }
+    ],
     detailContent: {
       fullDesc: "長期虐待因「痛苦持續時間」的乘數效應，在結果論累積痛苦上高於單次虐殺。此類行為最難被發現——施虐發生於私人空間，且「病態囤積」型的施虐者往往以動物救援者自居，社會辨識難度極高。",
       causeAnalysis: "性別分流現象顯著：男性施虐傾向直接物理暴力（拘禁、剝奪飲食、直接毆打）；女性施虐者高比例呈現病態囤積——以「救援愛心」為動機，但實際上製造了數十至數百隻動物的系統性慢性痛苦，且主觀否認自身的危害性。",
@@ -308,7 +418,29 @@ export const HAZARD_DATA = [
     outcry: 1,
     tooltipTitle: "病態審美的直接資助",
     tooltipContent: "消費者直接為「明確的殘疾與終身痛苦」買單。包含：短吻犬呼吸道阻塞(BOAS)、摺耳貓軟骨變形劇痛、雙隕石色失明、茶杯體水腦症。這些病理性痛苦伴隨其一生，是消費端對畸形特徵的直接資助。",
-    citation: "AVMA Companion Animal Breeding Welfare guidelines",
+    citation: "AVMA Companion Animal Breeding Welfare / PMC/NIH (2022) BOAS / RCVS Knowledge (2026) / UFAW Scottish Fold / PMC/NIH (2007) Osteochondrodysplasia",
+    references: [
+          {
+                title: "AVMA - Companion Animal Breeding Welfare guidelines",
+                url: null
+          },
+          {
+                title: "PMC/NIH (2022) - BOAS: much more than a respiratory problem",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9673814/"
+          },
+          {
+                title: "RCVS Knowledge (2026) - Health and welfare of Brachycephalic dogs",
+                url: "https://www.rcvsknowledge.org/resource/health-and-welfare-of-brachycephalic-dogs/"
+          },
+          {
+                title: "UFAW - Scottish Fold – Osteochondrodysplasia",
+                url: "https://www.ufaw.org.uk/cats/scottish-fold-osteochondrodysplasia"
+          },
+          {
+                title: "PMC/NIH (2007) - Osteochondrodysplasia in three Scottish Fold cats",
+                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC2868141/"
+          }
+    ],
     detailContent: {
       fullDesc: "極端畸變品種是「人類審美偏好凌駕動物生理健康」的最直接呈現。雙色（Merle）基因的純合子導致耳聾與眼盲；摺耳基因（Folded-ear）全身軟骨異常導致持續骨骼疼痛；短吻特徵（Brachycephaly）使動物終身在輕度窒息狀態下生活。這些痛苦是可預期、不可逆的設計結果。",
       causeAnalysis: "消費者通常不了解其購買行為所資助的生理代價。社群媒體上「可愛」的外觀呈現，有效遮蔽了動物實際的痛苦狀態。部分消費者甚至認為動物「天生如此」而非「被設計成如此」。",
@@ -367,7 +499,25 @@ export const HAZARD_DATA = [
     outcry: 2,
     tooltipTitle: "母體損耗與代際折磨的工業化",
     tooltipContent: "商業繁殖場為追求利潤，母體常處於密閉籠具、反覆生育直至生理機能崩潰，其痛苦在規模與時間上被工業化放大。",
-    citation: "HSUS Puppy Mills Investigative Report",
+    citation: "HSUS Puppy Mills Investigative Report / Applied Animal Behaviour Science (2011) / HSVMA Veterinary Report / ASPCA (2026)",
+    references: [
+          {
+                title: "HSUS - Puppy Mills Investigative Report",
+                url: null
+          },
+          {
+                title: "Applied Animal Behaviour Science (2011) - Mental health of dogs formerly used as breeding stock",
+                url: "https://www.sciencedirect.com/science/article/abs/pii/S0168159111003005"
+          },
+          {
+                title: "HSVMA - Veterinary Report on Puppy Mills",
+                url: "https://www.humanevma.org/assets/pdfs/hsvma_veterinary_report_puppy_mills.pdf"
+          },
+          {
+                title: "ASPCA (2026) - Report on Puppy Mill Cruelty reveals USDA failure",
+                url: "https://www.aspca.org/about-us/press-releases/aspca-report-puppy-mill-cruelty-reveals-usdas-continued-failure-protect"
+          }
+    ],
     detailContent: {
       fullDesc: "商業繁殖場（俗稱「繁殖工廠」或「寵物工廠」）的核心問題在於規模化的母體剝削——種母犬貓在密閉籠具中連續發情繁殖，直至生育能力耗盡，才可能被棄置或安樂死。這是系統性的、無視動物感知的生產過程。",
       causeAnalysis: "此行為的道德譴責分極低（3 分），原因在於「繁殖業者」在法律框架下屬合法商業活動，且消費者不直接目睹母體的生活條件。供應鏈的不透明性，是此行為維持社會低譴責的結構性因素。",
@@ -426,7 +576,25 @@ export const HAZARD_DATA = [
     outcry: 3,
     tooltipTitle: "制度化基因折磨與繁殖風險",
     tooltipContent: "為迎合市場，刻意將痛苦寫入基因編碼並批發製造。極高的母體難產率與子代夭折率，導致龐大的醫療資源消耗與最終棄養負擔。育種者常使用近親交配，刻意保留病理性矮小與特徵，使子代承受不可逆的系統性折磨。",
-    citation: "Veterinary Journal: Genetic welfare problems of companion animals",
+    citation: "Veterinary Journal: Genetic welfare problems / RCVS Knowledge (2026) / Cambridge Animal Welfare (2021) / Humane World (China Meat Trade)",
+    references: [
+          {
+                title: "Veterinary Journal - Genetic welfare problems of companion animals",
+                url: null
+          },
+          {
+                title: "RCVS Knowledge (2026) - Health and welfare of Brachycephalic dogs",
+                url: "https://www.rcvsknowledge.org/resource/health-and-welfare-of-brachycephalic-dogs/"
+          },
+          {
+                title: "Cambridge Animal Welfare (2021) - A follow-up study of exercise test results and severity of BOAS signs in brachycephalic dogs",
+                url: "https://www.cambridge.org/core/journals/animal-welfare/article/followup-study-of-exercise-test-results-and-severity-of-brachycephalic-obstructive-airway-syndrome/699CE1C7ACF1415155760D5320A55371"
+          },
+          {
+                title: "Humane World for Animals - Ending China's Dog and Cat Meat Trade (Asia)",
+                url: "https://www.humaneworld.org/en/campaign/ending-chinas-dog-and-cat-meat-trades"
+          }
+    ],
     detailContent: {
       fullDesc: "量產極端畸變寵物是本指數中「社會輿論譴責最低、客觀危害最高」落差最大的類別之一。其危害橫跨三個維度：(1) 每隻個體承受的基因性終身慢性痛苦（高痛苦深度）；(2) 受影響個體數量龐大（高規模）；(3) 對獸醫資源、棄養安置系統的結構性消耗（高外部成本）。",
       causeAnalysis: "繁殖業者採用近親交配固化病理性特徵，如法鬥犬（BullDog）的短吻、茶杯型（Teacup）動物的極端矮小化。這些特徵在市場上獲得溢價，創造了強烈的經濟誘因使業者持續投入。消費端的無知與平台行銷的美化，共同維持了這條傷害鏈。",
@@ -485,7 +653,37 @@ export const HAZARD_DATA = [
     outcry: 10,
     tooltipTitle: "暴力的數位資本化（類型 C）",
     tooltipContent: "加密群組內部發展出「付費客製化訂單」商業模式——買家指定物種與施虐方式，施虐者以虛擬貨幣結算影片。此犯罪創造了「同溫層認同」的群體極化機制。當民眾舉報時，組織會動用惡意開盒與跨國網路恐嚇。其危害已正式超越動物福利，升級為威脅人類社會與資訊安全的網路組織犯罪。",
-    citation: "BBC World Service「Monkey Haters」調查報告, 2023 / SMACC 年度報告, 2024",
+    citation: "BBC World Service「Monkey Haters」調查報告, 2023 / SMACC 年度報告, 2024 / 中國 Telegram 網路組織虐殺寵物「傑克辣條」事件, 2023",
+    references: [
+          {
+                title: "BBC World Service (2023) - 'Monkey Haters' investigative report on cyber abuse (Asia)",
+                url: null
+          },
+          {
+                title: "SMACC (Social Media Animal Cruelty Coalition, 2024) - Annual Report on online animal abuse",
+                url: null
+          },
+          {
+                title: "中國 Telegram 網路組織虐殺寵物「傑克辣條」事件調查 (2023) (Asia)",
+                url: null
+          },
+          {
+                title: "新聞媒體調查報導 (VICE / The Guardian / Reuters) 網路動物虐待組織與群組",
+                url: null
+          },
+          {
+                title: "Animal Legal Defense Fund (ALDF.org) - 網路虐待倡議與法律分析",
+                url: null
+          },
+          {
+                title: "FBI NIBRS - 動物虐待一級重罪追蹤數據 (自 2016 年起)",
+                url: null
+          },
+          {
+                title: "中華民國農業部動物保護資訊網及警政署刑事警察局偵查案件記錄",
+                url: null
+          }
+    ],
     isSupplemental: true,
     detailContent: {
       fullDesc: "網路組織型商業虐待是本指數中唯一達到「跨國組織犯罪」等級的行為類型。其威脅已不限於動物福利：對舉報者的開盒恐嚇、跨國追蹤騷擾，使其成為威脅人身安全的網路暴力犯罪，並涉及洗錢（加密貨幣結算）與跨國司法管轄等複雜議題。",
@@ -545,7 +743,33 @@ export const HAZARD_DATA = [
     outcry: 2,
     tooltipTitle: "繁殖創傷與傳染病爆發",
     tooltipContent: "長期餵食促使流浪犬貓高密度群聚與繁衍。尤其是流浪貓具備刺激性排卵與倒刺交配的生理創傷，且發情頻率極高，無節制餵食等同於資助這部「痛苦生育機器」幾何級膨脹。高密度繁衍進而引發貓瘟、犬細小病毒爆發，導致無數幼體在惡劣環境中失明、病死或遭路殺。",
-    citation: "Loss et al. (2013) Nature Comm. / 台灣農業部林保育署野生動物犬咬與路殺數據",
+    citation: "Loss et al. (2013) Nature Comm. / 中華民國農業部林業及自然保育署野生動物犬咬與路殺數據 / The Wildlife Society (2025) / USDA APHIS / 中華民國苗栗縣政府石虎報告 / ScienceDirect (2025)",
+    references: [
+          {
+                title: "Loss et al. (2013) Nature Comm. - Impact of free-ranging domestic cats on wildlife",
+                url: null
+          },
+          {
+                title: "中華民國農業部林業及自然保育署 - 野生動物犬咬與路殺監測數據",
+                url: null
+          },
+          {
+                title: "The Wildlife Society (2025) - Feral and Free-Ranging Domestic Cats Issue Statement",
+                url: "https://wildlife.org/tws-issue-statement-feral-and-free-ranging-domestic-cats/"
+          },
+          {
+                title: "USDA APHIS - Free-ranging and Feral Cats (PDF)",
+                url: "https://www.aphis.usda.gov/sites/default/files/free-ranging-and-feral-cats.pdf"
+          },
+          {
+                title: "中華民國苗栗縣政府 - 石虎與保育工作報告",
+                url: "https://www.miaoli.gov.tw/eng/News_Content.aspx?n=434&s=271995"
+          },
+          {
+                title: "ScienceDirect (2025) - Incidence and prevalence of rabies virus infections in Asia",
+                url: "https://www.sciencedirect.com/science/article/pii/S2352771425001387"
+          }
+    ],
     detailContent: {
       fullDesc: "大量濫餵在本指數中獲得最高客觀危害分數（27 分），但社會道德譴責極低（2 分），呈現最大的認知偏差。其危害機制是系統性的：餵食→族群增長→密度上升→繁殖創傷擴大→傳染病爆發→幼體高夭折→原生生態崩壞。每一環節都製造大量動物痛苦，但行為者通常以「愛心」自我定義，完全不自知。",
       causeAnalysis: "大量濫餵者往往具備真實的同理心，但欠缺生態系統的整體思維。其行為的危害完全透過間接機制產生，使行為者難以感知因果連結。「看到動物吃到飽的滿足感」遮蔽了對隱性夭折與生態破壞的認知。",

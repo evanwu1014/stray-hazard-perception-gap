@@ -36,7 +36,7 @@ export default function RankList() {
         return (
           <Reveal key={item.id} delay={index * 50} className="rank-item-reveal-wrapper">
             {(isVisible) => (
-              <div className="rank-item-wrapper">
+              <div className="rank-item-wrapper" id={`behavior-${item.id}`}>
                 <div
                   className={`rank-item ${isCiteOpen ? "rank-item--cite-open" : ""}`}
                   data-total={item.objTotal}
@@ -119,14 +119,36 @@ export default function RankList() {
                         <strong className="cite-panel-title">{item.tooltipTitle}</strong>
                         <p className="cite-panel-content">{item.tooltipContent}</p>
                         <div className="cite-panel-ref">
-                          <span className="cite-panel-ref-label">📚 參考文獻</span>
-                          <span className="cite-panel-ref-text">{item.citation}</span>
+                          <span className="cite-panel-ref-label">{uiLabels.citationLabel || "📚 參考文獻"}</span>
+                          {item.references && item.references.length > 0 ? (
+                            <ul className="cite-panel-ref-list" style={{ listStyle: "none", padding: 0, margin: "8px 0 0 0" }}>
+                              {item.references.map((ref, idx) => (
+                                <li key={idx} style={{ marginBottom: "6px", fontSize: "0.85em" }}>
+                                  {ref.url ? (
+                                    <a
+                                      href={ref.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="cite-link"
+                                      style={{ color: "#60a5fa", textDecoration: "underline" }}
+                                    >
+                                      {ref.title}
+                                    </a>
+                                  ) : (
+                                    <span style={{ color: "var(--text-dim)" }}>{ref.title}</span>
+                                  )}
+                                </li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <span className="cite-panel-ref-text">{item.citation}</span>
+                          )}
                         </div>
                         <Link
                           to={`/behavior/${item.id}`}
                           className="cite-panel-detail-link"
                         >
-                          查看完整情境分析 →
+                          {uiLabels.viewScenario || "查看完整情境分析 →"}
                         </Link>
                       </div>
                     </div>

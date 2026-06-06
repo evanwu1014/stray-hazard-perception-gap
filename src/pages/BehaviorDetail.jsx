@@ -68,7 +68,7 @@ export default function BehaviorDetail() {
       <div className="container">
         <button
           className="bdetail-back"
-          onClick={() => navigate(-1)}
+          onClick={() => navigate("/", { state: { scrollTo: `behavior-${item.id}` } })}
           aria-label="返回列表"
         >
           <span className="bdetail-back-arrow">←</span>
@@ -261,13 +261,37 @@ export default function BehaviorDetail() {
         <div className="container">
           <Reveal className="bdetail-citation-card">
             <div className="bdetail-citation-icon">📚</div>
-            <h3>{labels.citationTitle}</h3>
             <div className="bdetail-citation-content">
+              <h3>{labels.citationTitle}</h3>
               <p className="bdetail-citation-title-text">{item.tooltipTitle}</p>
               <p className="bdetail-citation-body">{item.tooltipContent}</p>
-              <div className="bdetail-citation-ref">
-                <span className="bdetail-citation-ref-label">參考文獻</span>
-                <span className="bdetail-citation-ref-text">{item.citation}</span>
+              <div className="bdetail-citation-ref" style={{ display: "block" }}>
+                <span className="bdetail-citation-ref-label" style={{ display: "block", marginBottom: "8px" }}>
+                  {uiLabels.citationLabel ? uiLabels.citationLabel.replace("📚 ", "") : "參考文獻"}
+                </span>
+                {item.references && item.references.length > 0 ? (
+                  <ul className="bdetail-citation-ref-list" style={{ listStyle: "none", padding: 0, margin: 0 }}>
+                    {item.references.map((ref, idx) => (
+                      <li key={idx} style={{ marginBottom: "8px", lineHeight: "1.5" }}>
+                        {ref.url ? (
+                          <a
+                            href={ref.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="cite-link"
+                            style={{ color: "#60a5fa", textDecoration: "underline", wordBreak: "break-all" }}
+                          >
+                            {ref.title}
+                          </a>
+                        ) : (
+                          <span style={{ color: "var(--text-dim)" }}>{ref.title}</span>
+                        )}
+                      </li>
+                    ))}
+                  </ul>
+                ) : (
+                  <span className="bdetail-citation-ref-text">{item.citation}</span>
+                )}
               </div>
             </div>
           </Reveal>

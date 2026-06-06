@@ -29,7 +29,7 @@ export default function ScenarioAnalysis() {
           >
             {hero.primaryBtn}
           </a>
-          <Link to="/" className="btn-secondary">{hero.secondaryBtn}</Link>
+          <Link to="/" state={{ scrollTo: "ranking" }} className="btn-secondary">{hero.secondaryBtn}</Link>
         </div>
         <div className="hero-scroll"><span>{uiLabels.scroll}</span><div className="arrow"></div></div>
       </section>
@@ -132,6 +132,7 @@ export default function ScenarioAnalysis() {
             <p>{bottom.prompt}</p>
             <Link 
               to="/" 
+              state={{ scrollTo: "ranking" }}
               className="btn-primary" 
               style={{ padding: "14px 32px" }}
             >

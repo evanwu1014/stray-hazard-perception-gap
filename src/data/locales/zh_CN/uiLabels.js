@@ -9,6 +9,9 @@ export const UI_LABELS = {
   researchBtn: "研究依据",
   learnMore: "深入了解",
   scroll: "SCROLL",
+  citationLabel: "📚 参考文献",
+  viewScenario: "查看完整场景分析 →",
+  
   
   threatLegend: {
     low: "低度威胁",
