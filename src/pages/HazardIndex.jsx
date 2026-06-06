@@ -228,32 +228,30 @@ export default function HazardIndex() {
                 const c = zoneColors[group.zone];
                 return (
                   <Reveal key={group.range}>
-                    {(isVisible) => (
-                      <div style={{ borderRadius: "12px", border: `1px solid ${c.border}`, background: c.bg, overflow: "hidden" }}>
-                        <div style={{ display: "flex", alignItems: "stretch" }}>
-                          {/* Level badge */}
-                          <div style={{ width: "5px", background: c.bar, flexShrink: 0 }}></div>
-                          <div style={{ padding: "24px 28px", flex: 1 }}>
-                            <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "12px", flexWrap: "wrap" }}>
-                              <span style={{ fontSize: "1.5rem", fontWeight: 700, color: c.bar, fontFamily: "var(--font-en)" }}>
-                                Level {group.range}
-                              </span>
-                              <span style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-light)" }}>{group.stageLabel}</span>
-                              <span style={{ fontSize: "0.8rem", padding: "2px 10px", borderRadius: "20px", background: c.bar, color: "#000", fontWeight: 600, opacity: 0.9 }}>{group.zoneName}</span>
-                            </div>
-                            <ul style={{ listStyle: "none", padding: 0, margin: "0 0 14px 0", display: "flex", flexDirection: "column", gap: "8px" }}>
-                              {group.items.map((item, i) => (
-                                <li key={i} style={{ fontSize: "0.93rem", lineHeight: 1.65, opacity: 0.88, display: "flex", gap: "8px" }}>
-                                  <span style={{ color: c.bar, flexShrink: 0, marginTop: "2px" }}>▶</span>
-                                  <span>{item}</span>
-                                </li>
-                              ))}
-                            </ul>
-                            <p style={{ fontSize: "0.82rem", opacity: 0.55, margin: 0 }}>幕後驅動力：{group.driver}</p>
+                    <div style={{ borderRadius: "12px", border: `1px solid ${c.border}`, background: c.bg, overflow: "hidden" }}>
+                      <div style={{ display: "flex", alignItems: "stretch" }}>
+                        {/* Level badge */}
+                        <div style={{ width: "5px", background: c.bar, flexShrink: 0 }}></div>
+                        <div style={{ padding: "24px 28px", flex: 1 }}>
+                          <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "12px", flexWrap: "wrap" }}>
+                            <span style={{ fontSize: "1.5rem", fontWeight: 700, color: c.bar, fontFamily: "var(--font-en)" }}>
+                              Level {group.range}
+                            </span>
+                            <span style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-light)" }}>{group.stageLabel}</span>
+                            <span style={{ fontSize: "0.8rem", padding: "2px 10px", borderRadius: "20px", background: c.bar, color: "#000", fontWeight: 600, opacity: 0.9 }}>{group.zoneName}</span>
                           </div>
+                          <ul style={{ listStyle: "none", padding: 0, margin: "0 0 14px 0", display: "flex", flexDirection: "column", gap: "8px" }}>
+                            {group.items.map((item, i) => (
+                              <li key={i} style={{ fontSize: "0.93rem", lineHeight: 1.65, opacity: 0.88, display: "flex", gap: "8px" }}>
+                                <span style={{ color: c.bar, flexShrink: 0, marginTop: "2px" }}>▶</span>
+                                <span>{item}</span>
+                              </li>
+                            ))}
+                          </ul>
+                          <p style={{ fontSize: "0.82rem", opacity: 0.55, margin: 0 }}>幕後驅動力：{group.driver}</p>
                         </div>
                       </div>
-                    )}
+                    </div>
                   </Reveal>
                 );
               })}

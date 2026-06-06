@@ -1,15 +1,25 @@
 import { useEffect, useState, useMemo } from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 
 export default function Navbar() {
   const { lang, toggleLang, uiLabels } = useI18n();
   const location = useLocation();
-  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+  
+  const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
 
   const isScenario = location.pathname === "/scenario";
   const isDetail = location.pathname.startsWith("/behavior");
+
+  // Sync / Reset states on path change without useEffect trigger loop
+  const [prevPath, setPrevPath] = useState(location.pathname);
+  if (location.pathname !== prevPath) {
+    setPrevPath(location.pathname);
+    setIsScrolled(false);
+    setActiveSection("");
+  }
 
   const links = useMemo(() => {
     const scenarioLinks = [
@@ -31,76 +41,109 @@ export default function Navbar() {
     return isScenario ? scenarioLinks : homeLinks;
   }, [isScenario, uiLabels]);
 
-  // Reset navbar visibility and active section on path change
+  // 1. Throttled detect scroll position for header sticky state (prevents layout checks)
   useEffect(() => {
-    setShow(false);
-    setActiveSection("");
-  }, [location.pathname]);
-
-  // Handle scroll listener
-  useEffect(() => {
-    if (isDetail) return;
-
     const handleScroll = () => {
       const scrollY = window.scrollY;
-      
-      // Determine if we should show the nav
-      setShow(scrollY > 300);
-
-      // Scroll Spy
-      let current = "";
-      for (const link of links) {
-        const el = document.getElementById(link.id);
-        if (el && scrollY >= el.offsetTop - 250) {
-          current = link.id;
-        }
-      }
-      setActiveSection(current);
+      setIsScrolled((prev) => {
+        const next = scrollY > 80;
+        return prev !== next ? next : prev;
+      });
     };
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    // Run once on load/mount
     handleScroll();
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
+  }, []);
+
+  // 2. High-performance IntersectionObserver scroll-spy (removes offsetTop layout reflows)
+  useEffect(() => {
+    if (isDetail) return;
+
+    const observerOptions = {
+      root: null,
+      rootMargin: "-25% 0px -55% 0px", // focus on middle-top area of screen
+      threshold: 0
+    };
+
+    const observerCallback = (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveSection(entry.target.id);
+        }
+      });
+    };
+
+    const observer = new IntersectionObserver(observerCallback, observerOptions);
+
+    links.forEach((link) => {
+      const el = document.getElementById(link.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
   }, [isDetail, links]);
 
   const handleLinkClick = (e, id) => {
     e.preventDefault();
-    const el = document.getElementById(id);
-    if (el) {
-      el.scrollIntoView({ behavior: "smooth" });
-      setActiveSection(id);
+    if (isDetail) {
+      navigate(isScenario ? "/scenario" : "/", { state: { scrollTo: id } });
+    } else {
+      const el = document.getElementById(id);
+      if (el) {
+        el.scrollIntoView({ behavior: "smooth" });
+        setActiveSection(id);
+      }
+    }
+  };
+
+  const handleLogoClick = () => {
+    if (location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else {
+      navigate("/");
     }
   };
 
   return (
-    <>
-      {!isDetail && (
-        <nav className={`float-nav ${show ? "show" : ""}`} id="floatNav">
-          {links.map((link) => (
-            <a
-              key={link.id}
-              href={`#${link.id}`}
-              className={activeSection === link.id ? "active" : ""}
-              onClick={(e) => handleLinkClick(e, link.id)}
-            >
-              {link.label}
-            </a>
-          ))}
-        </nav>
-      )}
+    <header className={`site-header ${isScrolled ? "scrolled" : ""} ${isDetail ? "detail-mode" : ""}`}>
+      <div className="header-inner">
+        <div className="header-logo" onClick={handleLogoClick}>
+          <span className="logo-abbr">P.C.H.I.</span>
+          <span className="logo-full">純結果論危害指數</span>
+        </div>
 
-      <button
-        className="lang-switch-btn"
-        onClick={toggleLang}
-        title={lang === "zh_TW" ? "切換至簡體中文" : "切换至繁体中文"}
-      >
-        <span className="lang-icon">🌐</span>
-        <span className="lang-text">{lang === "zh_TW" ? "繁中" : "简中"}</span>
-      </button>
-    </>
+        {!isDetail && (
+          <nav className="header-nav">
+            {links.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={activeSection === link.id ? "active" : ""}
+                onClick={(e) => handleLinkClick(e, link.id)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        )}
+
+        <div className="header-actions">
+          <button
+            className="lang-btn"
+            onClick={toggleLang}
+            title={lang === "zh_TW" ? "切換至簡體中文" : "切换至繁体中文"}
+          >
+            <span className="lang-icon">🌐</span>
+            <span className="lang-text">{lang === "zh_TW" ? "繁中" : "簡中"}</span>
+          </button>
+        </div>
+      </div>
+    </header>
   );
 }

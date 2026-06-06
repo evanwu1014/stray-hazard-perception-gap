@@ -325,6 +325,7 @@ export default function BehaviorDetail() {
   );
 }
 
+
 /* ─── ScoreGauge Sub-component ─── */
 function ScoreGauge({ label, value, max, colorClass, icon }) {
   const pct = (value / max) * 100;
@@ -333,16 +334,34 @@ function ScoreGauge({ label, value, max, colorClass, icon }) {
       <div className="bdetail-gauge-icon">{icon}</div>
       <div className="bdetail-gauge-ring-wrap">
         <svg className="bdetail-gauge-svg" viewBox="0 0 80 80">
+          <defs>
+            <linearGradient id="grad-c-lo" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#10b981" />
+              <stop offset="100%" stopColor="#22d3ee" />
+            </linearGradient>
+            <linearGradient id="grad-c-md" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#f59e0b" />
+              <stop offset="100%" stopColor="#f5a623" />
+            </linearGradient>
+            <linearGradient id="grad-c-hi" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ef4444" />
+              <stop offset="100%" stopColor="#f472b6" />
+            </linearGradient>
+          </defs>
           <circle
-            cx="40" cy="40" r="32"
+            cx="40"
+            cy="40"
+            r="32"
             fill="none"
             stroke="rgba(255,255,255,0.06)"
             strokeWidth="6"
           />
           <circle
-            cx="40" cy="40" r="32"
+            cx="40"
+            cy="40"
+            r="32"
             fill="none"
-            stroke="currentColor"
+            stroke={`url(#grad-${colorClass})`}
             strokeWidth="6"
             strokeLinecap="round"
             strokeDasharray={`${(pct / 100) * 201} 201`}
