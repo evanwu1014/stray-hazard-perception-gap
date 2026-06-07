@@ -5,10 +5,24 @@ import RankList from "../components/RankList";
 import DeviationChart from "../components/DeviationChart";
 import { useI18n } from "../context/I18nContext";
 
+const formatTitle = (title) => {
+  if (!title) return title;
+  const match = title.match(/^([^(（]+)[(（](.+)[)）]\s*$/);
+  if (match) {
+    return (
+      <>
+        {match[1]}
+        <span className="title-sub">{match[2]}</span>
+      </>
+    );
+  }
+  return title;
+};
+
 export default function HazardIndex() {
   const { hazardText, uiLabels } = useI18n();
   const location = useLocation();
-  const { hero, methodology, dimensions, ranking, perception, abuseSociology, polarizationIndicator, insights, quote } = hazardText;
+  const { hero, methodology, dimensions, ranking, perception, abuseSociology, polarizationIndicator, insights, quote, disclaimer } = hazardText;
 
   useEffect(() => {
     if (location.state?.scrollTo) {
@@ -31,13 +45,35 @@ export default function HazardIndex() {
       <section className="hero" id="hero">
         <div className="hero-eyebrow">{hero.eyebrow}</div>
         <h1>{hero.title}</h1>
+        <p className="hero-lead">
+          {hero.lead.pre}<span className="lead-hl">{hero.lead.highlight}</span>{hero.lead.post}
+        </p>
         <p className="hero-sub">
-          {hero.sub[0]}<strong>{hero.sub[1]}</strong>{hero.sub[2]}<br />
-          {hero.sub[3]}<br />
-          {hero.sub[4]}
+          {hero.sub[0]}<strong>{hero.sub[1]}</strong><br />
+          {hero.sub[2]}<br />
+          {hero.sub[3]}
         </p>
         <div className="hero-scroll"><span>{uiLabels.scroll}</span><div className="arrow"></div></div>
       </section>
+
+      {/* ═══ Disclaimer Banner ═══ */}
+      {disclaimer && (
+        <section style={{ paddingTop: 0, paddingBottom: 0 }}>
+          <div className="container">
+            <Reveal>
+              <div className="disclaimer-banner">
+                <span className="disclaimer-badge">{disclaimer.badge}</span>
+                <h3 className="disclaimer-title">{disclaimer.title}</h3>
+                <ul className="disclaimer-list">
+                  {disclaimer.points.map((p, i) => (
+                    <li key={i}>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* ═══ Methodology ═══ */}
       <section id="methodology">
@@ -52,7 +88,7 @@ export default function HazardIndex() {
               <h4>{methodology.declaration.title}</h4>
               {methodology.declaration.content}<br />
               <span className="warning-divider">
-                ⚠️ <strong>{methodology.declaration.warning}</strong> <Link to="/scenario" style={{ color: "var(--blue)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "4px" }}>{methodology.declaration.warningLink}</Link> {methodology.declaration.warningSuffix}
+                [注意] <strong>{methodology.declaration.warning}</strong> <Link to="/scenario" style={{ color: "var(--blue)", fontWeight: 600, textDecoration: "underline", textUnderlineOffset: "4px" }}>{methodology.declaration.warningLink}</Link> {methodology.declaration.warningSuffix}
               </span>
             </div>
           </Reveal>
@@ -66,7 +102,7 @@ export default function HazardIndex() {
             {dimensions.map((dim, idx) => (
               <Reveal key={idx} className="dim-card" delay={idx * 100}>
                 <div className="stripe"></div>
-                <div className="icon">{dim.icon}</div>
+                {dim.icon && <div className="icon">{dim.icon}</div>}
                 <h3>{dim.title} <span className="badge">{dim.range}</span></h3>
                 <p className="desc">{dim.desc}</p>
                 <ul className="examples">
@@ -119,7 +155,7 @@ export default function HazardIndex() {
           </Reveal>
 
           <Reveal className="gap-note">
-            ⚠️ {perception.note}
+            [注意] {perception.note}
           </Reveal>
 
           {/* Two metric cards */}
@@ -156,7 +192,7 @@ export default function HazardIndex() {
             <div className="persona-grid">
               {perception.personas.map((per, idx) => (
                 <Reveal key={idx} className="persona" delay={idx * 100}>
-                  <span className="persona-icon">{per.icon}</span>
+                  {per.icon && <span className="persona-icon">{per.icon}</span>}
                   <h4>{per.title}</h4>
                   <span className="persona-label">{per.label}</span>
                   <p>{per.desc}</p>
@@ -177,10 +213,10 @@ export default function HazardIndex() {
               <p>{abuseSociology.sub}</p>
             </Reveal>
 
-            <Reveal className="abuse-grid" style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(300px, 1fr))", gap: "24px", marginBottom: "48px" }}>
+            <Reveal className="abuse-grid">
               {abuseSociology.typologies.map((type, idx) => (
                 <div key={idx} className="dim-card" style={{ position: "relative", borderLeft: "4px solid var(--red, #ef4444)" }}>
-                  <h4 style={{ fontSize: "1.2rem", marginBottom: "12px", color: "var(--text-light)" }}>{type.title}</h4>
+                  <h4 className="abuse-card-title">{formatTitle(type.title)}</h4>
                   <p className="desc" style={{ opacity: 0.9, lineHeight: 1.6, fontSize: "0.95rem" }}>{type.desc}</p>
                 </div>
               ))}
@@ -188,20 +224,20 @@ export default function HazardIndex() {
 
             <Reveal className="gender-card" style={{ padding: "32px", borderRadius: "12px", background: "rgba(255, 255, 255, 0.015)", border: "1px solid var(--border)" }}>
               <h3 style={{ fontSize: "1.3rem", marginBottom: "16px", display: "flex", alignItems: "center", gap: "8px" }}>
-                <span>🚻</span> {abuseSociology.gendered.title}
+                {abuseSociology.gendered.title}
               </h3>
               <p style={{ marginBottom: "24px", opacity: 0.8, fontSize: "0.95rem" }}>{abuseSociology.gendered.desc}</p>
-              <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))", gap: "24px" }}>
+              <div className="gender-types-grid">
                 {abuseSociology.gendered.types.map((gt, idx) => (
                   <div key={idx} style={{ background: "rgba(0,0,0,0.1)", padding: "20px", borderRadius: "8px", border: "1px solid rgba(255,255,255,0.03)" }}>
-                    <strong style={{ display: "block", color: "var(--red, #ef4444)", marginBottom: "8px", fontSize: "1.05rem" }}>{gt.role}</strong>
+                    <strong className="gender-card-title">{formatTitle(gt.role)}</strong>
                     <p style={{ fontSize: "0.92rem", opacity: 0.85, lineHeight: 1.6 }}>{gt.desc}</p>
                   </div>
                 ))}
               </div>
               {abuseSociology.gendered.insight && (
                 <p style={{ marginTop: "24px", padding: "16px", borderRadius: "8px", background: "rgba(234,179,8,0.07)", borderLeft: "3px solid rgba(234,179,8,0.5)", fontSize: "0.92rem", opacity: 0.9, lineHeight: 1.7 }}>
-                  <strong>⚠️ </strong>{abuseSociology.gendered.insight}
+                  <strong>[注意] </strong>{abuseSociology.gendered.insight}
                 </p>
               )}
             </Reveal>
@@ -259,7 +295,7 @@ export default function HazardIndex() {
 
             <Reveal style={{ marginTop: "32px" }}>
               <div style={{ padding: "20px 24px", borderRadius: "10px", background: "rgba(255,255,255,0.03)", border: "1px solid var(--border)", fontSize: "0.92rem", lineHeight: 1.75, opacity: 0.85 }}>
-                <strong>📋 決策指引：</strong>{polarizationIndicator.decisionGuide}
+                <strong>決策指引：</strong>{polarizationIndicator.decisionGuide}
               </div>
             </Reveal>
           </div>

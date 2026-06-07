@@ -5,7 +5,8 @@ import DecisionMatrix from "../components/DecisionMatrix";
 import { useI18n } from "../context/I18nContext";
 
 export default function ScenarioAnalysis() {
-  const { scenarioText, scenarioList, uiLabels } = useI18n();
+  const { hazardText, scenarioText, scenarioList, uiLabels } = useI18n();
+  const { disclaimer } = hazardText;
   const { hero, intro, scenarios, charts, matrix, philosophy, bottom } = scenarioText;
 
   return (
@@ -33,6 +34,25 @@ export default function ScenarioAnalysis() {
         </div>
         <div className="hero-scroll"><span>{uiLabels.scroll}</span><div className="arrow"></div></div>
       </section>
+
+      {/* ═══ Disclaimer Banner ═══ */}
+      {disclaimer && (
+        <section style={{ paddingTop: 0, paddingBottom: 0 }}>
+          <div className="container">
+            <Reveal>
+              <div className="disclaimer-banner">
+                <span className="disclaimer-badge">{disclaimer.badge}</span>
+                <h3 className="disclaimer-title">{disclaimer.title}</h3>
+                <ul className="disclaimer-list">
+                  {disclaimer.points.map((p, i) => (
+                    <li key={i}>{p}</li>
+                  ))}
+                </ul>
+              </div>
+            </Reveal>
+          </div>
+        </section>
+      )}
 
       {/* ═══ Introduction ═══ */}
       <section id="intro" style={{ paddingTop: 0 }}>
@@ -65,7 +85,7 @@ export default function ScenarioAnalysis() {
                 delay={index * 100}
               >
                 <span className="scenario-badge">{sc.badge}</span>
-                <h3>{sc.icon} {sc.title}</h3>
+                <h3>{sc.title}</h3>
                 <p className="desc">{sc.desc}</p>
                 <div className="scenario-details">
                   <div className="detail-row">

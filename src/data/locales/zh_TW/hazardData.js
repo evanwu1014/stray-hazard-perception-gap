@@ -64,7 +64,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "自然保育緩衝區",
-        icon: "🌿",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "TNR 個體棲息於保育區邊緣，持續以石虎幼獸、穿山甲、原生鳥類為獵物。絕育不影響其狩獵本能，餵食延長其壽命即延長獵殺時間。",
@@ -76,7 +76,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "都市社區公園",
-        icon: "🏙️",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "固定餵食點造成犬貓群聚，排泄物污染兒童遊憩區，引發鄰里投訴與管理衝突。餵食習慣吸引未絕育個體持續加入族群。",
@@ -88,7 +88,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "校園周邊",
-        icon: "🎓",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "校貓族群若未有效控管，會對接觸過多貓的學童造成過敏風險，以及對小型野鳥（麻雀、白頭翁）的棲地壓縮效應。",
@@ -103,7 +103,7 @@ export const HAZARD_DATA = [
   {
     id: 2,
     name: "私自處決遊蕩貓狗",
-    desc: "給予單一個體短暫但劇烈的急性痛苦並剝奪生命。受害規模極小，且客觀上終止了該個體對原生生態造成的捕食壓力；但私人暴力手段會造成大眾不安與法律秩序威脅。",
+    desc: "屬違法行為。給予單一個體短暫但劇烈的急性痛苦並剝奪生命，在結果論模型中受害規模極小；但私人暴力手段會造成大眾不安與法律秩序威脅。本模型僅量化客觀結果，不代表認可或鼓勵此違法行為。",
     subScores: {
       pain: 6,
       scale: 1,
@@ -112,8 +112,8 @@ export const HAZARD_DATA = [
     objTotal: 8,
     condemn: 8,
     outcry: 9,
-    tooltipTitle: "結果論淨值折抵與外部性",
-    tooltipContent: "此為違法暴力行為。個體痛苦評為 6 分，但該捕食個體被移除客觀上阻止了未來被其掠食的數百隻原生野生動物的極端折磨（淨痛苦總量下降）。惟私人暴力會產生秩序恐慌，故仍具備 1 分外部社會成本。",
+    tooltipTitle: "結果論視角下的外部性與違法性",
+    tooltipContent: "此為違法暴力行為（見下方法律引用）。個體痛苦評為 6 分；在純結果論的計量上，移除單一掠食個體會減少其未來對原生野生動物造成的捕食壓力，惟私人暴力同時產生秩序恐慌，故仍具備 1 分外部社會成本。需強調：本模型僅量化結果，不構成任何道德或法律上的正當化，亦不鼓勵此行為。",
     citation: "中華民國《動物保護法》第 25 條刑事責任 / 環境犯罪學與社會安全成本 / PMC/NIH (2023) / WHO / United Against Rabies (2022) / Asian News Network (2023)",
     references: [
           {
@@ -138,14 +138,14 @@ export const HAZARD_DATA = [
           }
     ],
     detailContent: {
-      fullDesc: "私自處決流浪動物在臺灣屬違法行為（動保法第 25 條），最高可處二年有期徒刑。儘管在結果論框架下，移除一隻獵食個體可客觀減少未來發生的動物痛苦，但私刑模式帶來的法律秩序破壞與社會恐慌，使其在「外部成本」面仍有負向評分。",
+      fullDesc: "私自處決流浪動物在臺灣屬違法行為（動保法第 25 條），最高可處二年有期徒刑。在結果論框架下，移除一隻獵食個體雖會減少其未來對原生動物造成的捕食壓力，但私刑模式帶來的法律秩序破壞與社會恐慌，使其在「外部成本」面仍有負向評分。本模型的量化僅描述客觀結果，並不主張或鼓勵以違法手段處置動物；正確的解方是建立合法、快速的通報與移除機制。",
       causeAnalysis: "行為者通常是對流浪動物生態危害有所認知的農牧業者、保育人士或對鄰里安全有顧慮的居民。缺乏合法快速移除管道，是促使私刑行為發生的重要結構性因素。",
       policyImplication: "降低私刑誘因的最有效手段，是建立「可通報、快速回應」的合法移除機制。若政府無法在合理時間內回應民眾的流浪動物投訴，私刑事件將難以根絕。"
     },
     scenarios: [
       {
         name: "農牧與偏鄉地區",
-        icon: "🌾",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "農民為保護家禽牲畜免遭流浪犬攻擊，面臨「舉報無效、等待漫長」的行政失靈困境，私下處置事件頻發且難以追查。",
@@ -157,7 +157,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "住宅社區",
-        icon: "🏘️",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "鄰里糾紛中，對流浪動物的私刑有時是居民宣洩衝突的替代行為，並造成其他居民的心理恐慌與信任崩解。",
@@ -169,7 +169,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "生態保護區周邊",
-        icon: "🦌",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "需特別關注",
         desc: "護林巡查員面臨保育動物遭流浪犬攻擊與自身執法能力不足的兩難，部分案例涉及非正式的動物移除。",
@@ -222,7 +222,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "都市寵物消費市場",
-        icon: "🏪",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "寵物店集中展示特定品種，在高人流環境中激發衝動型購買。購買行為直接驅動上游繁殖業者擴產，形成需求-供應的正向回饋迴路。",
@@ -234,7 +234,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "社群媒體影響圈",
-        icon: "📱",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "網紅展示特定品種動物，引發追隨者的模仿購買熱潮。熱門品種的需求暴增往往超越繁殖業者的正規能力，催生品質低落的地下繁殖場。",
@@ -246,7 +246,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "收容系統壓力端",
-        icon: "🏚️",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "純種寵物熱潮使收容所空間被「流行品種的棄養高峰」周期性擠壓，造成非熱門品種的安樂死配額被壓縮。",
@@ -299,7 +299,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "社區公共空間",
-        icon: "🏘️",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "需立即通報",
         desc: "單起虐殺事件即可引發社區恐慌，居民人身安全感受影響。施虐者若具病理性人格，可能對相關人員（如餵食志工）產生後續威脅。",
@@ -311,7 +311,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "網路傳播環境",
-        icon: "🌐",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "虐殺影像在社群平台的擴散造成大規模次級創傷，同時可能助長「博眼球」的模仿動機，或成為組織型商業虐待的招募素材。",
@@ -323,7 +323,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "學校或青少年群體",
-        icon: "🎒",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "青少年施虐者的出現往往是家庭暴力或同儕壓力環境的警訊指標。學校系統的早期介入可阻斷其人際暴力的發展軌跡。",
@@ -348,7 +348,7 @@ export const HAZARD_DATA = [
     condemn: 10,
     outcry: 10,
     tooltipTitle: "時間維度的痛苦累積",
-    tooltipContent: "將個體痛苦時間拉長，其結果論累積痛苦高於瞬間虐殺。在此類行為中存在顯著的性別分流機制：男性施虐者傾向物理暴力，而女性施虐者則高比例表現為『病態囤積（Animal Hoarding）』。後者常被『愛心拯救』的外衣包裝，社會譴責極低，但會導致數十至數百隻動物長期處於極度擁擠、營養不良、疾病蔓延與糞尿窒息中，其製造的慢性痛苦深度與生命受害規模在結果論上遠超單一物理暴力。",
+    tooltipContent: "將個體痛苦時間拉長，其結果論累積痛苦高於瞬間虐殺。此類行為可粗分為兩種樣態：物理暴力型，以及常被『愛心拯救』外衣包裝的『病態囤積（Animal Hoarding）』。後者社會譴責極低，卻會導致數十至數百隻動物長期處於極度擁擠、營養不良、疾病蔓延與糞尿窒息中，其製造的慢性痛苦深度與生命受害規模在結果論上遠超單一物理暴力。（臨床統計上兩種樣態的性別分布雖有差異，但性別並非成因，個體差異遠大於群體傾向。）",
     citation: "APA (2023) Hoarding Disorder / EBSCO (2024) Animal Hoarding / 社會學與犯罪學解構",
     references: [
           {
@@ -362,13 +362,13 @@ export const HAZARD_DATA = [
     ],
     detailContent: {
       fullDesc: "長期虐待因「痛苦持續時間」的乘數效應，在結果論累積痛苦上高於單次虐殺。此類行為最難被發現——施虐發生於私人空間，且「病態囤積」型的施虐者往往以動物救援者自居，社會辨識難度極高。",
-      causeAnalysis: "性別分流現象顯著：男性施虐傾向直接物理暴力（拘禁、剝奪飲食、直接毆打）；女性施虐者高比例呈現病態囤積——以「救援愛心」為動機，但實際上製造了數十至數百隻動物的系統性慢性痛苦，且主觀否認自身的危害性。",
+      causeAnalysis: "施虐可分為兩種樣態：直接物理暴力（拘禁、剝奪飲食、直接毆打）；以及病態囤積——以「救援愛心」為動機，卻製造了數十至數百隻動物的系統性慢性痛苦，且主觀否認自身的危害性。兩種樣態在臨床統計上的性別分布雖有差異，但這反映的是社會化路徑，而非性別本身決定善惡。",
       policyImplication: "應建立強制揭露制度：當救援組織的照養數量超過特定門檻（如 20 隻），需定期接受動保機關的實地訪查，且不得以「保護隱私」拒絕。病態囤積案例應被納入精神衛生強制評估範疇。"
     },
     scenarios: [
       {
         name: "私人住宅（物理虐待型）",
-        icon: "🏠",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "需立即介入",
         desc: "施虐者以鎖閉、剝奪飲水、系統性毆打等手段，對圈養動物造成持續性折磨。行為高度隱蔽，且通常與家庭暴力、藥物濫用等問題共存。",
@@ -380,7 +380,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "病態囤積現場",
-        icon: "📦",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "需立即介入",
         desc: "施虐者以「愛心救援」為名收容數十至數百隻動物，但實際上無力負擔照顧。個體在惡劣環境中忍受長期飢餓、傳染病蔓延與窒息性的糞尿環境。",
@@ -392,7 +392,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "救援組織的灰色地帶",
-        icon: "⚠️",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "部分以「NGO」或「個人救援」為名的組織，實際上處於囤積與合法救援之間的灰色地帶，缺乏財務透明度與動物福利監察機制。",
@@ -407,7 +407,7 @@ export const HAZARD_DATA = [
   {
     id: 6,
     name: "購買極端畸變寵物",
-    desc: "消費行為直接為「明確的殘疾與終身痛苦」買單。讓少數個體終身承受短吻呼吸道阻塞、摺耳軟骨劇痛、雙隕石色失明或茶杯體水腦等病痛，屬於病態審美的直接資助。",
+    desc: "消費行為直接為「明確的殘疾與終身痛苦」買單。讓少數個體終身承受短吻呼吸道阻塞、摺耳軟骨劇痛、雙重雲石色基因（double merle）致盲或茶杯體水腦等病痛，屬於病態審美的直接資助。",
     subScores: {
       pain: 8,
       scale: 2,
@@ -417,8 +417,8 @@ export const HAZARD_DATA = [
     condemn: 2,
     outcry: 1,
     tooltipTitle: "病態審美的直接資助",
-    tooltipContent: "消費者直接為「明確的殘疾與終身痛苦」買單。包含：短吻犬呼吸道阻塞(BOAS)、摺耳貓軟骨變形劇痛、雙隕石色失明、茶杯體水腦症。這些病理性痛苦伴隨其一生，是消費端對畸形特徵的直接資助。",
-    citation: "AVMA Companion Animal Breeding Welfare / PMC/NIH (2022) BOAS / RCVS Knowledge (2026) / UFAW Scottish Fold / PMC/NIH (2007) Osteochondrodysplasia",
+    tooltipContent: "消費者直接為「明確的殘疾與終身痛苦」買單。包含：短吻犬呼吸道阻塞(BOAS)、摺耳貓軟骨變形劇痛、雙重雲石色基因（double merle）致盲、茶杯體水腦症。這些病理性痛苦伴隨其一生，是消費端對畸形特徵的直接資助。",
+    citation: "AVMA Companion Animal Breeding Welfare / PMC/NIH (2022) BOAS / RCVS Knowledge / UFAW Scottish Fold / PMC/NIH (2007) Osteochondrodysplasia",
     references: [
           {
                 title: "AVMA - Companion Animal Breeding Welfare guidelines",
@@ -429,7 +429,7 @@ export const HAZARD_DATA = [
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9673814/"
           },
           {
-                title: "RCVS Knowledge (2026) - Health and welfare of Brachycephalic dogs",
+                title: "RCVS Knowledge - Health and welfare of Brachycephalic dogs",
                 url: "https://www.rcvsknowledge.org/resource/health-and-welfare-of-brachycephalic-dogs/"
           },
           {
@@ -442,14 +442,14 @@ export const HAZARD_DATA = [
           }
     ],
     detailContent: {
-      fullDesc: "極端畸變品種是「人類審美偏好凌駕動物生理健康」的最直接呈現。雙色（Merle）基因的純合子導致耳聾與眼盲；摺耳基因（Folded-ear）全身軟骨異常導致持續骨骼疼痛；短吻特徵（Brachycephaly）使動物終身在輕度窒息狀態下生活。這些痛苦是可預期、不可逆的設計結果。",
+      fullDesc: "極端畸變品種是「人類審美偏好凌駕動物生理健康」的最直接呈現。雲石色（Merle）基因的純合子（即雙重雲石色 double merle）導致耳聾與眼盲；摺耳基因（Folded-ear）全身軟骨異常導致持續骨骼疼痛；短吻特徵（Brachycephaly）使動物終身在輕度窒息狀態下生活。這些痛苦是可預期、不可逆的設計結果。",
       causeAnalysis: "消費者通常不了解其購買行為所資助的生理代價。社群媒體上「可愛」的外觀呈現，有效遮蔽了動物實際的痛苦狀態。部分消費者甚至認為動物「天生如此」而非「被設計成如此」。",
       policyImplication: "荷蘭、德國等國已禁止特定極端畸形品種的繁殖與銷售（如摺耳貓）。臺灣應參考國際進展，建立「禁止繁殖清單」制度，並要求所有短吻犬的買賣必須附帶 BOAS 篩檢報告。"
     },
     scenarios: [
       {
         name: "寵物電商與網路販售",
-        icon: "🛍️",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "電商平台允許繁殖業者直接觸達消費者，買家無法實際評估動物健康狀況。帶有嚴重遺傳病的動物在鏡頭下以「可愛」的方式被行銷，其實際痛苦完全不可見。",
@@ -461,7 +461,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "寵物展覽活動",
-        icon: "🐾",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "品種展覽以「美麗標準」評選動物，公開正向化病理性特徵。展覽文化間接鼓勵繁殖業者強化極端畸形特徵以獲得獎項，形成以「得獎」為導向的惡化循環。",
@@ -473,7 +473,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "高端寵物市場",
-        icon: "💎",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "高價畸變品種被作為身分地位象徵販售，消費者的社會階層認同強化了其購買動機，使價格訊號在此市場失去糾正作用。",
@@ -499,7 +499,7 @@ export const HAZARD_DATA = [
     outcry: 2,
     tooltipTitle: "母體損耗與代際折磨的工業化",
     tooltipContent: "商業繁殖場為追求利潤，母體常處於密閉籠具、反覆生育直至生理機能崩潰，其痛苦在規模與時間上被工業化放大。",
-    citation: "HSUS Puppy Mills Investigative Report / Applied Animal Behaviour Science (2011) / HSVMA Veterinary Report / ASPCA (2026)",
+    citation: "HSUS Puppy Mills Investigative Report / Applied Animal Behaviour Science (2011) / HSVMA Veterinary Report / ASPCA",
     references: [
           {
                 title: "HSUS - Puppy Mills Investigative Report",
@@ -514,7 +514,7 @@ export const HAZARD_DATA = [
                 url: "https://www.humanevma.org/assets/pdfs/hsvma_veterinary_report_puppy_mills.pdf"
           },
           {
-                title: "ASPCA (2026) - Report on Puppy Mill Cruelty reveals USDA failure",
+                title: "ASPCA - Report on Puppy Mill Cruelty reveals USDA failure",
                 url: "https://www.aspca.org/about-us/press-releases/aspca-report-puppy-mill-cruelty-reveals-usdas-continued-failure-protect"
           }
     ],
@@ -526,7 +526,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "地下繁殖場",
-        icon: "🏭",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "需立即通報",
         desc: "未登記的地下繁殖場在農村或工業區租用場地，以惡劣條件大規模生產純種幼犬貓，幼體健康不佳、基因品質不穩定，卻透過網路以「自家繁殖」包裝銷售。",
@@ -538,7 +538,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "合法但過度繁殖的業者",
-        icon: "📋",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "持有合法執照的繁殖業者在法律邊緣操作——符合最低標準但仍在過度繁殖，母體在惡劣但「合法」的條件下被反覆生育。",
@@ -550,7 +550,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "收容系統的結構排擠",
-        icon: "🐕",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "繁殖業者持續供給市場的同時，收容所中的混種犬貓因市場需求低落而面臨更高的安樂死壓力，形成「繁殖業繁榮、收容動物死亡」的反比關係。",
@@ -576,14 +576,14 @@ export const HAZARD_DATA = [
     outcry: 3,
     tooltipTitle: "制度化基因折磨與繁殖風險",
     tooltipContent: "為迎合市場，刻意將痛苦寫入基因編碼並批發製造。極高的母體難產率與子代夭折率，導致龐大的醫療資源消耗與最終棄養負擔。育種者常使用近親交配，刻意保留病理性矮小與特徵，使子代承受不可逆的系統性折磨。",
-    citation: "Veterinary Journal: Genetic welfare problems / RCVS Knowledge (2026) / Cambridge Animal Welfare (2021) / Humane World (China Meat Trade)",
+    citation: "Veterinary Journal: Genetic welfare problems / RCVS Knowledge / Cambridge Animal Welfare (2021) / Humane World (China Meat Trade)",
     references: [
           {
                 title: "Veterinary Journal - Genetic welfare problems of companion animals",
                 url: null
           },
           {
-                title: "RCVS Knowledge (2026) - Health and welfare of Brachycephalic dogs",
+                title: "RCVS Knowledge - Health and welfare of Brachycephalic dogs",
                 url: "https://www.rcvsknowledge.org/resource/health-and-welfare-of-brachycephalic-dogs/"
           },
           {
@@ -603,7 +603,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "短吻犬貓量產（BOAS）",
-        icon: "😿",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "極端危害",
         desc: "法鬥、巴哥、英鬥、波斯貓等極端短吻品種，因頭骨結構導致終身呼吸道阻塞（BOAS）。量產環境下母體高難產率（剖腹產率超過 90%），子代在生命早期即承受慢性呼吸窘迫。",
@@ -615,7 +615,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "茶杯型/極端矮化品種",
-        icon: "🫖",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "極端危害",
         desc: "茶杯貴賓、迷你馬爾濟斯等極端矮化品種，常以近親交配固化矮小特徵，導致腦積水（水腦症）、低血糖症、骨骼脆化等系統性疾病，部分個體難以存活至成年。",
@@ -627,7 +627,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "棄養後的系統性衝擊",
-        icon: "💔",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "極端畸變品種的終身醫療費用遠高於一般品種，當飼主無力負擔時，棄養率顯著高於均值，且因需要特殊醫療照護，在收容環境中存活率低、適養媒合困難。",
@@ -693,7 +693,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "加密通訊平台（Telegram 等）",
-        icon: "🔐",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "跨國犯罪",
         desc: "犯罪組織在加密群組中建立商業運作體系——付費訂閱、客製化訂單、虛擬貨幣結算。群組成員相互強化扭曲認知，形成自我封閉的極化生態圈。",
@@ -705,7 +705,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "社群媒體的公開傳播",
-        icon: "📡",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "虐待影像在主流社群平台的短暫流傳，既是招募新成員的管道，也是組織展示「實力」的宣傳手段。平台的快速下架機制至關重要但往往滯後。",
@@ -717,7 +717,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "舉報者的人身安全",
-        icon: "🛡️",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "人身安全威脅",
         desc: "舉報此類犯罪的個人面臨嚴重的人身安全威脅：開盒（公開個人資訊）、跨國追蹤、工作騷擾，以及對家人的威脅。此威脅嚴重抑制公民舉報意願。",
@@ -778,7 +778,7 @@ export const HAZARD_DATA = [
     scenarios: [
       {
         name: "自然保育區與棲地邊緣",
-        icon: "🌲",
+        icon: "",
         riskLevel: "critical",
         riskLabel: "極端威脅",
         desc: "濫餵點吸引高密度流浪貓犬聚集於保育區邊緣，石虎、穿山甲、原生鳥類與爬蟲類遭受系統性獵殺壓力。每一隻在此存活的流浪貓，平均每年獵殺數十至百隻原生野生動物。",
@@ -790,7 +790,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "都市社區大規模餵食點",
-        icon: "🏙️",
+        icon: "",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "固定的大規模餵食點造成犬貓高密度群聚，形成傳染病爆發的溫床（貓瘟、犬細小、狂犬病威脅），並因路殺、追咬事件引發公共安全問題。",
@@ -802,7 +802,7 @@ export const HAZARD_DATA = [
       },
       {
         name: "校園與機構內的長期餵食",
-        icon: "🏫",
+        icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "大學校園、工廠、醫院等封閉或半封閉機構內，長年累積的「校貓族群」往往超過機構的管理能力，形成疾病傳播風險與設施衛生問題。",
