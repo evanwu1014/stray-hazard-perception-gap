@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import RankList from "../components/RankList";
 import DeviationChart from "../components/DeviationChart";
 import { useI18n } from "../context/I18nContext";
+import './HazardIndex.css';
 
 const formatTitle = (title) => {
   if (!title) return title;

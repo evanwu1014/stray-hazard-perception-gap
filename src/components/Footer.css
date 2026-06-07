@@ -1,0 +1,53 @@
+/* ─────────────────── Final Quote & Footer ─────────────────── */
+.final-quote {
+  text-align: center;
+  padding: 100px 24px 120px;
+}
+
+.final-quote blockquote {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: clamp(1.15rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+  line-height: 1.9;
+  color: var(--text-dim);
+  position: relative;
+}
+
+.final-quote blockquote::before {
+  content: '"';
+  position: absolute;
+  top: -40px;
+  left: -10px;
+  font-size: 6rem;
+  font-family: Georgia, serif;
+  color: rgba(167, 139, 250, .12);
+  line-height: 1;
+}
+
+.final-quote .highlight {
+  color: var(--text);
+  font-weight: 700;
+}
+
+footer {
+  text-align: center;
+  padding: 30px;
+  font-size: .78rem;
+  color: var(--text-faint);
+  border-top: 1px solid var(--surface-border);
+  font-family: var(--font-en);
+}
+
+.mt-2 {
+  margin-top: 16px;
+}
+
+.mt-4 {
+  margin-top: 32px;
+}
+
+strong.accent {
+  color: var(--text);
+  font-weight: 700;
+}

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { useI18n } from "../context/I18nContext";
+import './RankList.css';
 
 const getColorClass = (val) => {
   if (val <= 3) return "c-lo";

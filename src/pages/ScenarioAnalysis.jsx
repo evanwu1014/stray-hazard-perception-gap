@@ -3,6 +3,7 @@ import Reveal from "../components/Reveal";
 import ScenarioChart from "../components/ScenarioChart";
 import DecisionMatrix from "../components/DecisionMatrix";
 import { useI18n } from "../context/I18nContext";
+import './ScenarioAnalysis.css';
 
 export default function ScenarioAnalysis() {
   const { hazardText, scenarioText, scenarioList, uiLabels } = useI18n();

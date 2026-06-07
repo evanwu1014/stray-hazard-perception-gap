@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 import Reveal from "../components/Reveal";
+import './BehaviorDetail.css';
 
 const getThreatClass = (total) => {
   if (total <= 10) return { cls: "threat-1", label: "低度威脅" };
@@ -55,6 +56,9 @@ export default function BehaviorDetail() {
   const perception = (item.condemn + item.outcry) / 2;
   const objNorm = +(item.objTotal / 3).toFixed(1);
   const deviation = +(perception - objNorm).toFixed(1);
+  const relations = item.relationship
+    ? (Array.isArray(item.relationship) ? item.relationship : [item.relationship])
+    : [];
 
   // Build adjacent items for navigation
   const allSorted = sortedData;
@@ -155,6 +159,75 @@ export default function BehaviorDetail() {
                 <p>{item.detailContent.policyImplication}</p>
               </Reveal>
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* ─── Relationship Chain ─── */}
+      {relations.length > 0 && (
+        <section className="bdetail-relations-section">
+          <div className="container">
+            <Reveal className="sec-heading">
+              <h2>{labels.relationshipTitle}</h2>
+              <p>{labels.relationshipSubtitle}</p>
+            </Reveal>
+
+            {relations.map((rel, rIdx) => (
+              <div key={rIdx} className="bdetail-relation-group">
+                {rel.typeName && (
+                  <Reveal className="bdetail-relation-type-heading">
+                    <h3>{rel.typeName}</h3>
+                  </Reveal>
+                )}
+
+                <div className="bdetail-relation-flow-layout">
+                  {/* Agents */}
+                  <Reveal className="bdetail-agents-card">
+                    <h4>{labels.agentLabel}</h4>
+                    <div className="bdetail-agents-list">
+                      {rel.agents.map((agent, aIdx) => (
+                        <div key={aIdx} className="bdetail-agent-item">
+                          <span className="bdetail-agent-role">{agent.role}</span>
+                          {agent.note && (
+                            <span className="bdetail-agent-note">
+                              {labels.agentNotePrefix || " — "}{agent.note}
+                            </span>
+                          )}
+                        </div>
+                      ))}
+                    </div>
+                  </Reveal>
+
+                  {/* Transmission Path */}
+                  <Reveal className="bdetail-transmission">
+                    <div className="bdetail-transmission-header">
+                      <span className="bdetail-transmission-dot"></span>
+                      <h4>{labels.transmissionLabel}</h4>
+                    </div>
+                    <p className="bdetail-transmission-path">{rel.transmission}</p>
+                  </Reveal>
+
+                  {/* Victims */}
+                  <div className="bdetail-victims-section">
+                    <h4 className="bdetail-victims-title">{labels.victimLabel}</h4>
+                    <div className="bdetail-victims-grid">
+                      {rel.victims.map((v, vIdx) => (
+                        <Reveal key={vIdx} delay={vIdx * 100} className="bdetail-victim-card">
+                          <div className="bdetail-victim-header">
+                            <span className="bdetail-victim-icon">{v.icon}</span>
+                            <div className="bdetail-victim-meta">
+                              <h5>{v.category}</h5>
+                              <p className="bdetail-victim-entities">{v.entities}</p>
+                            </div>
+                          </div>
+                          <p className="bdetail-victim-desc">{v.desc}</p>
+                        </Reveal>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))}
           </div>
         </section>
       )}

@@ -101,6 +101,12 @@ export const UI_LABELS = {
       critical: "需立即介入",
       high: "高風險",
       moderate: "中度風險"
-    }
+    },
+    relationshipTitle: "危害因果關係鏈",
+    relationshipSubtitle: "此行為中，行為主體如何將危害傳導至各承受對象",
+    agentLabel: "行為主體",
+    agentNotePrefix: "—",
+    transmissionLabel: "危害傳導路徑",
+    victimLabel: "衝擊承受者"
   }
 };

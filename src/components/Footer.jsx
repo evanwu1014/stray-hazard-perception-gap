@@ -1,5 +1,6 @@
 import { useLocation } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
+import './Footer.css';
 
 export default function Footer() {
   const location = useLocation();

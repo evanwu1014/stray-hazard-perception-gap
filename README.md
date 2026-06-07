@@ -1,16 +1,77 @@
-# React + Vite
+# 純結果論危害指數 (Pure Consequentialist Hazard Index)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+本專案旨在破除動保議題中常見的情緒化與道德綁架，將複雜的生態衝突與結果論量化標準，拆解為「行為危害評估」、「社會結構分析」、「場域風險分類」以及「手段決策矩陣」，提供決策者一套具備科學與經濟學邏輯的管理框架。
 
-Currently, two official plugins are available:
+## 專案特色
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+### 客觀量化評估系統
+捨棄傳統的「動機論（善與惡）」，純粹以「客觀結果造成的損害」來量化各項涉犬貓行為。透過三個維度進行評量：
 
-## React Compiler
+- **個體痛苦深度** (Pain Severity, 0-10)：衡量受害者承受生理/心理折磨的強度與長度
+- **受害生命規模** (Harm Scale, 0-10)：衡量受影響生命之廣度
+- **外部成本外溢** (External Cost Spillover, 0-10)：衡量對公衛、鄰里關係、社會資源消耗及野生動物生態平衡的破壞力
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### 認知偏移分析
+透過「認知偏移值公式」揭示大眾道德直覺與客觀危害之間的落差，分析演算法、視覺衝擊與流量變現如何推波助瀾，形成輿論極化黑產。
 
-## Expanding the ESLint configuration
+### 多語言支援
+支援台灣繁體 (zh_TW) 與中國簡體 (zh_CN) 雙語系，嚴格遵循在地化用語規範：
+- 台灣使用「遊蕩犬貓」、「石虎」、「路殺」等本土用語
+- 大陸使用「流浪犬猫」、「豹猫」、「路杀/车撞」等習慣用語
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 精緻的視覺設計
+採用現代暗色主題、玻璃擬態與動態微動效的極簡科技風，為嚴肅議題提供客觀、理性且具質感的呈現介面。
+
+## 核心內容
+
+### 九大行為危害評估
+從「當面餵食 TNR 遊蕩犬貓」到「大量濫餵」，系統化分析九項核心行為的客觀危害與社會認知落差。
+
+### 特定場域風險分類
+針對自然保育區、都市社區、農牧場域等不同場域，提供差異化的風險評估與管理建議。
+
+### 手段與場域決策矩陣
+結合手段強度與場域風險，提供科學化的管理決策框架。
+
+## 重要聲明
+
+本文所有「危害分數」與「結果論計量」僅用於描述客觀結果，**不等同於道德或法律上的評價，也不構成任何行為的正當化**。本專案**不主張、不鼓勵任何違法行為**（包含私自處置動物、私刑等）；文中對私刑、囤積等行為的分析，目的在於揭示其結構性成因與政策缺口，所有現實爭議皆應循合法途徑解決。
+
+## 快速開始
+
+### 安裝依賴
+```bash
+npm install
+```
+
+### 啟動開發伺服器
+```bash
+npm run dev
+```
+
+### 建置生產版本
+```bash
+npm run build
+```
+
+### 預覽建置結果
+```bash
+npm run preview
+```
+
+## 專案文件
+
+詳細的技術設計與理論內容請參閱：
+
+- [專案文件](./docs/PROJECT_DOCUMENT.md) - 完整的專案架構與語意本地化規範
+- [理論內容](./docs/THEORETICAL_CONTENT.md) - 九大行為量化危害與社會認知
+- [UI/UX 設計](./docs/UI_UX_DESIGN.md) - 網頁設計規範與互動效果
+- [色彩系統](./docs/COLOR_SYSTEM.md) - 完整的配色系統規範
+- [參考文獻](./docs/references.md) - 學術與法律引用來源
+
+## 技術架構
+
+- **前端框架**: React 19 + Vite 8
+- **路由**: React Router DOM 7
+- **建置工具**: Vite 單文件輸出插件
+- **樣式**: 原生 CSS + CSS 變數系統

@@ -1,6 +1,7 @@
 import { useEffect, useState, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
+import './Navbar.css';
 
 export default function Navbar() {
   const { lang, toggleLang, uiLabels } = useI18n();
