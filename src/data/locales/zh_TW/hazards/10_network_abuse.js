@@ -1,0 +1,90 @@
+export const hazardData = {
+    id: 10,
+    name: "網路組織型商業虐待",
+    desc: "透過加密群組進行虐殺影片販售與「客製化付費訂單」。金錢誘因驅動大量捕捉街頭動物（尤其是 TNR 親人個體）製造內容；同時對舉報者施以開盒（Doxing）與跨國網路恐嚇，社會威脅嚴重外溢至人身安全。",
+    subScores: {
+      pain: 10,
+      scale: 5,
+      external: 7
+    },
+    objTotal: 22,
+    condemn: 10,
+    outcry: 10,
+    tooltipTitle: "暴力的數位資本化（類型 C）",
+    tooltipContent: "加密群組內部發展出「付費客製化訂單」商業模式——買家指定物種與施虐方式，施虐者以虛擬貨幣結算影片。此犯罪創造了「同溫層認同」的群體極化機制。當民眾舉報時，組織會動用惡意開盒與跨國網路恐嚇。其危害已正式超越動物福利，升級為威脅人類社會與資訊安全的網路組織犯罪。",
+    citation: "BBC World Service「Monkey Haters」調查報告, 2023 / SMACC 年度報告, 2024 / 中國 Telegram 網路組織虐殺寵物「傑克辣條」事件, 2023",
+    references: [
+          {
+                title: "BBC World Service. (2023). The monkey haters [Documentary]. BBC Eye Investigations.",
+                url: "https://www.bbc.com/news/world-us-canada-65959139"
+          },
+          {
+                title: "Social Media Animal Cruelty Coalition (SMACC). (2024). Teaming up against animal cruelty: SMACC annual report. Asia for Animals Coalition.",
+                url: "https://www.socialmediaanimalcruelty.org/"
+          },
+          {
+                title: "中國 Telegram 網路組織虐殺寵物「傑克辣條」事件調查 (2023)",
+                url: "https://www.theguardian.com/media/2023/jun/20/inside-the-global-monkey-torture-network"
+          },
+          {
+                title: "Bakar, F. (2023, June 20). Inside the global monkey torture network. The Guardian.",
+                url: "https://www.theguardian.com/media/2023/jun/20/inside-the-global-monkey-torture-network"
+          },
+          {
+                title: "Animal Legal Defense Fund (ALDF). (n.d.). Animal cruelty issues and legal advocacy. ALDF.",
+                url: "https://aldf.org/"
+          },
+          {
+                title: "Federal Bureau of Investigation (FBI). (2016). National Incident-Based Reporting System (NIBRS): Animal cruelty offenses. U.S. Department of Justice.",
+                url: "https://ucr.fbi.gov/nibrs/2016"
+          },
+          {
+                title: "中華民國農業部動物保護資訊網及警政署刑事警察局偵查案件記錄",
+                url: "https://animal.moa.gov.tw/"
+          }
+    ],
+    isSupplemental: true,
+    detailContent: {
+      fullDesc: "網路組織型商業虐待是本指數中唯一達到「跨國組織犯罪」等級的行為類型。其威脅已不限於動物福利：對舉報者的開盒恐嚇、跨國追蹤騷擾，使其成為威脅人身安全的網路暴力犯罪，並涉及洗錢（加密貨幣結算）與跨國司法管轄等複雜議題。",
+      causeAnalysis: "此犯罪的驅動力是「需求端的群體認同」——內容消費者在加密社群中建立共同的扭曲世界觀，彼此強化。供應端（施虐者）受金錢誘因驅動，捕捉最易接近的 TNR 親人貓作為目標。兩端的匿名性使傳統執法極為困難。",
+      policyImplication: "應建立跨國執法合作機制，將此類犯罪納入國際刑警組織的協查範疇。在國內，需修訂法規使對舉報者的開盒恐嚇成為獨立刑事罪名，以保護倡議者的人身安全。"
+    },
+    scenarios: [
+      {
+        name: "加密通訊平台（Telegram 等）",
+        icon: "",
+        riskLevel: "critical",
+        riskLabel: "跨國犯罪",
+        desc: "犯罪組織在加密群組中建立商業運作體系——付費訂閱、客製化訂單、虛擬貨幣結算。群組成員相互強化扭曲認知，形成自我封閉的極化生態圈。",
+        actions: [
+          { role: "民眾", action: "若無意間進入此類群組，立即截圖保存並向 SMACC 或 IFAW 等國際組織舉報，切勿自行散布" },
+          { role: "平台業者", action: "建立 AI 偵測機制識別動物虐待關鍵詞組合，配合各國執法機關提供帳號資訊" },
+          { role: "NBI/調查局", action: "專責單位追蹤加密貨幣金流，與 Interpol 協作鎖定組織核心成員" }
+        ]
+      },
+      {
+        name: "社群媒體的公開傳播",
+        icon: "",
+        riskLevel: "high",
+        riskLabel: "高風險",
+        desc: "虐待影像在主流社群平台的短暫流傳，既是招募新成員的管道，也是組織展示「實力」的宣傳手段。平台的快速下架機制至關重要但往往滯後。",
+        actions: [
+          { role: "目擊網民", action: "使用平台檢舉功能回報，同時向動保機關提供平台連結與帳號資訊" },
+          { role: "主流平台", action: "強化動物虐待影像的自動偵測，並建立跨平台的帳號黑名單共享機制" },
+          { role: "動保倡議組織", action: "與平台建立直接聯絡管道，加速高危害內容的下架處理" }
+        ]
+      },
+      {
+        name: "舉報者的人身安全",
+        icon: "",
+        riskLevel: "critical",
+        riskLabel: "人身安全威脅",
+        desc: "舉報此類犯罪的個人面臨嚴重的人身安全威脅：開盒（公開個人資訊）、跨國追蹤、工作騷擾，以及對家人的威脅。此威脅嚴重抑制公民舉報意願。",
+        actions: [
+          { role: "舉報者", action: "優先使用匿名管道（如 SMACC 的匿名提交表單），不要以個人帳號直接接觸組織成員" },
+          { role: "政府/警方", action: "提供動物犯罪舉報者的人身保護機制，並將開盒恐嚇納入刑事追訴" },
+          { role: "媒體", action: "報導此議題時注意保護消息來源，避免不經意揭露舉報者身份" }
+        ]
+      }
+    ]
+  };

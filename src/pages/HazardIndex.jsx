@@ -239,6 +239,23 @@ export default function HazardIndex() {
                   </div>
                 ))}
               </div>
+              {abuseSociology.gendered.academicNotes && (
+                <div style={{ marginTop: "24px", padding: "20px", borderRadius: "8px", background: "rgba(99,102,241,0.07)", borderLeft: "3px solid rgba(99,102,241,0.6)", border: "1px solid rgba(99,102,241,0.15)", borderLeftWidth: "3px" }}>
+                  <h4 style={{ fontSize: "1rem", color: "#a5b4fc", marginBottom: "12px", fontWeight: "600" }}>
+                    {abuseSociology.gendered.academicNotes.title}
+                  </h4>
+                  <p style={{ fontSize: "0.92rem", opacity: 0.85, marginBottom: "12px", lineHeight: 1.6 }}>
+                    {abuseSociology.gendered.academicNotes.desc}
+                  </p>
+                  <ul style={{ paddingLeft: "20px", margin: 0, display: "flex", flexDirection: "column", gap: "8px" }}>
+                    {abuseSociology.gendered.academicNotes.points.map((pt, idx) => (
+                      <li key={idx} style={{ fontSize: "0.88rem", opacity: 0.85, lineHeight: 1.6, listStyleType: "disc" }}>
+                        {pt}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
               {abuseSociology.gendered.insight && (
                 <p style={{ marginTop: "24px", padding: "16px", borderRadius: "8px", background: "rgba(234,179,8,0.07)", borderLeft: "3px solid rgba(234,179,8,0.5)", fontSize: "0.92rem", opacity: 0.9, lineHeight: 1.7 }}>
                   <strong>[注意] </strong>{abuseSociology.gendered.insight}
