@@ -1,15 +1,15 @@
 export const UI_LABELS = {
-  painDepth: "痛苦深度",
+  painDepth: "個體痛苦深度",
   painDepthFull: "個體痛苦深度",
   harmScale: "受害生命規模",
-  externalCost: "外部成本",
+  externalCost: "外部成本外溢",
   externalCostFull: "外部環境與社會成本",
   totalScore: "危害總分",
   citationRef: "註",
   researchBtn: "研究依據",
   learnMore: "深入了解",
   scroll: "SCROLL",
-  citationLabel: "📚 參考文獻",
+  citationLabel: "參考文獻",
   viewScenario: "查看完整情境分析 →",
   
   
@@ -56,9 +56,9 @@ export const UI_LABELS = {
   matrix: {
     method: "管理手段",
     columns: {
-      reserve: "🌲 生態敏感區與離島",
-      urban: "🏙️ 都市社區與一般鄰里",
-      campus: "🏫 學校與封閉型校園"
+      reserve: "生態敏感區與離島",
+      urban: "都市社區與一般鄰里",
+      campus: "學校與封閉型校園"
     }
   },
   
@@ -69,9 +69,9 @@ export const UI_LABELS = {
       campus: "學校校園"
     },
     bars: {
-      eco: "🦅 原生生態破壞度",
-      pub: "🦠 社會公衛與衝突風險",
-      welfare: "😿 動物本身福利耗損"
+      eco: "原生生態破壞度",
+      pub: "社會公衛與衝突風險",
+      welfare: "動物本身福利耗損"
     }
   },
   

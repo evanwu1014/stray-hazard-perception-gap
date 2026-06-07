@@ -17,9 +17,9 @@ const getColorClass = (val) => {
 
 const getRiskConfig = (level) => {
   const configs = {
-    critical: { color: "var(--red)", bg: "rgba(239,68,68,0.08)", border: "rgba(239,68,68,0.3)", label: "⚡" },
-    high:     { color: "var(--t-3)", bg: "rgba(255,138,80,0.08)", border: "rgba(255,138,80,0.3)", label: "⚠️" },
-    moderate: { color: "var(--t-2)", bg: "rgba(255,200,69,0.08)", border: "rgba(255,200,69,0.3)", label: "ℹ️" },
+    critical: { color: "var(--red)", bg: "rgba(239,68,68,0.08)", border: "rgba(239,68,68,0.3)", label: "" },
+    high:     { color: "var(--t-3)", bg: "rgba(255,138,80,0.08)", border: "rgba(255,138,80,0.3)", label: "" },
+    moderate: { color: "var(--t-2)", bg: "rgba(255,200,69,0.08)", border: "rgba(255,200,69,0.3)", label: "" },
   };
   return configs[level] || configs.moderate;
 };
@@ -110,27 +110,26 @@ export default function BehaviorDetail() {
                     value={item.subScores.pain}
                     max={10}
                     colorClass={getColorClass(item.subScores.pain)}
-                    icon="💢"
                   />
                   <ScoreGauge
                     label={uiLabels.harmScale}
                     value={item.subScores.scale}
                     max={10}
                     colorClass={getColorClass(item.subScores.scale)}
-                    icon="📊"
                   />
                   <ScoreGauge
                     label={uiLabels.externalCostFull}
                     value={item.subScores.external}
                     max={10}
                     colorClass={getColorClass(item.subScores.external)}
-                    icon="🌐"
                   />
-                </div>
-                <div className={`bdetail-total-score ${threat.cls}`}>
-                  <span className="bdetail-total-label">{uiLabels.totalScore}</span>
-                  <span className="bdetail-total-val">{item.objTotal}</span>
-                  <span className="bdetail-total-max">/ 30</span>
+                  <div className={`bdetail-total-score ${threat.cls}`} style={{ "--score-pct": `${(item.objTotal / 30) * 100}%` }}>
+                    <span className="bdetail-total-label">{uiLabels.totalScore}</span>
+                    <div className="bdetail-total-num">
+                      <span className="bdetail-total-val">{item.objTotal}</span>
+                      <span className="bdetail-total-max">/ 30</span>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -144,17 +143,14 @@ export default function BehaviorDetail() {
           <div className="container">
             <div className="bdetail-content-grid">
               <Reveal className="bdetail-content-card">
-                <div className="bdetail-content-card-icon">📋</div>
                 <h3>{labels.fullDesc}</h3>
                 <p>{item.detailContent.fullDesc}</p>
               </Reveal>
               <Reveal className="bdetail-content-card" delay={100}>
-                <div className="bdetail-content-card-icon">🔍</div>
                 <h3>{labels.causeAnalysis}</h3>
                 <p>{item.detailContent.causeAnalysis}</p>
               </Reveal>
               <Reveal className="bdetail-content-card" delay={200}>
-                <div className="bdetail-content-card-icon">⚖️</div>
                 <h3>{labels.policyImplication}</h3>
                 <p>{item.detailContent.policyImplication}</p>
               </Reveal>
@@ -225,7 +221,7 @@ export default function BehaviorDetail() {
                       }}
                     >
                       <div className="bdetail-sc-header">
-                        <span className="bdetail-sc-icon">{sc.icon}</span>
+                        {sc.icon && <span className="bdetail-sc-icon">{sc.icon}</span>}
                         <div className="bdetail-sc-meta">
                           <h3>{sc.name}</h3>
                           <span className="bdetail-sc-risk-badge">
@@ -260,14 +256,13 @@ export default function BehaviorDetail() {
       <section className="bdetail-citation-section">
         <div className="container">
           <Reveal className="bdetail-citation-card">
-            <div className="bdetail-citation-icon">📚</div>
             <div className="bdetail-citation-content">
               <h3>{labels.citationTitle}</h3>
               <p className="bdetail-citation-title-text">{item.tooltipTitle}</p>
               <p className="bdetail-citation-body">{item.tooltipContent}</p>
               <div className="bdetail-citation-ref" style={{ display: "block" }}>
                 <span className="bdetail-citation-ref-label" style={{ display: "block", marginBottom: "8px" }}>
-                  {uiLabels.citationLabel ? uiLabels.citationLabel.replace("📚 ", "") : "參考文獻"}
+                  {uiLabels.citationLabel || "參考文獻"}
                 </span>
                 {item.references && item.references.length > 0 ? (
                   <ul className="bdetail-citation-ref-list" style={{ listStyle: "none", padding: 0, margin: 0 }}>
@@ -327,11 +322,10 @@ export default function BehaviorDetail() {
 
 
 /* ─── ScoreGauge Sub-component ─── */
-function ScoreGauge({ label, value, max, colorClass, icon }) {
+function ScoreGauge({ label, value, max, colorClass }) {
   const pct = (value / max) * 100;
   return (
     <div className="bdetail-gauge">
-      <div className="bdetail-gauge-icon">{icon}</div>
       <div className="bdetail-gauge-ring-wrap">
         <svg className="bdetail-gauge-svg" viewBox="0 0 80 80">
           <defs>

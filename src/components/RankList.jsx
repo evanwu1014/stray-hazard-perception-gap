@@ -58,7 +58,6 @@ export default function RankList() {
                         aria-expanded={isCiteOpen}
                         aria-controls={`cite-panel-${item.id}`}
                       >
-                        <span className="cite-btn-icon">📖</span>
                         <span>{uiLabels.researchBtn}</span>
                         <span className={`cite-btn-chevron ${isCiteOpen ? "open" : ""}`}>›</span>
                       </button>
@@ -74,33 +73,33 @@ export default function RankList() {
                     </div>
                   </div>
 
-                  {/* Scores */}
-                  <div className="rank-scores">
-                    <div className="s-sub-scores">
-                      <div className="s-box">
-                        <span className="label">{uiLabels.painDepth}</span>
-                        <span className={`val ${getColorClass(item.subScores.pain)}`}>
-                          {item.subScores.pain}
-                        </span>
+                    {/* Scores */}
+                    <div className="rank-scores">
+                      <div className="s-sub-scores">
+                        <div className="s-row">
+                          <span className="label">{uiLabels.painDepth}</span>
+                          <span className={`val ${getColorClass(item.subScores.pain)}`}>
+                            {item.subScores.pain}
+                          </span>
+                        </div>
+                        <div className="s-row">
+                          <span className="label">{uiLabels.harmScale}</span>
+                          <span className={`val ${getColorClass(item.subScores.scale)}`}>
+                            {item.subScores.scale}
+                          </span>
+                        </div>
+                        <div className="s-row">
+                          <span className="label">{uiLabels.externalCost}</span>
+                          <span className={`val ${getColorClass(item.subScores.external)}`}>
+                            {item.subScores.external}
+                          </span>
+                        </div>
                       </div>
-                      <div className="s-box">
-                        <span className="label">{uiLabels.harmScale}</span>
-                        <span className={`val ${getColorClass(item.subScores.scale)}`}>
-                          {item.subScores.scale}
-                        </span>
-                      </div>
-                      <div className="s-box">
-                        <span className="label">{uiLabels.externalCost}</span>
-                        <span className={`val ${getColorClass(item.subScores.external)}`}>
-                          {item.subScores.external}
-                        </span>
+                      <div className={`s-box total ${getThreatClass(item.objTotal)}`}>
+                        <span className="label">{uiLabels.totalScore}</span>
+                        <span className="val">{item.objTotal}</span>
                       </div>
                     </div>
-                    <div className={`s-box total ${getThreatClass(item.objTotal)}`}>
-                      <span className="label">{uiLabels.totalScore}</span>
-                      <span className="val">{item.objTotal}</span>
-                    </div>
-                  </div>
                 </div>
 
                 {/* Cite Panel — slide-down 行內展開 */}
@@ -111,15 +110,12 @@ export default function RankList() {
                 >
                   <div className="cite-panel-inner">
                     <div className="cite-panel-topbar" />
-                    <div className="cite-panel-body">
-                      <div className="cite-panel-left">
-                        <span className="cite-panel-icon">🔬</span>
-                      </div>
-                      <div className="cite-panel-right">
+                      <div className="cite-panel-body">
+                        <div className="cite-panel-right">
                         <strong className="cite-panel-title">{item.tooltipTitle}</strong>
                         <p className="cite-panel-content">{item.tooltipContent}</p>
-                        <div className="cite-panel-ref">
-                          <span className="cite-panel-ref-label">{uiLabels.citationLabel || "📚 參考文獻"}</span>
+                          <div className="cite-panel-ref">
+                            <span className="cite-panel-ref-label">{uiLabels.citationLabel || "參考文獻"}</span>
                           {item.references && item.references.length > 0 ? (
                             <ul className="cite-panel-ref-list" style={{ listStyle: "none", padding: 0, margin: "8px 0 0 0" }}>
                               {item.references.map((ref, idx) => (
