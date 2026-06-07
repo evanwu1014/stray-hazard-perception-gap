@@ -2,12 +2,16 @@ export const HAZARD_TEXT = {
   hero: {
     eyebrow: "Pure Consequentialist Hazard Index",
     title: "纯结果论危害指数",
+    lead: {
+      pre: "聚焦 ",
+      highlight: "“流浪犬猫”",
+      post: " 议题 — 量化善意与暴力背后的真实代价"
+    },
     sub: [
-      "排除行为动机与主观情感，基于",
+      "排除行为动机与主观情感，改以",
       "纯结果论评估模型（Consequentialist Model）",
-      "——",
-      "如同计算公共卫生损失或灾难评估——",
-      "量化不同行为对世界造成的客观实质损害与生态冲击。"
+      "如同计算公共卫生损失或灾难评估，",
+      "量化各种行为对流浪犬猫、原生野生动物及生态系统造成的客观实质损害。"
     ]
   },
   methodology: {
