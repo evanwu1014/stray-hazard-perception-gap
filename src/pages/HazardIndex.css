@@ -434,60 +434,92 @@
   text-shadow: 0 0 8px rgba(96, 165, 250, 0.3);
 }
 
+.dev-meta-mobile,
 .dev-scores-mobile {
   display: none;
 }
 
 @media(max-width: 700px) {
   .dev-row {
-    grid-template-columns: 1fr;
-    gap: 4px;
-    padding: 16px 40px 16px 16px;
-    position: relative;
-    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 20px 16px;
+    align-items: stretch;
+    cursor: default;
   }
   
   .dev-row::after {
-    content: '+';
-    position: absolute;
-    right: 20px;
-    top: 15px;
-    font-size: 1.2rem;
-    font-weight: 700;
-    color: var(--text-faint);
-    transition: transform 0.25s, color 0.25s;
+    display: none;
   }
   
-  .dev-row.expanded::after {
-    content: '−';
-    color: var(--blue);
+  .dev-row .dev-name,
+  .dev-row .dev-score-cell,
+  .dev-row .dev-val {
+    display: none;
   }
   
-  .dev-row .dev-name {
+  .dev-meta-mobile {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 16px;
+    width: 100%;
+  }
+  
+  .dev-name-mobile {
     font-size: 0.95rem;
-    padding-right: 12px;
+    font-weight: 700;
+    color: #fff;
+    line-height: 1.4;
+  }
+  
+  .dev-val-mobile {
+    font-family: var(--font-en);
+    font-size: 1.05rem;
+    font-weight: 900;
+    white-space: nowrap;
+  }
+  
+  .dev-val-mobile.pos {
+    color: var(--d-hi);
+    text-shadow: 0 0 10px rgba(255, 92, 92, 0.3);
+  }
+  
+  .dev-val-mobile.neg {
+    color: var(--cyan);
+    text-shadow: 0 0 10px rgba(34, 211, 238, 0.3);
+  }
+  
+  .dev-row .dev-bar-wrap {
+    width: 100%;
+    margin: 4px 0;
   }
   
   .dev-row .dev-scores-mobile {
     display: flex;
-    gap: 16px;
-    font-size: .82rem;
-    color: var(--text-dim);
-    max-height: 0;
-    opacity: 0;
-    overflow: hidden;
-    margin-top: 0;
-    transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s, margin-top 0.3s;
-  }
-  
-  .dev-row .dev-scores-mobile.open {
-    max-height: 32px;
+    justify-content: space-between;
+    gap: 8px;
+    font-size: .8rem;
+    color: var(--text-faint);
+    width: 100%;
+    border-top: 1px dashed rgba(255, 255, 255, 0.05);
+    padding-top: 10px;
+    max-height: none;
     opacity: 1;
-    margin-top: 6px;
+    overflow: visible;
+    margin-top: 0;
+    transition: none;
   }
   
-  .dev-row .dev-score-cell {
-    display: none;
+  .dev-row .dev-scores-mobile span {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  
+  .dev-row .dev-scores-mobile strong {
+    color: var(--text-light);
   }
 }
 

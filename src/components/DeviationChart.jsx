@@ -1,4 +1,3 @@
-import { useState } from "react";
 import Reveal from "./Reveal";
 import { useI18n } from "../context/I18nContext";
 
@@ -12,16 +11,11 @@ const getThreatClass = (total) => {
 export default function DeviationChart() {
   const { getProcessedData, uiLabels } = useI18n();
   const processedData = getProcessedData();
-  const [expandedId, setExpandedId] = useState(null);
   
   // Sort by deviation descending (most overreacted first)
   const sortedData = [...processedData].sort((a, b) => b.deviation - a.deviation);
 
   const maxAbs = Math.max(...sortedData.map(d => Math.abs(d.deviation)));
-
-  const toggleRow = (id) => {
-    setExpandedId(prev => prev === id ? null : id);
-  };
 
   return (
     <div className="dev-chart" id="devChart">
@@ -38,24 +32,26 @@ export default function DeviationChart() {
         const isPos = item.deviation >= 0;
         const barPct = (Math.abs(item.deviation) / maxAbs) * 46; // 46% max each side
         const threatClass = getThreatClass(item.objTotal);
-        const isExpanded = expandedId === item.id;
         
         return (
           <Reveal key={item.id} delay={index * 50}>
             {(isVisible) => (
-              <div 
-                className={`dev-row ${isExpanded ? "expanded" : ""}`}
-                onClick={() => toggleRow(item.id)}
-              >
-                <div className="dev-name">{item.name}</div>
-                <div className={`dev-scores-mobile ${isExpanded ? "open" : ""}`}>
-                  <span>{uiLabels.deviation.morality}: <strong style={{ color: "var(--d-md)" }}>{item.condemn}</strong></span>
-                  <span>{uiLabels.deviation.outcry}: <strong style={{ color: "var(--purple)" }}>{item.outcry}</strong></span>
-                  <span>{uiLabels.deviation.harm}: <strong className={`harm-val ${threatClass}`}>{item.objTotal}</strong></span>
+              <div className="dev-row">
+                {/* 行動端專屬 Meta 列 */}
+                <div className="dev-meta-mobile">
+                  <div className="dev-name-mobile">{item.name}</div>
+                  <div className={`dev-val-mobile ${isPos ? "pos" : "neg"}`}>
+                    {isPos ? "+" : ""}{item.deviation}
+                  </div>
                 </div>
+
+                {/* 桌面端直屬單元格 */}
+                <div className="dev-name">{item.name}</div>
                 <div className="dev-score-cell condemn">{item.condemn}</div>
                 <div className="dev-score-cell outcry">{item.outcry}</div>
                 <div className={`dev-score-cell harm ${threatClass}`}>{item.objTotal}</div>
+                
+                {/* 雙端共用長條圖 */}
                 <div className="dev-bar-wrap">
                   <div className="dev-bar-center"></div>
                   <div 
@@ -63,8 +59,17 @@ export default function DeviationChart() {
                     style={{ width: isVisible ? `${barPct}%` : "0%" }}
                   ></div>
                 </div>
+                
+                {/* 桌面端偏差值 */}
                 <div className={`dev-val ${isPos ? "pos" : "neg"}`}>
                   {isPos ? "+" : ""}{item.deviation}
+                </div>
+
+                {/* 行動端專屬 Score 底部列 */}
+                <div className="dev-scores-mobile">
+                  <span>{uiLabels.deviation.morality}: <strong>{item.condemn}</strong></span>
+                  <span>{uiLabels.deviation.outcry}: <strong>{item.outcry}</strong></span>
+                  <span>{uiLabels.deviation.harm}: <strong className={`harm-val ${threatClass}`}>{item.objTotal}</strong></span>
                 </div>
               </div>
             )}
