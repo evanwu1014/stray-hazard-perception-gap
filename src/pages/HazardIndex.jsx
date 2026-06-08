@@ -291,12 +291,12 @@ export default function HazardIndex() {
                         {/* Level badge */}
                         <div style={{ width: "5px", background: c.bar, flexShrink: 0 }}></div>
                         <div style={{ padding: "24px 28px", flex: 1 }}>
-                          <div style={{ display: "flex", alignItems: "baseline", gap: "12px", marginBottom: "12px", flexWrap: "wrap" }}>
-                            <span style={{ fontSize: "1.5rem", fontWeight: 700, color: c.bar, fontFamily: "var(--font-en)" }}>
+                          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px", flexWrap: "wrap" }}>
+                            <span style={{ fontSize: "1.5rem", fontWeight: 700, color: c.bar, fontFamily: "var(--font-en)", lineHeight: 1 }}>
                               Level {group.range}
                             </span>
-                            <span style={{ fontSize: "1rem", fontWeight: 600, color: "var(--text-light)" }}>{group.stageLabel}</span>
-                            <span style={{ fontSize: "0.8rem", padding: "2px 10px", borderRadius: "20px", background: c.bar, color: "#000", fontWeight: 600, opacity: 0.9 }}>{group.zoneName}</span>
+                            <span style={{ fontSize: "1.15rem", fontWeight: 700, color: "var(--text-light)", lineHeight: 1 }}>{group.stageLabel}</span>
+                            <span style={{ fontSize: "0.78rem", padding: "4px 12px", borderRadius: "20px", background: c.bar, color: "#000", fontWeight: 700, opacity: 0.95, display: "inline-flex", alignItems: "center", lineHeight: 1 }}>{group.zoneName}</span>
                           </div>
                           <ul style={{ listStyle: "none", padding: 0, margin: "0 0 14px 0", display: "flex", flexDirection: "column", gap: "8px" }}>
                             {group.items.map((item, i) => (

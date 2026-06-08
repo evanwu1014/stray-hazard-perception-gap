@@ -13,6 +13,8 @@
   --text: #e2e8f0;
   --text-dim: #7a8ba7;
   --text-faint: #62728d;
+  --text-light: #ffffff;
+  --border: rgba(255, 255, 255, 0.08);
   --d-lo: #34d399;
   --d-md: #f5a623;
   --d-hi: #ff5c5c;
