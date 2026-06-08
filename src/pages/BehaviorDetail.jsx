@@ -225,6 +225,33 @@ export default function BehaviorDetail() {
                       ))}
                     </div>
                   </div>
+
+                  {/* Beneficiaries */}
+                  {rel.beneficiaries && rel.beneficiaries.length > 0 && (
+                    <div className="bdetail-beneficiaries-section">
+                      <h4 className="bdetail-beneficiaries-title">{labels.beneficiaryLabel}</h4>
+                      <div className="bdetail-beneficiaries-grid">
+                        {rel.beneficiaries.map((b, bIdx) => (
+                          <Reveal key={bIdx} delay={bIdx * 100} className="bdetail-beneficiary-card">
+                            <div className="bdetail-beneficiary-header">
+                              <span className="bdetail-beneficiary-icon" role="img" aria-label={b.category}>{b.icon}</span>
+                              <div className="bdetail-beneficiary-meta">
+                                <h5>{b.category}</h5>
+                                <p className="bdetail-beneficiary-entities">{b.entities}</p>
+                              </div>
+                            </div>
+                            <p className="bdetail-beneficiary-desc">{b.desc}</p>
+                            {b.caveat && (
+                              <div className="bdetail-beneficiary-caveat">
+                                <span className="bdetail-caveat-prefix">{labels.beneficiaryCaveatPrefix}</span>
+                                <span className="bdetail-caveat-text">{b.caveat}</span>
+                              </div>
+                            )}
+                          </Reveal>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

@@ -588,13 +588,17 @@
 }
 
 .bdetail-victims-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--red);
   text-transform: uppercase;
-  letter-spacing: 0.5px;
+  letter-spacing: 0.75px;
   font-family: var(--font-en);
   margin-bottom: 4px;
+  border-left: 3px solid var(--red);
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
 }
 
 .bdetail-victims-grid {
@@ -681,6 +685,135 @@
   font-size: 0.88rem;
   color: var(--text-dim);
   line-height: 1.65;
+}
+
+/* Beneficiary Section */
+.bdetail-beneficiaries-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+.bdetail-beneficiaries-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: var(--green);
+  text-transform: uppercase;
+  letter-spacing: 0.75px;
+  font-family: var(--font-en);
+  margin-bottom: 4px;
+  border-left: 3px solid var(--green);
+  padding-left: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.bdetail-beneficiaries-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+@media (max-width: 900px) {
+  .bdetail-beneficiaries-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bdetail-beneficiaries-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.bdetail-beneficiary-card {
+  background: rgba(16, 185, 129, 0.03);
+  border: 1px solid rgba(16, 185, 129, 0.12);
+  border-radius: var(--radius);
+  padding: 24px;
+  backdrop-filter: blur(12px);
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+              border-color 0.3s;
+  display: flex;
+  flex-direction: column;
+}
+
+.bdetail-beneficiary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow);
+  border-color: rgba(16, 185, 129, 0.3);
+}
+
+.bdetail-beneficiary-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+
+.bdetail-beneficiary-icon {
+  font-size: 1.8rem;
+  line-height: 1;
+  flex-shrink: 0;
+  padding: 6px;
+  background: rgba(16, 185, 129, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(16, 185, 129, 0.1);
+}
+
+.bdetail-beneficiary-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.bdetail-beneficiary-meta h5 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.bdetail-beneficiary-entities {
+  font-size: 0.78rem;
+  color: var(--green);
+  font-weight: 600;
+  background: rgba(16, 185, 129, 0.08);
+  border: 1px solid rgba(16, 185, 129, 0.15);
+  padding: 2px 8px;
+  border-radius: 4px;
+  display: inline-block;
+  align-self: flex-start;
+  line-height: 1.3;
+}
+
+.bdetail-beneficiary-desc {
+  font-size: 0.88rem;
+  color: var(--text-dim);
+  line-height: 1.65;
+  flex-grow: 1;
+}
+
+.bdetail-beneficiary-caveat {
+  margin-top: 14px;
+  padding: 10px 12px;
+  background: rgba(245, 158, 11, 0.06);
+  border-left: 3px solid var(--yellow);
+  border-radius: 4px;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  min-height: 95px;
+}
+
+.bdetail-caveat-prefix {
+  font-weight: 700;
+  color: var(--yellow);
+  margin-right: 4px;
+}
+
+.bdetail-caveat-text {
+  color: var(--text-dim);
 }
 
 /* ─── Perception Gap ─── */

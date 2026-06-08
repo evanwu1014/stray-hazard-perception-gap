@@ -107,6 +107,8 @@ export const UI_LABELS = {
     agentLabel: "行為主體",
     agentNotePrefix: "—",
     transmissionLabel: "危害傳導路徑",
-    victimLabel: "衝擊承受者"
+    victimLabel: "衝擊承受者",
+    beneficiaryLabel: "結果論受益者",
+    beneficiaryCaveatPrefix: "⚠️ 範圍限定："
   }
 };
