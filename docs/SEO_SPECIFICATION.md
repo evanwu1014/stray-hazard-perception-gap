@@ -25,6 +25,10 @@
 *   **標籤**：`<link rel="canonical" href="https://stray-hazard-perception-gap.web.app/" />`
 *   **用途**：防止搜尋引擎將不同的子網域或 URL 參數視為重複內容，集中權重於官方域名。
 
+### 搜尋引擎所有權驗證 (Search Console Verification)
+*   **標籤**：`<meta name="google-site-verification" content="52ap-mgFlb7dCU1FxyslfFRv_FyxuqoD5TRr9gFjD8E" />`
+*   **用途**：向 Google Search Console 證明網站所有權，啟用網站檢索狀態與關鍵字曝光的追蹤管理。
+
 ### 開放圖譜協定 (Open Graph Protocol)
 為社交平台分享網址時提供富媒體預覽資訊：
 *   `og:title`：專案核心標題。
