@@ -117,6 +117,23 @@ export default function Navbar() {
     }
   };
  
+  const currentLink = useMemo(() => {
+    return links.find(link => link.id === activeSection);
+  }, [links, activeSection]);
+
+  // 3. 監聽 activeSection 變化，自動橫向滾動行動端導覽項目至中央對齊
+  useEffect(() => {
+    if (!isScrolled || !activeSection) return;
+    const activeEl = document.getElementById(`nav-link-mob-${activeSection}`);
+    if (activeEl) {
+      activeEl.scrollIntoView({
+        behavior: "smooth",
+        block: "nearest",
+        inline: "center"
+      });
+    }
+  }, [activeSection, isScrolled]);
+
   return (
     <header className={`site-header ${isScrolled ? "scrolled" : ""} ${isDetail ? "detail-mode" : ""} ${isMenuOpen ? "drawer-open" : ""}`}>
       <div className="header-inner">
@@ -125,6 +142,34 @@ export default function Navbar() {
           <span className="logo-full">純結果論危害指數</span>
         </div>
  
+        {/* 動態段落定位標籤 (方案三：暫時註解以測試方案一)
+        {!isDetail && currentLink && (
+          <div className={`header-active-section ${isScrolled && activeSection ? "visible" : ""}`}>
+            <span className="section-dot">•</span>
+            <span className="section-label">{currentLink.label}</span>
+          </div>
+        )}
+        */}
+
+        {/* 行動端二級水平滑動導覽列 (方案一 - 長在原本的 bar 內) */}
+        {!isDetail && (
+          <div className="mobile-scroll-nav-bar">
+            <div className="mobile-scroll-nav-inner">
+              {links.map((link) => (
+                <a
+                  key={link.id}
+                  href={`#${link.id}`}
+                  className={activeSection === link.id ? "active" : ""}
+                  onClick={(e) => handleLinkClick(e, link.id)}
+                  id={`nav-link-mob-${link.id}`}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        )}
+
         {!isDetail && (
           <nav className="header-nav">
             {links.map((link) => (

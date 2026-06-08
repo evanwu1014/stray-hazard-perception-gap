@@ -246,6 +246,123 @@
   }
 }
 
+/* ─────────────────── Mobile Section Indicator ─────────────────── */
+.header-active-section {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .header-active-section {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%) scale(0.9);
+    opacity: 0;
+    pointer-events: none;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    color: var(--blue);
+    background: rgba(96, 165, 250, 0.06);
+    border: 1px solid rgba(96, 165, 250, 0.16);
+    padding: 0 10px;
+    height: 24px;
+    border-radius: 12px;
+    transition: opacity 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+                transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    z-index: 1002;
+    max-width: 110px;
+    white-space: nowrap;
+  }
+  
+  .header-active-section.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
+  
+  .header-active-section .section-dot {
+    font-size: 1rem;
+    line-height: 1;
+    color: var(--blue);
+    text-shadow: 0 0 6px var(--blue);
+    animation: navPulseDot 2s infinite ease-in-out;
+  }
+}
+
+@keyframes navPulseDot {
+  0%, 100% {
+    opacity: 0.5;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+}
+
+/* ─────────────────── Mobile Scroll Tab Bar (方案一) ─────────────────── */
+.mobile-scroll-nav-bar {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .mobile-scroll-nav-bar {
+    display: flex;
+    flex: 1;
+    max-width: 190px; /* 限制在 logo 與 actions 之間，防止按鈕被推走 */
+    height: 30px;
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 15px;
+    margin: 0 8px;
+    overflow: hidden;
+    align-items: center;
+  }
+  
+  /* 當選單抽屜開啟時隱藏 */
+  .drawer-open .mobile-scroll-nav-bar {
+    display: none !important;
+  }
+  
+  .mobile-scroll-nav-inner {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    width: 100%;
+    height: 100%;
+    padding: 0 8px;
+    overflow-x: auto;
+    scrollbar-width: none; /* Firefox */
+  }
+  
+  .mobile-scroll-nav-inner::-webkit-scrollbar {
+    display: none; /* Safari/Chrome */
+  }
+  
+  .mobile-scroll-nav-inner a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.72rem;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 3px 10px;
+    border-radius: 10px;
+    transition: all 0.25s;
+    border: 1px solid transparent;
+    background: rgba(255, 255, 255, 0.01);
+    flex-shrink: 0; /* 關鍵：阻止 flex 擠壓以產生橫向溢出滑動 */
+  }
+  
+  .mobile-scroll-nav-inner a.active {
+    color: #fff;
+    background: rgba(96, 165, 250, 0.15);
+    border-color: rgba(96, 165, 250, 0.25);
+    box-shadow: 0 0 10px rgba(96, 165, 250, 0.08);
+  }
+}
+
 /* ─────────────────── Hamburger Button ─────────────────── */
 .hamburger-btn {
   display: none;
