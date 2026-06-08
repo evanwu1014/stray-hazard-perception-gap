@@ -19,11 +19,11 @@ export default function SEOManager() {
 
     if (pathname === "/") {
       title = isTW
-        ? "純結果論危害指數 — Pure Consequentialist Hazard Index"
-        : "纯结果论危害指数 — Pure Consequentialist Hazard Index";
+        ? "純結果論危害指數：遊蕩犬貓議題與客觀危害量化評估"
+        : "纯结果论危害指数：流浪犬猫议题与客观危害量化评估";
       description = isTW
-        ? "排除主觀情感，以科學量化衡量行為造成的真實損害。一套將行為拆解為三個獨立量化指標的純結果論評分機制。"
-        : "排除主观情感，以科学量化衡量行为造成的真实损害。一套将行为拆解为三个独立量化指标的纯结果论评分机制。";
+        ? "排除主觀情感，以科學量化評估遊蕩犬貓（流浪貓狗）相關行為對野生動物與生態環境造成的真實損害，並分析社會道德直覺與客觀危害的認知落差。"
+        : "排除主观情感，以科学量化评估流浪犬猫相关行为对野生动物与生态环境造成的真实损害，并分析社会道德直觉与客观危害的认知偏差。";
     } else if (pathname === "/scenario") {
       title = isTW
         ? "特定場域危害與管理決策模型 — Pure Consequentialist Hazard Index"
@@ -53,11 +53,11 @@ export default function SEOManager() {
       }
     } else {
       title = isTW
-        ? "純結果論危害指數 — Pure Consequentialist Hazard Index"
-        : "纯结果论危害指数 — Pure Consequentialist Hazard Index";
+        ? "純結果論危害指數：遊蕩犬貓議題與客觀危害量化評估"
+        : "纯结果论危害指数：流浪犬猫议题与客观危害量化评估";
       description = isTW
-        ? "排除主觀情感，以科學量化衡量行為造成的真實損害。"
-        : "排除主观情感，以科学量化衡量行为造成的真实损害。";
+        ? "排除主觀情感，以科學量化評估遊蕩犬貓（流浪貓狗）相關行為對野生動物與生態環境造成的真實損害。"
+        : "排除主观情感，以科学量化评估流浪犬猫相关行为对野生动物与生态环境造成的真实损害。";
     }
 
     // 更新瀏覽器 Title
