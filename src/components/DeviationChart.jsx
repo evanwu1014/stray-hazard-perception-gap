@@ -1,3 +1,4 @@
+import { useState } from "react";
 import Reveal from "./Reveal";
 import { useI18n } from "../context/I18nContext";
 
@@ -11,11 +12,16 @@ const getThreatClass = (total) => {
 export default function DeviationChart() {
   const { getProcessedData, uiLabels } = useI18n();
   const processedData = getProcessedData();
+  const [expandedId, setExpandedId] = useState(null);
   
   // Sort by deviation descending (most overreacted first)
   const sortedData = [...processedData].sort((a, b) => b.deviation - a.deviation);
 
   const maxAbs = Math.max(...sortedData.map(d => Math.abs(d.deviation)));
+
+  const toggleRow = (id) => {
+    setExpandedId(prev => prev === id ? null : id);
+  };
 
   return (
     <div className="dev-chart" id="devChart">
@@ -32,13 +38,17 @@ export default function DeviationChart() {
         const isPos = item.deviation >= 0;
         const barPct = (Math.abs(item.deviation) / maxAbs) * 46; // 46% max each side
         const threatClass = getThreatClass(item.objTotal);
+        const isExpanded = expandedId === item.id;
         
         return (
           <Reveal key={item.id} delay={index * 50}>
             {(isVisible) => (
-              <div className="dev-row">
+              <div 
+                className={`dev-row ${isExpanded ? "expanded" : ""}`}
+                onClick={() => toggleRow(item.id)}
+              >
                 <div className="dev-name">{item.name}</div>
-                <div className="dev-scores-mobile">
+                <div className={`dev-scores-mobile ${isExpanded ? "open" : ""}`}>
                   <span>{uiLabels.deviation.morality}: <strong style={{ color: "var(--d-md)" }}>{item.condemn}</strong></span>
                   <span>{uiLabels.deviation.outcry}: <strong style={{ color: "var(--purple)" }}>{item.outcry}</strong></span>
                   <span>{uiLabels.deviation.harm}: <strong className={`harm-val ${threatClass}`}>{item.objTotal}</strong></span>

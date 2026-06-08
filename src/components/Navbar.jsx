@@ -10,18 +10,20 @@ export default function Navbar() {
   
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("");
-
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+ 
   const isScenario = location.pathname === "/scenario";
   const isDetail = location.pathname.startsWith("/behavior");
-
+ 
   // Sync / Reset states on path change without useEffect trigger loop
   const [prevPath, setPrevPath] = useState(location.pathname);
   if (location.pathname !== prevPath) {
     setPrevPath(location.pathname);
     setIsScrolled(false);
     setActiveSection("");
+    setIsMenuOpen(false);
   }
-
+ 
   const links = useMemo(() => {
     const scenarioLinks = [
       { id: "hero", label: uiLabels.nav.scenario.hero },
@@ -30,7 +32,7 @@ export default function Navbar() {
       { id: "charts", label: uiLabels.nav.scenario.charts },
       { id: "matrix", label: uiLabels.nav.scenario.matrix }
     ];
-
+ 
     const homeLinks = [
       { id: "methodology", label: uiLabels.nav.home.methodology },
       { id: "dimensions", label: uiLabels.nav.home.dimensions },
@@ -38,10 +40,10 @@ export default function Navbar() {
       { id: "perception", label: uiLabels.nav.home.perception },
       { id: "insights", label: uiLabels.nav.home.insights }
     ];
-
+ 
     return isScenario ? scenarioLinks : homeLinks;
   }, [isScenario, uiLabels]);
-
+ 
   // 1. Throttled detect scroll position for header sticky state (prevents layout checks)
   useEffect(() => {
     const handleScroll = () => {
@@ -51,25 +53,25 @@ export default function Navbar() {
         return prev !== next ? next : prev;
       });
     };
-
+ 
     window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
-
+ 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+ 
   // 2. High-performance IntersectionObserver scroll-spy (removes offsetTop layout reflows)
   useEffect(() => {
     if (isDetail) return;
-
+ 
     const observerOptions = {
       root: null,
       rootMargin: "-25% 0px -55% 0px", // focus on middle-top area of screen
       threshold: 0
     };
-
+ 
     const observerCallback = (entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
@@ -77,21 +79,22 @@ export default function Navbar() {
         }
       });
     };
-
+ 
     const observer = new IntersectionObserver(observerCallback, observerOptions);
-
+ 
     links.forEach((link) => {
       const el = document.getElementById(link.id);
       if (el) observer.observe(el);
     });
-
+ 
     return () => {
       observer.disconnect();
     };
   }, [isDetail, links]);
-
+ 
   const handleLinkClick = (e, id) => {
     e.preventDefault();
+    setIsMenuOpen(false);
     if (isDetail) {
       navigate(isScenario ? "/scenario" : "/", { state: { scrollTo: id } });
     } else {
@@ -102,23 +105,24 @@ export default function Navbar() {
       }
     }
   };
-
+ 
   const handleLogoClick = () => {
+    setIsMenuOpen(false);
     if (location.pathname === "/") {
       window.scrollTo({ top: 0, behavior: "smooth" });
     } else {
       navigate("/");
     }
   };
-
+ 
   return (
-    <header className={`site-header ${isScrolled ? "scrolled" : ""} ${isDetail ? "detail-mode" : ""}`}>
+    <header className={`site-header ${isScrolled ? "scrolled" : ""} ${isDetail ? "detail-mode" : ""} ${isMenuOpen ? "drawer-open" : ""}`}>
       <div className="header-inner">
         <div className="header-logo" onClick={handleLogoClick}>
           <span className="logo-abbr">P.C.H.I.</span>
           <span className="logo-full">純結果論危害指數</span>
         </div>
-
+ 
         {!isDetail && (
           <nav className="header-nav">
             {links.map((link) => (
@@ -133,7 +137,7 @@ export default function Navbar() {
             ))}
           </nav>
         )}
-
+ 
         <div className="header-actions">
           <button
             className="lang-btn"
@@ -147,8 +151,38 @@ export default function Navbar() {
             </svg>
             <span className="lang-text">{lang === "zh_TW" ? "繁中" : "簡中"}</span>
           </button>
+ 
+          {!isDetail && (
+            <button 
+              className={`hamburger-btn ${isMenuOpen ? "open" : ""}`}
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-label="選單開關"
+            >
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+              <span className="hamburger-line"></span>
+            </button>
+          )}
         </div>
       </div>
+ 
+      {/* 行動端選單抽屜 */}
+      {!isDetail && (
+        <div className={`mobile-menu-drawer ${isMenuOpen ? "open" : ""}`}>
+          <nav className="mobile-nav">
+            {links.map((link) => (
+              <a
+                key={link.id}
+                href={`#${link.id}`}
+                className={activeSection === link.id ? "active" : ""}
+                onClick={(e) => handleLinkClick(e, link.id)}
+              >
+                {link.label}
+              </a>
+            ))}
+          </nav>
+        </div>
+      )}
     </header>
   );
 }

@@ -441,18 +441,51 @@
 @media(max-width: 700px) {
   .dev-row {
     grid-template-columns: 1fr;
-    gap: 10px;
-    padding: 18px 16px;
+    gap: 4px;
+    padding: 16px 40px 16px 16px;
+    position: relative;
+    cursor: pointer;
   }
+  
+  .dev-row::after {
+    content: '+';
+    position: absolute;
+    right: 20px;
+    top: 15px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-faint);
+    transition: transform 0.25s, color 0.25s;
+  }
+  
+  .dev-row.expanded::after {
+    content: '−';
+    color: var(--blue);
+  }
+  
   .dev-row .dev-name {
-    font-size: 1rem;
+    font-size: 0.95rem;
+    padding-right: 12px;
   }
+  
   .dev-row .dev-scores-mobile {
     display: flex;
-    gap: 12px;
+    gap: 16px;
     font-size: .82rem;
     color: var(--text-dim);
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    margin-top: 0;
+    transition: max-height 0.3s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.25s, margin-top 0.3s;
   }
+  
+  .dev-row .dev-scores-mobile.open {
+    max-height: 32px;
+    opacity: 1;
+    margin-top: 6px;
+  }
+  
   .dev-row .dev-score-cell {
     display: none;
   }

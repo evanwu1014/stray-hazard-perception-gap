@@ -11,8 +11,109 @@
 
 @media(max-width: 768px) {
   .matrix-container {
-    padding: 24px;
+    padding: 20px 16px;
   }
+  
+  .matrix-table {
+    display: none;
+  }
+  
+  .matrix-mobile-tabs {
+    display: flex;
+  }
+  
+  .matrix-mobile-list {
+    display: flex;
+  }
+}
+
+/* ─────────────────── Mobile Matrix Styles ─────────────────── */
+.matrix-mobile-tabs {
+  display: none;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.matrix-tab-btn {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  color: var(--text-dim);
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+.matrix-tab-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.matrix-tab-btn.active {
+  color: #fff;
+}
+
+.matrix-tab-btn.active.reserve {
+  background: rgba(239, 68, 68, 0.15);
+  border-color: var(--red);
+  box-shadow: 0 0 12px rgba(239, 68, 68, 0.12);
+}
+
+.matrix-tab-btn.active.urban {
+  background: rgba(245, 158, 11, 0.15);
+  border-color: var(--yellow);
+  box-shadow: 0 0 12px rgba(245, 158, 11, 0.12);
+}
+
+.matrix-tab-btn.active.campus {
+  background: rgba(96, 165, 250, 0.15);
+  border-color: var(--blue);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.12);
+}
+
+.matrix-mobile-list {
+  display: none;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.matrix-mobile-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: var(--radius-sm);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  backdrop-filter: blur(10px);
+}
+
+.card-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.card-method-name {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.card-method-sub {
+  font-size: 0.75rem;
+  color: var(--text-faint);
+  font-weight: 400;
+  font-family: var(--font-en);
 }
 
 .matrix-table {

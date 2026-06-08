@@ -1,11 +1,59 @@
+import { useState } from "react";
 import { useI18n } from "../context/I18nContext";
 import './DecisionMatrix.css';
 
 export default function DecisionMatrix() {
   const { decisionMatrix, uiLabels } = useI18n();
+  const [activeTab, setActiveTab] = useState("reserve");
 
   return (
     <div className="matrix-container">
+      {/* 行動端場域切換 Tab Headers */}
+      <div className="matrix-mobile-tabs">
+        <button 
+          className={`matrix-tab-btn ${activeTab === "reserve" ? "active reserve" : ""}`}
+          onClick={() => setActiveTab("reserve")}
+        >
+          {uiLabels.matrix.columns.reserve}
+        </button>
+        <button 
+          className={`matrix-tab-btn ${activeTab === "urban" ? "active urban" : ""}`}
+          onClick={() => setActiveTab("urban")}
+        >
+          {uiLabels.matrix.columns.urban}
+        </button>
+        <button 
+          className={`matrix-tab-btn ${activeTab === "campus" ? "active campus" : ""}`}
+          onClick={() => setActiveTab("campus")}
+        >
+          {uiLabels.matrix.columns.campus}
+        </button>
+      </div>
+
+      {/* 行動端卡片清單 */}
+      <div className="matrix-mobile-list">
+        {decisionMatrix.map((row, index) => {
+          const colData = row.cols[activeTab];
+          return (
+            <div key={index} className="matrix-mobile-card">
+              <div className="card-header-row">
+                <span className="card-method-name">
+                  {row.method}
+                  {row.sub && <small className="card-method-sub">{row.sub}</small>}
+                </span>
+                <span className={`matrix-badge ${colData.type}`}>
+                  {colData.status}
+                </span>
+              </div>
+              <div className="matrix-detail">
+                {colData.detail}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      {/* 桌面端傳統 Table 視圖 */}
       <table className="matrix-table">
         <thead>
           <tr>

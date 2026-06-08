@@ -176,13 +176,134 @@
 
 @media (max-width: 768px) {
   .site-header {
-    padding: 0 16px;
+    padding: 0 20px;
   }
+  
   .header-nav {
     display: none; /* 行動端隱藏連結 */
   }
-  .site-header.scrolled .header-inner {
-    max-width: 100%;
-    border-radius: 20px;
+  
+  .hamburger-btn {
+    display: flex;
+  }
+  
+  .site-header.scrolled {
+    width: calc(100% - 32px);
+    left: 16px;
+    transform: none;
+    max-width: none;
+  }
+  
+  .site-header.scrolled.drawer-open {
+    width: 100%;
+    left: 0;
+    top: 0;
+    border-radius: 0;
+    border: none;
+    border-bottom: 1px solid var(--surface-border);
+    background: rgba(10, 13, 20, 0.96);
   }
 }
+
+/* ─────────────────── Hamburger Button ─────────────────── */
+.hamburger-btn {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 22px;
+  height: 15px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1010;
+  margin-left: 6px;
+}
+
+.hamburger-line {
+  width: 100%;
+  height: 2px;
+  background-color: var(--text-dim);
+  border-radius: 2px;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+  background-color: #fff;
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger-btn.open .hamburger-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+  background-color: #fff;
+}
+
+/* ─────────────────── Mobile Drawer ─────────────────── */
+.mobile-menu-drawer {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: rgba(10, 13, 20, 0.98);
+  backdrop-filter: blur(20px) saturate(1.6);
+  -webkit-backdrop-filter: blur(20px) saturate(1.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  opacity: 0;
+  pointer-events: none;
+  transform: translateY(-10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.mobile-menu-drawer.open {
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.mobile-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 0 40px;
+  margin-top: 40px;
+}
+
+.mobile-nav a {
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 1.15rem;
+  font-weight: 600;
+  font-family: var(--font-en);
+  letter-spacing: 0.5px;
+  padding: 10px 24px;
+  border-radius: 30px;
+  transition: all 0.25s;
+  width: 100%;
+  max-width: 260px;
+  text-align: center;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.mobile-nav a:hover, .mobile-nav a:active {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.06);
+}
+
+.mobile-nav a.active {
+  color: #fff;
+  background: rgba(96, 165, 250, 0.15);
+  border-color: rgba(96, 165, 250, 0.25);
+  box-shadow: 0 0 12px rgba(96, 165, 250, 0.12);
+}
+

@@ -1306,3 +1306,34 @@
   text-transform: none;
   letter-spacing: 0.5px;
 }
+
+/* ─────────────────── Flow Connector ─────────────────── */
+.bdetail-flow-connector {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 4px 0;
+  color: var(--blue);
+  opacity: 0.8;
+  margin: -8px 0;
+}
+
+.connector-arrow {
+  width: 20px;
+  height: 20px;
+  transform: rotate(90deg);
+  filter: drop-shadow(0 0 3px rgba(96, 165, 250, 0.4));
+  animation: bounceArrow 2s infinite ease-in-out;
+}
+
+@keyframes bounceArrow {
+  0%, 100% {
+    transform: rotate(90deg) translateX(0);
+    filter: drop-shadow(0 0 3px rgba(96, 165, 250, 0.4));
+  }
+  50% {
+    /* 旋轉 90 度後，translateX 實際上會在畫面上垂直向下移動 */
+    transform: rotate(90deg) translateX(5px);
+    filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.8));
+  }
+}
