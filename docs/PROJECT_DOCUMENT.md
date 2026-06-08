@@ -17,6 +17,12 @@
 - 獨立條目詳情頁設計規範 (Behavior Detail Page)
 - 路由切換捲動重置 (Scroll to Top)
 
+[SEO_SPECIFICATION.md](./SEO_SPECIFICATION.md)
+- SPA 與 HashRouter 限制下的 SEO 整合設計
+- 靜態 HTML Meta 標籤與 Open Graph / Twitter Card 配置
+- 客戶端動態 Title 與 Description 控制器 (SEOManager)
+- 爬蟲檢索與 XML 站點地圖 (robots.txt, sitemap.xml)
+
 ### 論述資料文件
 [THEORETICAL_CONTENT.md](./THEORETICAL_CONTENT.md)
 - 九大行為量化危害與社會認知

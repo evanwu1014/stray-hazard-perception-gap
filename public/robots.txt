@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stray-hazard-perception-gap.web.app/sitemap.xml

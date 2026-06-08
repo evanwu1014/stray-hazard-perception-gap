@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Main Page -->
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Scenario Analysis Page -->
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/scenario</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <!-- Behavior Details Pages -->
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/1</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/2</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/3</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/4</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/5</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/6</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/7</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/8</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/9</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://stray-hazard-perception-gap.web.app/#/behavior/10</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+</urlset>

@@ -6,11 +6,13 @@ import ScenarioAnalysis from "./pages/ScenarioAnalysis";
 import BehaviorDetail from "./pages/BehaviorDetail";
 import ScrollToTop from "./components/ScrollToTop";
 import { I18nProvider } from "./context/I18nContext";
+import SEOManager from "./components/SEOManager";
 
 function App() {
   return (
     <I18nProvider>
       <HashRouter>
+        <SEOManager />
         <ScrollToTop />
         <Navbar />
         <Routes>
