@@ -67,8 +67,8 @@ export default function DeviationChart() {
 
                 {/* 行動端專屬 Score 底部列 */}
                 <div className="dev-scores-mobile">
-                  <span>{uiLabels.deviation.morality}: <strong>{item.condemn}</strong></span>
-                  <span>{uiLabels.deviation.outcry}: <strong>{item.outcry}</strong></span>
+                  <span>{uiLabels.deviation.morality}: <strong className="condemn">{item.condemn}</strong></span>
+                  <span>{uiLabels.deviation.outcry}: <strong className="outcry">{item.outcry}</strong></span>
                   <span>{uiLabels.deviation.harm}: <strong className={`harm-val ${threatClass}`}>{item.objTotal}</strong></span>
                 </div>
               </div>

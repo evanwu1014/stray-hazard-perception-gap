@@ -517,10 +517,6 @@
     align-items: center;
     gap: 4px;
   }
-  
-  .dev-row .dev-scores-mobile strong {
-    color: var(--text-light);
-  }
 }
 
 .dev-name {
@@ -537,11 +533,11 @@
   text-align: center;
 }
 
-.dev-score-cell.condemn {
+.condemn {
   color: var(--d-md);
 }
 
-.dev-score-cell.outcry {
+.outcry {
   color: var(--purple);
 }
 
