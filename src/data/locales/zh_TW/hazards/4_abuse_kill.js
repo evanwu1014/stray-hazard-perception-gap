@@ -2,14 +2,6 @@ export const hazardData = {
     id: 4,
     name: "虐殺遊蕩犬貓",
     desc: "將單一個體的痛苦最大化至死。畫面最為殘忍，但損害完全收斂於該單一動物身上，對社會運作與整體自然生態毫無外溢影響。",
-    subScores: {
-      pain: 10,
-      scale: 1,
-      external: 1
-    },
-    objTotal: 12,
-    condemn: 10,
-    outcry: 10,
     tooltipTitle: "極端痛苦與危害邊界",
     tooltipContent: "視覺衝擊與社會道德譴責程度最高。在結果論模型中，其「個體痛苦深度」達滿分，但因受限於個體施暴能力，其損害被限制於極小規模，無外部生態擴散性。研究顯示其施虐動機可分為雙軌路徑：一是病理性虐待（ASPD/反社會型），以折磨生命獲取掌控感或快感；二是轉移性虐待（弱弱相殘型），施虐者將自身無力處理的心理與社會危機，向生態最底層的動物轉嫁。",
     citation: "Psychology Today (2025) / PMC/NIH (2022) / Oxford Animal Ethics / Faunalytics (2020)",

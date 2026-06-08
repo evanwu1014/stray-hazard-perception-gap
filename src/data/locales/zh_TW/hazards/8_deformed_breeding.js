@@ -2,14 +2,6 @@ export const hazardData = {
     id: 8,
     name: "量產極端畸變寵物",
     desc: "制度化的基因虐待。為了迎合市場，刻意將痛苦寫入基因編碼並批發製造。極高的母體難產率與子代夭折率，導致龐大的醫療資源消耗與最終棄養負擔。",
-    subScores: {
-      pain: 9,
-      scale: 8,
-      external: 7
-    },
-    objTotal: 24,
-    condemn: 3,
-    outcry: 3,
     tooltipTitle: "制度化基因折磨與繁殖風險",
     tooltipContent: "為迎合市場，刻意將痛苦寫入基因編碼並批發製造。極高的母體難產率與子代夭折率，導致龐大的醫療資源消耗與最終棄養負擔。育種者常使用近親交配，刻意保留病理性矮小與特徵，使子代承受不可逆的系統性折磨。",
     citation: "Asher et al. (2009) / RCVS Knowledge / Cambridge Animal Welfare (2021) / Humane World (China Meat Trade)",

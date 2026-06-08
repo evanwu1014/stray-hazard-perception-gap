@@ -38,7 +38,7 @@ export default function ScenarioAnalysis() {
 
       {/* ═══ Disclaimer Banner ═══ */}
       {disclaimer && (
-        <section style={{ paddingTop: 0, paddingBottom: 0 }}>
+        <section className="section-no-py">
           <div className="container">
             <Reveal>
               <div className="disclaimer-banner">
@@ -56,7 +56,7 @@ export default function ScenarioAnalysis() {
       )}
 
       {/* ═══ Introduction ═══ */}
-      <section id="intro" style={{ paddingTop: 0 }}>
+      <section id="intro" className="section-no-pt">
         <div className="container">
           <Reveal className="intro-box">
             <div className="intro-visual">
@@ -109,7 +109,7 @@ export default function ScenarioAnalysis() {
       </section>
 
       {/* ═══ Interactive Charts ═══ */}
-      <section id="charts" style={{ background: "var(--bg2)" }}>
+      <section id="charts" className="section-bg2">
         <div className="container">
           <Reveal className="sec-heading">
             <h2>{charts.title}</h2>
@@ -137,7 +137,7 @@ export default function ScenarioAnalysis() {
       </section>
 
       {/* ═══ Wording Note ═══ */}
-      <section style={{ paddingTop: 0 }}>
+      <section className="section-no-pt">
         <div className="container">
           <Reveal className="methodology-note">
             <h3>{philosophy.title}</h3>
@@ -147,15 +147,14 @@ export default function ScenarioAnalysis() {
       </section>
 
       {/* ═══ Bottom Quote & Actions ═══ */}
-      <section style={{ paddingTop: 0 }}>
+      <section className="section-no-pt">
         <div className="container">
           <Reveal className="bottom-action">
             <p>{bottom.prompt}</p>
             <Link 
               to="/" 
               state={{ scrollTo: "ranking" }}
-              className="btn-primary" 
-              style={{ padding: "14px 32px" }}
+              className="btn-primary btn-large"
             >
               <span>{bottom.btn}</span>
             </Link>

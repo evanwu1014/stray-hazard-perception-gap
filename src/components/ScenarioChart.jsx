@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useI18n } from "../context/I18nContext";
+import './ScenarioChart.css';
 
 export default function ScenarioChart() {
   const { scenarios, uiLabels } = useI18n();

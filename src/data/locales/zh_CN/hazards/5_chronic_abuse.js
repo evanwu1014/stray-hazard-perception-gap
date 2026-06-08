@@ -2,14 +2,6 @@ export const hazardData = {
     id: 5,
     name: "长期虐待（单／多只）",
     desc: "将极端折磨的时间线拉长至数月或数年。比直接虐杀制造了更多的痛苦总量，但同样属于封闭环境内的损害，无环境外部性。",
-    subScores: {
-      pain: 10,
-      scale: 2,
-      external: 1
-    },
-    objTotal: 13,
-    condemn: 10,
-    outcry: 10,
     tooltipTitle: "时间维度的痛苦累积",
     tooltipContent: "将个体痛苦时间拉长，其结果论累积痛苦高于瞬间虐杀。此类行为可粗分为两种样态：物理暴力型，以及常被「爱心拯救」外衣包装的「病态囤积（Animal Hoarding）」。后者社会谴责极低，却会导致数十至数百只动物长期处于极度拥挤、营养不良、疾病蔓延与粪尿窒息中，其制造的慢性痛苦深度与生命受害规模在结果论上远超单一物理暴力。（临床统计上两种样态的性别分布虽有差异，但性别并非成因，个体差异远大于群体倾向。）",
     citation: "APA (2023) Hoarding Disorder / EBSCO (2024) Animal Hoarding / 生物-心理-社会模型解构",

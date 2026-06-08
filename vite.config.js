@@ -10,7 +10,7 @@ try {
   const commitDateStr = execSync('git log -1 --format=%cd --date=iso').toString().trim();
   const commitDate = new Date(commitDateStr).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
   buildInfo = `${commitDate} (${commitHash})`;
-} catch (e) {
+} catch {
   buildInfo = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
 }
 

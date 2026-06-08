@@ -59,7 +59,7 @@ export default function HazardIndex() {
 
       {/* ═══ Disclaimer Banner ═══ */}
       {disclaimer && (
-        <section style={{ paddingTop: 0, paddingBottom: 0 }}>
+        <section className="section-no-py">
           <div className="container">
             <Reveal>
               <div className="disclaimer-banner">
@@ -97,7 +97,7 @@ export default function HazardIndex() {
       </section>
 
       {/* ═══ Dimensions ═══ */}
-      <section id="dimensions" style={{ paddingTop: 0 }}>
+      <section id="dimensions" className="section-no-pt">
         <div className="container">
           <div className="dim-grid">
             {dimensions.map((dim, idx) => (
@@ -211,7 +211,7 @@ export default function HazardIndex() {
 
       {/* ═══ Abuse Sociology ═══ */}
       {abuseSociology && (
-        <section id="abuse-sociology" className="abuse-sociology-section" style={{ padding: "80px 0", background: "rgba(255, 255, 255, 0.01)", borderTop: "1px solid var(--border)", borderBottom: "1px solid var(--border)" }}>
+        <section id="abuse-sociology" className="abuse-sociology-section">
           <div className="container">
             <Reveal className="sec-heading" style={{ marginBottom: "48px" }}>
               <h2>{abuseSociology.title}</h2>

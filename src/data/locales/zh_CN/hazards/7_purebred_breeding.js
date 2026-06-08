@@ -2,14 +2,6 @@ export const hazardData = {
     id: 7,
     name: "养殖纯种猫狗贩卖",
     desc: "将基因缺陷与母体生育耗损「批发化」。虽然不会刻意施虐，但量产数以百计带有遗传病风险的生命，同时对流浪动物收容系统带来结构性的排挤压力。",
-    subScores: {
-      pain: 5,
-      scale: 7,
-      external: 6
-    },
-    objTotal: 18,
-    condemn: 3,
-    outcry: 2,
     tooltipTitle: "母体损耗与代际折磨的工业化",
     tooltipContent: "商业繁殖场为追求利润，母体常处于密闭笼具、反复生育直至生理机能崩溃，其痛苦在规模与时间上被工业化放大。",
     citation: "HSUS Puppy Mills Investigative Report / Applied Animal Behaviour Science (2011) / HSVMA Veterinary Report / ASPCA",

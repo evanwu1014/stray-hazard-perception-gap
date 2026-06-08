@@ -1,3 +1,4 @@
+import { HAZARD_SCORES } from '../../hazardScores';
 import { hazardData as hazard1 } from './hazards/1_feed_tnr';
 import { hazardData as hazard2 } from './hazards/2_private_execution';
 import { hazardData as hazard3 } from './hazards/3_purebred_purchase';
@@ -20,7 +21,10 @@ export const HAZARD_DATA = [
   hazard8,
   hazard10,
   hazard9
-];
+].map(item => ({
+  ...item,
+  ...HAZARD_SCORES[item.id]
+}));
 
 // Helper function to calculate deviation for each item
 export const getProcessedHazardData = () => {

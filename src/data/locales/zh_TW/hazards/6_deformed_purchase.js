@@ -2,14 +2,6 @@ export const hazardData = {
     id: 6,
     name: "購買極端畸變寵物",
     desc: "消費行為直接為「明確的殘疾與終身痛苦」買單。讓少數個體終身承受短吻呼吸道阻塞、摺耳軟骨劇痛、雙重雲石色基因（double merle）致盲或茶杯體水腦等病痛，屬於病態審美的直接資助。",
-    subScores: {
-      pain: 8,
-      scale: 2,
-      external: 4
-    },
-    objTotal: 14,
-    condemn: 2,
-    outcry: 1,
     tooltipTitle: "病態審美的直接資助",
     tooltipContent: "消費者直接為「明確的殘疾與終身痛苦」買單。包含：短吻犬呼吸道阻塞(BOAS)、摺耳貓軟骨變形劇痛、雙重雲石色基因（double merle）致盲、茶杯體水腦症。這些病理性痛苦伴隨其一生，是消費端對畸形特徵的直接資助。",
     citation: "AVMA Companion Animal Breeding Welfare / PMC/NIH (2022) BOAS / RCVS Knowledge / UFAW Scottish Fold / PMC/NIH (2007) Osteochondrodysplasia",

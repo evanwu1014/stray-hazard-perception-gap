@@ -2,14 +2,6 @@ export const hazardData = {
     id: 1,
     name: "當面餵食 TNR 遊蕩犬貓",
     desc: "犬貓個體免於飢餓且無繁衍能力。但維持其街頭生命仍會產生排泄物，並讓其持續基於本能掠食原生野生動物或追咬路人。",
-    subScores: {
-      pain: 1,      // 痛苦深度
-      scale: 2,     // 受害規模
-      external: 3   // 外部成本
-    },
-    objTotal: 6,
-    condemn: 1,     // 大眾道德直覺
-    outcry: 1,      // 輿論風暴指數
     tooltipTitle: "開放空間 TNR/TNA 的限制",
     tooltipContent: "研究與數學模型顯示，流浪犬貓的年移除率必須持續達到 75% 至 85% 以上，族群總量才會開始下降，且絕育個體仍會持續獵殺野生動物或造成人車追咬衝突。",
     citation: "Longcore et al. (2009) / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / Duke Space (2023) / JASV / 台灣石虎保育協會 / PMC/NIH (2023)",

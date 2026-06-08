@@ -2,14 +2,6 @@ export const hazardData = {
     id: 9,
     name: "大量濫餵（含放置餵食）",
     desc: "終極的生態與衛生災難。造成流浪犬貓異常聚集繁衍與高夭折率暗數，傳染病與路殺橫行；同時對原生野生動物造成巨大生存威脅（如石虎/穿山甲遭犬隻咬傷致死、原生鳥類與爬蟲類遭貓隻掠食）。",
-    subScores: {
-      pain: 7,
-      scale: 10,
-      external: 10
-    },
-    objTotal: 27,
-    condemn: 2,
-    outcry: 2,
     tooltipTitle: "繁殖創傷與傳染病爆發",
     tooltipContent: "長期餵食促使流浪犬貓高密度群聚與繁衍。尤其是流浪貓具備刺激性排卵與倒刺交配的生理創傷，且發情頻率極高，無節制餵食等同於資助這部「痛苦生育機器」幾何級膨脹。高密度繁衍進而引發貓瘟、犬細小病毒爆發，導致無數幼體在惡劣環境中失明、病死或遭路殺。",
     citation: "Loss et al. (2013) Nature Comm. / 中華民國農業部林業及自然保育署野生動物犬咬與路殺數據 / The Wildlife Society (2025) / USDA APHIS / 中華民國苗栗縣政府石虎報告 / ScienceDirect (2025)",

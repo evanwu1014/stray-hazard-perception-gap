@@ -2,14 +2,6 @@ export const hazardData = {
     id: 3,
     name: "购买纯种猫狗",
     desc: "买方虽妥善照顾，但资金助长了繁殖产业。让少数个体终身承受轻至中度的人择基因缺陷（如折耳、短吻犬呼吸问题），并占据收容资源。",
-    subScores: {
-      pain: 4,
-      scale: 2,
-      external: 3
-    },
-    objTotal: 9,
-    condemn: 1,
-    outcry: 1,
     tooltipTitle: "人择基因缺陷的痛苦",
     tooltipContent: "纯种宠物（如折耳猫、短吻犬）在选育特征的过程中，常固化了严重的遗传疾病，如骨骼发育不良、短吻犬呼吸道阻塞综合征（BOAS）。",
     citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",

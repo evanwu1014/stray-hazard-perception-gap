@@ -2,14 +2,6 @@ export const hazardData = {
     id: 7,
     name: "養殖純種貓狗販售",
     desc: "將基因缺陷與母體生育耗損「批發化」。雖然不會刻意施虐，但量產數以百計帶有遺傳病風險的生命，同時對流浪動物收容系統帶來結構性的排擠壓力。",
-    subScores: {
-      pain: 5,
-      scale: 7,
-      external: 6
-    },
-    objTotal: 18,
-    condemn: 3,
-    outcry: 2,
     tooltipTitle: "母體損耗與代際折磨的工業化",
     tooltipContent: "商業繁殖場為追求利潤，母體常處於密閉籠具、反覆生育直至生理機能崩潰，其痛苦在規模與時間上被工業化放大。",
     citation: "HSUS Puppy Mills Investigative Report / Applied Animal Behaviour Science (2011) / HSVMA Veterinary Report / ASPCA",

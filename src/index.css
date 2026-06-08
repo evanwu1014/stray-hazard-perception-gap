@@ -242,3 +242,21 @@ section {
     font-size: 0.98rem;
   }
 }
+
+/* Global Helper Layout Classes */
+.section-no-py {
+  padding-top: 0 !important;
+  padding-bottom: 0 !important;
+}
+
+.section-no-pt {
+  padding-top: 0 !important;
+}
+
+.section-bg2 {
+  background: var(--bg2);
+}
+
+.btn-large {
+  padding: 14px 32px;
+}

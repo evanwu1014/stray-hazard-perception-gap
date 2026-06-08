@@ -2,14 +2,6 @@ export const hazardData = {
     id: 1,
     name: "当面喂食 TNR 流浪犬猫",
     desc: "犬猫个体免于饥饿且无繁殖能力。但维持其街头生命仍会产生排泄物，并让其持续基于本能掠食原生野生动物或追咬路人。",
-    subScores: {
-      pain: 1,
-      scale: 2,
-      external: 3
-    },
-    objTotal: 6,
-    condemn: 1,
-    outcry: 1,
     tooltipTitle: "开放空间 TNR/TNA 的局限",
     tooltipContent: "研究与数学模型显示，流浪犬猫的年移除率必须持续达到 75% 至 85% 以上，种群总量才会开始下降，且绝育个体仍会持续猎杀野生动物或造成人车追咬冲突。",
     citation: "Longcore et al. (2009) / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / Duke Space (2023) / JASV / 台湾石虎保育协会 / PMC/NIH (2023)",

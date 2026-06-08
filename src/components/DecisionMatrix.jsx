@@ -1,4 +1,5 @@
 import { useI18n } from "../context/I18nContext";
+import './DecisionMatrix.css';
 
 export default function DecisionMatrix() {
   const { decisionMatrix, uiLabels } = useI18n();

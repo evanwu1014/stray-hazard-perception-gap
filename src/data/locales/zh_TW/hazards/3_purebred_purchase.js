@@ -2,14 +2,6 @@ export const hazardData = {
     id: 3,
     name: "購買純種貓狗",
     desc: "買方雖妥善照顧，但資金助長了繁殖產業。讓少數個體終身承受輕至中度的人擇基因缺陷（如摺耳、短吻犬呼吸問題），並佔據收容資源。",
-    subScores: {
-      pain: 4,
-      scale: 2,
-      external: 3
-    },
-    objTotal: 9,
-    condemn: 1,
-    outcry: 1,
     tooltipTitle: "人擇基因缺陷的痛苦",
     tooltipContent: "純種寵物（如摺耳貓、短吻犬）在選育特徵的過程中，常固化了嚴重的遺傳疾病，如骨骼發育不良、短吻犬呼吸道阻塞綜合症（BOAS）。",
     citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",

@@ -2,14 +2,6 @@ export const hazardData = {
     id: 10,
     name: "網路組織型商業虐待",
     desc: "透過加密群組進行虐殺影片販售與「客製化付費訂單」。金錢誘因驅動大量捕捉街頭動物（尤其是 TNR 親人個體）製造內容；同時對舉報者施以開盒（Doxing）與跨國網路恐嚇，社會威脅嚴重外溢至人身安全。",
-    subScores: {
-      pain: 10,
-      scale: 5,
-      external: 7
-    },
-    objTotal: 22,
-    condemn: 10,
-    outcry: 10,
     tooltipTitle: "暴力的數位資本化（類型 C）",
     tooltipContent: "加密群組內部發展出「付費客製化訂單」商業模式——買家指定物種與施虐方式，施虐者以虛擬貨幣結算影片。此犯罪創造了「同溫層認同」的群體極化機制。當民眾舉報時，組織會動用惡意開盒與跨國網路恐嚇。其危害已正式超越動物福利，升級為威脅人類社會與資訊安全的網路組織犯罪。",
     citation: "BBC World Service「Monkey Haters」調查報告, 2023 / SMACC 年度報告, 2024 / 中國 Telegram 網路組織虐殺寵物「傑克辣條」事件, 2023",
@@ -43,7 +35,6 @@ export const hazardData = {
                 url: "https://animal.moa.gov.tw/"
           }
     ],
-    isSupplemental: true,
     detailContent: {
       fullDesc: "網路組織型商業虐待是本指數中唯一達到「跨國組織犯罪」等級的行為類型。其威脅已不限於動物福利：對舉報者的開盒恐嚇、跨國追蹤騷擾，使其成為威脅人身安全的網路暴力犯罪，並涉及洗錢（加密貨幣結算）與跨國司法管轄等複雜議題。",
       causeAnalysis: "此犯罪的驅動力是「需求端的群體認同」——內容消費者在加密社群中建立共同的扭曲世界觀，彼此強化。供應端（施虐者）受金錢誘因驅動，捕捉最易接近的 TNR 親人貓作為目標。兩端的匿名性使傳統執法極為困難。",

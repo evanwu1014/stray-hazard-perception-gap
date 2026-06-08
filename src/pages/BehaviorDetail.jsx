@@ -214,7 +214,7 @@ export default function BehaviorDetail() {
                       {rel.victims.map((v, vIdx) => (
                         <Reveal key={vIdx} delay={vIdx * 100} className="bdetail-victim-card">
                           <div className="bdetail-victim-header">
-                            <span className="bdetail-victim-icon">{v.icon}</span>
+                            <span className="bdetail-victim-icon" role="img" aria-label={v.category}>{v.icon}</span>
                             <div className="bdetail-victim-meta">
                               <h5>{v.category}</h5>
                               <p className="bdetail-victim-entities">{v.entities}</p>

@@ -2,14 +2,6 @@ export const hazardData = {
     id: 9,
     name: "大量滥喂（含放置喂食）",
     desc: "终极的生态与卫生灾难。造成流浪犬猫异常聚集繁殖与高夭折率暗数，传染病与路杀横行；同时对原生野生动物造成巨大生存威胁（如豹猫/穿山甲遭犬只咬伤致死、原生鸟类与爬行动物遭猫只掠食）。",
-    subScores: {
-      pain: 7,
-      scale: 10,
-      external: 10
-    },
-    objTotal: 27,
-    condemn: 2,
-    outcry: 2,
     tooltipTitle: "繁殖创伤与传染病爆发",
     tooltipContent: "长期喂食促使流浪犬猫高密度群聚与繁殖。尤其是流浪猫具备刺激性排卵与倒刺交配的生理创伤，且发情频率极高，无节制喂食等同于资助这部「痛苦生育机器」几何级膨胀。高密度繁殖进而引发猫瘟、犬细小病毒爆发，导致无数幼体在恶劣环境中失明、病死或遭路杀。",
     citation: "Loss et al. (2013) Nature Comm. / 中华人民共和国国家林业和草原局相关生态数据 / The Wildlife Society (2025) / USDA APHIS / 中华民国苗栗县政府石虎报告 / ScienceDirect (2025)",
