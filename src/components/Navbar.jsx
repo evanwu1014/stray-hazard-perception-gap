@@ -1,10 +1,12 @@
 import { useEffect, useState, useMemo } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
+import { useViewMode } from "../context/ViewModeContext";
 import './Navbar.css';
 
 export default function Navbar() {
   const { lang, toggleLang, uiLabels } = useI18n();
+  const { viewMode, toggleViewMode } = useViewMode();
   const location = useLocation();
   const navigate = useNavigate();
   
@@ -139,6 +141,29 @@ export default function Navbar() {
         )}
  
         <div className="header-actions">
+          {/* 電腦版/行動版一鍵切換按鈕 */}
+          <button
+            className="view-mode-btn"
+            onClick={toggleViewMode}
+            title={viewMode === "mobile" ? "切換至電腦版版面" : "切換至手機版版面"}
+          >
+            {viewMode === "mobile" ? (
+              /* 電腦圖標 */
+              <svg className="view-mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '15px', height: '15px' }}>
+                <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                <line x1="8" y1="21" x2="16" y2="21"></line>
+                <line x1="12" y1="17" x2="12" y2="21"></line>
+              </svg>
+            ) : (
+              /* 手機圖標 */
+              <svg className="view-mode-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ width: '15px', height: '15px' }}>
+                <rect x="5" y="2" width="14" height="20" rx="2" ry="2"></rect>
+                <line x1="12" y1="18" x2="12.01" y2="18"></line>
+              </svg>
+            )}
+            <span className="view-mode-text">{viewMode === "mobile" ? "電腦版" : "行動版"}</span>
+          </button>
+
           <button
             className="lang-btn"
             onClick={toggleLang}

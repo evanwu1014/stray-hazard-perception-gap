@@ -122,10 +122,10 @@
 .header-actions {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
 }
 
-.lang-btn {
+.lang-btn, .view-mode-btn {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
   padding: 6px 12px;
@@ -140,9 +140,10 @@
   gap: 6px;
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0; /* 防止被擠壓 */
 }
 
-.lang-btn .lang-icon {
+.lang-btn .lang-icon, .view-mode-btn .view-mode-icon {
   font-size: 0.85rem;
   transition: transform 0.4s ease;
 }
@@ -154,11 +155,22 @@
   box-shadow: 0 0 12px rgba(96, 165, 250, 0.15);
 }
 
+.view-mode-btn:hover {
+  color: #fff;
+  border-color: rgba(167, 139, 250, 0.4);
+  background: rgba(167, 139, 250, 0.08);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.15);
+}
+
 .lang-btn:hover .lang-icon {
   transform: rotate(20deg);
 }
 
-.lang-btn:active {
+.view-mode-btn:hover .view-mode-icon {
+  transform: scale(1.1);
+}
+
+.lang-btn:active, .view-mode-btn:active {
   transform: scale(0.96);
 }
 
@@ -203,6 +215,19 @@
     border-bottom: 1px solid var(--surface-border);
     background: rgba(10, 13, 20, 0.96);
   }
+
+  /* 行動端折疊按鈕文字，只保留圖標以容納所有控制項 */
+  .lang-btn .lang-text, .view-mode-btn .view-mode-text {
+    display: none;
+  }
+  
+  .lang-btn, .view-mode-btn {
+    padding: 0;
+    width: 34px;
+    height: 34px;
+    justify-content: center;
+    border-radius: 50%; /* 圓形圖標按鈕 */
+  }
 }
 
 /* ─────────────────── Hamburger Button ─────────────────── */
@@ -218,6 +243,7 @@
   padding: 0;
   z-index: 1010;
   margin-left: 6px;
+  flex-shrink: 0; /* 防止被擠壓 */
 }
 
 .hamburger-line {
