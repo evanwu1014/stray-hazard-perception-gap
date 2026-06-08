@@ -202,8 +202,10 @@
   .site-header.scrolled {
     width: calc(100% - 32px);
     left: 16px;
-    transform: none;
+    transform: translateY(0);
     max-width: none;
+    /* 改用不會對 X 軸進行 -50% 位移的手機版專屬動畫 */
+    animation: headerSlideInMobile 0.3s cubic-bezier(0.25, 0.8, 0.25, 1.1) both;
   }
   
   .site-header.scrolled.drawer-open {
@@ -214,6 +216,8 @@
     border: none;
     border-bottom: 1px solid var(--surface-border);
     background: rgba(10, 13, 20, 0.96);
+    animation: none; /* 開啟抽屜時停用動畫，避免跳動 */
+    transform: none;
   }
 
   /* 行動端折疊按鈕文字，只保留圖標以容納所有控制項 */
@@ -227,6 +231,18 @@
     height: 34px;
     justify-content: center;
     border-radius: 50%; /* 圓形圖標按鈕 */
+  }
+}
+
+/* 行動端專屬 header 浮現動畫 */
+@keyframes headerSlideInMobile {
+  0% {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
   }
 }
 
