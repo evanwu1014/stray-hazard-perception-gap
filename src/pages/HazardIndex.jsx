@@ -291,7 +291,7 @@ export default function HazardIndex() {
                         {/* Level badge */}
                         <div style={{ width: "5px", background: c.bar, flexShrink: 0 }}></div>
                         <div style={{ padding: "24px 28px", flex: 1 }}>
-                          <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "12px", flexWrap: "wrap" }}>
+                          <div className="polarization-header">
                             <span style={{ fontSize: "1.5rem", fontWeight: 700, color: c.bar, fontFamily: "var(--font-en)", lineHeight: 1 }}>
                               Level {group.range}
                             </span>
