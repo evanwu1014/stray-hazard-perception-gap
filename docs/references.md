@@ -24,6 +24,13 @@
 | 台灣石虎保育協會 (Leopard Cat Association of Taiwan)（中華民國）- 石虎保育數據 | https://www.twlcat.org/en/ | ✅ 可正常存取 | |
 | PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats | https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/ | ✅ 可正常存取 | |
 | AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats | https://topics.amcham.com.tw/2016/07/protecting-endangered-leopard-cats/ | ✅ 可正常存取 | |
+| 交通部數據/野保團體精算 - 台灣每年遊蕩犬社會成本高達 36.4億元 | https://www.cna.com.tw/news/ahel/202604290135.aspx | ✅ 可正常存取 | |
+| 台中市警局 - 近2年流浪狗車禍死傷破700人 | https://udn.com/news/story/7321/8914334 | ✅ 可正常存取 | |
+| 交通部公路局 - 撞擊動物A1/A2交通事故從2019年2204件升至2023年2634件 | https://ubrand.udn.com/ubrand/story/123659/8146183 | ✅ 可正常存取 | |
+| 內政部警政署 - 閃避動物自摔事故研議增設統計欄位 | https://www.hpb.npa.gov.tw/ch/app/data/doc?module=govinfo&detailNo=798101581361868800&type=s | ✅ 可正常存取 | |
+| WHO 世界衛生組織 - 99%人類狂犬病致死源自犬隻 | https://www.who.int/zh/news-room/fact-sheets/detail/rabies | ✅ 可正常存取 | |
+| 農業部 - 2024年全台遊蕩犬約14萬隻 | https://news.pts.org.tw/article/785686 | ✅ 可正常存取 | |
+| 報導者/公視 - 遊蕩犬攻擊穿山甲、石虎、山羌等野生動物案例頻發 | https://www.twreporter.org/a/6-years-after-no-kill-policy-adopted-conflict-with-wildlife | ✅ 可正常存取 | |
 
 ---
 
@@ -36,7 +43,10 @@
 | PMC/NIH (2023) - Progress towards dog-mediated rabies elimination in PR China (Asia) | https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/ | ✅ 可正常存取 | |
 | WHO - Strategic Framework for Elimination of Human Rabies Transmitted by Dogs | https://iris.who.int/bitstreams/18d3fd7b-0c76-4284-b714-0b7650d015ad/download | ✅ 可正常存取 | PDF 文件 |
 | United Against Rabies / WHO (2022) - Rabies prevention and control – lessons from Chongqing, China (Asia) | https://unitedagainstrabies.org/news/rabies-prevention-and-control-lessons-from-chongqing-china/ | ✅ 可正常存取 | |
-| Asian News Network (2023) - China's crackdown on stray dogs sparks public outcry (Asia) | https://asianews.network/chinas-crackdown-on-stray-dogs-sparks-public-outcry/ | ✅ 可正常存取 | |
+| 交通部數據/野保團體精算 - 台灣每年遊蕩犬社會成本高達 36.4億元 | https://www.cna.com.tw/news/ahel/202604290135.aspx | ✅ 可正常存取 | |
+| 台中市警局 - 近2年流浪狗車禍死傷破700人 | https://udn.com/news/story/7321/8914334 | ✅ 可正常存取 | |
+| 交通部公路局 - 撞擊動物A1/A2交通事故從2019年2204件升至2023年2634件 | https://ubrand.udn.com/ubrand/story/123659/8146183 | ✅ 可正常存取 | |
+| 內政部警政署 - 閃避動物自摔事故研議增設統計欄位 | https://www.hpb.npa.gov.tw/ch/app/data/doc?module=govinfo&detailNo=798101581361868800&type=s | ✅ 可正常存取 | |
 
 ---
 
@@ -135,7 +145,7 @@
 ## 總結
 
 ### 狀態統計
-- ✅ **可正常存取**: 48 個
+- ✅ **可正常存取**: 58 個
 - ⚠️ **被防機器人擋住**: 4 個（但網址存在，只是需要手動存取或訂閱）
 - ❌ **無 URL**: 0 個
 

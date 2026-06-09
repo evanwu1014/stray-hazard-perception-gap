@@ -4,7 +4,7 @@ export const hazardData = {
     desc: "犬貓個體免於飢餓且無繁衍能力。但維持其街頭生命仍會產生排泄物，並讓其持續基於本能掠食原生野生動物或追咬路人。",
     tooltipTitle: "開放空間 TNR/TNA 的限制",
     tooltipContent: "研究與數學模型顯示，流浪犬貓的年移除率必須持續達到 75% 至 85% 以上，族群總量才會開始下降，且絕育個體仍會持續獵殺野生動物或造成人車追咬衝突。",
-    citation: "Longcore et al. (2009) / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / Duke Space (2023) / JASV / 台灣石虎保育協會 / PMC/NIH (2023)",
+    citation: "Longcore et al. (2009) / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / 台灣石虎保育協會 / 農業部(2024) / WHO / 交通部公路局(2023) / 警政署",
     references: [
           {
                 title: "Longcore, T., Rich, C., & Sullivan, L. M. (2009). Critical assessment of claims regarding management of feral cats by trap–neuter–return. Conservation Biology, 23(4), 887–894.",
@@ -45,6 +45,34 @@ export const hazardData = {
           {
                 title: "AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats",
                 url: "https://topics.amcham.com.tw/2016/07/protecting-endangered-leopard-cats/"
+          },
+          {
+                title: "交通部數據/野保團體精算 - 台灣每年遊蕩犬社會成本高達 36.4億元",
+                url: "https://www.cna.com.tw/news/ahel/202604290135.aspx"
+          },
+          {
+                title: "台中市警局 - 近2年流浪狗車禍死傷破700人",
+                url: "https://udn.com/news/story/7321/8914334"
+          },
+          {
+                title: "交通部公路局 - 撞擊動物A1/A2交通事故從2019年2204件升至2023年2634件",
+                url: "https://ubrand.udn.com/ubrand/story/123659/8146183"
+          },
+          {
+                title: "內政部警政署 - 閃避動物自摔事故研議增設統計欄位",
+                url: "https://www.hpb.npa.gov.tw/ch/app/data/doc?module=govinfo&detailNo=798101581361868800&type=s"
+          },
+          {
+                title: "WHO 世界衛生組織 - 99%人類狂犬病致死源自犬隻",
+                url: "https://www.who.int/zh/news-room/fact-sheets/detail/rabies"
+          },
+          {
+                title: "農業部 - 2024年全台遊蕩犬約14萬隻",
+                url: "https://news.pts.org.tw/article/785686"
+          },
+          {
+                title: "報導者/公視 - 遊蕩犬攻擊穿山甲、石虎、山羌等野生動物案例頻發",
+                url: "https://www.twreporter.org/a/6-years-after-no-kill-policy-adopted-conflict-with-wildlife"
           }
     ],
     detailContent: {
@@ -66,15 +94,15 @@ export const hazardData = {
         ]
       },
       {
-        name: "都市社區公園",
+        name: "都市社區/重劃區邊緣",
         icon: "",
-        riskLevel: "moderate",
-        riskLabel: "中度風險",
-        desc: "固定餵食點造成犬貓群聚，排泄物污染兒童遊憩區，引發鄰里投訴與管理衝突。餵食習慣吸引未絕育個體持續加入族群。",
+        riskLevel: "high",
+        riskLabel: "高風險",
+        desc: "固定餵食點造成犬貓群聚。具領域性的成群浪犬會造成居民長期的「環境精神壓力」與交通安全威脅；兒童沙坑與公園則面臨排泄物帶來的公衛風險（如弓蟲病、跳蚤）。",
         actions: [
-          { role: "民眾", action: "若欲餵食，請在指定區域並主動配合捕捉新進個體送往絕育" },
-          { role: "里辦公處", action: "建立回報機制，協調動保機關定期清查餵食點" },
-          { role: "動保機關", action: "提供合法收養媒合管道，降低民眾「原地餵養」的動機" }
+          { role: "用路人", action: "行經餵食熱區需提高警覺，防範突發性動物衝出導致閃避自摔" },
+          { role: "里辦公處", action: "建立回報機制，協調環保局與動保機關定期清查餵食點與環境清理" },
+          { role: "動保機關", action: "優先移除具攻擊性或高密度聚集的遊蕩貓狗，落實社區安全防護" }
         ]
       },
       {
@@ -82,14 +110,14 @@ export const hazardData = {
         icon: "",
         riskLevel: "moderate",
         riskLabel: "中度風險",
-        desc: "校貓族群若未有效控管，會對接觸過多貓的學童造成過敏風險，以及對小型野鳥（麻雀、白頭翁）的棲地壓縮效應。",
+        desc: "校犬貓族群若未有效控管，會增加學童接觸人畜共通傳染病（如狂犬病潛在威脅、寄生蟲）的風險，以及對小型野鳥的棲地壓縮效應。",
         actions: [
           { role: "學校行政", action: "制定校園動物管理辦法，明確禁止外帶食物餵食" },
-          { role: "學生/家長", action: "主動反映校貓問題，透過正式管道尋求移送收容" },
-          { role: "教育單位", action: "納入生態保育課程，說明流浪動物對生物多樣性的衝擊" }
+          { role: "學生/家長", action: "主動反映校園遊蕩動物問題，透過正式管道尋求移送收容" },
+          { role: "教育單位", action: "納入生態與公衛課程，說明流浪動物對生物多樣性與社區安全的影響" }
         ]
       }
-    ],
+    ],
   relationship: {
     agents: [
       {
@@ -106,14 +134,14 @@ export const hazardData = {
       {
         icon: "🦁",
         category: "原生野生動物",
-        entities: "石虎幼獸、穿山甲、原生鳥類、爬蟲類",
-        desc: "承受遊蕩犬貓不間斷的本能獵捕與棲地壓迫。絕育不消除掠食行為，餵食延長壽命即延長獵殺時間。"
+        entities: "穿山甲、石虎、山羌等野生動物",
+        desc: "依據農業部 2024 年統計，全台遊蕩犬約 14 萬隻。龐大族群對底層生態造成極大壓力，攻擊原生動物案例頻發（如壽山山羌族群銳減 90%）。絕育不消除掠食本能，餵食延長壽命即延長獵殺時間。"
       },
       {
         icon: "👥",
         category: "社區居民與用路人",
-        entities: "一般行人、孩童、外送員",
-        desc: "面臨人犬追咬衝突、排泄物污染兒童遊憩區、交通安全風險。"
+        entities: "機車騎士、一般行人、孩童、外送員",
+        desc: "依據公路局統計，動物碰撞 A1/A2 交通事故逐年攀升（2023年達2,634件），單一縣市（如台中）近兩年流浪狗車禍死傷即破700人。警政署研究亦確認「閃避自摔」黑數存在，實際受害大於統計。民間團體精算連帶社會成本高達數十億元；且依據 WHO 資訊，高達 99% 的人類狂犬病致死病例源自犬隻，遊蕩族群是社區傳染病與鄰里衝突的隱患。"
       },
       {
         icon: "🐾",
