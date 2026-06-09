@@ -6,8 +6,8 @@ import { execSync } from 'child_process'
 // 獲取最新 Git Commit Hash 與 Commit 時間，若出錯則降級為當前系統時間
 let buildInfo = '';
 try {
-  const commitHash = execSync('git rev-parse --short HEAD').toString().trim();
-  const commitDateStr = execSync('git log -1 --format=%cd --date=iso').toString().trim();
+  const commitHash = execSync('git rev-parse --short HEAD 2>/dev/null').toString().trim();
+  const commitDateStr = execSync('git log -1 --format=%cd --date=iso 2>/dev/null').toString().trim();
   const commitDate = new Date(commitDateStr).toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
   buildInfo = `${commitDate} (${commitHash})`;
 } catch {

@@ -117,9 +117,11 @@ export default function Navbar() {
     }
   };
  
+  /*
   const currentLink = useMemo(() => {
     return links.find(link => link.id === activeSection);
   }, [links, activeSection]);
+  */
 
   // 3. 監聽 activeSection 變化，自動橫向滾動行動端導覽項目至中央對齊
   useEffect(() => {
@@ -137,7 +139,19 @@ export default function Navbar() {
   return (
     <header className={`site-header ${isScrolled ? "scrolled" : ""} ${isDetail ? "detail-mode" : ""} ${isMenuOpen ? "drawer-open" : ""}`}>
       <div className="header-inner">
-        <div className="header-logo" onClick={handleLogoClick}>
+        <div 
+          className="header-logo" 
+          onClick={handleLogoClick}
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              handleLogoClick();
+            }
+          }}
+          aria-label={lang === "zh_TW" ? "回首頁" : "回首页"}
+        >
           <span className="logo-abbr">P.C.H.I.</span>
           <span className="logo-full">純結果論危害指數</span>
         </div>

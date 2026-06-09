@@ -2,20 +2,8 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import Reveal from "./Reveal";
 import { useI18n } from "../context/I18nContext";
+import { getColorClass, getThreatClass } from "../utils/scoreHelpers";
 import './RankList.css';
-
-const getColorClass = (val) => {
-  if (val <= 3) return "c-lo";
-  if (val <= 6) return "c-md";
-  return "c-hi";
-};
-
-const getThreatClass = (total) => {
-  if (total <= 10) return "threat-1";
-  if (total <= 15) return "threat-2";
-  if (total <= 22) return "threat-3";
-  return "threat-4";
-};
 
 export default function RankList() {
   const { hazardData, uiLabels } = useI18n();

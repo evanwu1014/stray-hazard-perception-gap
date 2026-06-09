@@ -14,8 +14,8 @@ export default function SEOManager() {
     const isTW = lang === "zh_TW";
     const pathname = location.pathname;
 
-    let title = "";
-    let description = "";
+    let title;
+    let description;
 
     if (pathname === "/") {
       title = isTW
@@ -63,16 +63,35 @@ export default function SEOManager() {
     // 更新瀏覽器 Title
     document.title = title;
     
+    // 輔助函式：動態更新或建立 Meta 標籤
+    const setMetaTag = (selector, attrName, attrVal, contentVal) => {
+      let element = document.querySelector(selector);
+      if (element) {
+        element.setAttribute("content", contentVal);
+      } else {
+        element = document.createElement("meta");
+        element.setAttribute(attrName, attrVal);
+        element.setAttribute("content", contentVal);
+        document.head.appendChild(element);
+      }
+    };
+
     // 更新 Meta Description
-    let metaDesc = document.querySelector('meta[name="description"]');
-    if (metaDesc) {
-      metaDesc.setAttribute("content", description);
-    } else {
-      metaDesc = document.createElement("meta");
-      metaDesc.name = "description";
-      metaDesc.content = description;
-      document.head.appendChild(metaDesc);
-    }
+    setMetaTag('meta[name="description"]', 'name', 'description', description);
+
+    // 更新 Open Graph 標籤
+    setMetaTag('meta[property="og:title"]', 'property', 'og:title', title);
+    setMetaTag('meta[property="og:description"]', 'property', 'og:description', description);
+    
+    const canonicalUrl = `https://stray-hazard-perception-gap.web.app/#${location.pathname}`;
+    setMetaTag('meta[property="og:url"]', 'property', 'og:url', canonicalUrl);
+    
+    const ogLocale = isTW ? "zh_TW" : "zh_CN";
+    setMetaTag('meta[property="og:locale"]', 'property', 'og:locale', ogLocale);
+
+    // 更新 Twitter Card 標籤
+    setMetaTag('meta[name="twitter:title"]', 'name', 'twitter:title', title);
+    setMetaTag('meta[name="twitter:description"]', 'name', 'twitter:description', description);
   }, [location.pathname, lang, hazardData]);
 
   return null;

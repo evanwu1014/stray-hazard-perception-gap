@@ -35,6 +35,7 @@ export function ViewModeProvider({ children }) {
   );
 }
 
+// eslint-disable-next-line react-refresh/only-export-components
 export function useViewMode() {
   return useContext(ViewModeContext);
 }

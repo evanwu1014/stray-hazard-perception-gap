@@ -1,20 +1,8 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 import Reveal from "../components/Reveal";
+import { getThreatClass, getColorClass } from "../utils/scoreHelpers";
 import './BehaviorDetail.css';
-
-const getThreatClass = (total) => {
-  if (total <= 10) return { cls: "threat-1", label: "低度威脅" };
-  if (total <= 15) return { cls: "threat-2", label: "中度威脅" };
-  if (total <= 22) return { cls: "threat-3", label: "高度威脅" };
-  return { cls: "threat-4", label: "極端威脅" };
-};
-
-const getColorClass = (val) => {
-  if (val <= 3) return "c-lo";
-  if (val <= 6) return "c-md";
-  return "c-hi";
-};
 
 const getRiskConfig = (level) => {
   const configs = {
@@ -52,7 +40,15 @@ export default function BehaviorDetail() {
     );
   }
 
-  const threat = getThreatClass(item.objTotal);
+  const threatClass = getThreatClass(item.objTotal);
+  const threat = {
+    cls: threatClass,
+    label:
+      threatClass === "threat-1" ? uiLabels.threatLegend.low :
+      threatClass === "threat-2" ? uiLabels.threatLegend.medium :
+      threatClass === "threat-3" ? uiLabels.threatLegend.high :
+      uiLabels.threatLegend.extreme
+  };
   const perception = (item.condemn + item.outcry) / 2;
   const objNorm = +(item.objTotal / 3).toFixed(1);
   const deviation = +(perception - objNorm).toFixed(1);

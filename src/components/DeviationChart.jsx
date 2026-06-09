@@ -1,12 +1,6 @@
 import Reveal from "./Reveal";
 import { useI18n } from "../context/I18nContext";
-
-const getThreatClass = (total) => {
-  if (total <= 10) return "threat-1";
-  if (total <= 15) return "threat-2";
-  if (total <= 22) return "threat-3";
-  return "threat-4";
-};
+import { getThreatClass } from "../utils/scoreHelpers";
 
 export default function DeviationChart() {
   const { getProcessedData, uiLabels } = useI18n();
@@ -52,7 +46,11 @@ export default function DeviationChart() {
                 <div className={`dev-score-cell harm ${threatClass}`}>{item.objTotal}</div>
                 
                 {/* 雙端共用長條圖 */}
-                <div className="dev-bar-wrap">
+                <div 
+                  className="dev-bar-wrap" 
+                  role="img" 
+                  aria-label={`${item.name}：${isPos ? uiLabels.deviation.overreaction.split(" — ")[0] : uiLabels.deviation.blindSpot.split(" — ")[0]}，${uiLabels.deviation.deviation}：${isPos ? "+" : ""}${item.deviation}`}
+                >
                   <div className="dev-bar-center"></div>
                   <div 
                     className={`dev-bar ${isPos ? "over" : "blind"}`} 
