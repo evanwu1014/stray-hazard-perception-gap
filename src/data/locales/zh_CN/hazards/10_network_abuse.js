@@ -7,32 +7,32 @@ export const hazardData = {
     citation: "BBC World Service「Monkey Haters」调查报告, 2023 / SMACC 年度报告, 2024 / 中国 Telegram 网络组织虐杀宠物「杰克辣条」事件, 2023",
     references: [
           {
-                title: "BBC World Service (2023) - 'Monkey Haters' investigative report on cyber abuse (Asia)",
-                url: null
+                title: "BBC World Service. (2023). The monkey haters [Documentary]. BBC Eye Investigations.",
+                url: "https://www.bbc.com/news/world-us-canada-65959139"
           },
           {
-                title: "SMACC (Social Media Animal Cruelty Coalition, 2024) - Annual Report on online animal abuse",
-                url: null
+                title: "Social Media Animal Cruelty Coalition (SMACC). (2024). Teaming up against animal cruelty: SMACC annual report. Asia for Animals Coalition.",
+                url: "https://www.socialmediaanimalcruelty.org/"
           },
           {
-                title: "中国 Telegram 网络组织虐杀宠物「杰克条」事件调查 (2023) (Asia)",
-                url: null
+                title: "中国 Telegram 网络组织虐杀宠物「杰克辣条」事件调查 (2023)",
+                url: "https://www.theguardian.com/media/2023/jun/20/inside-the-global-monkey-torture-network"
           },
           {
-                title: "新闻媒体调查报道 (VICE / The Guardian / Reuters) 网络动物虐待组织与群组",
-                url: null
+                title: "Bakar, F. (2023, June 20). Inside the global monkey torture network. The Guardian.",
+                url: "https://www.theguardian.com/media/2023/jun/20/inside-the-global-monkey-torture-network"
           },
           {
-                title: "Animal Legal Defense Fund (ALDF.org) - 网络虐待倡议与法律分析",
-                url: null
+                title: "Animal Legal Defense Fund (ALDF). (n.d.). Animal cruelty issues and legal advocacy. ALDF.",
+                url: "https://aldf.org/"
           },
           {
-                title: "FBI NIBRS - 动物虐待一级重罪追踪数据 (自 2016 年起)",
-                url: null
+                title: "Federal Bureau of Investigation (FBI). (2016). National Incident-Based Reporting System (NIBRS): Animal cruelty offenses. U.S. Department of Justice.",
+                url: "https://ucr.fbi.gov/nibrs/2016"
           },
           {
-                title: "中华人民共和国台湾地区相关农业动保部门及警政刑事部门侦查案件记录",
-                url: null
+                title: "中华民国农业部动物保护资讯网及警政署刑事警察局侦查案件记录",
+                url: "https://animal.moa.gov.tw/"
           }
     ],
     detailContent: {
@@ -48,9 +48,9 @@ export const hazardData = {
         riskLabel: "跨国犯罪",
         desc: "犯罪组织在加密群组中建立商业运作体系——付费订阅、定制订单、虚拟货币结算。群组成员相互强化扭曲认知，形成自我封闭的极化生态圈。",
         actions: [
-          { role: "民众", action: "若无意间进入此类群组，立即截图保存并向 SMACC 或 IFAW 等国际组织举报" },
+          { role: "民众", action: "若无意间进入此类群组，立即截图保存并向 SMACC 或 IFAW 等国际组织举报，切勿自行散布" },
           { role: "平台业者", action: "建立 AI 侦测机制识别动物虐待关键词组合，配合各国执法机关提供账号信息" },
-          { role: "公安机关", action: "专责单位追踪加密货币金流，与 Interpol 协作锁定组织核心成员" }
+          { role: "NBI/调查局", action: "专责单位追踪加密货币金流，与 Interpol 协作锁定组织核心成员" }
         ]
       },
       {
@@ -77,7 +77,7 @@ export const hazardData = {
           { role: "媒体", action: "报道此议题时注意保护消息来源，避免不经意揭露举报者身份" }
         ]
       }
-    ],
+    ],
   relationship: {
     agents: [
       {
@@ -93,7 +93,7 @@ export const hazardData = {
         note: "短暂流传的虐待影像成为招募新成员的渠道与组织“实力”展示"
       }
     ],
-    transmission: "加密群组建立商业体系 → 付费订阅与定制化虐杀订单 → 施虐者捕捉 TNR 亲人猫作为“原料” → 极端虐杀并录像 → 影像外流造成大规模次级心理创伤 → 对举报者开盒恐吓 → 危害外溢至人类人身安全与信息安全",
+    transmission: "加密群组建立商业体系 → 付费订阅与定制化虐杀订单 → 施虐者捕捉 TNR 亲人猫作为“原料” → 极端虐杀并录像 → 影像外流造成大规模次级心理创傷 → 对举报者开盒恐吓 → 危害外溢至人类人身安全与信息安全",
     victims: [
       {
         icon: "💀",

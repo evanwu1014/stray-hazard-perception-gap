@@ -35,15 +35,15 @@ export const hazardData = {
                 url: "https://jsmcah.org/index.php/jasv/article/view/125/287"
           },
           {
-                title: "台湾石虎保育协会 (Leopard Cat Association of Taiwan) - 豹猫保育数据 (台湾地区)",
+                title: "台湾石虎保育协会 (Leopard Cat Association of Taiwan) - 石虎保育数据（中华民国）",
                 url: "https://www.twlcat.org/en/"
           },
           {
-                title: "PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats (Taiwan)",
+                title: "PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats",
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/"
           },
           {
-                title: "AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats (Taiwan)",
+                title: "AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats",
                 url: "https://topics.amcham.com.tw/2016/07/protecting-endangered-leopard-cats/"
           },
           {
@@ -86,7 +86,7 @@ export const hazardData = {
         icon: "",
         riskLevel: "high",
         riskLabel: "高风险",
-        desc: "TNR 个体栖息于保育区边缘，持续以豹猫幼兽、穿山甲、原生鸟类为猎物。绝育不影响其狩猎本能，喂食延长其寿命即延长猎杀时间。",
+        desc: "TNR 个体栖息于保育区边缘，持续以石虎幼兽、穿山甲、原生鸟类为猎物。绝育不影响其狩猎本能，喂食延长其寿命即延长猎杀时间。",
         actions: [
           { role: "民众", action: "停止在保育区缓冲区喂食，支持合法移除计划" },
           { role: "地方政府", action: "划定禁止喂食范围，设置明确告示并执行处罚" },
@@ -126,7 +126,7 @@ export const hazardData = {
       },
       {
         role: "无完整配套之 TNR 执行者",
-        note: "绝育个体但仍回置至街头环境"
+        note: "绝育个体 but 仍回置至街头环境"
       }
     ],
     transmission: "喂食维持个体街头存活 → 绝育不影响狩猎本能 → 持续对原生动物施加掠食压力 → 喂食点吸引未绝育个体聚集 → 族群密度失控 → 排泄物与人犬冲突外溢",
@@ -153,7 +153,7 @@ export const hazardData = {
     beneficiaries: [
       {
         icon: "🐾",
-        category: "被喂食的 TNR 犬猫个体",
+        category: "被喂食 the TNR 犬猫个体",
         entities: "接受定期喂食的绝育犬猫",
         desc: "个体免于饥饿带来的即时性生存痛苦，生活质量在个体层面获得改善。",
         caveat: "此收益仅作用于「个体福利」维度。在「生态系统」与「种群动态」维度，喂食维持了掠食压力并吸引未绝育个体聚集，净效应在生态面为负。"
