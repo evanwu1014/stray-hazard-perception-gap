@@ -1,9 +1,9 @@
 export const hazardData = {
     id: 3,
-    name: "購買純種貓狗",
-    desc: "買方雖妥善照顧，但資金助長了繁殖產業。讓少數個體終身承受輕至中度的人擇基因缺陷（如摺耳、短吻犬呼吸問題），並佔據收容資源。",
-    tooltipTitle: "人擇基因缺陷的痛苦",
-    tooltipContent: "純種寵物（如摺耳貓、短吻犬）在選育特徵的過程中，常固化了嚴重的遺傳疾病，如骨骼發育不良、短吻犬呼吸道阻塞綜合症（BOAS）。",
+    name: "購買一般純種犬貓",
+    desc: "買方雖妥善照顧，但資金助長了繁殖產業。讓少數個體終身承受潛在的遺傳疾病風險（如大型犬髖關節發育不良、特定品種心臟病），並佔據收容資源。",
+    tooltipTitle: "潛在遺傳疾病的風險",
+    tooltipContent: "純種寵物在追求純系選育的過程中，常因基因庫封閉而推升潛在遺傳疾病的發生率（如骨骼發育不良、退化性疾病）。此為隱性風險，有別於直接追求殘疾外觀的極端畸變繁殖。",
     citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",
     references: [
           {
@@ -65,7 +65,7 @@ export const hazardData = {
           { role: "中央政府", action: "研擬純種動物棄養的溯源追責機制，強化繁殖業者的飼主責任連結" }
         ]
       }
-    ],
+    ],
   relationship: {
     agents: [
       {
@@ -81,9 +81,9 @@ export const hazardData = {
     victims: [
       {
         icon: "🧬",
-        category: "帶遺傳缺陷之子代個體",
-        entities: "摺耳貓、短吻犬等純種子代",
-        desc: "終身承受輕至中度的人擇基因缺陷——骨骼發育不良、短吻呼吸問題（BOAS）、心臟病、關節退化等。"
+        category: "帶遺傳缺陷風險之子代",
+        entities: "一般純種犬貓子代",
+        desc: "相較於米克斯（混種），純系選育固化了潛在的遺傳疾病風險——如大型犬髖關節發育不良（CHD）、退化性關節炎、遺傳性心臟病等。"
       },
       {
         icon: "🤰",

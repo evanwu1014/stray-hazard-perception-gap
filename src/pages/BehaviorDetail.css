@@ -418,6 +418,32 @@
   line-height: 1.8;
 }
 
+.bdetail-comparison-caveat {
+  margin-top: 16px;
+  padding: 12px 16px;
+  background: rgba(239, 68, 68, 0.04);
+  border: 1px dashed rgba(239, 68, 68, 0.25);
+  border-left: 4px solid var(--red, #ef4444);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.bdetail-comparison-caveat-title {
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--red, #ef4444);
+  letter-spacing: 0.5px;
+  font-family: var(--font-cn);
+}
+
+.bdetail-comparison-caveat-text {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  line-height: 1.6;
+}
+
 /* ─── Relationship Chain ─── */
 .bdetail-relations-section {
   padding: 0 0 60px;

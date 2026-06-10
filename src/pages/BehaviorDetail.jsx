@@ -145,6 +145,12 @@ export default function BehaviorDetail() {
               <Reveal className="bdetail-content-card">
                 <h3>{labels.fullDesc}</h3>
                 <p>{item.detailContent.fullDesc}</p>
+                {item.detailContent.comparisonCaveat && (
+                  <div className="bdetail-comparison-caveat">
+                    <span className="bdetail-comparison-caveat-title">【{labels.comparisonCaveatLabel}對照】</span>
+                    <span className="bdetail-comparison-caveat-text">{item.detailContent.comparisonCaveat}</span>
+                  </div>
+                )}
               </Reveal>
               <Reveal className="bdetail-content-card" delay={100}>
                 <h3>{labels.causeAnalysis}</h3>

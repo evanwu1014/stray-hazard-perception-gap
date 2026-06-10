@@ -38,6 +38,12 @@ export default function RankList() {
                   <div className="rank-body">
                     <h3>{item.name}</h3>
                     <p>{item.desc}</p>
+                    {item.detailContent?.comparisonCaveat && (
+                      <div className="rank-item-caveat">
+                        <span className="rank-item-caveat-badge">{uiLabels.comparisonCaveatLabel}</span>
+                        <span className="rank-item-caveat-text">{item.detailContent.comparisonCaveat}</span>
+                      </div>
+                    )}
 
                     {/* Action Row */}
                     <div className="rank-actions">

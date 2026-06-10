@@ -68,6 +68,33 @@
   line-height: 1.65;
 }
 
+.rank-item-caveat {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+  margin-top: 6px;
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.rank-item-caveat-badge {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: var(--red, #ef4444);
+  border: 1px solid rgba(239, 68, 68, 0.35);
+  background: rgba(239, 68, 68, 0.06);
+  padding: 0px 4px;
+  border-radius: 3px;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.rank-item-caveat-text {
+  color: var(--text-dim);
+  opacity: 0.85;
+}
+
 .rank-scores {
   display: flex;
   flex-direction: row;

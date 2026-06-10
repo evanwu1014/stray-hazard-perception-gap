@@ -1,9 +1,9 @@
 export const hazardData = {
     id: 3,
-    name: "购买纯种猫狗",
-    desc: "买方虽妥善照顾，但资金助长了繁殖产业。让少数个体终身承受轻至中度的人择基因缺陷（如折耳、短吻犬呼吸问题），并占据收容资源。",
-    tooltipTitle: "人择基因缺陷的痛苦",
-    tooltipContent: "纯种宠物（如折耳猫、短吻犬）在选育特征的过程中，常固化了严重的遗传疾病，如骨骼发育不良、短吻犬呼吸道阻塞综合征（BOAS）。",
+    name: "购买一般纯种犬猫",
+    desc: "买方虽妥善照顾，但资金助长了繁殖产业。让少数个体终生承受潜在的遗传疾病风险（如大型犬髋关节发育不良、特定品种心脏病），并占据收容资源。",
+    tooltipTitle: "潜在遗传疾病的风险",
+    tooltipContent: "纯种宠物在追求纯系选育的过程中，常因基因库封闭而推升潜在遗传疾病的发生率（如骨骼发育不良、退化性疾病）。此为隐性风险，有别于直接追求残疾外观的极端畸变繁殖。",
     citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",
     references: [
           {
@@ -65,7 +65,7 @@ export const hazardData = {
           { role: "中央政府", action: "研拟纯种动物弃养的溯源追责机制，强化繁殖业者的饲主责任连结" }
         ]
       }
-    ],
+    ],
   relationship: {
     agents: [
       {
@@ -81,9 +81,9 @@ export const hazardData = {
     victims: [
       {
         icon: "🧬",
-        category: "带遗传缺陷之子代个体",
-        entities: "折耳猫、短吻犬等纯种子代",
-        desc: "终生承受轻至中度的人择基因缺陷——骨骼发育不良、短吻呼吸问题（BOAS）、心脏病、关节退化等。"
+        category: "带遗传缺陷风险之子代",
+        entities: "一般纯种犬猫子代",
+        desc: "相较于米克斯（混种），纯系选育固化了潜在的遗传疾病风险——如大型犬髋关节发育不良（CHD）、退化性关节炎、遗传性心脏病等。"
       },
       {
         icon: "🤰",

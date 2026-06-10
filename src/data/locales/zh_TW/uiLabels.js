@@ -10,6 +10,7 @@ export const UI_LABELS = {
   learnMore: "深入了解",
   scroll: "SCROLL",
   citationLabel: "參考文獻",
+  comparisonCaveatLabel: "區分",
   viewScenario: "查看完整情境分析 →",
   
   

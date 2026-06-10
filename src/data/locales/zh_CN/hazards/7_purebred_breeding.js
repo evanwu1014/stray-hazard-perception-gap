@@ -1,6 +1,6 @@
 export const hazardData = {
     id: 7,
-    name: "养殖纯种猫狗贩卖",
+    name: "养殖一般纯种犬猫贩卖",
     desc: "将基因缺陷与母体生育耗损「批发化」。虽然不会刻意施虐，但量产数以百计带有遗传病风险的生命，同时对流浪动物收容系统带来结构性的排挤压力。",
     tooltipTitle: "母体损耗与代际折磨的工业化",
     tooltipContent: "商业繁殖场为追求利润，母体常处于密闭笼具、反复生育直至生理机能崩溃，其痛苦在规模与时间上被工业化放大。",
@@ -65,7 +65,7 @@ export const hazardData = {
           { role: "动保NGO", action: "强化收容所动物的媒合营销，缩小与纯种动物在「需求能见度」上的差距" }
         ]
       }
-    ],
+    ],
   relationship: {
     agents: [
       {
