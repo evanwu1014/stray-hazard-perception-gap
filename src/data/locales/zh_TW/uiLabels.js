@@ -110,6 +110,8 @@ export const UI_LABELS = {
     transmissionLabel: "危害傳導路徑",
     victimLabel: "衝擊承受者",
     beneficiaryLabel: "結果論受益者",
-    beneficiaryCaveatPrefix: "⚠️ 範圍限定："
+    beneficiaryCaveatPrefix: "⚠️ 範圍限定：",
+    exploreOthers: "探索其他危害行為",
+    exploreOthersDesc: "左右滑動預覽 / 依客觀危害排名"
   }
 };

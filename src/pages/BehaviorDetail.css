@@ -5,6 +5,15 @@
   min-height: 100vh;
 }
 
+.bdetail-header-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 32px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
 /* Back Button */
 .bdetail-back {
   display: inline-flex;
@@ -18,7 +27,53 @@
   font-family: var(--font-cn);
   cursor: pointer;
   transition: color 0.2s, gap 0.2s;
-  margin-bottom: 32px;
+}
+
+/* Header Quick Navigation */
+.bdetail-quick-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  border-radius: 20px;
+  padding: 4px;
+  backdrop-filter: blur(12px);
+}
+
+.bdetail-quick-nav-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: var(--text-dim);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: all 0.2s;
+}
+
+.bdetail-quick-nav-btn:hover:not(.disabled) {
+  color: #ffffff;
+  background: rgba(255, 255, 255, 0.06);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.1);
+}
+
+.bdetail-quick-nav-btn.disabled {
+  color: var(--text-faint);
+  opacity: 0.3;
+  cursor: not-allowed;
+}
+
+.bdetail-quick-nav-info {
+  font-family: var(--font-cn);
+  font-size: 0.8rem;
+  color: var(--text-dim);
+  padding: 0 12px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .bdetail-back:hover {
@@ -1251,81 +1306,165 @@
   line-height: 1.5;
 }
 
-/* ─── Between-item Navigation ─── */
-.bdetail-nav {
+/* ─── Navigation Sliding Carousel ─── */
+.bdetail-carousel-section {
+  padding: 40px 0 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.bdetail-carousel-header {
+  margin-bottom: 24px;
+}
+
+.bdetail-carousel-header h3 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 6px;
+  letter-spacing: 0.5px;
+}
+
+.bdetail-carousel-header p {
+  font-size: 0.8rem;
+  color: var(--text-faint);
+}
+
+.bdetail-carousel-list {
   display: flex;
-  justify-content: space-between;
+  overflow-x: auto;
   gap: 16px;
-  padding: 24px 0 80px;
-  flex-wrap: wrap;
+  padding: 12px 4px 24px;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
-.bdetail-nav-btn {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 16px 24px;
-  background: var(--surface);
-  border: 1px solid var(--surface-border);
-  border-radius: var(--radius);
-  text-decoration: none;
-  transition: all 0.3s;
-  flex: 1;
-  min-width: 200px;
-  max-width: 360px;
+/* Custom sleek scrollbar for carousel */
+.bdetail-carousel-list::-webkit-scrollbar {
+  height: 5px;
 }
 
-.bdetail-nav-btn:hover {
-  border-color: rgba(167, 139, 250, 0.3);
-  background: rgba(22, 27, 38, 0.9);
-  transform: translateY(-2px);
-  box-shadow: var(--shadow);
+.bdetail-carousel-list::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: 3px;
 }
 
-.bdetail-nav-btn.next {
-  justify-content: flex-end;
-  margin-left: auto;
+.bdetail-carousel-list::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 3px;
+  transition: background 0.3s;
 }
 
-.bdetail-nav-arrow {
-  font-family: var(--font-en);
-  font-size: 1.2rem;
-  color: var(--purple);
-  flex-shrink: 0;
-  transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1.4);
+.bdetail-carousel-list::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.16);
 }
 
-.bdetail-nav-btn.prev:hover .bdetail-nav-arrow {
-  transform: translateX(-6px);
-}
-
-.bdetail-nav-btn.next:hover .bdetail-nav-arrow {
-  transform: translateX(6px);
-}
-
-.bdetail-nav-text {
+.bdetail-carousel-card {
+  flex: 0 0 160px; /* fixed width cards */
   display: flex;
   flex-direction: column;
-  gap: 2px;
+  justify-content: space-between;
+  padding: 16px;
+  height: 110px;
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
 }
 
-.bdetail-nav-btn.next .bdetail-nav-text {
-  text-align: right;
+.bdetail-carousel-card:hover {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
-.bdetail-nav-hint {
-  font-size: 0.68rem;
-  color: var(--text-faint);
-  text-transform: uppercase;
-  letter-spacing: 1px;
+.bdetail-cc-rank {
   font-family: var(--font-en);
+  font-size: 0.72rem;
+  color: var(--text-faint);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
-.bdetail-nav-name {
-  font-size: 0.9rem;
+.bdetail-cc-name {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  transition: color 0.2s;
+}
+
+.bdetail-carousel-card:hover .bdetail-cc-name {
+  color: #ffffff;
+}
+
+.bdetail-cc-meta {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.bdetail-cc-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.bdetail-cc-score {
+  font-family: var(--font-en);
+  font-size: 0.76rem;
+  color: var(--text-faint);
   font-weight: 600;
-  color: var(--text);
-  line-height: 1.3;
+}
+
+/* Threat Class dot coloring */
+.bdetail-carousel-card.threat-1 .bdetail-cc-dot { background: var(--t-1); box-shadow: 0 0 6px var(--t-1); }
+.bdetail-carousel-card.threat-2 .bdetail-cc-dot { background: var(--t-2); box-shadow: 0 0 6px var(--t-2); }
+.bdetail-carousel-card.threat-3 .bdetail-cc-dot { background: var(--t-3); box-shadow: 0 0 6px var(--t-3); }
+.bdetail-carousel-card.threat-4 .bdetail-cc-dot { background: var(--t-4); box-shadow: 0 0 6px var(--t-4); }
+
+/* Active Focused Card State */
+.bdetail-carousel-card.active {
+  background: rgba(255, 255, 255, 0.05);
+  transform: scale(1.03);
+}
+
+.bdetail-carousel-card.active .bdetail-cc-name {
+  color: #ffffff;
+}
+
+.bdetail-carousel-card.active .bdetail-cc-rank {
+  color: var(--text-dim);
+}
+
+.bdetail-carousel-card.active .bdetail-cc-score {
+  color: var(--text-dim);
+}
+
+/* Neon glow borders for active card according to threat levels */
+.bdetail-carousel-card.active.threat-1 {
+  border-color: rgba(94, 168, 255, 0.4);
+  box-shadow: 0 0 12px rgba(94, 168, 255, 0.25);
+}
+.bdetail-carousel-card.active.threat-2 {
+  border-color: rgba(255, 200, 69, 0.4);
+  box-shadow: 0 0 12px rgba(255, 200, 69, 0.25);
+}
+.bdetail-carousel-card.active.threat-3 {
+  border-color: rgba(255, 138, 80, 0.4);
+  box-shadow: 0 0 12px rgba(255, 138, 80, 0.25);
+}
+.bdetail-carousel-card.active.threat-4 {
+  border-color: rgba(255, 45, 85, 0.45);
+  box-shadow: 0 0 12px rgba(255, 45, 85, 0.3);
 }
 
 /* ─── Abuse Sociology Alignment ─── */

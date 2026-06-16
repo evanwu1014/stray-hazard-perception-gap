@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 import Reveal from "../components/Reveal";
@@ -30,6 +30,47 @@ export default function BehaviorDetail() {
   const item = sortedData.find(i => i.id === parseInt(id)) || supplemental;
   const rank = sortedData.findIndex(i => i.id === parseInt(id)) + 1;
   const isSupplemental = !!supplemental;
+
+  const carouselRef = useRef(null);
+  const activeCardRef = useRef(null);
+
+  // Auto-scroll the active card to the center inside the horizontal carousel (locally, without scrolling the main window)
+  useEffect(() => {
+    if (isSupplemental) return;
+    const timer = setTimeout(() => {
+      const listEl = carouselRef.current;
+      const cardEl = activeCardRef.current;
+      if (listEl && cardEl) {
+        const listWidth = listEl.clientWidth;
+        const cardWidth = cardEl.clientWidth;
+        const cardOffsetLeft = cardEl.offsetLeft;
+        listEl.scrollTo({
+          left: cardOffsetLeft - (listWidth / 2) + (cardWidth / 2),
+          behavior: "smooth"
+        });
+      }
+    }, 150);
+    return () => clearTimeout(timer);
+  }, [id, isSupplemental]);
+
+  // Translate vertical mouse wheel scrolling to horizontal scroll for desktop ease of use
+  useEffect(() => {
+    if (isSupplemental) return;
+    const listEl = carouselRef.current;
+    if (!listEl) return;
+
+    const handleWheel = (e) => {
+      if (e.deltaY !== 0) {
+        e.preventDefault();
+        listEl.scrollLeft += e.deltaY * 0.8; // 0.8 is a speed dampening factor for smoother scrolling
+      }
+    };
+
+    listEl.addEventListener("wheel", handleWheel, { passive: false });
+    return () => {
+      listEl.removeEventListener("wheel", handleWheel);
+    };
+  }, [isSupplemental]);
 
   if (!item) {
     return (
@@ -66,16 +107,42 @@ export default function BehaviorDetail() {
 
   return (
     <div className="bdetail-page">
-      {/* ─── Back Button ─── */}
+      {/* ─── Header Navigation ─── */}
       <div className="container">
-        <button
-          className="bdetail-back"
-          onClick={() => navigate("/", { state: { scrollTo: `behavior-${item.id}` } })}
-          aria-label="返回列表"
-        >
-          <span className="bdetail-back-arrow">←</span>
-          {labels.backToList}
-        </button>
+        <div className="bdetail-header-wrap">
+          <button
+            className="bdetail-back"
+            onClick={() => navigate("/", { state: { scrollTo: `behavior-${item.id}` } })}
+            aria-label="返回列表"
+          >
+            <span className="bdetail-back-arrow">←</span>
+            {labels.backToList}
+          </button>
+
+          {!isSupplemental && (
+            <div className="bdetail-quick-nav">
+              <Link
+                to={prevItem ? `/behavior/${prevItem.id}` : '#'}
+                className={`bdetail-quick-nav-btn prev ${!prevItem ? 'disabled' : ''}`}
+                title={prevItem ? `危害較低：${prevItem.name}` : ''}
+                onClick={(e) => !prevItem && e.preventDefault()}
+              >
+                ←
+              </Link>
+              <span className="bdetail-quick-nav-info">
+                綜合排名 #{rank} / {allSorted.length}
+              </span>
+              <Link
+                to={nextItem ? `/behavior/${nextItem.id}` : '#'}
+                className={`bdetail-quick-nav-btn next ${!nextItem ? 'disabled' : ''}`}
+                title={nextItem ? `危害較高：${nextItem.name}` : ''}
+                onClick={(e) => !nextItem && e.preventDefault()}
+              >
+                →
+              </Link>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* ─── Hero Section ─── */}
@@ -427,29 +494,45 @@ export default function BehaviorDetail() {
         </div>
       </section>
 
-      {/* ─── Navigation between items ─── */}
-      <div className="container">
-        <div className="bdetail-nav">
-          {prevItem ? (
-            <Link to={`/behavior/${prevItem.id}`} className="bdetail-nav-btn prev">
-              <span className="bdetail-nav-arrow">←</span>
-              <span className="bdetail-nav-text">
-                <span className="bdetail-nav-hint">危害較低</span>
-                <span className="bdetail-nav-name">{prevItem.name}</span>
-              </span>
-            </Link>
-          ) : <div />}
-          {nextItem ? (
-            <Link to={`/behavior/${nextItem.id}`} className="bdetail-nav-btn next">
-              <span className="bdetail-nav-text">
-                <span className="bdetail-nav-hint">危害較高</span>
-                <span className="bdetail-nav-name">{nextItem.name}</span>
-              </span>
-              <span className="bdetail-nav-arrow">→</span>
-            </Link>
-          ) : <div />}
+      {/* ─── Navigation Sliding Carousel ─── */}
+      {!isSupplemental ? (
+        <section className="bdetail-carousel-section">
+          <div className="container">
+            <div className="bdetail-carousel-header">
+              <h3>{labels.exploreOthers || "探索其他危害行為"}</h3>
+              <p>{labels.exploreOthersDesc || "左右滑動預覽 / 依客觀危害排名"}</p>
+            </div>
+            <div className="bdetail-carousel-list" ref={carouselRef}>
+              {allSorted.map((behave, index) => {
+                const isActive = behave.id === item.id;
+                const behaveRank = index + 1;
+                const behaveThreatClass = getThreatClass(behave.objTotal);
+                return (
+                  <Link
+                    key={behave.id}
+                    to={`/behavior/${behave.id}`}
+                    ref={isActive ? activeCardRef : null}
+                    className={`bdetail-carousel-card ${isActive ? 'active' : ''} ${behaveThreatClass}`}
+                  >
+                    <span className="bdetail-cc-rank">#{behaveRank}</span>
+                    <span className="bdetail-cc-name">{behave.name}</span>
+                    <div className="bdetail-cc-meta">
+                      <span className="bdetail-cc-dot" />
+                      <span className="bdetail-cc-score">{behave.objTotal} 分</span>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        </section>
+      ) : (
+        <div className="container" style={{ textAlign: "center", padding: "40px 0 60px" }}>
+          <Link to="/" className="btn-scenario" style={{ display: "inline-flex" }}>
+            {labels.backToList}
+          </Link>
         </div>
-      </div>
+      )}
     </div>
   );
 }
