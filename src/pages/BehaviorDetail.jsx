@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 import Reveal from "../components/Reveal";
@@ -457,7 +457,18 @@ export default function BehaviorDetail() {
 
 /* ─── TotalScoreGauge Sub-component ─── */
 function TotalScoreGauge({ label, value, max, colorClass, threatLabel }) {
-  const pct = (value / max) * 100;
+  const [animatedValue, setAnimatedValue] = useState(0);
+
+  useEffect(() => {
+    // Reset to 0, then transition to final value on mount or change
+    setAnimatedValue(0);
+    const timer = setTimeout(() => {
+      setAnimatedValue(value);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [value]);
+
+  const pct = (animatedValue / max) * 100;
   return (
     <div className={`bdetail-total-gauge-wrap ${colorClass}`}>
       <span className="bdetail-total-gauge-label">{label}</span>
@@ -505,7 +516,18 @@ function TotalScoreGauge({ label, value, max, colorClass, threatLabel }) {
 
 /* ─── LinearScoreRow Sub-component ─── */
 function LinearScoreRow({ icon, label, value, max, colorClass }) {
-  const pct = (value / max) * 100;
+  const [animatedValue, setAnimatedValue] = useState(0);
+
+  useEffect(() => {
+    // Reset to 0, then transition to final value on mount or change
+    setAnimatedValue(0);
+    const timer = setTimeout(() => {
+      setAnimatedValue(value);
+    }, 50);
+    return () => clearTimeout(timer);
+  }, [value]);
+
+  const pct = (animatedValue / max) * 100;
   return (
     <div className="bdetail-linear-row">
       <div className="bdetail-linear-header">
