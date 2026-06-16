@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 import Reveal from "../components/Reveal";
@@ -15,6 +16,7 @@ const getRiskConfig = (level) => {
 };
 
 export default function BehaviorDetail() {
+  const [isTotalHovered, setIsTotalHovered] = useState(false);
   const { id } = useParams();
   const navigate = useNavigate();
   const { hazardData, uiLabels } = useI18n();
@@ -111,18 +113,21 @@ export default function BehaviorDetail() {
                     value={item.subScores.pain}
                     max={10}
                     colorClass={getColorClass(item.subScores.pain)}
+                    isLinkedHover={isTotalHovered}
                   />
                   <ScoreGauge
                     label={uiLabels.harmScale}
                     value={item.subScores.scale}
                     max={10}
                     colorClass={getColorClass(item.subScores.scale)}
+                    isLinkedHover={isTotalHovered}
                   />
                   <ScoreGauge
                     label={uiLabels.externalCostFull}
                     value={item.subScores.external}
                     max={10}
                     colorClass={getColorClass(item.subScores.external)}
+                    isLinkedHover={isTotalHovered}
                   />
                   <ScoreGauge
                     label={uiLabels.totalScore}
@@ -130,6 +135,9 @@ export default function BehaviorDetail() {
                     max={30}
                     colorClass={threat.cls}
                     size="large"
+                    formulaText={`${uiLabels.painDepthFull} (${item.subScores.pain}) + ${uiLabels.harmScale} (${item.subScores.scale}) + ${uiLabels.externalCostFull} (${item.subScores.external}) = ${uiLabels.totalScore} (${item.objTotal})`}
+                    onMouseEnter={() => setIsTotalHovered(true)}
+                    onMouseLeave={() => setIsTotalHovered(false)}
                   />
                 </div>
               </div>
@@ -448,93 +456,118 @@ export default function BehaviorDetail() {
 
 
 /* ─── ScoreGauge Sub-component ─── */
-function ScoreGauge({ label, value, max, colorClass, size = "normal" }) {
+function ScoreGauge({ label, value, max, colorClass, size = "normal", isLinkedHover = false, formulaText = "", onMouseEnter, onMouseLeave }) {
   const pct = (value / max) * 100;
   const isLarge = size === "large";
+
+  const renderRing = () => (
+    <div className={`bdetail-gauge-ring-wrap ${isLarge ? "large" : ""}`}>
+      <svg className={`bdetail-gauge-svg ${isLarge ? "large" : ""}`} viewBox="0 0 80 80">
+        <defs>
+          <linearGradient id="grad-c-lo" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#10b981" />
+            <stop offset="100%" stopColor="#22d3ee" />
+          </linearGradient>
+          <linearGradient id="grad-c-md" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f59e0b" />
+            <stop offset="100%" stopColor="#f5a623" />
+          </linearGradient>
+          <linearGradient id="grad-c-hi" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ef4444" />
+            <stop offset="100%" stopColor="#f472b6" />
+          </linearGradient>
+          {/* Total score specific gradients */}
+          <linearGradient id="grad-threat-1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#5ea8ff" />
+            <stop offset="100%" stopColor="#22d3ee" />
+          </linearGradient>
+          <linearGradient id="grad-threat-2" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ffc845" />
+            <stop offset="100%" stopColor="#f5a623" />
+          </linearGradient>
+          <linearGradient id="grad-threat-3" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ff8a50" />
+            <stop offset="100%" stopColor="#ff2d55" />
+          </linearGradient>
+          <linearGradient id="grad-threat-4" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#ff2d55" />
+            <stop offset="100%" stopColor="#ec4899" />
+          </linearGradient>
+        </defs>
+        {/* Outer decorative rings */}
+        <circle
+          cx="40"
+          cy="40"
+          r="37"
+          fill="none"
+          stroke="rgba(255,255,255,0.03)"
+          strokeWidth="0.8"
+        />
+        <circle
+          cx="40"
+          cy="40"
+          r="37"
+          fill="none"
+          stroke={`url(#grad-${colorClass})`}
+          strokeWidth="0.8"
+          strokeDasharray="4 6"
+          className="bdetail-gauge-decor"
+          opacity="0.3"
+          style={{ transformOrigin: "40px 40px" }}
+        />
+        <circle
+          cx="40"
+          cy="40"
+          r="32"
+          fill="none"
+          stroke="rgba(255,255,255,0.06)"
+          strokeWidth="6"
+        />
+        <circle
+          cx="40"
+          cy="40"
+          r="32"
+          fill="none"
+          stroke={`url(#grad-${colorClass})`}
+          strokeWidth="6"
+          strokeLinecap="round"
+          strokeDasharray={`${(pct / 100) * 201} 201`}
+          transform="rotate(-90 40 40)"
+          className={colorClass}
+          style={{ transition: "stroke-dasharray 1s cubic-bezier(.22,1,.36,1)" }}
+        />
+      </svg>
+      <span className={`bdetail-gauge-val ${colorClass}`}>
+        {value}
+        {isLarge && <span className="bdetail-gauge-max">/ {max}</span>}
+      </span>
+    </div>
+  );
+
   return (
-    <div className={`bdetail-gauge ${isLarge ? "large" : ""} ${isLarge ? colorClass : ""}`}>
-      <div className={`bdetail-gauge-ring-wrap ${isLarge ? "large" : ""}`}>
-        <svg className={`bdetail-gauge-svg ${isLarge ? "large" : ""}`} viewBox="0 0 80 80">
-          <defs>
-            <linearGradient id="grad-c-lo" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#10b981" />
-              <stop offset="100%" stopColor="#22d3ee" />
-            </linearGradient>
-            <linearGradient id="grad-c-md" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#f59e0b" />
-              <stop offset="100%" stopColor="#f5a623" />
-            </linearGradient>
-            <linearGradient id="grad-c-hi" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ef4444" />
-              <stop offset="100%" stopColor="#f472b6" />
-            </linearGradient>
-            {/* Total score specific gradients */}
-            <linearGradient id="grad-threat-1" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#5ea8ff" />
-              <stop offset="100%" stopColor="#22d3ee" />
-            </linearGradient>
-            <linearGradient id="grad-threat-2" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ffc845" />
-              <stop offset="100%" stopColor="#f5a623" />
-            </linearGradient>
-            <linearGradient id="grad-threat-3" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ff8a50" />
-              <stop offset="100%" stopColor="#ff2d55" />
-            </linearGradient>
-            <linearGradient id="grad-threat-4" x1="0%" y1="0%" x2="100%" y2="100%">
-              <stop offset="0%" stopColor="#ff2d55" />
-              <stop offset="100%" stopColor="#ec4899" />
-            </linearGradient>
-          </defs>
-          {/* Outer decorative rings */}
-          <circle
-            cx="40"
-            cy="40"
-            r="37"
-            fill="none"
-            stroke="rgba(255,255,255,0.03)"
-            strokeWidth="0.8"
-          />
-          <circle
-            cx="40"
-            cy="40"
-            r="37"
-            fill="none"
-            stroke={`url(#grad-${colorClass})`}
-            strokeWidth="0.8"
-            strokeDasharray="4 6"
-            className="bdetail-gauge-decor"
-            opacity="0.3"
-            style={{ transformOrigin: "40px 40px" }}
-          />
-          <circle
-            cx="40"
-            cy="40"
-            r="32"
-            fill="none"
-            stroke="rgba(255,255,255,0.06)"
-            strokeWidth="6"
-          />
-          <circle
-            cx="40"
-            cy="40"
-            r="32"
-            fill="none"
-            stroke={`url(#grad-${colorClass})`}
-            strokeWidth="6"
-            strokeLinecap="round"
-            strokeDasharray={`${(pct / 100) * 201} 201`}
-            transform="rotate(-90 40 40)"
-            className={colorClass}
-            style={{ transition: "stroke-dasharray 1s cubic-bezier(.22,1,.36,1)" }}
-          />
-        </svg>
-        <span className={`bdetail-gauge-val ${colorClass}`}>
-          {value}
-          {isLarge && <span className="bdetail-gauge-max">/ {max}</span>}
-        </span>
-      </div>
-      <span className="bdetail-gauge-label">{label}</span>
+    <div
+      className={`bdetail-gauge ${isLarge ? "large" : ""} ${isLarge ? colorClass : ""} ${isLinkedHover ? "linked-hover" : ""}`}
+      onMouseEnter={onMouseEnter}
+      onMouseLeave={onMouseLeave}
+    >
+      {isLarge ? (
+        <>
+          {renderRing()}
+          <div className="bdetail-gauge-info">
+            <span className="bdetail-gauge-label">{label}</span>
+            {formulaText && (
+              <div className="bdetail-gauge-formula">
+                {formulaText}
+              </div>
+            )}
+          </div>
+        </>
+      ) : (
+        <>
+          {renderRing()}
+          <span className="bdetail-gauge-label">{label}</span>
+        </>
+      )}
     </div>
   );
 }
