@@ -344,13 +344,51 @@
 .bdetail-linear-fill {
   height: 100%;
   border-radius: 3px;
+  position: relative;
   transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
-  /* Pure flat color without any glowing shadows */
 }
 
-.bdetail-linear-fill.c-lo { background: #10b981; }
-.bdetail-linear-fill.c-md { background: #f59e0b; }
-.bdetail-linear-fill.c-hi { background: #ef4444; }
+.bdetail-linear-fill.c-lo {
+  background: linear-gradient(90deg, rgba(16, 185, 129, 0.35), #10b981);
+  color: #10b981;
+}
+.bdetail-linear-fill.c-md {
+  background: linear-gradient(90deg, rgba(245, 158, 11, 0.35), #f59e0b);
+  color: #f59e0b;
+}
+.bdetail-linear-fill.c-hi {
+  background: linear-gradient(90deg, rgba(239, 68, 68, 0.35), #ef4444);
+  color: #ef4444;
+}
+
+/* Embedded Glow Cap for sub-scores, unified with homepage deviation bars */
+.bdetail-linear-fill.has-glow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: 3px;
+  background: rgba(255, 255, 255, 0.95);
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+  box-shadow: 0 0 6px currentColor, -1px 0 2px rgba(255, 255, 255, 0.5);
+  animation: pulseCap 1.5s infinite alternate ease-in-out;
+}
+
+/* Subtle Icon Coloring based on severity */
+.bdetail-linear-row.c-lo .bdetail-linear-icon { color: var(--green, #10b981); opacity: 0.85; }
+.bdetail-linear-row.c-md .bdetail-linear-icon { color: var(--yellow, #f59e0b); opacity: 0.85; }
+.bdetail-linear-row.c-hi .bdetail-linear-icon { color: var(--red, #ef4444); opacity: 0.85; }
+
+@keyframes pulseCap {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 .bdetail-linear-val {
   font-family: var(--font-en);

@@ -529,7 +529,7 @@ function LinearScoreRow({ icon, label, value, max, colorClass }) {
 
   const pct = (animatedValue / max) * 100;
   return (
-    <div className="bdetail-linear-row">
+    <div className={`bdetail-linear-row ${colorClass}`}>
       <div className="bdetail-linear-header">
         <span className="bdetail-linear-icon">
           <TechIcon name={icon} size={16} />
@@ -539,7 +539,7 @@ function LinearScoreRow({ icon, label, value, max, colorClass }) {
       <div className="bdetail-linear-bar-wrap">
         <div className="bdetail-linear-track">
           <div 
-            className={`bdetail-linear-fill ${colorClass}`}
+            className={`bdetail-linear-fill ${colorClass} ${value > 0 ? 'has-glow' : ''}`}
             style={{ width: `${pct}%` }}
           />
         </div>
