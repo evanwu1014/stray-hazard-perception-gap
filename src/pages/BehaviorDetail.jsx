@@ -1,6 +1,7 @@
 import { useParams, useNavigate, Link } from "react-router-dom";
 import { useI18n } from "../context/I18nContext";
 import Reveal from "../components/Reveal";
+import TechIcon from "../components/TechIcon";
 import { getThreatClass, getColorClass } from "../utils/scoreHelpers";
 import './BehaviorDetail.css';
 
@@ -230,7 +231,7 @@ export default function BehaviorDetail() {
                       {rel.victims.map((v, vIdx) => (
                         <Reveal key={vIdx} delay={vIdx * 100} className="bdetail-victim-card">
                           <div className="bdetail-victim-header">
-                            <span className="bdetail-victim-icon" role="img" aria-label={v.category}>{v.icon}</span>
+                            <span className="bdetail-victim-icon" role="img" aria-label={v.category}><TechIcon name={v.icon} size={22} /></span>
                             <div className="bdetail-victim-meta">
                               <h5>{v.category}</h5>
                               <p className="bdetail-victim-entities">{v.entities}</p>
@@ -258,7 +259,7 @@ export default function BehaviorDetail() {
                           {rel.beneficiaries.map((b, bIdx) => (
                             <Reveal key={bIdx} delay={bIdx * 100} className="bdetail-beneficiary-card">
                               <div className="bdetail-beneficiary-header">
-                                <span className="bdetail-beneficiary-icon" role="img" aria-label={b.category}>{b.icon}</span>
+                                <span className="bdetail-beneficiary-icon" role="img" aria-label={b.category}><TechIcon name={b.icon} size={22} /></span>
                                 <div className="bdetail-beneficiary-meta">
                                   <h5>{b.category}</h5>
                                   <p className="bdetail-beneficiary-entities">{b.entities}</p>

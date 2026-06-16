@@ -4,6 +4,7 @@ import Reveal from "../components/Reveal";
 import RankList from "../components/RankList";
 import DeviationChart from "../components/DeviationChart";
 import { useI18n } from "../context/I18nContext";
+import TechIcon from "../components/TechIcon";
 import './HazardIndex.css';
 
 const formatTitle = (title) => {
@@ -104,7 +105,7 @@ export default function HazardIndex() {
               <Reveal key={idx} className="dim-card" delay={idx * 100}>
                 <div className="stripe"></div>
                 <div className="dim-card-header">
-                  {dim.icon && <div className="icon">{dim.icon}</div>}
+                  {dim.icon && <div className="icon"><TechIcon name={dim.icon} /></div>}
                   <h3>{dim.title} <span className="badge">{dim.range}</span></h3>
                 </div>
                 <p className="desc">{dim.desc}</p>
@@ -196,7 +197,7 @@ export default function HazardIndex() {
               {perception.personas.map((per, idx) => (
                 <Reveal key={idx} className="persona" delay={idx * 100}>
                   <div className="persona-header">
-                    {per.icon && <span className="persona-icon">{per.icon}</span>}
+                    {per.icon && <span className="persona-icon"><TechIcon name={per.icon} /></span>}
                     <h4>{per.title}</h4>
                   </div>
                   <span className="persona-label">{per.label}</span>

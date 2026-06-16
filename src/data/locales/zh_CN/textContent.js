@@ -27,7 +27,7 @@ export const HAZARD_TEXT = {
   },
   dimensions: [
     {
-      icon: "",
+      icon: "pain",
       title: "个体痛苦深度",
       range: "0 – 10",
       desc: "评估生命（包含流浪犬猫与受波及的原生野生动物）所承受的生理与心理折磨程度及持续时间。",
@@ -38,7 +38,7 @@ export const HAZARD_TEXT = {
       ]
     },
     {
-      icon: "",
+      icon: "scope",
       title: "受害生命规模",
       range: "0 – 10",
       desc: "评估该行为影响的生命数量广度——从单个个体到整个生物群落。",
@@ -49,7 +49,7 @@ export const HAZARD_TEXT = {
       ]
     },
     {
-      icon: "",
+      icon: "ripple",
       title: "外部环境与社会成本",
       range: "0 – 10",
       desc: "评估行为对人类公共卫生、环境整洁以及当地原生生态系统造成的破坏与威胁。",

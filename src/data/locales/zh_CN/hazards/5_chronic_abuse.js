@@ -70,7 +70,7 @@ export const hazardData = {
       transmission: "封闭私人空间 → 对圈养动物施以系统性长期折磨 → 痛苦持续时间乘数效应 → 累积痛苦总量高于单次虐杀",
       victims: [
         {
-          icon: "💀",
+          icon: "skull",
           category: "受拘禁之动物个体",
           entities: "被长期圈养虐待的犬猫（单或少数只）",
           desc: "在漫长的月至年的时间尺度内，承受饥饿、脱水、物理打击与精神折磨的累积性痛苦。"
@@ -78,7 +78,7 @@ export const hazardData = {
       ],
       beneficiaries: [
         {
-          icon: "🚫",
+          icon: "ban",
           category: "结果论框架下：无可辩护的系统性受益方",
           entities: "（此样态在所有维度均为纯损害）",
           desc: "在纯结果论框架下，长期物理虐待不产生任何可辩护的正向结果。痛苦持续时间的乘数效应使累计危害高于瞬间虐杀，损害完全收敛于受害个体，无任何正向外溢效应。",
@@ -97,13 +97,13 @@ export const hazardData = {
       transmission: "以“救援”为名不断收容 → 照养量远超个人能力 → 环境崩溃（极度拥挤、粪尿堆积） → 数十至数百只动物陷入慢性饥饿、传染病蔓延、互食 → 披着“善意”外衣而社会谴责极低",
       victims: [
         {
-          icon: "🐾",
+          icon: "paw",
           category: "被囤积之动物群体",
           entities: "数十至数百只犬猫",
           desc: "在极度拥挤、缺乏医疗、脏乱窒息的环境中，遭受慢性饥饿、传染病肆虐、甚至同类互食的长期系统性折磨。其痛苦规模远超物理暴力型。"
         },
         {
-          icon: "🏘️",
+          icon: "neighborhood",
           category: "社区环境与邻里",
           entities: "周边居民",
           desc: "承受严重恶臭、噪音、寄生虫滋生与社区公卫冲突。"
@@ -111,7 +111,7 @@ export const hazardData = {
       ],
       beneficiaries: [
         {
-          icon: "🧠",
+          icon: "brain",
           category: "囤积者本身（短期心理缓解）",
           entities: "病态囤积行为的执行者",
           desc: "囤积行为在神经科学层面为囤积者提供了短期的焦虑缓解与依附满足感（催产素机制）。此为推动行为持续的心理驱动力。",

@@ -80,19 +80,19 @@ export const hazardData = {
     transmission: "消费端需求 → 驱动繁殖产业规模扩张 → 种母在密闭笼具中反复生育 → 近亲繁殖固化基因缺陷 → 子代承受遗传病终身痛苦 → 收容所动物被结构性排挤",
     victims: [
       {
-        icon: "🧬",
+        icon: "dna",
         category: "带遗传缺陷风险之子代",
         entities: "一般纯种犬猫子代",
         desc: "相较于米克斯（混种），纯系选育固化了潜在的遗传疾病风险——如大型犬髋关节发育不良（CHD）、退化性关节炎、遗传性心脏病等。"
       },
       {
-        icon: "🤰",
+        icon: "pregnant",
         category: "繁殖场母体",
         entities: "种母犬猫",
         desc: "在密闭笼具中反复发情繁殖，承受高频率生育的生理损耗，直至生育能力耗尽被弃置。"
       },
       {
-        icon: "🏠",
+        icon: "home",
         category: "收容系统中的动物",
         entities: "收容所待领养犬猫",
         desc: "纯种消费占据了潜在领养家庭的需求，健康的收容所犬猫因“市场能见度低”而面临更高的安乐死压力。"
@@ -100,7 +100,7 @@ export const hazardData = {
     ],
     beneficiaries: [
       {
-        icon: "🏠",
+        icon: "home",
         category: "个别购买者与被购入之个体",
         entities: "获得稳定家庭环境的纯种犬猫",
         desc: "相较于留在繁殖场或流落街头，被购买并妥善照顾的个体进入了稳定的家庭环境，其个体生活品质在微观层面确实获得改善。",
