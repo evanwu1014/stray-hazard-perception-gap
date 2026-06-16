@@ -433,18 +433,22 @@
 }
 
 /* Embedded Glow Cap for sub-scores, unified with homepage deviation bars */
+.bdetail-linear-fill.has-glow {
+  animation: bdetailBarGlowBreath 2.5s infinite alternate ease-in-out;
+}
+
 .bdetail-linear-fill.has-glow::after {
   content: '';
   position: absolute;
   top: 0;
   bottom: 0;
   right: 0;
-  width: 3px;
-  background: rgba(255, 255, 255, 0.95);
+  width: 10px;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45));
   border-top-right-radius: 3px;
   border-bottom-right-radius: 3px;
-  box-shadow: 0 0 6px currentColor, -1px 0 2px rgba(255, 255, 255, 0.5);
-  animation: pulseCap 1.5s infinite alternate ease-in-out;
+  box-shadow: 0 0 14px currentColor, 0 0 4px currentColor;
+  pointer-events: none;
 }
 
 /* Subtle Icon Coloring based on severity */
@@ -452,12 +456,14 @@
 .bdetail-linear-row.c-md .bdetail-linear-icon { color: var(--yellow, #f59e0b); opacity: 0.85; }
 .bdetail-linear-row.c-hi .bdetail-linear-icon { color: var(--red, #ef4444); opacity: 0.85; }
 
-@keyframes pulseCap {
+@keyframes bdetailBarGlowBreath {
   0% {
-    opacity: 0.5;
+    opacity: 0.8;
+    box-shadow: 0 0 4px currentColor;
   }
   100% {
     opacity: 1;
+    box-shadow: 0 0 12px currentColor;
   }
 }
 
