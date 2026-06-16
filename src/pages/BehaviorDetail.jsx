@@ -551,7 +551,7 @@ function ScoreGauge({ label, value, max, colorClass, size = "normal", isLinkedHo
       onMouseLeave={onMouseLeave}
     >
       {isLarge ? (
-        <>
+        <div className="bdetail-gauge-large-wrap">
           {renderRing()}
           <div className="bdetail-gauge-info">
             <span className="bdetail-gauge-label">{label}</span>
@@ -561,7 +561,7 @@ function ScoreGauge({ label, value, max, colorClass, size = "normal", isLinkedHo
               </div>
             )}
           </div>
-        </>
+        </div>
       ) : (
         <>
           {renderRing()}
