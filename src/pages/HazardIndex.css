@@ -640,7 +640,8 @@
 .dev-bar.over {
   left: 50%;
   background: linear-gradient(90deg, rgba(255, 138, 80, .7), rgba(255, 92, 92, .9));
-  box-shadow: 0 0 12px rgba(255, 92, 92, .2);
+  box-shadow: 0 0 4px rgba(255, 92, 92, 0.1);
+  opacity: 0.5;
 }
 
 .dev-bar.over.has-glow {
@@ -665,7 +666,8 @@
 .dev-bar.blind {
   right: 50%;
   background: linear-gradient(270deg, rgba(94, 168, 255, .7), rgba(34, 211, 238, .9));
-  box-shadow: 0 0 12px rgba(94, 168, 255, .2);
+  box-shadow: 0 0 4px rgba(94, 168, 255, 0.1);
+  opacity: 0.5;
 }
 
 .dev-bar.blind.has-glow {
@@ -688,27 +690,27 @@
 
 @keyframes barGlowBreathOver {
   0% {
-    opacity: 0.45;
-    box-shadow: 0 0 2px rgba(255, 92, 92, 0.1);
-    filter: brightness(0.85);
+    opacity: 0.65;
+    box-shadow: 0 0 4px rgba(255, 92, 92, 0.2);
+    filter: brightness(0.9);
   }
   100% {
     opacity: 1;
     box-shadow: 0 0 24px rgba(255, 92, 92, 0.65), 0 0 8px rgba(255, 92, 92, 0.3);
-    filter: brightness(1.15);
+    filter: brightness(1.2);
   }
 }
 
 @keyframes barGlowBreathBlind {
   0% {
-    opacity: 0.45;
-    box-shadow: 0 0 2px rgba(94, 168, 255, 0.1);
-    filter: brightness(0.85);
+    opacity: 0.65;
+    box-shadow: 0 0 4px rgba(94, 168, 255, 0.2);
+    filter: brightness(0.9);
   }
   100% {
     opacity: 1;
     box-shadow: 0 0 24px rgba(34, 211, 238, 0.65), 0 0 8px rgba(34, 211, 238, 0.3);
-    filter: brightness(1.15);
+    filter: brightness(1.2);
   }
 }
 
