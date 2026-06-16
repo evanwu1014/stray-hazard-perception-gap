@@ -157,72 +157,21 @@
 }
 
 /* Score Gauges */
-.bdetail-scores {
-  display: flex;
-  flex-direction: column;
-}
-
-.bdetail-gauge-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  align-items: stretch;
-}
-
-@media(max-width: 900px) {
-  .bdetail-gauge-grid {
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-}
-
-@media(max-width: 600px) {
-  .bdetail-gauge-grid {
-    grid-template-columns: 1fr;
-    gap: 12px;
-  }
-}
-
-.bdetail-gauge {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-  padding: 20px 16px;
+.bdetail-scores-panel {
   background: rgba(0, 0, 0, 0.25);
   border: 1px solid rgba(255, 255, 255, 0.04);
-  border-radius: 14px;
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s, box-shadow 0.3s;
-}
-
-.bdetail-gauge:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Large Gauge Card - Total Score (relocated to bottom, span all 3 columns) */
-.bdetail-gauge.large {
-  grid-column: 1 / -1;
+  border-radius: 20px;
+  padding: 44px 56px;
   position: relative;
   overflow: hidden;
-  min-height: 180px;
-  padding: 32px 24px;
-  display: flex;
-}
-
-.bdetail-gauge-large-wrap {
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 48px;
-  width: 100%;
-  max-width: 760px;
-  margin: 0 auto;
+  justify-content: center;
+  gap: 56px;
 }
 
-.bdetail-gauge.large::before {
+.bdetail-scores-panel::before {
   content: '';
   position: absolute;
   top: 0;
@@ -231,214 +180,217 @@
   height: 3px;
 }
 
-.bdetail-gauge.large.threat-1::before { background: linear-gradient(90deg, rgba(94,168,255,.6), var(--t-1)); }
-.bdetail-gauge.large.threat-2::before { background: linear-gradient(90deg, rgba(255,200,69,.6), var(--t-2)); }
-.bdetail-gauge.large.threat-3::before { background: linear-gradient(90deg, rgba(255,138,80,.6), var(--t-3)); }
-.bdetail-gauge.large.threat-4::before { background: linear-gradient(90deg, rgba(255,45,85,.6),  var(--t-4)); }
+.bdetail-scores-panel.threat-1::before { background: linear-gradient(90deg, rgba(94,168,255,.6), var(--t-1)); }
+.bdetail-scores-panel.threat-2::before { background: linear-gradient(90deg, rgba(255,200,69,.6), var(--t-2)); }
+.bdetail-scores-panel.threat-3::before { background: linear-gradient(90deg, rgba(255,138,80,.6), var(--t-3)); }
+.bdetail-scores-panel.threat-4::before { background: linear-gradient(90deg, rgba(255,45,85,.6),  var(--t-4)); }
 
-/* Gauge info block in large mode */
-.bdetail-gauge-info {
+/* Columns */
+.bdetail-scores-left {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+
+.bdetail-scores-right {
+  flex-grow: 1;
   display: flex;
   flex-direction: column;
-  align-items: flex-start;
-  gap: 12px;
-  flex-grow: 1;
+  gap: 22px;
 }
 
-.bdetail-gauge.large .bdetail-gauge-label {
-  font-size: 0.95rem;
-  font-weight: 800;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  color: #ffffff;
-  text-align: left;
+/* ─── Left Column: Giant Total Gauge ─── */
+.bdetail-total-gauge-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 160px;
 }
 
-/* Summation Formula Styling */
-.bdetail-gauge-formula {
-  font-family: var(--font-en), monospace;
-  font-size: 0.92rem;
-  font-weight: 600;
-  color: var(--text-dim);
-  background: rgba(255, 255, 255, 0.03);
-  border: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 10px 18px;
-  border-radius: 8px;
-  letter-spacing: 0.5px;
-  width: 100%;
-  max-width: 600px;
-  transition: color 0.3s, border-color 0.3s, background-color 0.3s;
-}
-
-.bdetail-gauge.large:hover .bdetail-gauge-formula {
-  color: #ffffff;
-  border-color: rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.05);
-}
-
-/* Hover Linkage style for individual cards */
-.bdetail-gauge.linked-hover {
-  transform: translateY(-2px);
-  border-color: rgba(255, 255, 255, 0.08);
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.bdetail-gauge.linked-hover .bdetail-gauge-svg circle.c-lo { filter: drop-shadow(0 0 4px rgba(16, 185, 129, 0.7)); }
-.bdetail-gauge.linked-hover .bdetail-gauge-svg circle.c-md { filter: drop-shadow(0 0 4px rgba(245, 166, 35, 0.7)); }
-.bdetail-gauge.linked-hover .bdetail-gauge-svg circle.c-hi { filter: drop-shadow(0 0 4px rgba(255, 92, 92, 0.8)); }
-
-.bdetail-gauge.linked-hover .bdetail-gauge-val {
-  text-shadow: 0 0 6px currentColor;
-}
-
-@media(max-width: 900px) {
-  .bdetail-gauge-large-wrap {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 24px;
-    text-align: center;
-  }
-  .bdetail-gauge-info {
-    align-items: center;
-    text-align: center;
-  }
-  .bdetail-gauge.large .bdetail-gauge-label {
-    text-align: center;
-  }
-}
-
-@media(max-width: 600px) {
-  .bdetail-gauge-large-wrap {
-    gap: 16px;
-  }
-}
-
-.bdetail-gauge-icon {
-  font-size: 1.3rem;
-}
-
-.bdetail-gauge-ring-wrap {
+.bdetail-total-gauge-ring {
   position: relative;
-  width: 80px;
-  height: 80px;
+  width: 150px;
+  height: 150px;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.bdetail-gauge-ring-wrap.large {
-  width: 140px;
-  height: 140px;
+.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-ring {
+  transform: scale(1.05);
 }
 
-.bdetail-gauge:hover .bdetail-gauge-ring-wrap {
-  transform: scale(1.08);
+.bdetail-total-gauge-svg {
+  width: 150px;
+  height: 150px;
+  overflow: visible;
 }
 
-.bdetail-gauge-svg {
-  width: 80px;
-  height: 80px;
-  overflow: visible; /* 避免 drop-shadow 被邊界裁切 */
-}
-
-.bdetail-gauge-svg.large {
-  width: 140px;
-  height: 140px;
-}
-
-.bdetail-gauge-svg circle {
+.bdetail-total-gauge-svg circle {
   transition: stroke-dasharray 1s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* SVG ring glow for individual scores */
-.bdetail-gauge-svg circle.c-lo {
-  filter: drop-shadow(0 0 3px rgba(16, 185, 129, 0.6));
-}
-.bdetail-gauge-svg circle.c-md {
-  filter: drop-shadow(0 0 3px rgba(245, 166, 35, 0.6));
-}
-.bdetail-gauge-svg circle.c-hi {
-  filter: drop-shadow(0 0 3px rgba(255, 92, 92, 0.7));
-}
-
-.bdetail-gauge:hover .bdetail-gauge-svg circle.c-lo {
-  filter: drop-shadow(0 0 6px rgba(16, 185, 129, 0.9));
-}
-.bdetail-gauge:hover .bdetail-gauge-svg circle.c-md {
-  filter: drop-shadow(0 0 6px rgba(245, 166, 35, 0.9));
-}
-.bdetail-gauge:hover .bdetail-gauge-svg circle.c-hi {
-  filter: drop-shadow(0 0 6px rgba(255, 92, 92, 0.95));
-}
-
 /* SVG ring glow for threat levels (total score) */
-.bdetail-gauge-svg circle.threat-1 {
-  filter: drop-shadow(0 0 3px rgba(94, 168, 255, 0.6));
-}
-.bdetail-gauge-svg circle.threat-2 {
-  filter: drop-shadow(0 0 3px rgba(255, 200, 69, 0.6));
-}
-.bdetail-gauge-svg circle.threat-3 {
-  filter: drop-shadow(0 0 3px rgba(255, 138, 80, 0.7));
-}
-.bdetail-gauge-svg circle.threat-4 {
-  filter: drop-shadow(0 0 3px rgba(255, 45, 85, 0.8));
-}
+.bdetail-total-gauge-svg circle.threat-1 { filter: drop-shadow(0 0 4px rgba(94, 168, 255, 0.65)); }
+.bdetail-total-gauge-svg circle.threat-2 { filter: drop-shadow(0 0 4px rgba(255, 200, 69, 0.65)); }
+.bdetail-total-gauge-svg circle.threat-3 { filter: drop-shadow(0 0 4px rgba(255, 138, 80, 0.75)); }
+.bdetail-total-gauge-svg circle.threat-4 { filter: drop-shadow(0 0 4px rgba(255, 45, 85, 0.85)); }
 
-.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-1 {
-  filter: drop-shadow(0 0 6px rgba(94, 168, 255, 0.9));
-}
-.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-2 {
-  filter: drop-shadow(0 0 6px rgba(255, 200, 69, 0.9));
-}
-.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-3 {
-  filter: drop-shadow(0 0 6px rgba(255, 138, 80, 0.95));
-}
-.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-4 {
-  filter: drop-shadow(0 0 6px rgba(255, 45, 85, 0.98));
-}
+.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-svg circle.threat-1 { filter: drop-shadow(0 0 8px rgba(94, 168, 255, 0.9)); }
+.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-svg circle.threat-2 { filter: drop-shadow(0 0 8px rgba(255, 200, 69, 0.9)); }
+.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-svg circle.threat-3 { filter: drop-shadow(0 0 8px rgba(255, 138, 80, 0.95)); }
+.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-svg circle.threat-4 { filter: drop-shadow(0 0 8px rgba(255, 45, 85, 0.98)); }
 
-.bdetail-gauge-val {
+.bdetail-total-gauge-val {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   font-family: var(--font-en);
-  font-size: 1.4rem;
+  font-size: 2.8rem;
   font-weight: 900;
-  transition: text-shadow 0.3s;
-}
-
-.bdetail-gauge-ring-wrap.large .bdetail-gauge-val {
-  font-size: 2.6rem;
+  line-height: 1;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  line-height: 1.05;
+  transition: text-shadow 0.3s;
 }
 
-.bdetail-gauge:hover .bdetail-gauge-val {
-  text-shadow: 0 0 8px currentColor;
+.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-val {
+  text-shadow: 0 0 10px currentColor;
 }
 
-/* Value colors for threat levels */
-.bdetail-gauge-val.threat-1 { color: var(--t-1); }
-.bdetail-gauge-val.threat-2 { color: var(--t-2); }
-.bdetail-gauge-val.threat-3 { color: var(--t-3); }
-.bdetail-gauge-val.threat-4 { color: var(--t-4); }
+.bdetail-total-gauge-val.threat-1 { color: var(--t-1); }
+.bdetail-total-gauge-val.threat-2 { color: var(--t-2); }
+.bdetail-total-gauge-val.threat-3 { color: var(--t-3); }
+.bdetail-total-gauge-val.threat-4 { color: var(--t-4); }
 
-.bdetail-gauge-max {
-  font-size: 0.88rem;
+.bdetail-total-gauge-max {
+  font-size: 0.9rem;
   color: var(--text-faint);
   font-weight: 600;
-  margin-top: -4px;
+  margin-top: -2px;
 }
 
-.bdetail-gauge-label {
-  font-size: 0.72rem;
-  color: var(--text-faint);
+.bdetail-total-gauge-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
   text-align: center;
-  line-height: 1.3;
+}
+
+.bdetail-total-gauge-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--text-faint);
+  font-family: var(--font-en);
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+}
+
+.bdetail-total-gauge-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 2px 10px;
+  border-radius: 10px;
+  letter-spacing: 0.5px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.bdetail-total-gauge-badge.threat-1 { color: var(--t-1); background: rgba(94, 168, 255, 0.08); border-color: rgba(94, 168, 255, 0.15); }
+.bdetail-total-gauge-badge.threat-2 { color: var(--t-2); background: rgba(255, 200, 69, 0.06); border-color: rgba(255, 200, 69, 0.15); }
+.bdetail-total-gauge-badge.threat-3 { color: var(--t-3); background: rgba(255, 138, 80, 0.06); border-color: rgba(255, 138, 80, 0.15); }
+.bdetail-total-gauge-badge.threat-4 { color: var(--t-4); background: rgba(255, 45, 85, 0.08);  border-color: rgba(255, 45, 85, 0.2); }
+
+
+/* ─── Right Column: Flat Horizontal Bars ─── */
+.bdetail-linear-row {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.bdetail-linear-header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bdetail-linear-icon {
+  color: var(--text-dim);
+  display: flex;
+  align-items: center;
+}
+
+.bdetail-linear-label {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: var(--text-dim);
+  letter-spacing: 0.5px;
+}
+
+.bdetail-linear-bar-wrap {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bdetail-linear-track {
+  flex-grow: 1;
+  height: 6px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.02);
+  border-radius: 3px;
+  overflow: hidden;
+  position: relative;
+}
+
+.bdetail-linear-fill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
+  /* Pure flat color without any glowing shadows */
+}
+
+.bdetail-linear-fill.c-lo { background: #10b981; }
+.bdetail-linear-fill.c-md { background: #f59e0b; }
+.bdetail-linear-fill.c-hi { background: #ef4444; }
+
+.bdetail-linear-val {
+  font-family: var(--font-en);
+  font-size: 0.85rem;
+  color: var(--text-dim);
+  white-space: nowrap;
+  width: 44px;
+  text-align: right;
+}
+
+.bdetail-linear-val strong {
+  font-size: 0.95rem;
+  color: #ffffff;
+  font-weight: 800;
+}
+
+.bdetail-linear-val-max {
+  color: var(--text-faint);
+  font-size: 0.72rem;
+}
+
+
+/* ─── Responsive Layout ─── */
+@media(max-width: 768px) {
+  .bdetail-scores-panel {
+    flex-direction: column;
+    padding: 36px 24px;
+    gap: 36px;
+  }
+
+  .bdetail-scores-right {
+    width: 100%;
+    gap: 18px;
+  }
 }
 
 /* ─── Detail Content Cards ─── */
