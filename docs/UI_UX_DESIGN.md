@@ -47,6 +47,18 @@
 
 ## 3. 互動與動畫效果 (Micro-interactions & Animations)
 
+*   **全域背景網格與極簡滾動條**：
+    *   於 `body` 主背景疊加細緻的 `24px * 24px` 點狀科技網格（Dotted Grid Pattern），增強層次感。
+    *   客製化極簡暗色滾動條（`::-webkit-scrollbar`），懸停時呈現半透明藍色發光，保持暗色主題視覺的一致性。
+*   **首屏漸層文字與按鈕流光**：
+    *   為 Hero `h1` 與 `.lead-hl` 加入 6 秒循環的 `textShimmer` 位移漸層流光動畫，模擬動態金屬反光。
+    *   主要按鈕（`.btn-primary`）引入虛擬元素的 hover 橫向滑動高光條，並加強半透明霓虹背光投影效果（Drop Glow）。
+*   **卡片特有色發光與呼吸總分盒**：
+    *   調整維度卡懸浮上浮陰影。場景卡 hover 時會投射與其危害等級（紅/黃/藍）一致的動態光暈邊框。
+    *   排名列表中，危害度總分盒（`.s-box.total`）依據其四段威脅級別（`threat-1` 至 `threat-4`）套用 `threatGlow` 呼吸發光動畫。
+*   **偏差圖表格線與尖端發光點**：
+    *   [DeviationChart.jsx](../src/components/DeviationChart.jsx) 圖表背景疊加每 10% 寬度的垂直基準網格線，零偏線具有微弱發光外圈並提升 z-index。
+    *   使用 CSS 偽元素為正負偏值條狀圖的末端加上「呼吸發光指針點（`pulseGlow`）」，在視覺上主動引導用戶注意極端偏移值。
 *   **捲動顯現機制**: 使用 [Reveal.jsx](../src/components/Reveal.jsx) 包裹區塊，當視窗捲動至該區塊時，觸發 `opacity` 與 `translateY(36px -> 0px)` 的貝氏曲線動畫。
 *   **動態進度條與偏差條**:
     *   [RankList.jsx](../src/components/RankList.jsx) 中的危害強度橫條，在元素進入可視範圍後以 `transition: width 1.2s` 漸進填滿。
@@ -62,6 +74,7 @@
 
 *   **三維評分環形圖與總分卡 (SVG Score Gauges & Total Score Card)**
     *   以自訂 SVG `<circle>` 動態繪製 `strokeDasharray`。當頁面加載時，環形條從 0% 漸進加載至指定分值（`transition: stroke-dasharray 1s`）。
+    *   **雙重裝飾外環線**：於環形圖最外圍加入細線實圈與虛線齒輪環，並綁定 `rotateGaugeDecor` 慢速旋轉動畫，打造科技儀表板的高端質感。
     *   三個維度（個體痛苦深度、受害生命規模、外部成本外溢）分別使用對應的指標色彩，並在環形中心顯著呈現分數數值。各維度儀表板不再使用 emoji 圖示。
     *   **四欄網格佈局**（`grid-template-columns: repeat(4, 1fr)`）：將客觀危害總分卡作為第四個網格項目，與三個維度儀表板並排顯示。小螢幕自動調整為兩欄或單欄。
     *   **總分卡重新設計**：總分卡從橫向長條改為垂直卡片形式，具備頂部漸層裝飾條（`::before`）、底部進度條（以 CSS 變數 `--score-pct` 動態控制寬度）、hover 上浮與文字發光效果，字體加大至 `3.5rem`。
