@@ -1363,3 +1363,17 @@
     filter: drop-shadow(0 0 8px rgba(96, 165, 250, 0.8));
   }
 }
+
+/* ─────────────────── ScoreGauge Spin Animation ─────────────────── */
+.bdetail-gauge-decor {
+  animation: rotateGaugeDecor 25s linear infinite;
+}
+
+@keyframes rotateGaugeDecor {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

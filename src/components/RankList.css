@@ -245,6 +245,7 @@
   background: rgba(94, 168, 255, .08);
   border: 1.5px solid rgba(94, 168, 255, .3);
   box-shadow: 0 0 20px rgba(94, 168, 255, .04);
+  animation: threatGlow1 4s infinite ease-in-out;
 }
 .s-box.total.threat-1::before { background: var(--t-1); box-shadow: 0 1px 8px rgba(94, 168, 255, .5); }
 .s-box.total.threat-1 .val {
@@ -259,6 +260,7 @@
   background: rgba(255, 200, 69, .06);
   border: 1.5px solid rgba(255, 200, 69, .25);
   box-shadow: 0 0 20px rgba(255, 200, 69, .03);
+  animation: threatGlow2 4s infinite ease-in-out;
 }
 .s-box.total.threat-2::before { background: var(--t-2); box-shadow: 0 1px 8px rgba(255, 200, 69, .5); }
 .s-box.total.threat-2 .val {
@@ -273,6 +275,7 @@
   background: rgba(255, 138, 80, .08);
   border: 1.5px solid rgba(255, 138, 80, .3);
   box-shadow: 0 0 20px rgba(255, 138, 80, .04);
+  animation: threatGlow3 4s infinite ease-in-out;
 }
 .s-box.total.threat-3::before { background: var(--t-3); box-shadow: 0 1px 8px rgba(255, 138, 80, .5); }
 .s-box.total.threat-3 .val {
@@ -287,6 +290,7 @@
   background: rgba(255, 92, 92, .08);
   border: 1.5px solid rgba(255, 45, 85, .3);
   box-shadow: 0 0 20px rgba(255, 45, 85, .04);
+  animation: threatGlow4 4s infinite ease-in-out;
 }
 .s-box.total.threat-4::before { background: var(--t-4); box-shadow: 0 1px 8px rgba(255, 45, 85, .5); }
 .s-box.total.threat-4 .val {
@@ -295,6 +299,47 @@
 }
 .s-box.total.threat-4 .label {
   color: rgba(255, 45, 85, .8);
+}
+
+@keyframes threatGlow1 {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(94, 168, 255, .04);
+    border-color: rgba(94, 168, 255, .3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(94, 168, 255, .2);
+    border-color: rgba(94, 168, 255, .55);
+  }
+}
+@keyframes threatGlow2 {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 200, 69, .03);
+    border-color: rgba(255, 200, 69, .25);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 200, 69, .18);
+    border-color: rgba(255, 200, 69, .5);
+  }
+}
+@keyframes threatGlow3 {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 138, 80, .04);
+    border-color: rgba(255, 138, 80, .3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 138, 80, .22);
+    border-color: rgba(255, 138, 80, .6);
+  }
+}
+@keyframes threatGlow4 {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(255, 45, 85, .04);
+    border-color: rgba(255, 45, 85, .3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(255, 45, 85, .26);
+    border-color: rgba(255, 45, 85, .65);
+  }
 }
 
 .c-lo {

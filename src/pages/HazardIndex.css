@@ -26,10 +26,11 @@
   font-weight: 900;
   line-height: 1.15;
   margin-bottom: 28px;
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 40%, #f472b6 100%);
+  background: linear-gradient(120deg, #60a5fa 0%, #a78bfa 30%, #f472b6 60%, #a78bfa 80%, #60a5fa 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  animation: fadeUp .8s .35s both;
+  animation: textShimmer 6s linear infinite, fadeUp .8s .35s both;
 }
 
 .hero-lead {
@@ -44,10 +45,12 @@
 }
 
 .hero-lead .lead-hl {
-  background: linear-gradient(135deg, #60a5fa 0%, #a78bfa 50%, #f472b6 100%);
+  background: linear-gradient(120deg, #60a5fa 0%, #a78bfa 30%, #f472b6 60%, #a78bfa 80%, #60a5fa 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   font-weight: 900;
+  animation: textShimmer 6s linear infinite;
 }
 
 .hero-sub {
@@ -109,14 +112,31 @@
   background: linear-gradient(135deg, rgba(96, 165, 250, 0.15) 0%, rgba(167, 139, 250, 0.15) 100%);
   border: 1px solid rgba(167, 139, 250, 0.3);
   color: #fff;
-  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.15);
+  box-shadow: 0 4px 20px rgba(167, 139, 250, 0.15), 0 0 15px rgba(167, 139, 250, 0.05);
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: 0.5s;
+}
+
+.btn-primary:hover::before {
+  left: 100%;
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
   border-color: var(--blue);
   background: linear-gradient(135deg, rgba(96, 165, 250, 0.25) 0%, rgba(167, 139, 250, 0.25) 100%);
-  box-shadow: 0 6px 24px rgba(167, 139, 250, 0.3);
+  box-shadow: 0 8px 28px rgba(167, 139, 250, 0.35), 0 0 20px rgba(96, 165, 250, 0.2);
 }
 
 .btn-secondary {
@@ -148,6 +168,15 @@
   }
   50% {
     transform: rotate(45deg) translateY(8px);
+  }
+}
+
+@keyframes textShimmer {
+  0% {
+    background-position: 0% center;
+  }
+  100% {
+    background-position: 200% center;
   }
 }
 
@@ -566,8 +595,13 @@
   height: 32px;
   display: flex;
   align-items: center;
-  background: linear-gradient(90deg, rgba(94, 168, 255, 0.02) 0%, rgba(94, 168, 255, 0.02) 50%, rgba(255, 92, 92, 0.02) 50%, rgba(255, 92, 92, 0.02) 100%);
+  background: 
+    /* Vertical grid lines every 10% */
+    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px) 0 0 / 10% 100%,
+    /* Left/Right background split */
+    linear-gradient(90deg, rgba(94, 168, 255, 0.02) 0%, rgba(94, 168, 255, 0.02) 50%, rgba(255, 92, 92, 0.02) 50%, rgba(255, 92, 92, 0.02) 100%);
   border-radius: 4px;
+  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 
 .dev-bar-center {
@@ -575,8 +609,10 @@
   left: 50%;
   top: 0;
   bottom: 0;
-  width: 1px;
-  background: rgba(255, 255, 255, .25);
+  width: 1.5px;
+  background: rgba(255, 255, 255, .35);
+  box-shadow: 0 0 8px rgba(255, 255, 255, 0.5);
+  z-index: 2;
 }
 
 .dev-bar-center::before {
@@ -607,11 +643,50 @@
   box-shadow: 0 0 12px rgba(255, 92, 92, .2);
 }
 
+.dev-bar.over::after {
+  content: '';
+  position: absolute;
+  right: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #ff5c5c;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #ff5c5c, 0 0 20px #ff5c5c;
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
 /* Blind-spot bar: extends LEFT from center */
 .dev-bar.blind {
   right: 50%;
   background: linear-gradient(270deg, rgba(94, 168, 255, .7), rgba(34, 211, 238, .9));
   box-shadow: 0 0 12px rgba(94, 168, 255, .2);
+}
+
+.dev-bar.blind::after {
+  content: '';
+  position: absolute;
+  left: -3px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 6px;
+  background: #22d3ee;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #22d3ee, 0 0 20px #22d3ee;
+  animation: pulseGlow 1.5s infinite alternate ease-in-out;
+}
+
+@keyframes pulseGlow {
+  0% {
+    transform: translateY(-50%) scale(0.85);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translateY(-50%) scale(1.35);
+    opacity: 1;
+  }
 }
 
 .dev-val {

@@ -467,6 +467,27 @@ function ScoreGauge({ label, value, max, colorClass }) {
               <stop offset="100%" stopColor="#f472b6" />
             </linearGradient>
           </defs>
+          {/* Outer decorative rings */}
+          <circle
+            cx="40"
+            cy="40"
+            r="37"
+            fill="none"
+            stroke="rgba(255,255,255,0.03)"
+            strokeWidth="0.8"
+          />
+          <circle
+            cx="40"
+            cy="40"
+            r="37"
+            fill="none"
+            stroke={`url(#grad-${colorClass})`}
+            strokeWidth="0.8"
+            strokeDasharray="4 6"
+            className="bdetail-gauge-decor"
+            opacity="0.3"
+            style={{ transformOrigin: "40px 40px" }}
+          />
           <circle
             cx="40"
             cy="40"
