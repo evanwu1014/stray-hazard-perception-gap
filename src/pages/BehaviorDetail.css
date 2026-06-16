@@ -255,23 +255,39 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  transition: text-shadow 0.3s;
+  color: #ffffff; /* Pure white core for maximum contrast and legibility */
+  transition: transform 0.3s;
 }
-
-.bdetail-total-gauge-wrap:hover .bdetail-total-gauge-val {
-  text-shadow: 0 0 10px currentColor;
-}
-
-.bdetail-total-gauge-val.threat-1 { color: var(--t-1); }
-.bdetail-total-gauge-val.threat-2 { color: var(--t-2); }
-.bdetail-total-gauge-val.threat-3 { color: var(--t-3); }
-.bdetail-total-gauge-val.threat-4 { color: var(--t-4); }
 
 .bdetail-total-gauge-max {
   font-size: 0.9rem;
   color: var(--text-faint);
   font-weight: 600;
   margin-top: -2px;
+  text-shadow: none; /* No glow on the denominator for a cleaner look */
+}
+
+/* Breathing threat-colored neon glow for the score number */
+.bdetail-total-gauge-val.threat-1 { animation: textGlowThreat1 2s infinite alternate ease-in-out; }
+.bdetail-total-gauge-val.threat-2 { animation: textGlowThreat2 2s infinite alternate ease-in-out; }
+.bdetail-total-gauge-val.threat-3 { animation: textGlowThreat3 2s infinite alternate ease-in-out; }
+.bdetail-total-gauge-val.threat-4 { animation: textGlowThreat4 2s infinite alternate ease-in-out; }
+
+@keyframes textGlowThreat1 {
+  0% { text-shadow: 0 0 4px rgba(94, 168, 255, 0.4), 0 0 10px rgba(94, 168, 255, 0.1); }
+  100% { text-shadow: 0 0 12px rgba(94, 168, 255, 0.85), 0 0 22px rgba(94, 168, 255, 0.3); }
+}
+@keyframes textGlowThreat2 {
+  0% { text-shadow: 0 0 4px rgba(255, 200, 69, 0.4), 0 0 10px rgba(255, 200, 69, 0.1); }
+  100% { text-shadow: 0 0 12px rgba(255, 200, 69, 0.85), 0 0 22px rgba(255, 200, 69, 0.3); }
+}
+@keyframes textGlowThreat3 {
+  0% { text-shadow: 0 0 4px rgba(255, 138, 80, 0.45), 0 0 10px rgba(255, 138, 80, 0.1); }
+  100% { text-shadow: 0 0 14px rgba(255, 138, 80, 0.9), 0 0 24px rgba(255, 138, 80, 0.3); }
+}
+@keyframes textGlowThreat4 {
+  0% { text-shadow: 0 0 4px rgba(255, 45, 85, 0.5), 0 0 10px rgba(255, 45, 85, 0.1); }
+  100% { text-shadow: 0 0 16px rgba(255, 45, 85, 0.95), 0 0 26px rgba(255, 45, 85, 0.4); }
 }
 
 .bdetail-total-gauge-label {
