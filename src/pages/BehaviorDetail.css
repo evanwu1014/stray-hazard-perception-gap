@@ -458,12 +458,14 @@
 
 @keyframes bdetailBarGlowBreath {
   0% {
-    opacity: 0.8;
-    box-shadow: 0 0 4px currentColor;
+    opacity: 0.55;
+    box-shadow: 0 0 2px currentColor;
+    filter: brightness(0.85);
   }
   100% {
     opacity: 1;
-    box-shadow: 0 0 12px currentColor;
+    box-shadow: 0 0 18px currentColor, 0 0 6px currentColor;
+    filter: brightness(1.15);
   }
 }
 
