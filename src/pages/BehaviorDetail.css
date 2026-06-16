@@ -1396,6 +1396,7 @@
 }
 
 /* ─────────────────── ScoreGauge Spin Animation ─────────────────── */
+.bdetail-total-gauge-decor,
 .bdetail-gauge-decor {
   animation: rotateGaugeDecor 25s linear infinite;
 }
