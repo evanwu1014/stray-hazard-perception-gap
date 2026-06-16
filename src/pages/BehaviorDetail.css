@@ -168,7 +168,6 @@
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  gap: 56px;
 }
 
 .bdetail-scores-panel::before {
@@ -190,6 +189,8 @@
   flex-shrink: 0;
   display: flex;
   justify-content: center;
+  padding-right: 48px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
 }
 
 .bdetail-scores-right {
@@ -197,6 +198,7 @@
   display: flex;
   flex-direction: column;
   gap: 22px;
+  padding-left: 48px;
 }
 
 /* ─── Left Column: Giant Total Gauge ─── */
@@ -204,7 +206,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 16px;
+  gap: 12px;
   width: 160px;
 }
 
@@ -289,7 +291,6 @@
   letter-spacing: 0.5px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.05);
-  margin-top: 4px;
 }
 
 .bdetail-total-gauge-badge.threat-1 { color: var(--t-1); background: rgba(94, 168, 255, 0.08); border-color: rgba(94, 168, 255, 0.15); }
@@ -377,11 +378,21 @@
   .bdetail-scores-panel {
     flex-direction: column;
     padding: 36px 24px;
-    gap: 36px;
+    align-items: center;
+  }
+
+  .bdetail-scores-left {
+    border-right: none;
+    padding-right: 0;
+    border-bottom: 1px dashed rgba(255, 255, 255, 0.1);
+    padding-bottom: 32px;
+    width: 100%;
   }
 
   .bdetail-scores-right {
+    padding-left: 0;
     width: 100%;
+    margin-top: 32px;
     gap: 18px;
   }
 }
