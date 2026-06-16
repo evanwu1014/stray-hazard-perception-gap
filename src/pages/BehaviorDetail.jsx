@@ -460,6 +460,7 @@ function TotalScoreGauge({ label, value, max, colorClass, threatLabel }) {
   const pct = (value / max) * 100;
   return (
     <div className={`bdetail-total-gauge-wrap ${colorClass}`}>
+      <span className="bdetail-total-gauge-label">{label}</span>
       <div className="bdetail-total-gauge-ring">
         <svg className="bdetail-total-gauge-svg" viewBox="0 0 80 80">
           <defs>
@@ -497,10 +498,7 @@ function TotalScoreGauge({ label, value, max, colorClass, threatLabel }) {
           <span className="bdetail-total-gauge-max">/ {max}</span>
         </span>
       </div>
-      <div className="bdetail-total-gauge-meta">
-        <span className="bdetail-total-gauge-label">{label}</span>
-        <span className={`bdetail-total-gauge-badge ${colorClass}`}>{threatLabel}</span>
-      </div>
+      <span className={`bdetail-total-gauge-badge ${colorClass}`}>{threatLabel}</span>
     </div>
   );
 }
