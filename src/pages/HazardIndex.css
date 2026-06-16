@@ -643,50 +643,11 @@
   box-shadow: 0 0 12px rgba(255, 92, 92, .2);
 }
 
-.dev-bar.over.has-glow::after {
-  content: '';
-  position: absolute;
-  right: -3px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  background: #ff5c5c;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #ff5c5c, 0 0 20px #ff5c5c;
-  animation: pulseGlow 1.5s infinite alternate ease-in-out;
-}
-
 /* Blind-spot bar: extends LEFT from center */
 .dev-bar.blind {
   right: 50%;
   background: linear-gradient(270deg, rgba(94, 168, 255, .7), rgba(34, 211, 238, .9));
   box-shadow: 0 0 12px rgba(94, 168, 255, .2);
-}
-
-.dev-bar.blind.has-glow::after {
-  content: '';
-  position: absolute;
-  left: -3px;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 6px;
-  height: 6px;
-  background: #22d3ee;
-  border-radius: 50%;
-  box-shadow: 0 0 10px #22d3ee, 0 0 20px #22d3ee;
-  animation: pulseGlow 1.5s infinite alternate ease-in-out;
-}
-
-@keyframes pulseGlow {
-  0% {
-    transform: translateY(-50%) scale(0.85);
-    opacity: 0.7;
-  }
-  100% {
-    transform: translateY(-50%) scale(1.35);
-    opacity: 1;
-  }
 }
 
 .dev-val {

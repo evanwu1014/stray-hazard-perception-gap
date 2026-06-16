@@ -53,7 +53,7 @@ export default function DeviationChart() {
                 >
                   <div className="dev-bar-center"></div>
                   <div 
-                    className={`dev-bar ${isPos ? "over" : "blind"} ${Math.abs(item.deviation) >= 3 ? "has-glow" : ""}`} 
+                    className={`dev-bar ${isPos ? "over" : "blind"}`} 
                     style={{ width: isVisible ? `${barPct}%` : "0%" }}
                   ></div>
                 </div>
