@@ -643,7 +643,7 @@
   box-shadow: 0 0 12px rgba(255, 92, 92, .2);
 }
 
-.dev-bar.over::after {
+.dev-bar.over.has-glow::after {
   content: '';
   position: absolute;
   right: -3px;
@@ -664,7 +664,7 @@
   box-shadow: 0 0 12px rgba(94, 168, 255, .2);
 }
 
-.dev-bar.blind::after {
+.dev-bar.blind.has-glow::after {
   content: '';
   position: absolute;
   left: -3px;
