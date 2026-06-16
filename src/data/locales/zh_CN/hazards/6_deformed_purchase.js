@@ -35,7 +35,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "宠物电商与网络销售",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "电商平台允许繁殖业者直接触达消费者，买家无法实际评估动物健康状况。带有严重遗传病的动物在镜头下以「可爱」的方式被营销，其实际痛苦完全不可见。",
@@ -47,7 +47,7 @@ export const hazardData = {
       },
       {
         name: "宠物展览活动",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "品种展览以「美丽标准」评选动物，公开正向化病理性特征。展览文化间接鼓励繁殖业者强化极端畸形特征以获得奖项。",
@@ -59,7 +59,7 @@ export const hazardData = {
       },
       {
         name: "高端宠物市场",
-        icon: "",
+        icon: "money",
         riskLevel: "moderate",
         riskLabel: "中度风险",
         desc: "高价畸变品种被作为身份地位象征销售，消费者的社会阶层认同强化了其购买动机，使价格信号在此市场失去纠正作用。",

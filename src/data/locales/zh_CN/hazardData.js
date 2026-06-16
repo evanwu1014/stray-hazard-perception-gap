@@ -1,30 +1,16 @@
 import { HAZARD_SCORES } from '../../hazardScores';
-import { hazardData as hazard1 } from './hazards/1_feed_tnr';
-import { hazardData as hazard2 } from './hazards/2_private_execution';
-import { hazardData as hazard3 } from './hazards/3_purebred_purchase';
-import { hazardData as hazard4 } from './hazards/4_abuse_kill';
-import { hazardData as hazard5 } from './hazards/5_chronic_abuse';
-import { hazardData as hazard6 } from './hazards/6_deformed_purchase';
-import { hazardData as hazard7 } from './hazards/7_purebred_breeding';
-import { hazardData as hazard8 } from './hazards/8_deformed_breeding';
-import { hazardData as hazard10 } from './hazards/10_network_abuse';
-import { hazardData as hazard9 } from './hazards/9_overfeeding';
 
-export const HAZARD_DATA = [
-  hazard1,
-  hazard2,
-  hazard3,
-  hazard4,
-  hazard5,
-  hazard6,
-  hazard7,
-  hazard8,
-  hazard10,
-  hazard9
-].map(item => ({
-  ...item,
-  ...HAZARD_SCORES[item.id]
-}));
+// Automatically import all hazard data modules from the ./hazards directory
+const modules = import.meta.glob('./hazards/*.js', { eager: true });
+
+export const HAZARD_DATA = Object.values(modules)
+  .map(mod => mod.hazardData)
+  // Ensure the items are sorted numerically by their ID
+  .sort((a, b) => a.id - b.id)
+  .map(item => ({
+    ...item,
+    ...HAZARD_SCORES[item.id]
+  }));
 
 // Helper function to calculate deviation for each item
 export const getProcessedHazardData = () => {

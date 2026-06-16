@@ -32,7 +32,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "社区公共空间",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "critical",
         riskLabel: "需立即通报",
         desc: "单起虐杀事件即可引发社区恐慌，居民人身安全感受影响。施虐者若具病理性人格，可能对相关人员（如喂食志愿者）产生后续威胁。",
@@ -44,7 +44,7 @@ export const hazardData = {
       },
       {
         name: "网络传播环境",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "虐杀影像在社交平台的扩散造成大规模次级创伤，同时可能助长「博眼球」的模仿动机，或成为组织型商业虐待的招募素材。",
@@ -56,7 +56,7 @@ export const hazardData = {
       },
       {
         name: "学校或青少年群体",
-        icon: "",
+        icon: "community",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "青少年施虐者的出现往往是家庭暴力或同伴压力环境的警示指标。学校系统的早期介入可阻断其人际暴力的发展轨迹。",

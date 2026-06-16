@@ -48,7 +48,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "農牧與偏鄉地區",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "農民為保護家禽牲畜免遭流浪犬攻擊，面臨「舉報無效、等待漫長」的行政失靈困境，私下處置事件頻發且難以追查。",
@@ -60,7 +60,7 @@ export const hazardData = {
       },
       {
         name: "住宅社區",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "鄰里糾紛中，對流浪動物的私刑有時是居民宣洩衝突的替代行為，並造成其他居民的心理恐慌與信任崩解。",
@@ -72,7 +72,7 @@ export const hazardData = {
       },
       {
         name: "生態保護區周邊",
-        icon: "",
+        icon: "wildlife",
         riskLevel: "critical",
         riskLabel: "需特別關注",
         desc: "護林巡查員面臨保育動物遭流浪犬攻擊與自身執法能力不足的兩難，部分案例涉及非正式的動物移除。",

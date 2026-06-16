@@ -31,7 +31,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "短吻犬貓量產（BOAS）",
-        icon: "",
+        icon: "dna",
         riskLevel: "critical",
         riskLabel: "極端危害",
         desc: "法鬥、巴哥、英鬥、波斯貓等極端短吻品種，因頭骨結構導致終身呼吸道阻塞（BOAS）。量產環境下母體高難產率（剖腹產率超過 90%），子代在生命早期即承受慢性呼吸窘迫。",
@@ -43,7 +43,7 @@ export const hazardData = {
       },
       {
         name: "茶杯型/極端矮化品種",
-        icon: "",
+        icon: "bone",
         riskLevel: "critical",
         riskLabel: "極端危害",
         desc: "茶杯貴賓、迷你馬爾濟斯等極端矮化品種，常以近親交配固化矮小特徵，導致腦積水（水腦症）、低血糖症、骨骼脆化等系統性疾病，部分個體難以存活至成年。",
@@ -55,7 +55,7 @@ export const hazardData = {
       },
       {
         name: "棄養後的系統性衝擊",
-        icon: "",
+        icon: "ripple",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "極端畸變品種的終身醫療費用遠高於一般品種，當飼主無力負擔時，棄養率顯著高於均值，且因需要特殊醫療照護，在收容環境中存活率低、適養媒合困難。",

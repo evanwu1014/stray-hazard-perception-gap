@@ -83,7 +83,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "自然保育缓冲区",
-        icon: "",
+        icon: "wildlife",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "TNR 个体栖息于保育区边缘，持续以石虎幼兽、穿山甲、原生鸟类为猎物。绝育不影响其狩猎本能，喂食延长其寿命即延长猎杀时间。",
@@ -95,7 +95,7 @@ export const hazardData = {
       },
       {
         name: "城市社区/重划区边缘",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "固定喂食点造成犬猫群聚。具领域性的成群浪犬会造成居民长期的「环境精神压力」与交通安全威胁；儿童沙坑与公园则面临排泄物带来的公卫风险（如弓形虫病、跳蚤）。",
@@ -107,7 +107,7 @@ export const hazardData = {
       },
       {
         name: "校园周边",
-        icon: "",
+        icon: "community",
         riskLevel: "moderate",
         riskLabel: "中度风险",
         desc: "校犬猫种群若未有效控管，会增加学童接触人畜共患传染病（如狂犬病潜在威胁、寄生虫）的风险，以及对小型野鸟的栖地压缩效应。",

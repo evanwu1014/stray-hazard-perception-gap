@@ -39,7 +39,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "自然保育區與棲地邊緣",
-        icon: "",
+        icon: "wildlife",
         riskLevel: "critical",
         riskLabel: "極端威脅",
         desc: "濫餵點吸引高密度流浪貓犬聚集於保育區邊緣，石虎、穿山甲、原生鳥類與爬蟲類遭受系統性獵殺壓力。每一隻在此存活的流浪貓，平均每年獵殺數十至百隻原生野生動物。",
@@ -51,7 +51,7 @@ export const hazardData = {
       },
       {
         name: "都市社區大規模餵食點",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "固定的大規模餵食點造成犬貓高密度群聚，形成傳染病爆發的溫床（貓瘟、犬細小、狂犬病威脅），並因路殺、追咬事件引發公共安全問題。",
@@ -63,7 +63,7 @@ export const hazardData = {
       },
       {
         name: "校園與機構內的長期餵食",
-        icon: "",
+        icon: "community",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "大學校園、工廠、醫院等封閉或半封閉機構內，長年累積的「校貓族群」往往超過機構的管理能力，形成疾病傳播風險與設施衛生問題。",

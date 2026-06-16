@@ -417,6 +417,23 @@
   border-radius: 3px;
   position: relative;
   transition: width 1.2s cubic-bezier(.22, 1, .36, 1);
+  animation: drawBar 1.2s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+.bdetail-total-gauge-circle {
+  animation: drawCircle 1.2s cubic-bezier(.22, 1, .36, 1) forwards;
+}
+
+@keyframes drawCircle {
+  from {
+    stroke-dasharray: 0 201;
+  }
+}
+
+@keyframes drawBar {
+  from {
+    width: 0%;
+  }
 }
 
 .bdetail-linear-fill.c-lo {

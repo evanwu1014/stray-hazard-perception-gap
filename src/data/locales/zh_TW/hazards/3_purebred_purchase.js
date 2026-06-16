@@ -31,7 +31,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "都市寵物消費市場",
-        icon: "",
+        icon: "money",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "寵物店集中展示特定品種，在高人流環境中激發衝動型購買。購買行為直接驅動上游繁殖業者擴產，形成需求-供應的正向回饋迴路。",
@@ -43,7 +43,7 @@ export const hazardData = {
       },
       {
         name: "社群媒體影響圈",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "網紅展示特定品種動物，引發追隨者的模仿購買熱潮。熱門品種的需求暴增往往超越繁殖業者的正規能力，催生品質低落的地下繁殖場。",
@@ -55,7 +55,7 @@ export const hazardData = {
       },
       {
         name: "收容系統壓力端",
-        icon: "",
+        icon: "hospital",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "純種寵物熱潮使收容所空間被「流行品種的棄養高峰」周期性擠壓，造成非熱門品種的安樂死配額被壓縮。",

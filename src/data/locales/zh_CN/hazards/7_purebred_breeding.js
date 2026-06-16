@@ -31,7 +31,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "地下繁殖场",
-        icon: "",
+        icon: "breeder",
         riskLevel: "critical",
         riskLabel: "需立即通报",
         desc: "未登记的地下繁殖场在农村或工业区租用场地，以恶劣条件大规模生产纯种幼犬猫，幼体健康不佳、基因品质不稳定，却透过网络以「自家繁殖」包装销售。",
@@ -43,7 +43,7 @@ export const hazardData = {
       },
       {
         name: "合法但过度繁殖的业者",
-        icon: "",
+        icon: "scale",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "持有合法执照的繁殖业者在法律边缘操作——符合最低标准但仍在过度繁殖，母体在恶劣但「合法」的条件下被反复生育。",
@@ -55,7 +55,7 @@ export const hazardData = {
       },
       {
         name: "收容系统的结构排挤",
-        icon: "",
+        icon: "hospital",
         riskLevel: "moderate",
         riskLabel: "中度风险",
         desc: "繁殖业者持续供给市场的同时，收容所中的混种犬猫因市场需求低落而面临更高的安乐死压力，形成「繁殖业繁荣、收容动物死亡」的反比关系。",

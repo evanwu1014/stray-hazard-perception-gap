@@ -39,7 +39,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "自然保育区与栖地边缘",
-        icon: "",
+        icon: "wildlife",
         riskLevel: "critical",
         riskLabel: "极端威胁",
         desc: "滥喂点吸引高密度流浪猫犬聚集于保育区边缘，石虎、穿山甲、原生鸟类与爬行类遭受系统性猎杀压力。每一只在此存活的流浪猫，平均每年猎杀数十至百只原生野生动物。",
@@ -51,7 +51,7 @@ export const hazardData = {
       },
       {
         name: "城市社区大规模喂食点",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "固定的大规模喂食点造成犬猫高密度群聚，形成传染病爆发的温床（猫瘟、犬细小、狂犬病威胁），并因路杀、追咬事件引发公共安全问题。",
@@ -63,7 +63,7 @@ export const hazardData = {
       },
       {
         name: "校园与机构内的长期喂食",
-        icon: "",
+        icon: "community",
         riskLevel: "moderate",
         riskLabel: "中度风险",
         desc: "大学校园、工厂、医院等封闭或半封闭机构内，长年累积的「校猫种群」往往超过机构的管理能力，形成疾病传播风险与设施卫生问题。",

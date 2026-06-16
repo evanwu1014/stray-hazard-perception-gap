@@ -23,7 +23,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "私人住宅（物理虐待型）",
-        icon: "",
+        icon: "home",
         riskLevel: "critical",
         riskLabel: "需立即介入",
         desc: "施虐者以锁闭、剥夺饮水、系统性殴打等手段，对圈养动物造成持续性折磨。行为高度隐蔽，且通常与家庭暴力、药物滥用等问题共存。",
@@ -35,7 +35,7 @@ export const hazardData = {
       },
       {
         name: "病态囤积现场",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "critical",
         riskLabel: "需立即介入",
         desc: "施虐者以「爱心救援」为名收容数十至数百只动物，但实际上无力负担照顾。个体在恶劣环境中忍受长期饥饿、传染病蔓延与窒息性的粪尿环境。",
@@ -47,7 +47,7 @@ export const hazardData = {
       },
       {
         name: "救援组织的灰色地带",
-        icon: "",
+        icon: "community",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "部分以「NGO」或「个人救援」为名的组织，实际上处于囤积与合法救援之间的灰色地带，缺乏财务透明度与动物福利监察机制。",

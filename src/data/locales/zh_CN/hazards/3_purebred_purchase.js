@@ -31,7 +31,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "城市宠物消费市场",
-        icon: "",
+        icon: "money",
         riskLevel: "moderate",
         riskLabel: "中度风险",
         desc: "宠物店集中展示特定品种，在高人流环境中激发冲动型购买。购买行为直接驱动上游繁殖业者扩产，形成需求-供应的正向反馈循环。",
@@ -43,7 +43,7 @@ export const hazardData = {
       },
       {
         name: "社交媒体影响圈",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "网红展示特定品种动物，引发粉丝的模仿购买热潮。热门品种的需求暴增往往超越繁殖业者的正规能力，催生品质低劣的地下繁殖场。",
@@ -55,7 +55,7 @@ export const hazardData = {
       },
       {
         name: "收容系统压力端",
-        icon: "",
+        icon: "hospital",
         riskLevel: "moderate",
         riskLabel: "中度风险",
         desc: "纯种宠物热潮使收容所空间被「流行品种的弃养高峰」周期性挤压，造成非热门品种的安乐死配额被压缩。",

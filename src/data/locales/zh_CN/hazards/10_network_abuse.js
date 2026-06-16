@@ -43,7 +43,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "加密通讯平台（Telegram 等）",
-        icon: "",
+        icon: "lock",
         riskLevel: "critical",
         riskLabel: "跨国犯罪",
         desc: "犯罪组织在加密群组中建立商业运作体系——付费订阅、定制订单、虚拟货币结算。群组成员相互强化扭曲认知，形成自我封闭的极化生态圈。",
@@ -55,7 +55,7 @@ export const hazardData = {
       },
       {
         name: "社交媒体的公开传播",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高风险",
         desc: "虐待影像在主流社交平台的短暂流传，既是招募新成员的渠道，也是组织展示「实力」的宣传手段。平台的快速下架机制至关重要但往往滞后。",
@@ -67,7 +67,7 @@ export const hazardData = {
       },
       {
         name: "举报者的人身安全",
-        icon: "",
+        icon: "lock",
         riskLevel: "critical",
         riskLabel: "人身安全威胁",
         desc: "举报此类犯罪的个人面临严重的人身安全威胁：开盒（公开个人信息）、跨国追踪、工作骚扰，以及对家人的威胁。此威胁严重抑制公民举报意愿。",

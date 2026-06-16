@@ -43,7 +43,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "加密通訊平台（Telegram 等）",
-        icon: "",
+        icon: "lock",
         riskLevel: "critical",
         riskLabel: "跨國犯罪",
         desc: "犯罪組織在加密群組中建立商業運作體系——付費訂閱、客製化訂單、虛擬貨幣結算。群組成員相互強化扭曲認知，形成自我封閉的極化生態圈。",
@@ -55,7 +55,7 @@ export const hazardData = {
       },
       {
         name: "社群媒體的公開傳播",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "虐待影像在主流社群平台的短暫流傳，既是招募新成員的管道，也是組織展示「實力」的宣傳手段。平台的快速下架機制至關重要但往往滯後。",
@@ -67,7 +67,7 @@ export const hazardData = {
       },
       {
         name: "舉報者的人身安全",
-        icon: "",
+        icon: "lock",
         riskLevel: "critical",
         riskLabel: "人身安全威脅",
         desc: "舉報此類犯罪的個人面臨嚴重的人身安全威脅：開盒（公開個人資訊）、跨國追蹤、工作騷擾，以及對家人的威脅。此威脅嚴重抑制公民舉報意願。",

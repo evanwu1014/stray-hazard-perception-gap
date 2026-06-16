@@ -1,3 +1,4 @@
+/* global process */
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import { viteSingleFile } from 'vite-plugin-singlefile'
@@ -14,17 +15,19 @@ try {
   buildInfo = new Date().toLocaleString('zh-TW', { timeZone: 'Asia/Taipei' });
 }
 
+const shouldSingleFile = process.env.BUILD_SINGLE_FILE === 'true';
+
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [
     react(), 
-    viteSingleFile(),
+    shouldSingleFile && viteSingleFile(),
     {
       name: 'html-transform-build-info',
       transformIndexHtml(html) {
         return html.replace('</head>', `<meta name="build-info" content="${buildInfo}">\n</head>`);
       }
     }
-  ],
+  ].filter(Boolean),
   base: './'
 })

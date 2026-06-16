@@ -7,7 +7,7 @@ export default function DecisionMatrix() {
   const [activeTab, setActiveTab] = useState("reserve");
 
   return (
-    <div className="matrix-container">
+    <div className="matrix-container glass-card">
       {/* 行動端場域切換 Tab Headers */}
       <div className="matrix-mobile-tabs">
         <button 

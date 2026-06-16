@@ -12,7 +12,7 @@ export default function ScenarioChart() {
   };
 
   return (
-    <div className="chart-container">
+    <div className="chart-container glass-card">
       <div className="chart-tabs">
         <div 
           className={`chart-tab ${getTabClass("reserve")}`} 

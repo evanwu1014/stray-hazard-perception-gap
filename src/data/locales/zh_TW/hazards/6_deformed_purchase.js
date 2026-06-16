@@ -35,7 +35,7 @@ export const hazardData = {
     scenarios: [
       {
         name: "寵物電商與網路販售",
-        icon: "",
+        icon: "globe",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "電商平台允許繁殖業者直接觸達消費者，買家無法實際評估動物健康狀況。帶有嚴重遺傳病的動物在鏡頭下以「可愛」的方式被行銷，其實際痛苦完全不可見。",
@@ -47,7 +47,7 @@ export const hazardData = {
       },
       {
         name: "寵物展覽活動",
-        icon: "",
+        icon: "neighborhood",
         riskLevel: "high",
         riskLabel: "高風險",
         desc: "品種展覽以「美麗標準」評選動物，公開正向化病理性特徵。展覽文化間接鼓勵繁殖業者強化極端畸形特徵以獲得獎項，形成以「得獎」為導向的惡化循環。",
@@ -59,7 +59,7 @@ export const hazardData = {
       },
       {
         name: "高端寵物市場",
-        icon: "",
+        icon: "money",
         riskLevel: "moderate",
         riskLabel: "中度風險",
         desc: "高價畸變品種被作為身分地位象徵販售，消費者的社會階層認同強化了其購買動機，使價格訊號在此市場失去糾正作用。",
