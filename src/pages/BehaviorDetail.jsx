@@ -124,13 +124,13 @@ export default function BehaviorDetail() {
                     max={10}
                     colorClass={getColorClass(item.subScores.external)}
                   />
-                  <div className={`bdetail-total-score ${threat.cls}`} style={{ "--score-pct": `${(item.objTotal / 30) * 100}%` }}>
-                    <span className="bdetail-total-label">{uiLabels.totalScore}</span>
-                    <div className="bdetail-total-num">
-                      <span className="bdetail-total-val">{item.objTotal}</span>
-                      <span className="bdetail-total-max">/ 30</span>
-                    </div>
-                  </div>
+                  <ScoreGauge
+                    label={uiLabels.totalScore}
+                    value={item.objTotal}
+                    max={30}
+                    colorClass={threat.cls}
+                    size="large"
+                  />
                 </div>
               </div>
             </div>
@@ -448,12 +448,13 @@ export default function BehaviorDetail() {
 
 
 /* ─── ScoreGauge Sub-component ─── */
-function ScoreGauge({ label, value, max, colorClass }) {
+function ScoreGauge({ label, value, max, colorClass, size = "normal" }) {
   const pct = (value / max) * 100;
+  const isLarge = size === "large";
   return (
-    <div className="bdetail-gauge">
-      <div className="bdetail-gauge-ring-wrap">
-        <svg className="bdetail-gauge-svg" viewBox="0 0 80 80">
+    <div className={`bdetail-gauge ${isLarge ? "large" : ""} ${isLarge ? colorClass : ""}`}>
+      <div className={`bdetail-gauge-ring-wrap ${isLarge ? "large" : ""}`}>
+        <svg className={`bdetail-gauge-svg ${isLarge ? "large" : ""}`} viewBox="0 0 80 80">
           <defs>
             <linearGradient id="grad-c-lo" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#10b981" />
@@ -466,6 +467,23 @@ function ScoreGauge({ label, value, max, colorClass }) {
             <linearGradient id="grad-c-hi" x1="0%" y1="0%" x2="100%" y2="100%">
               <stop offset="0%" stopColor="#ef4444" />
               <stop offset="100%" stopColor="#f472b6" />
+            </linearGradient>
+            {/* Total score specific gradients */}
+            <linearGradient id="grad-threat-1" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#5ea8ff" />
+              <stop offset="100%" stopColor="#22d3ee" />
+            </linearGradient>
+            <linearGradient id="grad-threat-2" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ffc845" />
+              <stop offset="100%" stopColor="#f5a623" />
+            </linearGradient>
+            <linearGradient id="grad-threat-3" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ff8a50" />
+              <stop offset="100%" stopColor="#ff2d55" />
+            </linearGradient>
+            <linearGradient id="grad-threat-4" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stopColor="#ff2d55" />
+              <stop offset="100%" stopColor="#ec4899" />
             </linearGradient>
           </defs>
           {/* Outer decorative rings */}
@@ -511,7 +529,10 @@ function ScoreGauge({ label, value, max, colorClass }) {
             style={{ transition: "stroke-dasharray 1s cubic-bezier(.22,1,.36,1)" }}
           />
         </svg>
-        <span className={`bdetail-gauge-val ${colorClass}`}>{value}</span>
+        <span className={`bdetail-gauge-val ${colorClass}`}>
+          {value}
+          {isLarge && <span className="bdetail-gauge-max">/ {max}</span>}
+        </span>
       </div>
       <span className="bdetail-gauge-label">{label}</span>
     </div>

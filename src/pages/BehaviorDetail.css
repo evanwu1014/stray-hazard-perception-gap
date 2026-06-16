@@ -164,19 +164,19 @@
 
 .bdetail-gauge-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   gap: 20px;
   align-items: stretch;
 }
 
-@media(max-width: 768px) {
+@media(max-width: 900px) {
   .bdetail-gauge-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
   }
 }
 
-@media(max-width: 400px) {
+@media(max-width: 600px) {
   .bdetail-gauge-grid {
     grid-template-columns: 1fr;
     gap: 12px;
@@ -202,6 +202,41 @@
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
 
+/* Large Gauge Card - Total Score */
+.bdetail-gauge.large {
+  grid-column: span 2;
+  position: relative;
+  overflow: hidden;
+  min-height: 180px;
+  padding: 24px 16px;
+}
+
+.bdetail-gauge.large::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+}
+
+.bdetail-gauge.large.threat-1::before { background: linear-gradient(90deg, rgba(94,168,255,.6), var(--t-1)); }
+.bdetail-gauge.large.threat-2::before { background: linear-gradient(90deg, rgba(255,200,69,.6), var(--t-2)); }
+.bdetail-gauge.large.threat-3::before { background: linear-gradient(90deg, rgba(255,138,80,.6), var(--t-3)); }
+.bdetail-gauge.large.threat-4::before { background: linear-gradient(90deg, rgba(255,45,85,.6),  var(--t-4)); }
+
+@media(max-width: 900px) {
+  .bdetail-gauge.large {
+    grid-column: span 3;
+  }
+}
+
+@media(max-width: 600px) {
+  .bdetail-gauge.large {
+    grid-column: span 1;
+  }
+}
+
 .bdetail-gauge-icon {
   font-size: 1.3rem;
 }
@@ -211,6 +246,11 @@
   width: 80px;
   height: 80px;
   transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.bdetail-gauge-ring-wrap.large {
+  width: 120px;
+  height: 120px;
 }
 
 .bdetail-gauge:hover .bdetail-gauge-ring-wrap {
@@ -223,11 +263,16 @@
   overflow: visible; /* 避免 drop-shadow 被邊界裁切 */
 }
 
+.bdetail-gauge-svg.large {
+  width: 120px;
+  height: 120px;
+}
+
 .bdetail-gauge-svg circle {
   transition: stroke-dasharray 1s cubic-bezier(.22, 1, .36, 1);
 }
 
-/* SVG ring glow */
+/* SVG ring glow for individual scores */
 .bdetail-gauge-svg circle.c-lo {
   filter: drop-shadow(0 0 3px rgba(16, 185, 129, 0.6));
 }
@@ -248,6 +293,33 @@
   filter: drop-shadow(0 0 6px rgba(255, 92, 92, 0.95));
 }
 
+/* SVG ring glow for threat levels (total score) */
+.bdetail-gauge-svg circle.threat-1 {
+  filter: drop-shadow(0 0 3px rgba(94, 168, 255, 0.6));
+}
+.bdetail-gauge-svg circle.threat-2 {
+  filter: drop-shadow(0 0 3px rgba(255, 200, 69, 0.6));
+}
+.bdetail-gauge-svg circle.threat-3 {
+  filter: drop-shadow(0 0 3px rgba(255, 138, 80, 0.7));
+}
+.bdetail-gauge-svg circle.threat-4 {
+  filter: drop-shadow(0 0 3px rgba(255, 45, 85, 0.8));
+}
+
+.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-1 {
+  filter: drop-shadow(0 0 6px rgba(94, 168, 255, 0.9));
+}
+.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-2 {
+  filter: drop-shadow(0 0 6px rgba(255, 200, 69, 0.9));
+}
+.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-3 {
+  filter: drop-shadow(0 0 6px rgba(255, 138, 80, 0.95));
+}
+.bdetail-gauge:hover .bdetail-gauge-svg circle.threat-4 {
+  filter: drop-shadow(0 0 6px rgba(255, 45, 85, 0.98));
+}
+
 .bdetail-gauge-val {
   position: absolute;
   top: 50%;
@@ -259,8 +331,30 @@
   transition: text-shadow 0.3s;
 }
 
+.bdetail-gauge-ring-wrap.large .bdetail-gauge-val {
+  font-size: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.1;
+}
+
 .bdetail-gauge:hover .bdetail-gauge-val {
   text-shadow: 0 0 8px currentColor;
+}
+
+/* Value colors for threat levels */
+.bdetail-gauge-val.threat-1 { color: var(--t-1); }
+.bdetail-gauge-val.threat-2 { color: var(--t-2); }
+.bdetail-gauge-val.threat-3 { color: var(--t-3); }
+.bdetail-gauge-val.threat-4 { color: var(--t-4); }
+
+.bdetail-gauge-max {
+  font-size: 0.82rem;
+  color: var(--text-faint);
+  font-weight: 600;
+  margin-top: -2px;
 }
 
 .bdetail-gauge-label {
@@ -268,102 +362,6 @@
   color: var(--text-faint);
   text-align: center;
   line-height: 1.3;
-}
-
-.bdetail-total-score {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 20px 12px;
-  border-radius: 14px;
-  position: relative;
-  overflow: hidden;
-  min-height: 160px;
-  background: rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.04);
-  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.3s, box-shadow 0.3s;
-}
-
-.bdetail-total-score:hover {
-  transform: translateY(-4px);
-  border-color: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
-}
-
-/* Top accent gradient bar — mirrors hero card */
-.bdetail-total-score::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 3px;
-}
-
-.bdetail-total-score.threat-1::before { background: linear-gradient(90deg, rgba(94,168,255,.6), var(--t-1)); }
-.bdetail-total-score.threat-2::before { background: linear-gradient(90deg, rgba(255,200,69,.6), var(--t-2)); }
-.bdetail-total-score.threat-3::before { background: linear-gradient(90deg, rgba(255,138,80,.6), var(--t-3)); }
-.bdetail-total-score.threat-4::before { background: linear-gradient(90deg, rgba(255,45,85,.6),  var(--t-4)); }
-
-/* Bottom progress bar — visualises score out of 30 */
-.bdetail-total-score::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 4px;
-  width: var(--score-pct, 0%);
-  border-radius: 0 4px 0 14px;
-  transition: width 1s cubic-bezier(.22, 1, .36, 1);
-}
-
-.bdetail-total-score.threat-1::after { background: var(--t-1); box-shadow: 0 0 10px rgba(94,168,255,.5); }
-.bdetail-total-score.threat-2::after { background: var(--t-2); box-shadow: 0 0 10px rgba(255,200,69,.5); }
-.bdetail-total-score.threat-3::after { background: var(--t-3); box-shadow: 0 0 10px rgba(255,138,80,.5); }
-.bdetail-total-score.threat-4::after { background: var(--t-4); box-shadow: 0 0 10px rgba(255,45,85,.5);  }
-
-.bdetail-total-label {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: var(--text-faint);
-  font-family: var(--font-en);
-  text-transform: uppercase;
-  letter-spacing: 1.5px;
-  text-align: center;
-}
-
-/* Numeric group (val + max) */
-.bdetail-total-num {
-  display: flex;
-  align-items: baseline;
-  gap: 6px;
-}
-
-.bdetail-total-val {
-  font-family: var(--font-en);
-  font-size: 3.5rem;
-  font-weight: 900;
-  line-height: 1;
-  transition: text-shadow 0.3s;
-}
-
-.bdetail-total-score:hover .bdetail-total-val {
-  text-shadow: 0 0 16px currentColor;
-}
-
-.bdetail-total-score.threat-1 .bdetail-total-val { color: var(--t-1); }
-.bdetail-total-score.threat-2 .bdetail-total-val { color: var(--t-2); }
-.bdetail-total-score.threat-3 .bdetail-total-val { color: var(--t-3); }
-.bdetail-total-score.threat-4 .bdetail-total-val { color: var(--t-4); }
-
-.bdetail-total-max {
-  font-family: var(--font-en);
-  font-size: 1.2rem;
-  font-weight: 600;
-  color: var(--text-faint);
-  padding-bottom: 6px;
 }
 
 /* ─── Detail Content Cards ─── */
