@@ -105,7 +105,7 @@ export default function HazardIndex() {
               <Reveal key={idx} className="dim-card" delay={idx * 100}>
                 <div className="stripe"></div>
                 <div className="dim-card-header">
-                  {dim.icon && <div className="icon"><TechIcon name={dim.icon} /></div>}
+                  {dim.icon && <div className="icon"><TechIcon name={dim.icon} size={24} /></div>}
                   <h3>{dim.title} <span className="badge">{dim.range}</span></h3>
                 </div>
                 <p className="desc">{dim.desc}</p>
@@ -197,7 +197,7 @@ export default function HazardIndex() {
               {perception.personas.map((per, idx) => (
                 <Reveal key={idx} className="persona" delay={idx * 100}>
                   <div className="persona-header">
-                    {per.icon && <span className="persona-icon"><TechIcon name={per.icon} /></span>}
+                    {per.icon && <span className="persona-icon"><TechIcon name={per.icon} size={32} /></span>}
                     <h4>{per.title}</h4>
                   </div>
                   <span className="persona-label">{per.label}</span>

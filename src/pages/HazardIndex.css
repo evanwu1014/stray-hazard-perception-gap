@@ -826,9 +826,8 @@
 }
 
 .persona .persona-icon {
-  font-size: 2rem;
   margin-bottom: 14px;
-  display: block;
+  display: inline-flex;
 }
 
 .persona h4 {

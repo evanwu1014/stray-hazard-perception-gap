@@ -309,11 +309,15 @@ export default function BehaviorDetail() {
                         <Reveal key={vIdx} delay={vIdx * 100} className="bdetail-victim-card">
                           <div className="bdetail-victim-header">
                             <span className="bdetail-victim-icon" role="img" aria-label={v.category}><TechIcon name={v.icon} size={22} /></span>
-                            <div className="bdetail-victim-meta">
-                              <h5>{v.category}</h5>
-                              <p className="bdetail-victim-entities">{v.entities}</p>
-                            </div>
+                            <h5>{v.category}</h5>
                           </div>
+                          {v.entities && (
+                            <div className="bdetail-victim-tags">
+                              {v.entities.split(/[；;、]/).map((tag, tIdx) => tag.trim() && (
+                                <span key={tIdx} className="bdetail-victim-tag">{tag.trim()}</span>
+                              ))}
+                            </div>
+                          )}
                           <p className="bdetail-victim-desc">{v.desc}</p>
                         </Reveal>
                       ))}
@@ -337,11 +341,15 @@ export default function BehaviorDetail() {
                             <Reveal key={bIdx} delay={bIdx * 100} className="bdetail-beneficiary-card">
                               <div className="bdetail-beneficiary-header">
                                 <span className="bdetail-beneficiary-icon" role="img" aria-label={b.category}><TechIcon name={b.icon} size={22} /></span>
-                                <div className="bdetail-beneficiary-meta">
-                                  <h5>{b.category}</h5>
-                                  <p className="bdetail-beneficiary-entities">{b.entities}</p>
-                                </div>
+                                <h5>{b.category}</h5>
                               </div>
+                              {b.entities && (
+                                <div className="bdetail-beneficiary-tags">
+                                  {b.entities.split(/[；;、]/).map((tag, tIdx) => tag.trim() && (
+                                    <span key={tIdx} className="bdetail-beneficiary-tag">{tag.trim()}</span>
+                                  ))}
+                                </div>
+                              )}
                               <p className="bdetail-beneficiary-desc">{b.desc}</p>
                               {b.caveat && (
                                 <div className="bdetail-beneficiary-caveat">
