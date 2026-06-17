@@ -106,10 +106,10 @@ Sitemap: https://stray-hazard-perception-gap.web.app/sitemap.xml
 ```
 
 ### Sitemap 配置 ([sitemap.xml](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/public/sitemap.xml))
-針對 Hash 路由特別編寫，列出了所有可供爬取的客戶端路徑，包含主頁、場域頁與 1~10 號行為條目詳情頁：
+針對 Hash 路由特別編寫，列出了所有可供爬取的客戶端路徑，包含主頁、場域頁與 1~13 號行為條目詳情頁：
 *   **首頁**：`https://stray-hazard-perception-gap.web.app/` (權重: 1.0)
 *   **場域頁**：`https://stray-hazard-perception-gap.web.app/#/scenario` (權重: 0.8)
-*   **行為詳情頁**：`https://stray-hazard-perception-gap.web.app/#/behavior/{1~10}` (權重: 0.6)
+*   **行為詳情頁**：`https://stray-hazard-perception-gap.web.app/#/behavior/{1~13}` (權重: 0.6)
 
 ---
 

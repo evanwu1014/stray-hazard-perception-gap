@@ -140,12 +140,41 @@
 | Federal Bureau of Investigation (FBI). (2016). *National Incident-Based Reporting System (NIBRS): Animal cruelty offenses*. U.S. Department of Justice. | https://ucr.fbi.gov/nibrs/2016 | ✅ 可正常存取 | FBI 將動物虐待列為一級重罪進行統計追蹤的資料庫 |
 | 中華民國農業部動物保護資訊網及警政署刑事警察局偵查案件記錄 | https://animal.moa.gov.tw/ | ✅ 可正常存取 | 台灣官方動物保護及偵查案件處理管道與記錄 |
 
+## 11. 源頭失管：棄養與飼主縱放繁殖
+
+| 標題 | URL | 狀態 | 備註 |
+|------|-----|------|------|
+| 環境資訊中心（2025）。零撲殺後野生動物遭犬貓攻擊案例增：生多所用 33 年救傷數據說話。 | https://e-info.org.tw/node/243369 | ✅ 可正常存取 | 報導生多所急救站 33 年數據 |
+| 聯合新聞網倡議家（2025）。野保 vs. 動保大戰：野生動物犬殺問題不斷，與動保政策轉向相關。 | https://ubrand.udn.com/ubrand/story/123659/8850518 | ✅ 可正常存取 | 探討政策轉向之報導 |
+| 報導者（2023）。野外棲地誰的家：犬殺頻傳，遊蕩犬與野生動物的衝突。 | https://www.twreporter.org/a/6-years-after-no-kill-policy-adopted-conflict-with-wildlife | ✅ 可正常存取 | 深度調查報導 |
+| 農業部生物多樣性研究所：野生動物急救站與救傷資料（官方機構入口）。 | https://www.tbri.gov.tw/ | ✅ 可正常存取 | 台灣官方急救站入口 |
+
+---
+
+## 12. 拒絕人道安樂死（情感性延命）
+
+| 標題 | URL | 狀態 | 備註 |
+|------|-----|------|------|
+| VCA Animal Hospitals。Quality of Life at the End of Life for Your Cat：Dr. Villalobos' quality-of-life scale。 | https://vcahospitals.com/st-marys/know-your-pet/quality-of-life-at-the-end-of-life-for-your-cat | ✅ 可正常存取 | 貓生活品質評估指引 |
+| VCA Canada Animal Hospitals。Quality of Life at the End of Life for Your Dog：HHHHHMM categories and >35 threshold。 | https://vcacanada.com/know-your-pet/quality-of-life-at-the-end-of-life-for-your-dog | ✅ 可正常存取 | 狗生活品質與 HHHHHMM 指標 |
+| Lap of Love。Quality of Life Scale PDF。 | https://www.lapoflove.com/how-will-i-know-it-is-time/lap-of-love-quality-of-life-scale.pdf | ✅ 可正常存取 | PDF 生活品質評估表 |
+
+---
+
+## 13. 收容體制過載與零撲殺結構性死亡
+
+| 標題 | URL | 狀態 | 備註 |
+|------|-----|------|------|
+| 中華民國監察院。調查報告（111 財調 0033）：全國各縣市為騰出公立收容所空間而回置／野放犬貓之調查。 | https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/67885 | ✅ 可正常存取 | 監察院糾正調查報告（一） |
+| 中華民國監察院。調查報告：動保政策與零撲殺配套措施缺失、收容壓力及源頭管理問題。 | https://cybsbox.cy.gov.tw/CYBSBoxSSL/edoc/download/45381 | ✅ 可正常存取 | 監察院糾正調查報告（二） |
+| 窩窩 Wuo-Wuo。《零撲殺專題 #04》零安樂死不等於零撲殺：談收容所人道處理與福利評估。 | https://wuo-wuo.com/topics/stray-animals/92-zero-culling-policy/864-zeczec-2648 | ✅ 可正常存取 | 收容所人道處理深度分析 |
+
 ---
 
 ## 總結
 
 ### 狀態統計
-- ✅ **可正常存取**: 58 個
+- ✅ **可正常存取**: 68 個
 - ⚠️ **被防機器人擋住**: 4 個（但網址存在，只是需要手動存取或訂閱）
 - ❌ **無 URL**: 0 個
 
