@@ -128,7 +128,7 @@ export const HAZARD_TEXT = {
       }
     ],
     gendered: {
-      title: "行為的性別分流與「雙向標籤武器化」的輿論盲區 (Gendered Behavioral Divergence and Bilateral Weaponization of Labels)",
+      title: "行為的性別分流與「雙向標籤武器化」的輿論盲區",
       desc: "個體的暴力、病態或善意行為並非單一性別因素所致，而是「生物-心理-社會模型」（Biopsychosocial Model）多重交織的結果。然而在網路語境中，性別標籤武器化是雙向的——男性特質的行為與女性特質的行為都被簡化為群體標籤並用於互相攻擊，而真正最具破壞性的隱性危害卻在雙方的標籤戰爭中被完全忽略：",
       types: [
         {
