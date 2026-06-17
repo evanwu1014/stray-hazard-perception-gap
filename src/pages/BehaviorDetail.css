@@ -863,6 +863,9 @@
 }
 
 .bdetail-victim-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.74rem;
   color: var(--blue);
   font-weight: 600;
@@ -872,6 +875,14 @@
   border-radius: 4px;
   line-height: 1.3;
   white-space: nowrap;
+}
+
+.bdetail-victim-tag .tag-sub {
+  font-size: 0.65rem;
+  font-weight: 500;
+  opacity: 0.55;
+  border-left: 1px solid rgba(96, 165, 250, 0.25);
+  padding-left: 6px;
 }
 
 .bdetail-victim-desc {
@@ -972,6 +983,9 @@
 }
 
 .bdetail-beneficiary-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-size: 0.74rem;
   color: var(--green);
   font-weight: 600;
@@ -981,6 +995,14 @@
   border-radius: 4px;
   line-height: 1.3;
   white-space: nowrap;
+}
+
+.bdetail-beneficiary-tag .tag-sub {
+  font-size: 0.65rem;
+  font-weight: 500;
+  opacity: 0.55;
+  border-left: 1px solid rgba(16, 185, 129, 0.25);
+  padding-left: 6px;
 }
 
 .bdetail-beneficiary-desc {
@@ -1203,6 +1225,16 @@
   font-weight: 700;
   margin-bottom: 6px;
   color: var(--text);
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.bdetail-sc-title-sub {
+  font-size: 0.82rem;
+  font-weight: 500;
+  opacity: 0.5;
+  color: var(--text-dim);
 }
 
 .bdetail-sc-risk-badge {
