@@ -99,5 +99,35 @@ export const HAZARD_SCORES = {
     condemn: 10,
     outcry: 10,
     isSupplemental: true
+  },
+  11: {
+    subScores: {
+      pain: 5,
+      scale: 8,
+      external: 7
+    },
+    objTotal: 20,
+    condemn: 4,
+    outcry: 3
+  },
+  12: {
+    subScores: {
+      pain: 9,
+      scale: 1,
+      external: 1
+    },
+    objTotal: 11,
+    condemn: 1,
+    outcry: 1
+  },
+  13: {
+    subScores: {
+      pain: 6,
+      scale: 8,
+      external: 5
+    },
+    objTotal: 19,
+    condemn: 2,
+    outcry: 2
   }
 };
