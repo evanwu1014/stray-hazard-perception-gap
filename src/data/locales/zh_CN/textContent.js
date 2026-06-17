@@ -145,7 +145,7 @@ export const HAZARD_TEXT = {
         }
       ],
       academicNotes: {
-        title: "生理与神经机制的学术支撑（Biopsychosocial Evidence）",
+        title: "生理与神经机制的学术支撑",
         desc: "社会性成因（如权力补偿、照护角色期望与母性刻板印象）必须建立在生理学与流行病学的实证基础上，才能构成完整的“生物-心理-社会模型”：",
         points: [
           "挑战假说（Challenge Hypothesis, Archer 2006）：雄性激素（Testosterone）的波动并非直接导致无端暴力，而是在个体感受到社会地位挑战、资源竞争或领地威胁时，显著调高物理性防御与支配行为的触发概率。",

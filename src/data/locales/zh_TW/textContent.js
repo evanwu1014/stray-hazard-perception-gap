@@ -145,7 +145,7 @@ export const HAZARD_TEXT = {
         }
       ],
       academicNotes: {
-        title: "生理與神經機制的學術支撐（Biopsychosocial Evidence）",
+        title: "生理與神經機制的學術支撐",
         desc: "社會性成因（如權力補償、照護角色期望與母性刻板印象）必須建立在生理學與流行病學的實證基礎上，才能構成完整的「生物-心理-社會模型」：",
         points: [
           "挑戰假說（Challenge Hypothesis, Archer 2006）：雄性激素（Testosterone）的波動並非直接導致無端暴力，而是在個體感受到社會地位挑戰、資源競爭或領地威脅時，顯著調高物理性防禦與支配行為的觸發機率。",
