@@ -1186,7 +1186,10 @@
 }
 
 .bdetail-sc-icon {
-  font-size: 1.8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sc-color);
   flex-shrink: 0;
   margin-top: 2px;
 }

@@ -432,7 +432,7 @@ export default function BehaviorDetail() {
                       }}
                     >
                       <div className="bdetail-sc-header">
-                        {sc.icon && <span className="bdetail-sc-icon">{sc.icon}</span>}
+                        {sc.icon && <span className="bdetail-sc-icon"><TechIcon name={sc.icon} size={22} /></span>}
                         <div className="bdetail-sc-meta">
                           <h3>{sc.name}</h3>
                           <span className="bdetail-sc-risk-badge">
