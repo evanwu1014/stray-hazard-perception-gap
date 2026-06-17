@@ -8,15 +8,6 @@ import LinearScoreRow from "../components/LinearScoreRow";
 import { getThreatClass, getColorClass } from "../utils/scoreHelpers";
 import './BehaviorDetail.css';
 
-const parseTag = (text) => {
-  if (!text) return { main: "", sub: "" };
-  const match = text.match(/^([^（\(\s]+)\s*[（\(]([^）\)]+)[）\)]$/);
-  if (match) {
-    return { main: match[1].trim(), sub: match[2].trim() };
-  }
-  return { main: text.trim(), sub: "" };
-};
-
 const getRiskConfig = (level) => {
   const configs = {
     critical: { color: "var(--red)", bg: "rgba(239,68,68,0.08)", border: "rgba(239,68,68,0.3)", label: "" },
@@ -322,17 +313,9 @@ export default function BehaviorDetail() {
                           </div>
                           {v.entities && (
                             <div className="bdetail-victim-tags">
-                              {v.entities.split(/[；;、]/).map((tag, tIdx) => {
-                                const trimmed = tag.trim();
-                                if (!trimmed) return null;
-                                const parsed = parseTag(trimmed);
-                                return (
-                                  <span key={tIdx} className="bdetail-victim-tag">
-                                    <span className="tag-main">{parsed.main}</span>
-                                    {parsed.sub && <span className="tag-sub">{parsed.sub}</span>}
-                                  </span>
-                                );
-                              })}
+                              {v.entities.split(/[；;、]/).map((tag, tIdx) => tag.trim() && (
+                                <span key={tIdx} className="bdetail-victim-tag">{tag.trim()}</span>
+                              ))}
                             </div>
                           )}
                           <p className="bdetail-victim-desc">{v.desc}</p>
@@ -362,17 +345,9 @@ export default function BehaviorDetail() {
                               </div>
                               {b.entities && (
                                 <div className="bdetail-beneficiary-tags">
-                                  {b.entities.split(/[；;、]/).map((tag, tIdx) => {
-                                    const trimmed = tag.trim();
-                                    if (!trimmed) return null;
-                                    const parsed = parseTag(trimmed);
-                                    return (
-                                      <span key={tIdx} className="bdetail-beneficiary-tag">
-                                        <span className="tag-main">{parsed.main}</span>
-                                        {parsed.sub && <span className="tag-sub">{parsed.sub}</span>}
-                                      </span>
-                                    );
-                                  })}
+                                  {b.entities.split(/[；;、]/).map((tag, tIdx) => tag.trim() && (
+                                    <span key={tIdx} className="bdetail-beneficiary-tag">{tag.trim()}</span>
+                                  ))}
                                 </div>
                               )}
                               <p className="bdetail-beneficiary-desc">{b.desc}</p>
@@ -459,12 +434,7 @@ export default function BehaviorDetail() {
                       <div className="bdetail-sc-header">
                         {sc.icon && <span className="bdetail-sc-icon"><TechIcon name={sc.icon} size={22} /></span>}
                         <div className="bdetail-sc-meta">
-                          <h3>
-                            {parseTag(sc.name).main}
-                            {parseTag(sc.name).sub && (
-                              <span className="bdetail-sc-title-sub"> ({parseTag(sc.name).sub})</span>
-                            )}
-                          </h3>
+                          <h3>{sc.name}</h3>
                           <span className="bdetail-sc-risk-badge">
                             {riskCfg.label} {sc.riskLabel}
                           </span>

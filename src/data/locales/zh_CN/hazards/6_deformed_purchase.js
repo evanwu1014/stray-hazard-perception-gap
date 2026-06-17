@@ -69,7 +69,8 @@ export const hazardData = {
           { role: "政府", action: "强制要求极端畸形品种在销售时附带「健康风险声明书」，类似香烟警示标签" }
         ]
       }
-    ],
+    ]
+,
   relationship: {
     agents: [
       {

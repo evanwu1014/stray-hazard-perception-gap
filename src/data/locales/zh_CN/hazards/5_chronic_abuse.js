@@ -57,7 +57,8 @@ export const hazardData = {
           { role: "兽医师", action: "若发现客户长期带入大量健康状况恶劣的动物，可考虑通报动保机关启动调查" }
         ]
       }
-    ],
+    ]
+,
   relationship: [
     {
       typeName: "样态 A：物理暴力型",

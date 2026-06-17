@@ -65,7 +65,8 @@ export const hazardData = {
           { role: "政府", action: "建立繁殖业者连带负担部分弃养安置成本的制度，使外部成本内部化" }
         ]
       }
-    ],
+    ]
+,
   relationship: {
     agents: [
       {

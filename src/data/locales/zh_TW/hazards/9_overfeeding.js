@@ -73,7 +73,8 @@ export const hazardData = {
           { role: "動保機關", action: "提供機構動物管理輔導服務，協助建立合規的動物管理 SOP" }
         ]
       }
-    ],
+    ]
+,
   relationship: {
     agents: [
       {

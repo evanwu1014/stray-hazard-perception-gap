@@ -65,7 +65,8 @@ export const hazardData = {
           { role: "動保NGO", action: "強化收容所動物的媒合行銷，縮小與純種動物在「需求能見度」上的差距" }
         ]
       }
-    ],
+    ]
+,
   relationship: {
     agents: [
       {
