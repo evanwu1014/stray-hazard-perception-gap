@@ -222,12 +222,7 @@ export default function HazardIndex() {
             <Reveal className="abuse-grid">
               {abuseSociology.typologies.map((type, idx) => (
                 <div key={idx} className="dim-card" style={{ position: "relative", borderLeft: "4px solid var(--red, #ef4444)" }}>
-                  <h4 className="abuse-card-title">
-                    <span className="abuse-icon">
-                      <TechIcon name="abuse" size={20} />
-                    </span>
-                    {formatTitle(type.title)}
-                  </h4>
+                  <h4 className="abuse-card-title">{formatTitle(type.title)}</h4>
                   <p className="desc" style={{ opacity: 0.9, lineHeight: 1.6, fontSize: "0.95rem" }}>{type.desc}</p>
                 </div>
               ))}
