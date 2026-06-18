@@ -15,8 +15,8 @@ export const hazardData = {
                 url: "https://www.socialmediaanimalcruelty.org/"
           },
           {
-                title: "中國 Telegram 網路組織虐殺寵物「傑克辣條」事件調查 (2023)",
-                url: "https://www.theguardian.com/media/2023/jun/20/inside-the-global-monkey-torture-network"
+                title: "中國 Telegram 網路組織虐殺寵物「傑克辣條」事件 (2023)",
+                url: "https://zh.wikipedia.org/wiki/杰克辣条虐猫事件"
           },
           {
                 title: "Bakar, F. (2023, June 20). Inside the global monkey torture network. The Guardian.",

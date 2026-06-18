@@ -4,16 +4,16 @@ export const hazardData = {
     desc: "将单个个体的痛苦最大化至死。其核心动机在于「施加折磨」或「寻求掌控感」，与出于自卫或农损排除的「私自处决（项目 2）」有本质不同。画面最为残忍，但损害完全收敛于该单一动物身上，对社会运作与整体自然生态毫无外溢影响。",
     tooltipTitle: "极端痛苦与危害边界",
     tooltipContent: "视觉冲击与社会道德谴责程度最高。在结果论模型中，其「个体痛苦深度」达满分，但因受限于个体施暴能力，其损害被限制于极小规模，无外部生态扩散性。与因行政失灵而私下清除流浪动物的「私自处决（项目 2）」不同，虐杀的核心目的在于「折磨过程的快感与掌控」，具有根本的动机与行为区别。研究显示其施虐动机可分为双轨路径：一是病理性虐待（ASPD/反社会型），以折磨生命获取掌控感或快感；二是转移性虐待（弱弱相残型），施虐者将自身无力处理的心理与社会危机，向生态最底层的动物转嫁。",
-    citation: "Psychology Today (2025) / PMC/NIH (2022) / Oxford Animal Ethics / Faunalytics (2020)",
+    citation: "Psychology Today (2025) / Mota-Rojas et al. (2022) / Oxford Animal Ethics / Faunalytics (2020)",
     references: [
           {
                 title: "Psychology Today (2025) - The Violence Link",
                 url: "https://www.psychologytoday.com/us/blog/the-human-equation/202503/the-violence-link"
           },
-          {
-                title: "PMC/NIH (2022) - Animal Abuse as an Indicator of Domestic Violence",
-                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9024712/"
-          },
+            {
+                  title: "Mota-Rojas et al. (2022) - Animal Abuse as an Indicator of Domestic Violence: One Health, One Welfare Approach",
+                  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9024712/"
+            },
           {
                 title: "Oxford Animal Ethics - The Link between Animal Abuse and Human Violence (Monograph)",
                 url: "https://www.oxfordanimalethics.com/what-we-do/publication/the-link-between-animal-abuse-and-human-violence/"

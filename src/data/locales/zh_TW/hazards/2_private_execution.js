@@ -4,16 +4,16 @@ export const hazardData = {
     desc: "出於防衛或移除危害之目的，對遊蕩犬貓施加未經法定程序的致死手段。通常肇因於長期公衛困擾、生態破壞或人身安全受威脅，且公權力失能無法解決問題。",
     tooltipTitle: "結果論視角下的外部性與違法性",
     tooltipContent: "此為違法暴力行為（見下方法律引用）。個體痛苦評為 6 分；在純結果論的計量上，移除單一掠食個體會減少其未來對原生野生動物造成的捕食壓力，惟私人暴力同時產生秩序恐慌，故仍具備 1 分外部社會成本。與「虐殺（項目 4）」不同，本行為動機為排除生存威脅（如車禍、農損）的移除性私刑，而非病理性或情緒轉移的極端痛苦折磨。需注意：現行法規對不同物種保護標準並不一致——犬貓受《動保法》保護，野生動物、農場動物、有害生物規範各異——其禁止依據更多來自維護公共秩序與防止暴力蔓延，而非客觀危害的精確計量。本模型不鼓勵以私力手段自行裁決，亦不主張守法即正確。",
-    citation: "中華民國《動物保護法》第 25 條刑事責任 / 環境犯罪學與社會安全成本 / PMC/NIH (2023) / WHO / United Against Rabies (2022) / 交通部公路局(2023)",
+    citation: "中華民國《動物保護法》第 25 條刑事責任 / 環境犯罪學與社會安全成本 / Shen et al. (2023) / WHO / United Against Rabies (2022) / 交通部公路局(2023)",
     references: [
           {
                 title: "動物保護法（民國 112 年 06 月 28 日修正）第 25 條刑事責任",
                 url: "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0060027&flno=25"
           },
-          {
-                title: "PMC/NIH (2023) - Progress towards dog-mediated rabies elimination in PR China (Asia)",
-                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/"
-          },
+            {
+                  title: "Shen et al. (2023) - Progress towards dog-mediated rabies elimination in PR China: a scoping review",
+                  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/"
+            },
           {
                 title: "WHO - Strategic Framework for Elimination of Human Rabies Transmitted by Dogs",
                 url: "https://iris.who.int/bitstreams/18d3fd7b-0c76-4284-b714-0b7650d015ad/download"

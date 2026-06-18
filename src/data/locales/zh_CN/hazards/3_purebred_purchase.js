@@ -4,7 +4,7 @@ export const hazardData = {
     desc: "买方虽妥善照顾，但资金助长了繁殖产业。让少数个体终生承受潜在的遗传疾病风险（如大型犬髋关节发育不良、特定品种心脏病），并占据收容资源。",
     tooltipTitle: "潜在遗传疾病的风险",
     tooltipContent: "纯种宠物在追求纯系选育的过程中，常因基因库封闭而推升潜在遗传疾病的发生率（如骨骼发育不良、退化性疾病）。此为隐性风险，有别于直接追求残疾外观的极端畸变繁殖。",
-    citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",
+    citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / Donner et al. (2018)",
     references: [
           {
                 title: "Asher, L., Diesel, G., Summers, J. F., McGreevy, P. D., & Collins, L. M. (2009). Inherited defects in pedigree dogs. Part 1: Disorders related to breed standards. The Veterinary Journal, 182(3), 402–411.",
@@ -19,7 +19,7 @@ export const hazardData = {
                 url: "https://pubmed.ncbi.nlm.nih.gov/23683021/"
           },
           {
-                title: "PMC/NIH (2018) - Frequency and distribution of 152 genetic disease variants in over 100,000 dogs",
+                title: "Donner et al. (2018) - Frequency and distribution of 152 genetic disease variants in over 100,000 dogs",
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5945203/"
           }
     ],

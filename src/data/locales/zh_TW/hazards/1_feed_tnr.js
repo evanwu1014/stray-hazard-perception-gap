@@ -3,8 +3,8 @@ export const hazardData = {
     name: "當面餵食 TNR 遊蕩犬貓",
     desc: "犬貓個體免於飢餓且無繁衍能力。但維持其街頭生命仍會產生排泄物，並讓其持續基於本能掠食原生野生動物或追咬路人。",
     tooltipTitle: "開放空間 TNR/TNA 的限制",
-    tooltipContent: "研究與數學模型顯示，流浪犬貓的年移除率必須持續達到 75% 至 85% 以上，族群總量才會開始下降，且絕育個體仍會持續獵殺野生動物或造成人車追咬衝突。",
-    citation: "Longcore et al. (2009) / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / 台灣石虎保育協會 / 農業部(2024) / WHO / 交通部公路局(2023) / 警政署",
+    tooltipContent: "研究與數學模型顯示，流浪犬貓的年絕育／移除率必須持續達到 71% 至 94% 以上，族群總量才會開始下降，且絕育個體仍會持續獵殺野生動物或造成人車追咬衝突。",
+    citation: "Longcore et al. (2009) / Barrows (2004) / Gunther et al. (2022) / IFAS (2020) / Wellbeing Intl. / 台灣石虎保育協會 / 農業部(2024) / WHO / 交通部公路局(2023) / 警政署",
     references: [
           {
                 title: "Longcore, T., Rich, C., & Sullivan, L. M. (2009). Critical assessment of claims regarding management of feral cats by trap–neuter–return. Conservation Biology, 23(4), 887–894.",
@@ -15,7 +15,7 @@ export const hazardData = {
                 url: "https://doi.org/10.2460/javma.2004.225.1365"
           },
           {
-                title: "PMC/NIH (2022) - High-intensity TNR required to reduce free-roaming cat population",
+                title: "Gunther et al. (2022) - Reduction of free-roaming cat population requires high-intensity neutering",
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9169806/"
           },
           {
@@ -39,7 +39,7 @@ export const hazardData = {
                 url: "https://www.twlcat.org/en/"
           },
           {
-                title: "PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats",
+                title: "van der Meer et al. (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats",
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/"
           },
           {

@@ -4,7 +4,7 @@ export const hazardData = {
     desc: "買方雖妥善照顧，但資金助長了繁殖產業。讓少數個體終身承受潛在的遺傳疾病風險（如大型犬髖關節發育不良、特定品種心臟病），並佔據收容資源。",
     tooltipTitle: "潛在遺傳疾病的風險",
     tooltipContent: "純種寵物在追求純系選育的過程中，常因基因庫封閉而推升潛在遺傳疾病的發生率（如骨骼發育不良、退化性疾病）。此為隱性風險，有別於直接追求殘疾外觀的極端畸變繁殖。",
-    citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / PMC/NIH (2018)",
+    citation: "Asher et al. (2009) / UFAW Genetic Welfare Problems / Bellumori et al. JAVMA (2013) / Donner et al. (2018)",
     references: [
           {
                 title: "Asher, L., Diesel, G., Summers, J. F., McGreevy, P. D., & Collins, L. M. (2009). Inherited defects in pedigree dogs. Part 1: Disorders related to breed standards. The Veterinary Journal, 182(3), 402–411.",
@@ -19,7 +19,7 @@ export const hazardData = {
                 url: "https://pubmed.ncbi.nlm.nih.gov/23683021/"
           },
           {
-                title: "PMC/NIH (2018) - Frequency and distribution of 152 genetic disease variants in over 100,000 dogs",
+                title: "Donner et al. (2018) - Frequency and distribution of 152 genetic disease variants in over 100,000 dogs",
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC5945203/"
           }
     ],

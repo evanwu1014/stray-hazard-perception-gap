@@ -19,7 +19,7 @@
 
 ## 2. 靜態 HTML SEO 配置
 
-配置於 [index.html](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/index.html) 的 `<head>` 區段中，內容包含：
+配置於 [index.html](../index.html) 的 `<head>` 區段中，內容包含：
 
 ### 規範連結 (Canonical Link)
 *   **標籤**：`<link rel="canonical" href="https://stray-hazard-perception-gap.web.app/" />`
@@ -61,7 +61,7 @@
 
 ## 3. 客戶端動態 Metadata 控制器
 
-### 元件實作：[SEOManager.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/components/SEOManager.jsx)
+### 元件實作：[SEOManager.jsx](../src/components/SEOManager.jsx)
 `SEOManager` 是一個輕量、無 DOM 渲染的 React 元件，透過 `useLocation` 與 `useI18n` 訂閱以下狀態變化：
 1.  **路徑變更 (Route Path)**：監聽當前的網址路徑。
 2.  **語系變更 (Active Language)**：監聽切換繁體中文 (`zh_TW`) 與簡體中文 (`zh_CN`) 的行為。
@@ -78,7 +78,7 @@
 | | 簡體中文 | `{行为名称} - 危害评估与分析 \| 纯结果论危害指数` | `{行为名称}的结果论危害量化评估与分析：{行为摘要}` |
 
 ### 掛載位置
-必須掛載於 `<HashRouter>` 內部的最上層（見 [App.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/App.jsx)），確保能正確存取 React Router 提供的上下文物件：
+必須掛載於 `<HashRouter>` 內部的最上層（見 [App.jsx](../src/App.jsx)），確保能正確存取 React Router 提供的上下文物件：
 ```jsx
 <I18nProvider>
   <HashRouter>
@@ -94,9 +94,9 @@
 
 ## 4. 爬蟲控制與站點地圖
 
-為了引導搜尋引擎發現 Hash 路由，專案在 [public/](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/public) 目錄中配置了靜態檢索輔助檔案：
+為了引導搜尋引擎發現 Hash 路由，專案在 [public/](../public) 目錄中配置了靜態檢索輔助檔案：
 
-### Robots 配置 ([robots.txt](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/public/robots.txt))
+### Robots 配置 ([robots.txt](../public/robots.txt))
 聲明允許所有爬蟲抓取，並明確指定 XML 站點地圖的 URL，利於搜尋引擎快速索引：
 ```text
 User-agent: *
@@ -105,7 +105,7 @@ Allow: /
 Sitemap: https://stray-hazard-perception-gap.web.app/sitemap.xml
 ```
 
-### Sitemap 配置 ([sitemap.xml](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/public/sitemap.xml))
+### Sitemap 配置 ([sitemap.xml](../public/sitemap.xml))
 針對 Hash 路由特別編寫，列出了所有可供爬取的客戶端路徑，包含主頁、場域頁與 1~13 號行為條目詳情頁：
 *   **首頁**：`https://stray-hazard-perception-gap.web.app/` (權重: 1.0)
 *   **場域頁**：`https://stray-hazard-perception-gap.web.app/#/scenario` (權重: 0.8)

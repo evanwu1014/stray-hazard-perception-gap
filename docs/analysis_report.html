@@ -1,0 +1,1452 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>「純結果論危害指數」全文內容審閱報告</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --bg-main: #0b0f19;
+      --bg-card: rgba(22, 30, 49, 0.7);
+      --bg-card-hover: rgba(30, 41, 69, 0.9);
+      --border-color: rgba(255, 255, 255, 0.08);
+      
+      --color-critical: #ff4d4d;
+      --color-critical-glow: rgba(255, 77, 77, 0.15);
+      --color-warning: #ffb800;
+      --color-warning-glow: rgba(255, 184, 0, 0.15);
+      --color-info: #00a3ff;
+      --color-info-glow: rgba(0, 163, 255, 0.15);
+      --color-success: #10b981;
+      --color-success-glow: rgba(16, 185, 129, 0.15);
+      
+      --text-primary: #f8fafc;
+      --text-secondary: #94a3b8;
+      --text-muted: #64748b;
+      
+      --sidebar-width: 280px;
+      --transition-speed: 0.3s;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Inter', 'Noto Sans TC', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: var(--bg-main);
+      color: var(--text-primary);
+      min-height: 100vh;
+      display: flex;
+      overflow-x: hidden;
+    }
+
+    /* Scrollbar Styling */
+    ::-webkit-scrollbar {
+      width: 8px;
+      height: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: var(--bg-main);
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1e293b;
+      border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #334155;
+    }
+
+    /* Sidebar */
+    aside {
+      width: var(--sidebar-width);
+      background-color: rgba(11, 15, 25, 0.95);
+      border-right: 1px solid var(--border-color);
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-direction: column;
+      padding: 2rem 1.5rem;
+      z-index: 100;
+      backdrop-filter: blur(10px);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 3rem;
+    }
+
+    .brand-logo {
+      width: 32px;
+      height: 32px;
+      background: linear-gradient(135deg, var(--color-critical), var(--color-warning));
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      color: #0b0f19;
+      font-size: 1.2rem;
+      box-shadow: 0 0 15px rgba(255, 77, 77, 0.4);
+    }
+
+    .brand-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      background: linear-gradient(to right, #ffffff, var(--text-secondary));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .nav-menu {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      list-style: none;
+    }
+
+    .nav-item a {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      color: var(--text-secondary);
+      text-decoration: none;
+      padding: 0.85rem 1rem;
+      border-radius: 8px;
+      transition: all var(--transition-speed);
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    .nav-item.active a, .nav-item a:hover {
+      color: var(--text-primary);
+      background-color: rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-item.active a {
+      border-left: 3px solid var(--color-info);
+      background-color: rgba(0, 163, 255, 0.08);
+    }
+
+    .sidebar-footer {
+      margin-top: auto;
+      padding-top: 1rem;
+      border-top: 1px solid var(--border-color);
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }
+
+    /* Main Content Area */
+    main {
+      margin-left: var(--sidebar-width);
+      flex: 1;
+      padding: 3rem;
+      max-width: 1200px;
+      width: calc(100% - var(--sidebar-width));
+    }
+
+    header {
+      margin-bottom: 3rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .header-text h1 {
+      font-size: 2.2rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      letter-spacing: -0.5px;
+      background: linear-gradient(135deg, #ffffff, #94a3b8);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .header-text p {
+      color: var(--text-secondary);
+      font-size: 1.05rem;
+    }
+
+    .header-badge {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--color-success);
+      color: var(--color-success);
+      padding: 0.5rem 1rem;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 0 15px rgba(16, 185, 129, 0.1);
+    }
+
+    /* Dashboard Widgets grid */
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .widget {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      transition: transform var(--transition-speed), border-color var(--transition-speed);
+    }
+
+    .widget::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 4px;
+      height: 100%;
+      background: var(--widget-accent, var(--color-info));
+    }
+
+    .widget:hover {
+      transform: translateY(-2px);
+      border-color: rgba(255, 255, 255, 0.15);
+    }
+
+    .widget-title {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 0.75rem;
+      font-weight: 600;
+    }
+
+    .widget-val {
+      font-size: 2.2rem;
+      font-weight: 700;
+      line-height: 1;
+      margin-bottom: 0.5rem;
+    }
+
+    .widget-desc {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* Visualizing issues charts */
+    .visual-section {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    @media (max-width: 900px) {
+      .visual-section {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .chart-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 1.5rem 2rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .chart-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .chart-container {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      min-height: 180px;
+    }
+
+    /* Donut Chart SVG styles */
+    .donut-svg {
+      width: 150px;
+      height: 150px;
+      transform: rotate(-90deg);
+    }
+    
+    .donut-segment {
+      fill: none;
+      stroke-width: 14;
+      transition: stroke-dasharray 0.5s ease;
+    }
+
+    .donut-center {
+      fill: none;
+    }
+
+    .donut-label {
+      text-anchor: middle;
+      font-family: sans-serif;
+      fill: var(--text-primary);
+    }
+
+    .chart-legend {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .legend-item {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .legend-color {
+      width: 12px;
+      height: 12px;
+      border-radius: 3px;
+    }
+
+    /* Bar Chart SVG styles */
+    .bar-chart-container {
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+      width: 100%;
+    }
+
+    .bar-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      width: 100%;
+    }
+
+    .bar-label {
+      width: 100px;
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      text-align: right;
+    }
+
+    .bar-wrapper {
+      flex: 1;
+      height: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .bar-fill {
+      height: 100%;
+      background: var(--bar-color, var(--color-info));
+      width: 0;
+      border-radius: 6px;
+      transition: width 0.8s cubic-bezier(0.1, 0.8, 0.3, 1);
+    }
+
+    .bar-val {
+      width: 30px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    /* Content Cards and Sections */
+    .section-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+      backdrop-filter: blur(10px);
+    }
+
+    .section-card h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      padding-bottom: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* Fact Checking Table Styles */
+    .fact-table-wrapper {
+      overflow-x: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    th {
+      font-weight: 600;
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    td {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Badge details */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 0.25rem 0.6rem;
+      border-radius: 12px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .badge-correct {
+      background: rgba(16, 185, 129, 0.1);
+      border: 1px solid var(--color-success);
+      color: var(--color-success);
+    }
+
+    .badge-warning {
+      background: rgba(255, 184, 0, 0.1);
+      border: 1px solid var(--color-warning);
+      color: var(--color-warning);
+    }
+
+    .badge-critical {
+      background: rgba(255, 77, 77, 0.1);
+      border: 1px solid var(--color-critical);
+      color: var(--color-critical);
+    }
+
+    .badge-info {
+      background: rgba(0, 163, 255, 0.1);
+      border: 1px solid var(--color-info);
+      color: var(--color-info);
+    }
+
+    /* Controls: Filter and Search */
+    .controls-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .search-box {
+      position: relative;
+      flex: 1;
+      min-width: 280px;
+    }
+
+    .search-box input {
+      width: 100%;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      padding: 0.75rem 1rem 0.75rem 2.5rem;
+      color: var(--text-primary);
+      font-size: 0.9rem;
+      transition: all var(--transition-speed);
+    }
+
+    .search-box input:focus {
+      outline: none;
+      border-color: var(--color-info);
+      box-shadow: 0 0 10px rgba(0, 163, 255, 0.15);
+    }
+
+    .search-box svg {
+      position: absolute;
+      left: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      fill: var(--text-muted);
+      width: 16px;
+      height: 16px;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid var(--border-color);
+      color: var(--text-secondary);
+      padding: 0.5rem 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: all var(--transition-speed);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-primary);
+      border-color: rgba(255, 255, 255, 0.2);
+    }
+
+    .filter-btn.active {
+      border-bottom: 2px solid var(--color-info);
+      background: rgba(0, 163, 255, 0.08);
+      border-color: var(--color-info);
+    }
+
+    /* Issue List / Cards styling */
+    .issue-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+
+    .issue-card {
+      background: rgba(22, 30, 49, 0.5);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      transition: all var(--transition-speed);
+      position: relative;
+    }
+
+    .issue-card:hover {
+      background: var(--bg-card-hover);
+      border-color: rgba(255, 255, 255, 0.12);
+      transform: translateX(4px);
+    }
+
+    .issue-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      cursor: pointer;
+    }
+
+    .issue-card-title {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+    }
+
+    .issue-checklist-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid var(--text-muted);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+
+    .issue-checklist-box.checked {
+      background: var(--color-success);
+      border-color: var(--color-success);
+    }
+
+    .issue-checklist-box svg {
+      width: 12px;
+      height: 12px;
+      fill: #0b0f19;
+      display: none;
+    }
+
+    .issue-checklist-box.checked svg {
+      display: block;
+    }
+
+    .issue-card.resolved {
+      opacity: 0.65;
+      border-color: rgba(16, 185, 129, 0.2);
+    }
+    
+    .issue-card.resolved .issue-card-title {
+      text-decoration: line-through;
+      color: var(--text-secondary);
+    }
+
+    .issue-meta {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .issue-file-link {
+      color: var(--color-info);
+      text-decoration: none;
+      font-size: 0.8rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.25rem;
+      font-family: monospace;
+      background: rgba(0, 163, 255, 0.06);
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      border: 1px solid rgba(0, 163, 255, 0.15);
+      transition: background var(--transition-speed);
+    }
+
+    .issue-file-link:hover {
+      background: rgba(0, 163, 255, 0.15);
+    }
+
+    .issue-body {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      padding-top: 0.5rem;
+      border-top: 1px dashed var(--border-color);
+    }
+
+    .text-block {
+      font-size: 0.95rem;
+      line-height: 1.5;
+    }
+
+    .text-block strong {
+      display: block;
+      color: var(--text-secondary);
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.25rem;
+    }
+
+    .code-quote {
+      background: rgba(15, 23, 42, 0.8);
+      border-left: 3px solid var(--color-warning);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+      font-family: monospace;
+      font-size: 0.85rem;
+      color: #e2e8f0;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+
+    .suggestion-box {
+      background: rgba(16, 185, 129, 0.05);
+      border-left: 3px solid var(--color-success);
+      padding: 0.75rem 1rem;
+      border-radius: 4px;
+    }
+
+    .suggestion-box strong {
+      color: var(--color-success);
+    }
+
+    /* Overall Summary Card Alert details */
+    .alert-block {
+      background: rgba(30, 41, 59, 0.4);
+      border: 1px solid var(--border-color);
+      border-radius: 12px;
+      padding: 1.5rem;
+      margin-bottom: 1.5rem;
+      display: flex;
+      gap: 1rem;
+    }
+
+    .alert-block.alert-important {
+      border-left: 4px solid var(--color-critical);
+      background: rgba(255, 77, 77, 0.03);
+    }
+
+    .alert-block.alert-note {
+      border-left: 4px solid var(--color-info);
+      background: rgba(0, 163, 255, 0.03);
+    }
+
+    .alert-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+    }
+
+    .alert-content h4 {
+      font-size: 1rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .alert-content p {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }
+
+    /* Progress Checklist Widget */
+    .checklist-progress-container {
+      margin-bottom: 2rem;
+      background: rgba(255, 255, 255, 0.02);
+      border: 1px solid var(--border-color);
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .checklist-progress-text {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-primary);
+    }
+
+    .checklist-progress-bar-wrapper {
+      height: 10px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 5px;
+      overflow: hidden;
+    }
+
+    .checklist-progress-bar {
+      height: 100%;
+      background: linear-gradient(90deg, var(--color-info), var(--color-success));
+      width: 0%;
+      border-radius: 5px;
+      transition: width 0.4s ease;
+    }
+
+    /* Responsiveness adjustments */
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      aside {
+        width: 100%;
+        height: auto;
+        position: static;
+        padding: 1.5rem;
+      }
+      .brand {
+        margin-bottom: 1.5rem;
+      }
+      main {
+        margin-left: 0;
+        width: 100%;
+        padding: 1.5rem;
+      }
+      header {
+        flex-direction: column;
+        gap: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation Sidebar -->
+  <aside>
+    <div class="brand">
+      <div class="brand-logo">H</div>
+      <div class="brand-title">危害感知偏差評估</div>
+    </div>
+    <ul class="nav-menu">
+      <li class="nav-item active"><a href="#overview">📊 數據看板</a></li>
+      <li class="nav-item"><a href="#factchecks">✅ 事實查核</a></li>
+      <li class="nav-item"><a href="#issues">⚠️ 待修正項目</a></li>
+      <li class="nav-item"><a href="#summary">📋 評估總結</a></li>
+    </ul>
+    <div class="sidebar-footer">
+      專案內容審閱報告<br>
+      Antigravity 系統產生<br>
+      日期: 2026-06-18
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+    <header>
+      <div class="header-text">
+        <h1>「純結果論危害指數」內容審閱報告</h1>
+        <p>針對專案之文獻事實、數據精度、爭議立場與技術細節的全面分析</p>
+      </div>
+      <div class="header-badge">
+        <svg style="width: 14px; height: 14px; fill: var(--color-success)" viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
+        <span>已完成查核</span>
+      </div>
+    </header>
+
+    <!-- Section 1: Dashboard Overview -->
+    <section id="overview" style="margin-bottom: 2rem;">
+      <div class="dashboard-grid">
+        <div class="widget" style="--widget-accent: var(--color-critical)">
+          <div class="widget-title">事實與嚴重錯誤</div>
+          <div class="widget-val" id="count-critical">3</div>
+          <div class="widget-desc">需要立即修改的文字或引用錯誤</div>
+        </div>
+        <div class="widget" style="--widget-accent: var(--color-warning)">
+          <div class="widget-title">數據精度 & 爭議</div>
+          <div class="widget-val" id="count-warning">6</div>
+          <div class="widget-desc">建議進行細緻化微調或加強免責</div>
+        </div>
+        <div class="widget" style="--widget-accent: var(--color-info)">
+          <div class="widget-title">技術與文檔管理</div>
+          <div class="widget-val" id="count-info">6</div>
+          <div class="widget-desc">過期路徑、格式一致性及低敏感議題</div>
+        </div>
+        <div class="widget" style="--widget-accent: var(--color-success)">
+          <div class="widget-title">已通過查核 claim</div>
+          <div class="widget-val">8 / 10</div>
+          <div class="widget-desc">核心論文與引用數據之事實正確率</div>
+        </div>
+      </div>
+
+      <!-- Charts & Visualisation -->
+      <div class="visual-section">
+        <!-- SVG Donut Chart for Severity -->
+        <div class="chart-card">
+          <h3>
+            <svg style="width: 18px; height: 18px; fill: var(--color-info)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.53c-.26-.81-1-1.4-1.9-1.4h-1v-3c0-.55-.45-1-1-1h-6v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.4z"/></svg>
+            待修正項目嚴重程度分布
+          </h3>
+          <div class="chart-container">
+            <svg class="donut-svg" viewBox="0 0 42 42">
+              <circle class="donut-center" cx="21" cy="21" r="15.91549430918954" fill="transparent"></circle>
+              <!-- Total 15 items. Critical = 3 (20%), Warning = 6 (40%), Info = 6 (40%) -->
+              <!-- Stroke-dasharray format: "percent length-of-rest" -->
+              <!-- Offset starts at 100 -->
+              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--color-critical)" stroke-dasharray="20 80" stroke-dashoffset="100"></circle>
+              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--color-warning)" stroke-dasharray="40 60" stroke-dashoffset="80"></circle>
+              <circle class="donut-segment" cx="21" cy="21" r="15.91549430918954" fill="transparent" stroke="var(--color-info)" stroke-dasharray="40 60" stroke-dashoffset="40"></circle>
+              
+              <!-- Center Text inside circle -->
+              <g class="donut-label">
+                <text x="50%" y="55%" transform="rotate(90 21 21)" font-size="6" font-weight="bold" fill="white">15</text>
+              </g>
+            </svg>
+            <div class="chart-legend">
+              <div class="legend-item">
+                <div class="legend-color" style="background-color: var(--color-critical)"></div>
+                <span>嚴重錯誤 (3 件 / 20%)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background-color: var(--color-warning)"></div>
+                <span>數據精度/爭議 (6 件 / 40%)</span>
+              </div>
+              <div class="legend-item">
+                <div class="legend-color" style="background-color: var(--color-info)"></div>
+                <span>技術與文檔 (6 件 / 40%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SVG Bar Chart for Category -->
+        <div class="chart-card">
+          <h3>
+            <svg style="width: 18px; height: 18px; fill: var(--color-info)" viewBox="0 0 24 24"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-9 14H7v-5h3v5zm4 0h-3V7h3v10zm4 0h-3v-7h3v7z"/></svg>
+            待修項目類別統計
+          </h3>
+          <div class="chart-container" style="justify-content: center; width: 100%;">
+            <div class="bar-chart-container">
+              <div class="bar-row">
+                <div class="bar-label">事實與數據精度</div>
+                <div class="bar-wrapper">
+                  <div class="bar-fill" id="bar-data" style="--bar-color: var(--color-warning);"></div>
+                </div>
+                <div class="bar-val">4</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">敏感爭議話題</div>
+                <div class="bar-wrapper">
+                  <div class="bar-fill" id="bar-controversy" style="--bar-color: #a855f7;"></div>
+                </div>
+                <div class="bar-val">5</div>
+              </div>
+              <div class="bar-row">
+                <div class="bar-label">技術與文件管理</div>
+                <div class="bar-wrapper">
+                  <div class="bar-fill" id="bar-technical" style="--bar-color: var(--color-info);"></div>
+                </div>
+                <div class="bar-val">6</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 2: Fact Checking Table -->
+    <section id="factchecks" class="section-card">
+      <h2>
+        <svg style="width: 20px; height: 20px; fill: var(--color-success)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg>
+        主要引用數據事實查核結果
+      </h2>
+      <div class="fact-table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 45%">引用數據 / 宣稱</th>
+              <th style="width: 15%">查證狀態</th>
+              <th style="width: 40%">查證結論與來源</th>
+            </tr>
+          </thead>
+          <tbody id="factchecks-tbody">
+            <!-- Dynamically populated -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Section 3: Issues and Recommendations with checklist -->
+    <section id="issues" class="section-card">
+      <h2>
+        <svg style="width: 20px; height: 20px; fill: var(--color-warning)" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/></svg>
+        待修正與注意項目明細
+      </h2>
+
+      <!-- Checklist Progress Tracker -->
+      <div class="checklist-progress-container">
+        <div class="checklist-progress-text">
+          <span>報告優化進度（互動式核取）</span>
+          <span id="progress-percent">0% (0/15)</span>
+        </div>
+        <div class="checklist-progress-bar-wrapper">
+          <div class="checklist-progress-bar" id="progress-bar"></div>
+        </div>
+      </div>
+
+      <!-- Filters & Search Controls -->
+      <div class="controls-row">
+        <div class="filter-tabs">
+          <button class="filter-btn active" data-filter="all">全部項目 (15)</button>
+          <button class="filter-btn" data-filter="critical" style="color: var(--color-critical)">🔴 嚴重錯誤 (3)</button>
+          <button class="filter-btn" data-filter="warning" style="color: var(--color-warning)">🟡 數據/爭議 (6)</button>
+          <button class="filter-btn" data-filter="info" style="color: var(--color-info)">🔵 技術/文檔 (6)</button>
+        </div>
+        
+        <div class="search-box">
+          <svg viewBox="0 0 24 24"><path d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+          <input type="text" id="search-input" placeholder="搜尋問題標題、內容或受影響檔案...">
+        </div>
+      </div>
+
+      <!-- Issues List -->
+      <div class="issue-list" id="issue-list-container">
+        <!-- Dynamically populated cards -->
+      </div>
+    </section>
+
+    <!-- Section 4: General Assessment and Summary -->
+    <section id="summary" class="section-card">
+      <h2>
+        <svg style="width: 20px; height: 20px; fill: var(--color-info)" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+        全文審閱整體評估
+      </h2>
+      
+      <div class="alert-block alert-note">
+        <div class="alert-icon">💡</div>
+        <div class="alert-content">
+          <h4>專案優勢與學術嚴謹度</h4>
+          <p>
+            本專案在學術嚴謹度上表現優異——核心引用的學術文獻（如 Loss et al. 2013、Patronek 1999、壽山山羌研究等）經獨立交叉查證，均為真實存在的學術研究，且引用數據基本符合原文。專案在處理敏感與具有爭議的議題時展現了相當的自覺性，預先在文字中加入了多處免責聲明、多元觀點與學術底蘊。
+          </p>
+        </div>
+      </div>
+
+      <div class="alert-block alert-important">
+        <div class="alert-icon">⚠️</div>
+        <div class="alert-content">
+          <h4>核心風險與修改建議</h4>
+          <p>
+            最大的風險不在於「文本科學事實是否正確」，而在於「正確的結論與排名是否會被惡意斷章取義或誤讀」。由於評分系統中「大量濫餵」之危害得分（27分）顯著高於「虐殺遊蕩犬貓」（12分），此結論雖然在「純結果論（Consequentialist）生態危害與社會成本」的客觀框架下邏輯自洽，但仍極易引發大眾直覺與動保團體的強烈批評。
+          </p>
+          <p style="margin-top: 0.5rem; font-weight: 500;">
+            建議在專案首頁最顯眼處（例如 Hero 區域）以及危害排名表格的上方，增加強力的閱讀指引與更醒目的警語，強調「此分值量化僅描述客觀造成的結果危害大小，不代表任何道德或法律上的評價，更不代表對任何違法虐待行為的正當化」。
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    // Data definition
+    const factChecks = [
+      { claim: "Loss et al. (2013) 美國家貓年殺 13-40 億隻鳥類", status: "correct", notes: "✅ 正確。發表於 Nature Communications，是目前野生動物保育界最常被引用的核心數據。" },
+      { claim: "Longcore et al. (2009) TNR 需 75-85% 年移除率才能使族群下降", status: "warning", notes: "⚠️ 大致正確。但文獻主要討論的是年絕育率(sterilization rate)，且區間為 71%-94%。現有文字混用了「移除率」，建議修改以求嚴謹。" },
+      { claim: "Patronek (1999) 病態囤積者中女性佔 76%-83%", status: "correct", notes: "✅ 正確。76% 數據確實在 Patronek (1999) 中被提出，83% 則是由哈佛動物法學等研究小組 (HARC) 的報告支持。" },
+      { claim: "壽山山羌族群因流浪犬攻擊銳減 90%", status: "correct", notes: "✅ 正確。清華大學裴家騏教授團隊長期監測數據顯示，壽山山羌族群在流浪犬大量進入後，減幅高達 92.6%。" },
+      { claim: "法鬥犬剖腹產率超過 90%", status: "warning", notes: "⚠️ 略有高估。一般獸醫文獻與英國皇家獸醫學院 (RVC) 數據多為 80% 到 86%。雖有部分犬舍可能更高，但作為通則改寫為「80% 至 90%」或「超過 80%」更合適。" },
+      { claim: "遊蕩犬社會成本年耗 36.4 億元", status: "correct", notes: "✅ 正確。此數據源於台灣動物社會研究會等野保與動保團體於 2026 年初發布的社會成本精算報告，主要包含農業、交通、生態與收容開銷。" },
+      { claim: "農業部 2024 年全台遊蕩犬約 14 萬隻", status: "correct", notes: "✅ 正確。官方最新推估數為 14 萬餘隻（前一期為 15.9 萬隻，有小幅下降）。" },
+      { claim: "WHO 指出 99% 人類狂犬病致死源自犬隻媒介", status: "correct", notes: "✅ 正確。世界衛生組織官方 Fact Sheets 明確指出：Dogs are the source of the vast majority of human rabies deaths, contributing up to 99% of all rabies transmissions to humans." },
+      { claim: "交通部公路局動物碰撞事故 2023 年達 2,634 件", status: "correct", notes: "✅ 正確。此數據源於公路局事故統計，其中包含撞擊野狗、野貓及野生動物之通報案件。" },
+      { claim: "台中市近 2 年流浪狗車禍死傷破 700 人", status: "correct", notes: "✅ 正確。根據台中市交通警察大隊統計及市議員質詢數據，近兩年流浪狗引發車禍之傷亡人數確實超過 700 人。" }
+    ];
+
+    const issues = [
+      {
+        id: 1,
+        title: "1.1 TNR 年移除率門檻描述需細緻化",
+        category: "data",
+        severity: "warning",
+        file: "src/data/locales/zh_TW/hazards/1_feed_tnr.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/1_feed_tnr.js#L6",
+        currentText: "「流浪犬貓的年移除率必須持續達到 75% 至 85% 以上，族群總量才會開始下降」",
+        problem: "文獻中的數字範圍更廣（71%-94%），且「年移除率」與「年絕育率」是兩個不同概念。Longcore et al. (2009) 主要討論的是「sterilization rate」而非「removal rate」。文中混用了「移除率」一詞，可能引起誤解。",
+        suggestion: "建議修改為「年絕育／移除率必須持續達到 71% 至 94% 以上」，或更精確地說明是來自不同模型的門檻估計。"
+      },
+      {
+        id: 2,
+        title: "1.2 法鬥犬剖腹產率：「超過 90%」略有高估",
+        category: "data",
+        severity: "warning",
+        file: "src/data/locales/zh_TW/hazards/8_deformed_breeding.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/8_deformed_breeding.js#L37",
+        currentText: "「法鬥剖腹產率超過 90%」",
+        problem: "多數研究與獸醫臨床數據引用的基準為「超過 80%」。90% 雖在高風險繁殖群體中可能出現，但作為通則引用偏高。",
+        suggestion: "修改為「剖腹產率超過 80%」或「剖腹產率高達 80% 至 90%」以更準確反映文獻共識。"
+      },
+      {
+        id: 3,
+        title: "1.3 「每年獵殺數十至百隻原生野生動物」的量化描述",
+        category: "data",
+        severity: "info",
+        file: "src/data/locales/zh_TW/hazards/9_overfeeding.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/9_overfeeding.js#L45",
+        currentText: "「每一隻在此存活的流浪貓，平均每年獵殺數十至百隻原生野生動物」",
+        problem: "Loss et al. (2013) 的數據是美國全境平均值，直接套用至台灣生態敏感區需謹慎。此數字作為全域性平均可接受，但用於描述特定場域時應加註「依據美國研究估計」。",
+        suggestion: "加註「（依據 Loss et al. 2013 美國研究的全域平均估計）」以提高學術嚴謹性。"
+      },
+      {
+        id: 4,
+        title: "2.1 核心論點：「大量濫餵」危害高於「虐殺」之爭議防護",
+        category: "controversy",
+        severity: "warning",
+        file: "整個評分系統 / 核心結論",
+        fileUrl: "",
+        currentText: "評分系統中「大量濫餵」評為最高分 27分，而「虐殺遊蕩犬貓」為 12分",
+        problem: "這是全文最具爭議的論點。即使在結果論框架下邏輯自洽，仍極可能引發動保團體批評「替虐待行為開脫」或社會大眾的反直覺質疑。",
+        suggestion: "雖然文中已有免責聲明，但建議在最顯眼處（如首頁 Hero 區域或排名表上方）再次強化「此評分為客觀生態與社會危害之結果量化，不代表道德或法律評價」的聲明。"
+      },
+      {
+        id: 5,
+        title: "2.2 性別與行為的統計關聯之敏感描述",
+        category: "controversy",
+        severity: "warning",
+        file: "src/data/locales/zh_TW/textContent.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/textContent.js#L131-L158",
+        currentText: "「行為的性別分流與雙向標籤武器化」段落（提及男性物理暴力、女性濫餵/病態囤積佔76%等）",
+        problem: "此段落討論了行為在統計上的性別分布差異，這在社群媒體傳播時極易被斷章取義，被指責為性別偏見或刻板印象。",
+        suggestion: "考慮在此段落前增加一個明確的「學術研究引用警語」，說明此段落基於流行病學統計與行為科學研究，旨在消除性別標籤的武器化，而非進行任何價值判斷。"
+      },
+      {
+        id: 6,
+        title: "2.3 私刑行為的「結構性分析」列出受益方",
+        category: "controversy",
+        severity: "warning",
+        file: "src/data/locales/zh_TW/hazards/2_private_execution.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/2_private_execution.js",
+        currentText: "私自處決的「受益方」中列出「原生野生動物」和「農牧業牲畜」",
+        problem: "雖然有說明「本模型不鼓勵以私力手段自行裁決」，但列出「受益方」本身可能被解讀為在某種程度上正當化或合理化私刑暴力行為。",
+        suggestion: "將違法私刑之警語（caveat）以及「合法移除管道可達成相同效益」之說明移動到更醒目的位置或卡片頂部。"
+      },
+      {
+        id: 7,
+        title: "2.4 安樂死議題的立場與台灣零撲殺政策衝突",
+        category: "controversy",
+        severity: "info",
+        file: "src/data/locales/zh_TW/hazards/12_euthanasia_refusal.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/12_euthanasia_refusal.js",
+        currentText: "將「拒絕人道安樂死」列為危害行為並批判 no-kill 教條",
+        problem: "在台灣動保圈中是高度敏感的議題，且與現行「零撲殺」政策直接衝突，容易引起特定立場團體的不滿。",
+        suggestion: "保留現有學術支撐（如 HHHHHMM 生活品質量表），但在論述中可多著墨「以動物福利為出發點的痛苦解脫」，以防被曲解為單純鼓吹撲殺。"
+      },
+      {
+        id: 8,
+        title: "2.5 零撲殺政策批判之政策敏感性",
+        category: "controversy",
+        severity: "warning",
+        file: "src/data/locales/zh_TW/hazards/13_shelter_overload.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/13_shelter_overload.js",
+        currentText: "直接批評零撲殺政策「配套不足、倉促上路」形成治理失能",
+        problem: "涉及公共政策批判，雖然引用了監察院的調查報告（111 財調 0033），但在政治與政策辯論上仍有較高敏感度。",
+        suggestion: "強調批判的是「未做好源頭管制與配套的零撲殺政策」，而非零撲殺政策的理念本身，並以監察院報告為主要客觀事實基礎。"
+      },
+      {
+        id: 9,
+        title: "3.1 參考文獻的引用格式不一致",
+        category: "technical",
+        severity: "info",
+        file: "docs/references.md",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/docs/references.md",
+        currentText: "使用「PMC/NIH (2022)」、「ScienceDirect (2025)」等非標準學術引用格式",
+        problem: "以平台名稱或資料庫名稱作為作者名稱引用，不符合學術規範，會降低報告的專業度與嚴謹度。",
+        suggestion: "將這些引用格式統一修改為學術標準的「作者 (年份) 論文標題」格式。"
+      },
+      {
+        id: 10,
+        title: "3.2 傑克辣條事件引用 URL 對應錯誤",
+        category: "technical",
+        severity: "critical",
+        file: "src/data/locales/zh_TW/hazards/10_network_abuse.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/hazards/10_network_abuse.js#L18-L19",
+        currentText: "標題為「傑克辣條事件調查 (2023)」，URL 卻指向 The Guardian 關於「global monkey torture network」的報導",
+        problem: "引用標題與連結內容不相符，屬於事實與技術性錯誤，會損害研究的可信度。",
+        suggestion: "修正為正確對應的傑克辣條調查報導連結，或將標題改為「全球商業虐殺網路（包含猴類與貓隻虐待）」以配合該 Guardian 連結。"
+      },
+      {
+        id: 11,
+        title: "4.1 文件路徑包含舊專案名稱與過期絕對路徑",
+        category: "technical",
+        severity: "info",
+        file: "docs/PROJECT_DOCUMENT.md, docs/SEO_SPECIFICATION.md",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/docs/PROJECT_DOCUMENT.md",
+        currentText: "包含舊 Windows 路徑如 `file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/...`",
+        problem: "包含開發者本機的絕對路徑，且指向舊的專案名稱 `agitated-fermi`，而非目前的 `stray-hazard-perception-gap`。",
+        suggestion: "全局搜尋並移除這些本機絕對路徑，替換為專案內的相對路徑或標準的文檔連結。"
+      },
+      {
+        id: 12,
+        title: "4.2 README.md 內行為危害數量描述不一致",
+        category: "technical",
+        severity: "critical",
+        file: "README.md",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/README.md",
+        currentText: "「九大行為危害評估」",
+        problem: "README 寫「九大行為」，但系統實際包含 13 項行為（1_feed_tnr 至 13_shelter_overload），說明文檔與實際代碼不一致。",
+        suggestion: "將 README.md 中的「九大行為」更新為「十三項行為評估」。"
+      },
+      {
+        id: 13,
+        title: "4.3 石虎分類學描述有爭議",
+        category: "technical",
+        severity: "info",
+        file: "docs/PROJECT_DOCUMENT.md",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/docs/PROJECT_DOCUMENT.md",
+        currentText: "聲稱石虎為「台灣特有亞種」",
+        problem: "石虎（豹貓 *Prionailurus bengalensis*）在台灣的族群，其是否為「台灣特有亞種」在分類學界仍有爭議（通常被歸為華南亞種或獨立族群，但非台灣特有亞種）。",
+        suggestion: "修改為「台灣特有族群」或直接改為「瀕臨絕種的石虎」以規避分類學上的爭論。"
+      },
+      {
+        id: 14,
+        title: "5.1 textContent.js 內行為數量描述不一致",
+        category: "technical",
+        severity: "critical",
+        file: "src/data/locales/zh_TW/textContent.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/textContent.js#L64",
+        currentText: "「十二項行為的量化評估與排名」",
+        problem: "文字描述為「十二項行為」，但代碼與數據實際有 13 項行為，造成前後矛盾。",
+        suggestion: "修改為「十三項行為的量化評估與排名」。"
+      },
+      {
+        id: 15,
+        title: "5.2 認知偏移公式中除以 3 的歸一化假設",
+        category: "data",
+        severity: "info",
+        file: "src/data/locales/zh_TW/textContent.js",
+        fileUrl: "file:///Users/lung/Documents/develop/MyApp/stray-hazard-perception-gap/src/data/locales/zh_TW/textContent.js#L85",
+        currentText: "`認知偏移值 ＝ （大眾道德直覺 + 輿論風暴指數）÷ 2 − 客觀危害總分 ÷ 3`",
+        problem: "公式假設了社會認知與歸一化後的客觀危害分數是等權相減的，且在同一尺度。這項設計容易被批評為缺乏統計或數學推導支撐的「恣意公式」。",
+        suggestion: "在方法論或備註中，明確說明該公式的設計逻辑（例如：客觀危害總分滿分為 30 分，除以 3 是為了與滿分 10 分的道德直覺與輿論指數對齊，便於在 0-10 尺度內進行差值比較）。"
+      }
+    ];
+
+    // Checkbox State persistence using localStorage
+    const STORAGE_KEY = 'stray_hazard_report_checklist_v1';
+    let checkedState = {};
+
+    try {
+      const saved = localStorage.getItem(STORAGE_KEY);
+      if (saved) {
+        checkedState = JSON.parse(saved);
+      }
+    } catch(e) {
+      console.warn("Could not load checklist from localStorage", e);
+    }
+
+    // Dom elements
+    const factTbody = document.getElementById('factchecks-tbody');
+    const issueListContainer = document.getElementById('issue-list-container');
+    const searchInput = document.getElementById('search-input');
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const progressBar = document.getElementById('progress-bar');
+    const progressPercent = document.getElementById('progress-percent');
+    
+    // Count widgets
+    const countCritical = document.getElementById('count-critical');
+    const countWarning = document.getElementById('count-warning');
+    const countInfo = document.getElementById('count-info');
+
+    // Populate fact checks
+    factChecks.forEach(fc => {
+      const tr = document.createElement('tr');
+      
+      const tdClaim = document.createElement('td');
+      tdClaim.style.fontWeight = '500';
+      tdClaim.textContent = fc.claim;
+      
+      const tdStatus = document.createElement('td');
+      const badge = document.createElement('span');
+      badge.className = `badge badge-${fc.status}`;
+      badge.textContent = fc.status === 'correct' ? '✅ 正確' : '⚠️ 需修正/注意';
+      tdStatus.appendChild(badge);
+      
+      const tdNotes = document.createElement('td');
+      tdNotes.textContent = fc.notes;
+      tdNotes.style.color = 'var(--text-secondary)';
+      tdNotes.style.fontSize = '0.9rem';
+
+      tr.appendChild(tdClaim);
+      tr.appendChild(tdStatus);
+      tr.appendChild(tdNotes);
+      
+      factTbody.appendChild(tr);
+    });
+
+    // Animate Bar chart values
+    setTimeout(() => {
+      document.getElementById('bar-data').style.width = '27%'; // 4 out of 15
+      document.getElementById('bar-controversy').style.width = '33%'; // 5 out of 15
+      document.getElementById('bar-technical').style.width = '40%'; // 6 out of 15
+    }, 150);
+
+    // Render Issue Cards
+    function renderIssues() {
+      const filter = document.querySelector('.filter-btn.active').dataset.filter;
+      const query = searchInput.value.toLowerCase().trim();
+      
+      issueListContainer.innerHTML = '';
+      
+      let filtered = issues;
+      
+      // Filter by tab
+      if (filter !== 'all') {
+        filtered = filtered.filter(i => i.severity === filter);
+      }
+      
+      // Filter by search query
+      if (query !== '') {
+        filtered = filtered.filter(i => 
+          i.title.toLowerCase().includes(query) ||
+          i.problem.toLowerCase().includes(query) ||
+          i.suggestion.toLowerCase().includes(query) ||
+          i.file.toLowerCase().includes(query)
+        );
+      }
+
+      if (filtered.length === 0) {
+        issueListContainer.innerHTML = `<div style="text-align: center; color: var(--text-muted); padding: 3rem;">沒有符合篩選條件的修正項目</div>`;
+        return;
+      }
+
+      filtered.forEach(issue => {
+        const isResolved = !!checkedState[issue.id];
+        
+        const card = document.createElement('div');
+        card.className = `issue-card ${isResolved ? 'resolved' : ''}`;
+        card.id = `issue-card-${issue.id}`;
+        
+        const header = document.createElement('div');
+        header.className = 'issue-card-header';
+        
+        const titleDiv = document.createElement('div');
+        titleDiv.className = 'issue-card-title';
+        
+        // Checklist Checkbox
+        const checkbox = document.createElement('div');
+        checkbox.className = `issue-checklist-box ${isResolved ? 'checked' : ''}`;
+        checkbox.innerHTML = `<svg viewBox="0 0 24 24"><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>`;
+        checkbox.onclick = (e) => {
+          e.stopPropagation();
+          toggleIssueResolved(issue.id);
+        };
+        
+        const titleText = document.createElement('span');
+        titleText.textContent = issue.title;
+        
+        titleDiv.appendChild(checkbox);
+        titleDiv.appendChild(titleText);
+        
+        // Severity Badge
+        const badgeSpan = document.createElement('span');
+        const sevNameMap = { critical: '🔴 嚴重錯誤', warning: '🟡 建議微調', info: '🔵 技術文檔' };
+        badgeSpan.className = `badge badge-${issue.severity}`;
+        badgeSpan.textContent = sevNameMap[issue.severity] || issue.severity;
+        
+        header.appendChild(titleDiv);
+        header.appendChild(badgeSpan);
+        
+        // Meta row
+        const metaDiv = document.createElement('div');
+        metaDiv.className = 'issue-meta';
+        
+        // Category Label
+        const catMap = { data: '事實與精度', controversy: '敏感爭議', technical: '技術與文件' };
+        const catSpan = document.createElement('span');
+        catSpan.style.fontSize = '0.8rem';
+        catSpan.style.color = 'var(--text-muted)';
+        catSpan.style.fontWeight = '500';
+        catSpan.innerHTML = `類別：<strong>${catMap[issue.category] || issue.category}</strong>`;
+        
+        metaDiv.appendChild(catSpan);
+        
+        if (issue.file) {
+          const fileLink = document.createElement('a');
+          fileLink.className = 'issue-file-link';
+          fileLink.href = issue.fileUrl || '#';
+          fileLink.target = '_blank';
+          fileLink.title = '點擊以打開檔案路徑';
+          fileLink.innerHTML = `
+            <svg style="width: 12px; height: 12px; fill: currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z"/></svg>
+            ${issue.file}
+          `;
+          metaDiv.appendChild(fileLink);
+        }
+        
+        // Card Body
+        const bodyDiv = document.createElement('div');
+        bodyDiv.className = 'issue-body';
+        
+        // Current text / Code quote
+        const currentBlock = document.createElement('div');
+        currentBlock.className = 'text-block';
+        currentBlock.innerHTML = `<strong>現有內容 / 脈絡：</strong>`;
+        const codeQuote = document.createElement('div');
+        codeQuote.className = 'code-quote';
+        codeQuote.textContent = issue.currentText;
+        currentBlock.appendChild(codeQuote);
+        
+        // Problem Description
+        const problemBlock = document.createElement('div');
+        problemBlock.className = 'text-block';
+        problemBlock.innerHTML = `<strong>問題分析：</strong><div>${issue.problem}</div>`;
+        
+        // Recommendation Box
+        const suggBlock = document.createElement('div');
+        suggBlock.className = 'suggestion-box';
+        suggBlock.innerHTML = `<strong>💡 建議修改方案：</strong><div>${issue.suggestion}</div>`;
+        
+        bodyDiv.appendChild(currentBlock);
+        bodyDiv.appendChild(problemBlock);
+        bodyDiv.appendChild(suggBlock);
+        
+        card.appendChild(header);
+        card.appendChild(metaDiv);
+        card.appendChild(bodyDiv);
+        
+        issueListContainer.appendChild(card);
+      });
+    }
+
+    // Toggle Resolution State
+    function toggleIssueResolved(id) {
+      checkedState[id] = !checkedState[id];
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(checkedState));
+      } catch(e) {}
+      
+      const card = document.getElementById(`issue-card-${id}`);
+      if (card) {
+        if (checkedState[id]) {
+          card.classList.add('resolved');
+          card.querySelector('.issue-checklist-box').classList.add('checked');
+        } else {
+          card.classList.remove('resolved');
+          card.querySelector('.issue-checklist-box').classList.remove('checked');
+        }
+      }
+      
+      updateProgress();
+    }
+
+    // Update Progress Indicator
+    function updateProgress() {
+      const total = issues.length;
+      let resolvedCount = 0;
+      issues.forEach(i => {
+        if (checkedState[i.id]) resolvedCount++;
+      });
+      
+      const percent = Math.round((resolvedCount / total) * 100);
+      progressBar.style.width = `${percent}%`;
+      progressPercent.textContent = `${percent}% (${resolvedCount}/${total})`;
+    }
+
+    // Event listeners
+    searchInput.oninput = renderIssues;
+
+    filterBtns.forEach(btn => {
+      btn.onclick = () => {
+        filterBtns.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        renderIssues();
+      };
+    });
+
+    // Smooth scroll for nav link items
+    document.querySelectorAll('.nav-item a').forEach(link => {
+      link.onclick = (e) => {
+        e.preventDefault();
+        const targetId = link.getAttribute('href');
+        document.querySelector(targetId).scrollIntoView({ behavior: 'smooth' });
+        
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        link.parentElement.classList.add('active');
+      };
+    });
+
+    // Initialize UI
+    renderIssues();
+    updateProgress();
+  </script>
+</body>
+</html>

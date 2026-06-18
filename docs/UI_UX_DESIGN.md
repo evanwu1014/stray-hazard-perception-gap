@@ -70,7 +70,7 @@
 
 ## 4. 獨立條目詳情頁設計規範 (Behavior Detail Page Specifications)
 
-為提供行為危害更全面深入的分析，獨立詳情頁 ([BehaviorDetail.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/pages/BehaviorDetail.jsx)) 設計了極富視覺衝擊與學術質感的佈局：
+為提供行為危害更全面深入的分析，獨立詳情頁 ([BehaviorDetail.jsx](../src/pages/BehaviorDetail.jsx)) 設計了極富視覺衝擊與學術質感的佈局：
 
 *   **行為危害評分面板 (Behavior Scores Panel)**
     *   將總分展示與分項評分整合成一個大型綜合卡片面板（`.bdetail-scores-panel`），具備頂部威脅級別漸層條（`::before`），在桌面端採用左右分欄設計，在小螢幕（$\le 768px$）下自動折疊為垂直排列。
@@ -108,7 +108,7 @@
 ## 5. 路由切換捲動重置 (Scroll to Top)
 
 *   **機制**：由於 React 單頁應用（SPA）預設會在路由跳轉時維持先前的滾動位置，這在列表頁滑動至底部並點擊「深入了解」後，會導致詳情頁面依然停留在最底部，破壞首屏視覺體驗。
-*   **解決方式**：使用 [ScrollToTop.jsx](file:///C:/Users/Lung/Documents/antigravity/agitated-fermi/src/components/ScrollToTop.jsx) 元件，在 `<HashRouter>` 的頂層監聽 `pathname` 的改變。一旦路由跳轉，便調用 `window.scrollTo({ top: 0, left: 0, behavior: 'instant' })` 強制重置滾動位置，提供流暢的瀏覽旅程。
+*   **解決方式**：使用 [ScrollToTop.jsx](../src/components/ScrollToTop.jsx) 元件，在 `<HashRouter>` 的頂層監聽 `pathname` 的改變。一旦路由跳轉，便調用 `window.scrollTo({ top: 0, left: 0, behavior: 'instant' })` 強制重置滾動位置，提供流暢的瀏覽旅程。
 
 ---
 

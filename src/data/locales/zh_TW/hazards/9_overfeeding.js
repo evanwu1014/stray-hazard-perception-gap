@@ -4,7 +4,7 @@ export const hazardData = {
     desc: "終極的生態與衛生災難。造成流浪犬貓異常聚集繁衍與高夭折率暗數，傳染病與路殺橫行；同時對原生野生動物造成巨大生存威脅（如石虎/穿山甲遭犬隻咬傷致死、原生鳥類與爬蟲類遭貓隻掠食）。",
     tooltipTitle: "繁殖創傷與傳染病爆發",
     tooltipContent: "長期餵食促使流浪犬貓高密度群聚與繁衍。尤其是流浪貓具備刺激性排卵與倒刺交配的生理創傷，且發情頻率極高，無節制餵食等同於資助這部「痛苦生育機器」幾何級膨脹。高密度繁衍進而引發貓瘟、犬細小病毒爆發，導致無數幼體在惡劣環境中失明、病死或遭路殺。",
-    citation: "Loss et al. (2013) Nature Comm. / 中華民國農業部林業及自然保育署野生動物犬咬與路殺數據 / The Wildlife Society (2025) / USDA APHIS / 中華民國苗栗縣政府石虎報告 / ScienceDirect (2025)",
+    citation: "Loss et al. (2013) Nature Comm. / 中華民國農業部林業及自然保育署野生動物犬咬與路殺數據 / The Wildlife Society (2025) / USDA APHIS / 中華民國苗栗縣政府石虎報告 / Shams et al. (2025)",
     references: [
           {
                 title: "Loss, S. R., Will, T., & Marra, P. P. (2013). The impact of free-ranging domestic cats on wildlife of the United States. Nature Communications, 4, Article 1396.",
@@ -27,7 +27,7 @@ export const hazardData = {
                 url: "https://www.miaoli.gov.tw/eng/News_Content.aspx?n=434&s=271995"
           },
           {
-                title: "ScienceDirect (2025) - Incidence and prevalence of rabies virus infections in Asia",
+                title: "Shams et al. (2025) - Incidence and prevalence of rabies virus infections in tested humans and animals in Asia: A systematic review and meta-analysis study",
                 url: "https://www.sciencedirect.com/science/article/pii/S2352771425001387"
           }
     ],
@@ -42,7 +42,7 @@ export const hazardData = {
         icon: "wildlife",
         riskLevel: "critical",
         riskLabel: "極端威脅",
-        desc: "濫餵點吸引高密度流浪貓犬聚集於保育區邊緣，石虎、穿山甲、原生鳥類與爬蟲類遭受系統性獵殺壓力。每一隻在此存活的流浪貓，平均每年獵殺數十至百隻原生野生動物。",
+        desc: "濫餵點吸引高密度流浪貓犬聚集於保育區邊緣，石虎、穿山甲、原生鳥類與爬蟲類遭受系統性獵殺壓力。每一隻在此存活的流浪貓，平均每年獵殺數十至百隻原生野生動物（依據 Loss et al. 2013 美國研究的全域平均估計）。",
         actions: [
           { role: "民眾", action: "嚴格遵守保育區餵食禁令，舉報違規行為，理解「讓動物餓著」有時是保護更多動物的正確選擇" },
           { role: "林業保育署", action: "設置智慧監測系統追蹤濫餵熱點，並在現場配置充足的執法人員" },

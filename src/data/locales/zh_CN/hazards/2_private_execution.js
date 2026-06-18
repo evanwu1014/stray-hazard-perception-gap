@@ -4,14 +4,14 @@ export const hazardData = {
     desc: "属违法行为。动机通常为排除安全威胁或经济损害之「自卫与移除导向私刑」，核心目的在于「消除冲突个体」而非「享受折磨过程」，与病理性「虐杀」有本质动机与行为区别。给予单个个体短暂但剧烈的急性痛苦并剥夺生命，在结果论模型中受害规模极小；私人暴力同时带来秩序恐慌。本模型仅量化结果，不代表认可此行为，亦不主张现行法律必然合理。",
     tooltipTitle: "结果论视角下的外部性与违法性",
     tooltipContent: "此为违法暴力行为（见下方法律引用）。个体痛苦评为 6 分；在纯结果论的计量上，移除单个个体以消除冲突会减少其未来对原生野生动物造成的捕食压力，惟私人暴力同时产生秩序恐慌，故仍具备 1 分外部社会成本。与「虐杀（项目 4）」不同，本行为动机为排除生存威胁（如车祸、农损）的移除性私刑，而非病理性或情绪转移的极端痛苦折磨。需注意：现行法规对不同物种保护标准并不一致——犬猫受《动保法》保护，野生动物、农场动物、有害生物规范各异——其禁止依据更多来自维护公共秩序与防止暴力蔓延，而非客观危害的精确计量。本模型不鼓励以私力手段自行裁决，亦不主张守法即正确。",
-    citation: "中华民国《动物保护法》第 25 条刑事责任 / 环境犯罪学与社会安全成本 / PMC/NIH (2023) / WHO / United Against Rabies (2022) / 交通部公路局(2023)",
+    citation: "中华民国《动物保护法》第 25 条刑事责任 / 环境犯罪学与社会安全成本 / Shen et al. (2023) / WHO / United Against Rabies (2022) / 交通部公路局(2023)",
     references: [
           {
                 title: "动物保护法（民国 112 年 06 月 28 日修正）第 25 条刑事责任",
                 url: "https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0060027&flno=25"
           },
           {
-                title: "PMC/NIH (2023) - Progress towards dog-mediated rabies elimination in PR China (Asia)",
+                title: "Shen et al. (2023) - Progress towards dog-mediated rabies elimination in PR China: a scoping review",
                 url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/"
           },
           {

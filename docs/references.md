@@ -16,13 +16,13 @@
 |------|-----|------|------|
 | Longcore, T., Rich, C., & Sullivan, L. M. (2009). Critical assessment of claims regarding management of feral cats by trap–neuter–return. *Conservation Biology*, 23(4), 887–894. | https://doi.org/10.1111/j.1523-1739.2009.01174.x | ✅ 可正常存取 | 經典學術引用 |
 | Barrows, P. L. (2004). Professional, ethical, and legal dilemmas of trap-neuter-release. *Journal of the American Veterinary Medical Association*, 225(9), 1365–1369. | https://doi.org/10.2460/javma.2004.225.1365 | ✅ 可正常存取 | 探討 TNR 倫理與法律困境 |
-| PMC/NIH (2022) - High-intensity TNR required to reduce free-roaming cat population | https://pmc.ncbi.nlm.nih.gov/articles/PMC9169806/ | ✅ 可正常存取 | |
+| Gunther, I., Hawlena, H., Azriel, L., Gibor, D., Berke, O., & Klement, E. (2022). Reduction of free-roaming cat population requires high-intensity neutering in spatial contiguity to mitigate compensatory effects. *Proceedings of the National Academy of Sciences (PNAS)*, 119(24), e2119000119. | https://pmc.ncbi.nlm.nih.gov/articles/PMC9169806/ | ✅ 可正常存取 | 探討高強度 TNR 絕育要求 |
 | University of Florida IFAS (2020) - How Effective and Humane Is Trap-Neuter-Release? | https://ask.ifas.ufl.edu/publication/UW468 | ✅ 可正常存取 | |
 | Wellbeing International - Why Trap-Neuter-Return is Not an Ethical Solution (Australia perspective) | https://www.wellbeingintlstudiesrepository.org/cgi/viewcontent.cgi?article=1009&context=aw_comp_globalcats_managementtnr | ✅ 可正常存取 | PDF 文件 |
 | Duke University Space (2023) - Citizens perceptions toward Hangzhou TNR Program (Asia) | https://dukespace.lib.duke.edu/items/bbbf3445-70a3-425f-948e-5501a94edc80 | ✅ 可正常存取 | |
 | JASV - Successful Control of Feral Cat Populations Through Trap-Neuter (Asia islands) | https://jsmcah.org/index.php/jasv/article/view/125/287 | ✅ 可正常存取 | 內容正常 |
 | 台灣石虎保育協會 (Leopard Cat Association of Taiwan)（中華民國）- 石虎保育數據 | https://www.twlcat.org/en/ | ✅ 可正常存取 | |
-| PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats | https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/ | ✅ 可正常存取 | |
+| van der Meer, E., Dullemont, H., Wang, C. H., Zhang, J. W., Lin, J. L., Pei, K. J. C., & Lai, Y. C. (2023). Fine-scaled selection of resting and hunting habitat by leopard cats (*Prionailurus bengalensis*) in a rural human-dominated landscape in Taiwan. *Animals*, 13(2), 268. | https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/ | ✅ 可正常存取 | 探討台灣石虎活動棲地選擇 |
 | AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats | https://topics.amcham.com.tw/2016/07/protecting-endangered-leopard-cats/ | ✅ 可正常存取 | |
 | 交通部數據/野保團體精算 - 台灣每年遊蕩犬社會成本高達 36.4億元 | https://www.cna.com.tw/news/ahel/202604290135.aspx | ✅ 可正常存取 | |
 | 台中市警局 - 近2年流浪狗車禍死傷破700人 | https://udn.com/news/story/7321/8914334 | ✅ 可正常存取 | |
@@ -40,7 +40,7 @@
 |------|-----|------|------|
 | 動物保護法（民國 112 年 06 月 28 日修正）第 25 條刑事責任 | https://law.moj.gov.tw/LawClass/LawSingle.aspx?pcode=M0060027&flno=25 | ✅ 可正常存取 | 台灣動物保護基本法規 |
 | 環境犯罪學與社會安全成本 (Environmental Criminology and Crime Prevention) | https://en.wikipedia.org/wiki/Environmental_criminology | ✅ 可正常存取 | 探討環境設計與犯罪成本關聯之學術概念 |
-| PMC/NIH (2023) - Progress towards dog-mediated rabies elimination in PR China (Asia) | https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/ | ✅ 可正常存取 | |
+| Shen, T., Welburn, S. C., Sun, L., & Yang, G. J. (2023). Progress towards dog-mediated rabies elimination in PR China: a scoping review. *Infectious Diseases of Poverty*, 12(1), 30. | https://pmc.ncbi.nlm.nih.gov/articles/PMC10077633/ | ✅ 可正常存取 | 探討中國犬媒介狂犬病清除進展 |
 | WHO - Strategic Framework for Elimination of Human Rabies Transmitted by Dogs | https://iris.who.int/bitstreams/18d3fd7b-0c76-4284-b714-0b7650d015ad/download | ✅ 可正常存取 | PDF 文件 |
 | United Against Rabies / WHO (2022) - Rabies prevention and control – lessons from Chongqing, China (Asia) | https://unitedagainstrabies.org/news/rabies-prevention-and-control-lessons-from-chongqing-china/ | ✅ 可正常存取 | |
 | 交通部數據/野保團體精算 - 台灣每年遊蕩犬社會成本高達 36.4億元 | https://www.cna.com.tw/news/ahel/202604290135.aspx | ✅ 可正常存取 | |
@@ -57,7 +57,7 @@
 | Asher, L., Diesel, G., Summers, J. F., McGreevy, P. D., & Collins, L. M. (2009). Inherited defects in pedigree dogs. Part 1: Disorders related to breed standards. *The Veterinary Journal*, 182(3), 402–411. | https://doi.org/10.1016/j.tvjl.2009.08.033 | ✅ 可正常存取 | 替代原較冷門之 Takanosu et al. (2008) 項目，為該領域權威作 |
 | Universities Federation for Animal Welfare (UFAW). (n.d.). *Genetic welfare problems of companion animals*. UFAW. | https://www.ufaw.org.uk/genetics | ✅ 可正常存取 | 英國大學動物福利聯盟公開資料庫 |
 | Bellumori et al. JAVMA (2013) - Prevalence of inherited disorders among mixed-breed and purebred dogs (27,254 cases) | https://pubmed.ncbi.nlm.nih.gov/23683021/ | ✅ 可正常存取 | |
-| PMC/NIH (2018) - Frequency and distribution of 152 genetic disease variants in over 100,000 dogs | https://pmc.ncbi.nlm.nih.gov/articles/PMC5945203/ | ✅ 可正常存取 | |
+| Donner, J., Anderson, H., Davison, S., Hughes, A. M., Bouirmane, J., Lindqvist, J., ... & Lohi, H. (2018). Frequency and distribution of 152 genetic disease variants in over 100,000 mixed breed and purebred dogs. *PLOS Genetics*, 14(4), e1007361. | https://pmc.ncbi.nlm.nih.gov/articles/PMC5945203/ | ✅ 可正常存取 | 龐大基因體數據分析犬隻遺傳病分佈 |
 
 ---
 
@@ -66,7 +66,7 @@
 | 標題 | URL | 狀態 | 備註 |
 |------|-----|------|------|
 | Psychology Today (2025) - The Violence Link | https://www.psychologytoday.com/us/blog/the-human-equation/202503/the-violence-link | ✅ 可正常存取 | |
-| PMC/NIH (2022) - Animal Abuse as an Indicator of Domestic Violence | https://pmc.ncbi.nlm.nih.gov/articles/PMC9024712/ | ✅ 可正常存取 | |
+| Mota-Rojas, D., Monsalve, S., Lezama-García, K., Mora-Medina, P., Domínguez-Oliva, A., Ramírez-Necoechea, R., & Garcia, R. C. M. (2022). Animal abuse as an indicator of domestic violence: One Health, One Welfare approach. *Animals*, 12(7), 802. | https://pmc.ncbi.nlm.nih.gov/articles/PMC9024712/ | ✅ 可正常存取 | 探討虐待動物與家庭暴力之關聯 |
 | Oxford Animal Ethics - The Link between Animal Abuse and Human Violence (Monograph) | https://www.oxfordanimalethics.com/what-we-do/publication/the-link-between-animal-abuse-and-human-violence/ | ✅ 可正常存取 | |
 | Faunalytics (2020) - The Development of an Animal Protection Regime in China (Asia) | https://faunalytics.org/the-development-of-an-animal-protection-regime-in-china/ | ✅ 可正常存取 | |
 
@@ -86,10 +86,10 @@
 | 標題 | URL | 狀態 | 備註 |
 |------|-----|------|------|
 | American Veterinary Medical Association (AVMA). (2017). *Inherited disorders in responsible breeding of companion animals*. AVMA Policies. | https://www.avma.org/resources-tools/avma-policies/inherited-disorders-responsible-breeding-companion-animals | ✅ 可正常存取 | 美國獸醫學會繁殖福利官方指導原則 |
-| PMC/NIH (2022) - BOAS: much more than a respiratory problem | https://pmc.ncbi.nlm.nih.gov/articles/PMC9673814/ | ✅ 可正常存取 | |
+| Bęczkowski, P. M., et al. (2022). Brachycephalic obstructive airway syndrome: much more than a surgical problem. *Veterinary Quarterly*, 42(1), 198–207. | https://pmc.ncbi.nlm.nih.gov/articles/PMC9673814/ | ✅ 可正常存取 | 探討短吻犬 BOAS 綜合症的多系統損害 |
 | RCVS Knowledge - Health and welfare of Brachycephalic dogs | https://www.rcvsknowledge.org/resource/health-and-welfare-of-brachycephalic-dogs/ | ✅ 可正常存取 | |
 | UFAW - Scottish Fold – Osteochondrodysplasia | https://www.ufaw.org.uk/cats/scottish-fold-osteochondrodysplasia | ⚠️ 被防機器人擋住 | 403 Forbidden，但網址存在 |
-| PMC/NIH (2007) - Osteochondrodysplasia in three Scottish Fold cats | https://pmc.ncbi.nlm.nih.gov/articles/PMC2868141/ | ✅ 可正常存取 | |
+| Chang, J., Jung, J., Oh, S., Lee, S., Kim, G., Kim, H., Kweon, O., Yoon, J., & Choi, M. (2007). Osteochondrodysplasia in three Scottish Fold cats. *Journal of Veterinary Science*, 8(3), 307-309. | https://pmc.ncbi.nlm.nih.gov/articles/PMC2868141/ | ✅ 可正常存取 | 探討摺耳貓軟骨發育不良病例 |
 
 ---
 
@@ -124,7 +124,7 @@
 | The Wildlife Society (2025) - Feral and Free-Ranging Domestic Cats Issue Statement | https://wildlife.org/tws-issue-statement-feral-and-free-ranging-domestic-cats/ | ✅ 可正常存取 | |
 | USDA APHIS - Free-ranging and Feral Cats (PDF) | https://www.aphis.usda.gov/sites/default/files/free-ranging-and-feral-cats.pdf | ✅ 可正常存取 | PDF 文件 |
 | 中華民國苗栗縣政府 - 石虎與保育工作報告 | https://www.miaoli.gov.tw/eng/News_Content.aspx?n=434&s=271995 | ✅ 可正常存取 | |
-| ScienceDirect (2025) - Incidence and prevalence of rabies virus infections in Asia | https://www.sciencedirect.com/science/article/pii/S2352771425001387 | ⚠️ 被防機器人擋住 | 403 Forbidden，但網址存在 |
+| Shams, F., Jokar, M., Djalali, E., Abdous, A., et al. (2025). Incidence and prevalence of rabies virus infections in tested humans and animals in Asia: A systematic review and meta-analysis study. *One Health*, 20, 101102. | https://www.sciencedirect.com/science/article/pii/S2352771425001387 | ⚠️ 被防機器人擋住 | 狂犬病亞洲感染流行率之統合分析 |
 
 ---
 

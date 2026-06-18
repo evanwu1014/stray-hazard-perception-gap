@@ -3,8 +3,8 @@ export const hazardData = {
     name: "当面喂食 TNR 流浪犬猫",
     desc: "犬猫个体免于饥饿且无繁殖能力。但维持其街头生命仍会产生排泄物，并让其持续基于本能掠食原生野生动物或追咬路人。",
     tooltipTitle: "开放空间 TNR/TNA 的局限",
-    tooltipContent: "研究与数学模型显示，流浪犬猫的年移除率必须持续达到 75% 至 85% 以上，种群总量才会开始下降，且绝育个体仍会持续猎杀野生动物或造成人车追咬冲突。",
-    citation: "Longcore et al. (2009) / Barrows (2004) / PMC/NIH (2022) / IFAS (2020) / Wellbeing Intl. / 台湾石虎保育协会 / 农业部(2024) / WHO / 交通部公路局(2023) / 警政署",
+    tooltipContent: "研究与数学模型显示，流浪犬猫的年绝育／移除率必须持续达到 71% 至 94% 以上，种群总量才会开始下降，且绝育个体仍会持续猎杀野生动物或造成人车追咬冲突。",
+    citation: "Longcore et al. (2009) / Barrows (2004) / Gunther et al. (2022) / IFAS (2020) / Wellbeing Intl. / 台湾石虎保育协会 / 农业部(2024) / WHO / 交通部公路局(2023) / 警政署",
     references: [
           {
                 title: "Longcore, T., Rich, C., & Sullivan, L. M. (2009). Critical assessment of claims regarding management of feral cats by trap–neuter–return. Conservation Biology, 23(4), 887–894.",
@@ -14,10 +14,10 @@ export const hazardData = {
                 title: "Barrows, P. L. (2004). Professional, ethical, and legal dilemmas of trap-neuter-release. Journal of the American Veterinary Medical Association, 225(9), 1365–1369.",
                 url: "https://doi.org/10.2460/javma.2004.225.1365"
           },
-          {
-                title: "PMC/NIH (2022) - High-intensity TNR required to reduce free-roaming cat population",
-                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9169806/"
-          },
+            {
+                  title: "Gunther et al. (2022) - Reduction of free-roaming cat population requires high-intensity neutering",
+                  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9169806/"
+            },
           {
                 title: "University of Florida IFAS (2020) - How Effective and Humane Is Trap-Neuter-Release?",
                 url: "https://ask.ifas.ufl.edu/publication/UW468"
@@ -38,10 +38,10 @@ export const hazardData = {
                 title: "台湾石虎保育协会 (Leopard Cat Association of Taiwan) - 石虎保育数据（中华民国）",
                 url: "https://www.twlcat.org/en/"
           },
-          {
-                title: "PMC/NIH (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats",
-                url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/"
-          },
+            {
+                  title: "van der Meer et al. (2023) - Fine-Scaled Selection of Resting and Hunting Habitat by Leopard Cats",
+                  url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC9854813/"
+            },
           {
                 title: "AmCham Taiwan (2016) - Protecting Taiwan's Endangered Leopard Cats",
                 url: "https://topics.amcham.com.tw/2016/07/protecting-endangered-leopard-cats/"
